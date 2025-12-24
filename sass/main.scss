@@ -1,0 +1,38 @@
+// Generals
+@import "./modules/_reset.scss";
+@import "./modules/_general.scss";
+@import "./modules/_var.scss";
+
+// Mobile Design First
+@import './modules/pageTransition';
+@import './modules/default';
+@import './modules/nav';
+@import './modules/footer';
+@import './modules/caseStudy';
+@import './modules/table';
+
+// Extra
+@import './modules/animation';
+@import './modules/cursor';
+// @import './modules/mail';
+
+// Font
+/* Geist - Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
+@import url('https://fonts.cdnfonts.com/css/switzer');
+
+/* Babas Nenu Font*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*
+<Setting - ShortCut Keyboard>
+1. Command K + Command S
+
+<Comment Out Shortcut in VS Code>
+1. Command + / = Individual Line Comment Out - Toggle Line Comment
+2. Shift + Option + A = Multiple line Comment out - Toggle Block Comment
+
+<Sass Watch>
+sass --watch sass/main.scss:public/css/main.css --style compressed
+*/

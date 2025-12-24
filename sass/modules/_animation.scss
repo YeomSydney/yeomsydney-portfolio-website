@@ -1,0 +1,51 @@
+/* Case Study Page-Open Animation */
+.page-open {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    transform: translateY(0);
+    display: block;
+    background-color: #FCFCFC;
+    z-index: 1499;
+
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll !important;
+
+    transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Side Items Page-Open Animation */
+.sideItemPage-open {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
+    display: block;
+    background-color: #FCFCFC;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+/* Extra Projects */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 15%;
+
+    width: 450px;
+    height: 280px;
+    border-radius: 8px;
+    z-index: 5;
+
+    background-size: cover;
+    background-position: center;
+    transform: translate(0);
+    opacity: 0;
+    pointer-events: none;
+}

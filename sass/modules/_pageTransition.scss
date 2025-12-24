@@ -1,0 +1,114 @@
+#content-wrapper {
+    position: relative;
+}
+
+/* Page Transition */
+#page-projects {
+    width: 100%;
+    opacity: 1;
+    display: block;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    pointer-events: auto !important;
+}
+
+#page-about {
+    width: 100%;
+    opacity: 0;
+    display: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+// Page: About
+#nav-toggle1:checked ~ #page-about {
+    display: block;
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#nav-toggle1:checked ~ #page-projects {
+    opacity: 0;
+    transform: scale(0.85) translateY(30px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+// Page: Projects
+#nav-toggle2:checked ~ #page-projects {
+    display: block;
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#nav-toggle2:checked ~ #page-about {
+    opacity: 0;
+    transform: scale(0.85) translateY(30px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+#nav-toggle4:checked ~ .goback-btn-wrapper {
+    display: flex;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translateY(0);
+}
+
+// Page: Contact
+/* Closed state */
+.contact-section {
+    pointer-events: none; /* disable interaction */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1em);
+}
+
+/* OPEN state */
+#nav-toggle3:checked ~ .contact-section {
+    pointer-events: auto; /* NOW clickable */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform 0.5s ease, opacity 0.5s ease, scale(1) ease;
+}
+
+main {
+    .hero-section,
+    .about-section {
+        width: 100vw;
+        height: 100vh;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        overflow-y: scroll;
+    }
+
+    .about-section {
+        background-color: #fcfcfc;
+        
+        .about-box {
+            display: flex;
+            flex-direction: column;
+            row-gap: 3em;
+            width: 100%;
+
+            .line {
+                height: 1px;
+                width: 100%;
+                background-color: #fcfcfc;
+            }
+
+            .about-me-name,
+            .about-me-02,
+            .about-me-section,
+            .backgrounds-section,
+            .skill-award-section {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,177 @@
+#main-nav-pc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000 !important;
+
+    .nav-top-pc {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1d1d1d80;
+        backdrop-filter: blur(8px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: .8em 2.4em;
+        z-index: 2001 !important;
+        transition: background-color 0.3s ease;
+
+        .main-nav-pc-top {
+            display: flex;
+            flex-direction: row;
+            column-gap: 1em;
+            align-items: center;
+
+            h3,
+            h4,
+            h5,
+            span {
+                color: #fcfcfc;
+            }
+
+            label h3 {
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            h4 {
+                opacity: 0.6;
+                font-size: 13px;
+            }
+
+            h5, span {
+                font-size: 13px;
+            }
+
+            label {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                column-gap: .5em;
+
+                .dot {
+                    background-color: #b7ff00 !important;
+                }
+            }
+        }
+    }
+
+    .nav-center-pc {
+        position: fixed;
+        bottom: 0;
+        padding: 2em 0;
+        background-color: transparent;
+        z-index: 2000 !important;
+
+        .nav-center {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: .5em;
+            z-index: 1;
+            z-index: 2000 !important;
+
+            .nav-block-text-left-main,
+            .nav-block-text-bottom-main {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                position: relative;
+
+                border-radius: 10em;
+                padding: 4px 10px;
+                overflow: hidden;
+                align-items: center;
+                box-shadow: 0px 8px 10px #11111110;
+                transition: background-color .2s, color .2s;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    backdrop-filter: blur(8px);
+                    background-color: #1d1d1d70;
+                    border-radius: 10em;
+                }
+
+                .nav-menu-each {
+
+                    label,
+                    a {
+                        .nav-menu {
+                            font-size: 14px;
+                            opacity: .6;
+                        }
+                    }
+
+                    &:hover {
+                        span {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                li {
+                    padding: 8px 13px;
+
+                    .main-logo a span {
+                        font-size: 14px;
+                    }
+
+                    a,
+                    span {
+                        color: #ffffff;
+                    }
+                }
+
+                .nav-menu-each.selected {
+                    span {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    #main-nav-pc {
+        .nav-top-pc {
+            .main-nav-pc-top {
+                h5 span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 743px) {
+    #main-nav-pc {
+        .nav-top-pc {
+            padding: .8em 1.8em;
+        }
+    }
+}
+
+@media only screen and (min-width: 744px) {
+    #main-nav-pc {
+        .nav-top-pc {
+            padding: .8em 2em;
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    
+}

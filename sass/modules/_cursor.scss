@@ -1,0 +1,36 @@
+#mouse_cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+
+    padding: 0 10px;
+    width: 22px;
+    height: 22px;
+    mix-blend-mode: difference;
+    pointer-events: none;
+
+    border-radius: 50%;
+    border: 1.2px solid #fcfcfc;
+    background-color: transparent;
+
+    font-family: 'geist', 'aktiv-grotesk', 'acumin-pro', 'Inter', 'Helvetica';
+    font-size: 10px;
+    line-height: normal;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    color: #fcfcfc;
+    text-align: center;
+    
+    overflow: hidden;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, transform 0.15s ease-out;
+}
+
+.hover-trigger {
+    cursor: pointer !important;
+    z-index: 50;
+}
