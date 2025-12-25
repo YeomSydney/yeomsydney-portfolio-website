@@ -127,7 +127,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             flex-direction: row;
                             justify-content: flex-start;
                             font-weight: 250;
-                            font-size: 34px;
+                            font-size: 40px;
+                            line-height: 42px;
 
                             div { opacity: 0; }
 
@@ -644,12 +645,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         .about-me-details-right-bar {
             display: flex;
             flex-direction: column;
-            row-gap: 3em;
 
             .am-details-profile-photo {
-                max-width: 260px;
-                max-height: 260px;
-                
                 img {
                     width: 100%;
                     height: 100%;
@@ -1067,6 +1064,15 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 }
             }
         }
+
+        .about-section {
+            .about-me-name {
+                .am-details-profile-photo {
+                    max-width: 300px;
+                    max-height: 300px;
+                }
+            }
+        }
     }
 }
 
@@ -1134,7 +1140,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                             ul {
                                 li a {
-                                    font-size: 34px;
+                                    font-size: 40px;
+                                    line-height: 42px;
                                 }
                             }
                         }
@@ -1171,8 +1178,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 .hero-extra-box-experience {
                     .hero-top-intro-para {
                         h3 {
-                            font-size: 34px;
-                            line-height: 44px;
+                            font-size: 40px;
+                            line-height: 42px;
                         }
                     }
 
@@ -1186,9 +1193,10 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         }
         
         .about-section {
-            padding: 35% 1.4em 0em 1.4em;
+            padding-top: 50%;
 
             .about-box {
+                padding: 0 1.4em;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -1198,7 +1206,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
             .about-me-name {
                 display: flex;
                 flex-direction: column;
-                row-gap: 3em;
+                row-gap: 1em;
     
                 .about-me-details-right-bar {
                     display: flex;
@@ -1219,9 +1227,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     }
     
                     .am-details-profile-photo {
-                        max-width: 260px;
-                        max-height: 260px;
-                        
                         img {
                             width: 100%;
                             height: 100%;
@@ -1388,7 +1393,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                             ul {
                                 li a {
-                                    font-size: 34px;
+                                    font-size: 40px;
+                                    line-height: 42px;
                                 }
                             }
                         }
@@ -1423,8 +1429,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                     .hero-top-intro-para {
                         h3 {
-                            font-size: 34px;
-                            line-height: 44px;
+                            font-size: 40px;
+                            line-height: 42px;
                         }
                     }
 
@@ -1644,6 +1650,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                                 li a {
                                     font-size: 40px;
+                                    line-height: 42px;
                                     opacity: .6;
                                     transition: opacity 0.6s ease;
                                 }
@@ -1899,6 +1906,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                         h3 {
                             font-size: 40px;
+                            line-height: 42px;
                         }
 
                         ul {
@@ -1987,7 +1995,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
             .about-me-name {
                 width: 100%;
                 display: grid;
-                grid-template-columns: 20% auto 55%;
+                grid-template-columns: auto 55%;
                 align-items: start;
 
                 .about-me-details-right-bar {
@@ -2011,9 +2019,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     }
 
                     .am-details-profile-photo {
-                        max-width: 300px;
-                        max-height: 300px;
-                        
                         img {
                             width: 100%;
                             height: 100%;
