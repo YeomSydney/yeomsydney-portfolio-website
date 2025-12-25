@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function switchBg(index) {
+    currentIndex = index;
     const nextImage = heroButtons[index].getAttribute("data-bg");
     const bottomLayer = topLayer;
     topLayer = 1 - topLayer;
@@ -233,7 +234,6 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       const cs = document.querySelector(`.${targetClass}`);
       if (cs) cs.classList.add("page-open");
-      currentIndex = index; // sync loop
     });
   });
 
@@ -451,19 +451,3 @@ function fitTextToPaddingBox() {
 
 window.addEventListener('load', fitTextToPaddingBox);
 window.addEventListener('resize', fitTextToPaddingBox);
-
-
-
-
-// function updateEDTClockPC() {
-//   const now = new Date();
-
-//   // Convert UTC time to EDT (UTC-4)
-//   const options = { timeZone: "America/New_York", hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" };
-//   const edtTime = new Intl.DateTimeFormat("en-US", options).format(now);
-
-//   document.getElementById("currentTimePC").textContent = `Toronto ${edtTime}`;
-// }
-
-// updateEDTClockPC();
-// setInterval(updateEDTClockPC, 1000);
