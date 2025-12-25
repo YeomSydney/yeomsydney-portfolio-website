@@ -98,6 +98,74 @@ function easeOutCubic(t) {
 }
 
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const pages = {
+    home: "nav-toggle2",
+    about: "nav-toggle1"
+  };
+
+  function navigate(page) {
+    if (!(page in pages)) {
+      console.warn("Page not found:", page);
+      window.location.href = "/";
+      return;
+    }
+
+    // Close any open CaseStudy pages first
+    document.querySelectorAll('.casestudy-item.page-open').forEach(cs => {
+      cs.classList.remove('page-open');
+    });
+
+    // Set the correct input state
+    const targetInput = document.getElementById(pages[page]);
+    if (targetInput) targetInput.checked = true;
+
+    // Update URL hash without reloading
+    window.location.hash = page === "home" ? "" : `#/${page}`;
+
+    // Scroll Home/About pages to top if needed
+    const pageId = page === "home" ? "page-projects" : page === "about" ? "page-about" : null;
+    if (pageId) {
+      const pageEl = document.getElementById(pageId);
+      pageEl?.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }
+
+  // Bind nav link clicks
+  document.querySelectorAll("[data-url]").forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigate(el.dataset.url);
+    });
+  });
+
+  // Handle hash changes/back-forward navigation
+  window.addEventListener("hashchange", () => {
+    const hashPage = location.hash.replace("#/", "") || "home";
+    if (hashPage in pages) {
+      navigate(hashPage);
+    } else {
+      window.location.href = "/";
+    }
+  });
+
+  // Initial page load
+  const initialPage = location.hash.replace("#/", "") || "home";
+  navigate(initialPage);
+
+  // Enable page transitions AFTER initial load
+  const allPages = document.querySelectorAll("#page-about, #page-projects");
+  allPages.forEach(page => {
+    // force browser to compute style first
+    page.offsetHeight; // triggers reflow
+    page.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+  });
+});
+
+
+
+
 // Open Case Studies
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -174,7 +242,11 @@ document.addEventListener("DOMContentLoaded", function () {
     layer.addEventListener("click", () => {
       const targetClass = heroButtons[currentIndex].getAttribute("data-target");
       const cs = document.querySelector(`.${targetClass}`);
-      if (cs) cs.classList.add("page-open");
+      if (cs) {
+        cs.classList.add("page-open");
+        // Scroll the CaseStudy to top
+        cs.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   });
 
@@ -275,8 +347,7 @@ caseStudies.forEach(page => {
 // initial state
 updateCaseStudyUI();
 
-
-
+// close casestudy
 function closeCaseStudy(page) {
   if (!page) return;
 
@@ -298,8 +369,6 @@ closeBtn.addEventListener('click', () => {
   closeCaseStudy(activePage);
 });
 
-
-
 // Close all project views when nav toggles are clicked
 ['nav-toggle1', 'nav-toggle2', 'nav-toggle4'].forEach(id => {
   const navToggle = document.getElementById(id);
@@ -319,16 +388,35 @@ closeBtn.addEventListener('click', () => {
 
 // Open Individual Pages
 function openPage(pageClass) {
-  const page = $(pageClass);
-  page.animate({ scrollTop: 0 }, 800);
+  // Close any open CaseStudy pages first
+  document.querySelectorAll('.casestudy-item.page-open').forEach(el => {
+    el.classList.remove('page-open');
+  });
+
+  // Scroll main page container to top
+  const page = document.querySelector(pageClass);
+  if (page) {
+    // Ensure page is visible first (CSS should handle visibility)
+    page.scrollTop = 0;          // immediately set scroll top
+    page.scrollTo({ top: 0, behavior: 'smooth' }); // smooth fallback
+  }
+
+  // Also scroll body/document just in case
+  window.scrollTo({ top: 0, behavior: 'auto' });
 }
 
-$("#nav-toggle1").on("click", function() {
-  openPage("#page-about");
-});
+// Bind nav toggles
+document.querySelectorAll("#nav-toggle1, #nav-toggle2").forEach(toggle => {
+  toggle.addEventListener("click", (e) => {
+    const targetPage = toggle.id === "nav-toggle1" ? "#page-about" : "#page-projects";
+    openPage(targetPage);
 
-$("#nav-toggle2").on("click", function() {
-  openPage("#page-projects");
+    // Set input checked state
+    toggle.checked = true;
+
+    // Close mobile nav if open
+    document.querySelector('.mobileNavBox')?.classList.remove('is-active');
+  });
 });
 
 
