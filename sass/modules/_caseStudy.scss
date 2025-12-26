@@ -1437,17 +1437,6 @@
                             }
                         }
                     }
-                    
-                    .cs-img-wrapping-box-section-divider {
-                        &-wb-details {
-                            width: 100%;
-                            display: grid;
-                            // grid-template-columns: repeat(3, 1fr) !important;
-                            grid-auto-columns: auto;
-                            grid-auto-rows: auto;
-                            row-gap: .5em;
-                        }
-                    }
 
                     .cs-img-wrapping-box-section-divider-wb-details {
                         .cs-img-wb-square {
