@@ -129,8 +129,12 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             font-weight: 250;
                             font-size: 40px;
                             line-height: 42px;
+                            transition: all .35s ease-in;
 
-                            div { opacity: 0; }
+                            div {
+                                opacity: 0;
+                                transition: all .35s ease-in;
+                            }
 
                             &.active-text {
                                 opacity: 1;
