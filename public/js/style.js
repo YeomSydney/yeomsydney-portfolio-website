@@ -161,6 +161,27 @@ document.addEventListener("DOMContentLoaded", () => {
     page.offsetHeight; // triggers reflow
     page.style.transition = "transform 0.5s ease, opacity 0.5s ease";
   });
+
+  // Reveal Scroll Effect
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target); // reveal once
+        }
+      });
+    },
+    {
+      threshold: 0.2, // 20% visible before triggering
+    }
+  );
+
+  reveals.forEach(section => {
+    observer.observe(section);
+  });
 });
 
 

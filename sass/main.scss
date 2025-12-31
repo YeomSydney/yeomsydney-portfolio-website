@@ -4,16 +4,16 @@
 @import "./modules/_var.scss";
 
 // Mobile Design First
-@import './modules/pageTransition';
 @import './modules/default';
 @import './modules/nav';
 @import './modules/footer';
 @import './modules/caseStudy';
-@import './modules/table';
+@import './modules/pageOpen';
+@import './modules/pageTransition';
 
 // Extra
-@import './modules/animation';
 @import './modules/cursor';
+@import './modules/reveal';
 // @import './modules/mail';
 
 // Font
