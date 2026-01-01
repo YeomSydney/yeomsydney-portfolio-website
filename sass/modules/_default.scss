@@ -251,8 +251,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
         .hero-extra-black {
             background-color: #111111;
-            padding-top: 10em;
-            padding-bottom: 10em;
 
             h2, h3, h4, h5, h6, p, a, span {
                 color: white;
@@ -486,34 +484,33 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
             }
         }
 
-        &.list {
-            ul {
-                display: flex;
-                flex-direction: column;
-                row-gap: 0;
+        ul,
+        &.list ul {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0;
 
-                li {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: top;
-                    border-top: 1px solid #1d1d1d10;
-                    padding: .8em 0;
-                    transition: all .3s ease;
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: top;
+                border-top: 1px solid #1d1d1d10;
+                padding: .8em 0;
+                transition: all .3s ease;
+                width: 100%;
+
+                .hero-extra-works-text {
                     width: 100%;
 
-                    .hero-extra-works-text {
-                        width: 100%;
+                    h3 {
+                        font-size: 14px !important;
+                    }
 
-                        h3 {
-                            font-size: 14px !important;
-                        }
-
-                        h4, h5 {
-                            display: flex !important;
-                            opacity: .6;
-                            font-size: 13px;
-                        }
+                    h4, h5 {
+                        display: flex !important;
+                        opacity: .6;
+                        font-size: 13px;
                     }
                 }
             }
@@ -548,11 +545,11 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     }
 
                     &:hover {
-                        border-radius: 2em;
+                        border-radius: 1em;
 
                         img {
                             transform: scale(1.07);
-                            border-radius: 2em;
+                            border-radius: 1em;
                         }
                     }
                 }
@@ -576,16 +573,121 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         }
     }
 
-    .hero-extra-works-box-black {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+    .hero-extra-black {
+        // overflow: hidden;
+        width: 100vw;
+        // height: 100vh;
 
-        .work-gallery-each-box {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 1em;
-            row-gap: 2em;
+        .hero-extra-works-box-black {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: 100vw;
+            // height: 100vh;
+            scroll-snap-type: y mandatory;
+
+            .work-gallery-each-box {
+                position: sticky !important;
+                top: 0;
+                height: 100%;
+                overflow: scroll;
+                scroll-snap-type: y mandatory;
+                scroll-behavior: smooth;
+
+                .casestudy-each-list {
+                    position: relative !important;
+                    top: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    overflow: hidden;
+                    scroll-snap-align: start;
+                    scroll-snap-stop: always;
+
+                    .casestudy-each-list-content {
+                        width: 100%;
+                        height: 100%;
+
+                        display: grid;
+                        grid-template-columns: 1fr 1.5fr 2.5fr;
+                        align-items: center;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            inset: -10%;
+                            background-image: var(--bg-image);
+                            background-size: cover;
+                            background-position: center;
+
+                            filter: blur(20px) brightness(0.7);
+                            transform: scale(1.2);
+                            z-index: 0;
+                        }
+
+                        .allProjectDetails {
+                            grid-column-start: 2;
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 4em;
+                            z-index: 2;
+
+                            &-top, &-bottom {
+                                display: flex;
+                                flex-direction: column;
+                                row-gap: .5em;
+                            }
+
+                            h2 {
+                                font-size: 12px;
+                                padding: 0 2px;
+                            }
+
+                            h3 {
+                                font-size: 40px;
+                                line-height: 42px;
+                            }
+
+                            h4 {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+
+                .allProjectThumbnails {
+                    position: relative;
+                    max-width: 550px;
+                    width: 90%;
+                    overflow: hidden;
+                    
+                    img {
+                        width: 100%;
+                        height: auto;
+                        object-fit: contain;
+                        display: block;
+                        transition: opacity 0.4s ease;
+
+                        &.hover-image {
+                            position: absolute;
+                            top: 0;
+                            left: 100%;
+                            opacity: 0;
+                            transition: left 0.5s ease, opacity 0.5s ease;
+                        }
+                    }
+
+                    &:hover img.hover-image {
+                        opacity: 1;
+                        left: 0;
+                    }
+
+                    &:hover img:not(.hover-image) {
+                        opacity: 0.3;
+                        left: 100%;
+                    }
+                }
+            }
         }
     }
 
@@ -824,140 +926,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     }
 }
 
-.work-gallery-each-box {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    column-gap: .5em;
-    row-gap: .5em;
-
-    .allProjectThumbnails {
-        position: relative;
-        min-width: 100px;
-        min-height: 100px;
-        transition: .3s ease-in-out all;
-
-        img {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            filter: brightness(1);
-            transition: .3s ease-in-out all;
-        }
-
-        .allProjectEachDesc-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: auto;
-            height: 100%;
-            opacity: 0;
-            transition: .3s ease-in-out all;
-
-            .allProjectEachDesc {
-                height: 100%;
-                width: auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 1em;
-
-                h4,
-                i,
-                li,
-                span {
-                    color: #fcfcfc;
-                }
-
-                .allProjectEachDetails {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: flex-start;
-                    height: 100%;
-                    width: auto;
-
-                    .gallery-project-badge-wrapper {
-                        display: inline-block;
-                        padding: 3px;
-                        background-color: #fcfcfc90;
-                        backdrop-filter: blur(8px);
-                        border-radius: 10em;
-                        width: auto;
-
-                        .gallery-project-badge {
-                            display: inline-flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            width: auto;
-                            align-items: center;
-
-                            h4,
-                            span {
-                                font-size: 12px;
-                            }
-
-                            h4 {
-                                padding: 8px 8px 8px 12px;
-                                color: #fcfcfc;
-                                border-radius: 3em;
-                            }
-
-                            span {
-                                padding: 8px 12px;
-                                background-color: #fcfcfc;
-                                color: black;
-                                border-radius: 3em;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        &:hover {
-            img {
-                filter: brightness(.6);
-            }
-
-            .allProjectEachDesc-container {
-                opacity: 1;
-            }
-        }
-    }
-
-    .casestudy-each-list {
-        position: relative;
-        transition: all .3s ease-in-out;
-
-        .allProjectEachDesc-container {
-            .gallery-project-name {
-                padding: .7em;
-            }
-
-            ul {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                flex-wrap: wrap;
-                column-gap: 6px;
-                row-gap: 6px;
-
-                li {
-                    font-size: 13px;
-                    word-break: normal;
-                    opacity: .6;
-                }
-            }
-        }
-
-        &:hover {
-            i {
-                opacity: 1;
-            }
-        }
-    }
-}
-
 @media only screen and (max-width: 439px) {
     .hero-section {
         .hero-extra {
@@ -1007,15 +975,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     }
                 }
             }
-
-            .work-gallery-list {
-                .work-gallery-each-box {
-                    display: grid;
-                    grid-template-columns: repeat(1, 1fr) !important;
-                    column-gap: 1em;
-                    row-gap: 1em;
-                }
-            }
         }
     }
 }
@@ -1048,18 +1007,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (max-width: 599px) {
     .hero-section {
         .work-gallery-each-box {
-            .allProjectEachDesc-container {
-                .gallery-project-name {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 0.4em;
-
-                    h4 {
-                        line-height: 28px;
-                        font-size: 24px;
-                    }
-                }
-            }
+        
         }
     }
 }
@@ -1067,19 +1015,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (min-width: 600px) {
     .hero-section {
         .work-gallery-each-box {
-            .allProjectEachDesc-container {
-                .gallery-project-name {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 0.4em;
-                    padding: .7em;
-    
-                    h4 {
-                        line-height: 34px;
-                        font-size: 28px;
-                    }
-                }
-            }
+        
         }
     }
 }
@@ -1463,12 +1399,12 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
             }
         }
 
-        .work-gallery-each-box {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr) !important;
-            column-gap: .5em;
-            row-gap: .5em;
-        }
+        // .work-gallery-each-box {
+        //     display: grid;
+        //     grid-template-columns: repeat(1, 1fr) !important;
+        //     column-gap: .5em;
+        //     row-gap: .5em;
+        // }
     }
 }
 
@@ -1664,11 +1600,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 row-gap: 8em !important;
                 padding-top: 8em !important;
             }
-
-            .hero-extra-black {
-                padding-top: 10em;
-                padding-bottom: 10em;
-            }
             
             .hero-extra {
                 .hero-bottom-intro-details,
@@ -1796,17 +1727,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 }
 
                 .hero-extra-works-box-black {
-                    display: grid;
-                    grid-template-columns: 1fr 4fr 1fr;
                     width: 100%;
-
-                    .work-gallery-each-box {
-                        grid-column-start: 2;
-                        display: grid;
-                        grid-template-columns: repeat(2, 1fr);
-                        column-gap: 1em;
-                        row-gap: 2em;
-                    }
                 }
 
                 .hero-extra-box-experience {
@@ -1899,12 +1820,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     line-height: 1;
                     margin: 0;
                 }
-            }
-
-            .work-gallery-each-box {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: .5em;
             }
         }
 

@@ -30,22 +30,3 @@
     height: 100vh;
     overflow-y: scroll;
 }
-
-/* Extra Projects */
-.project-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 15%;
-
-    width: 450px;
-    height: 280px;
-    border-radius: 8px;
-    z-index: 5;
-
-    background-size: cover;
-    background-position: center;
-    transform: translate(0);
-    opacity: 0;
-    pointer-events: none;
-}

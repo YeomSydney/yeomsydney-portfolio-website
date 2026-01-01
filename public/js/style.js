@@ -186,6 +186,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+document.querySelectorAll('.casestudy-each-list').forEach(item => {
+  const img = item.querySelector('img');
+  if (!img) return;
+
+  item.style.setProperty('--bg-image', `url(${img.src})`);
+});
+
+
+
+
+const sections = document.querySelectorAll('.work-gallery-each-box .casestudy-each-list');
+
+let isSnapping = false;
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting || isSnapping) return;
+
+      isSnapping = true;
+
+      requestAnimationFrame(() => {
+        entry.target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+
+      // release lock slightly after scroll finishes
+      setTimeout(() => {
+        isSnapping = false;
+      }, 600);
+    });
+  },
+  {
+    root: null,
+    threshold: 0.15,              // triggers earlier = smoother
+    rootMargin: '0px 0px -30% 0px' // makes snapping feel natural
+  }
+);
+
+sections.forEach(section => observer.observe(section));
+
+
+
 
 // Open Case Studies
 document.addEventListener("DOMContentLoaded", function () {
