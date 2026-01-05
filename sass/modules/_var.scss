@@ -1,3 +1,102 @@
 :root {
-    --accent-blue: #007aff;
+    /*
+        Colours
+            ├── Accent
+            │   ├── Blue: #007AFF
+            │   ├── Red: E13912
+            │   └── LightGreen: B7FF00
+            │
+            ├── Text
+            │   ├── Primary Black: #111111
+            │   └── Primary White: #FCFCFC
+            │
+            ├── Background
+            │   ├── White: #FCFCFC
+            │   ├── LightGrey 01: #F5F5F5
+            │   └── LightGrey 02: #EFEFEF
+            │
+            ├── Line
+            │   ├── White: #F9F9F960
+            │   ├── LightGrey: #D1D1D1
+            │   └── Dark (Black): #11111110
+            │
+            └── Glow
+                └── Glow White: #FCFCFC70
+    */
+
+
+
+
+    // Colours
+    // Accent Colours
+    --color-accent-blue: #007AFF;
+    --color-accent-blue-bg: #007AFF10;
+
+    --color-accent-red: #E13912;
+    --color-accent-red-bg: #E1391210;
+
+    --color-accent-lightgreen: #B7FF00;
+
+    // Background Colours
+    --bg-wh: #FCFCFC;
+    --bg-wh-bg: #FCFCFC20;
+    --bg-wh-dark: #FCFCFC40;
+
+    --bg-lightgrey01: #F5F5F5;
+    --bg-lightgrey02: #EFEFEF;
+
+    --bg-bk-light: #11111180;
+    
+    // Line Colours
+    --line-white: #F9F9F960;
+    --line-grey: #d1d1d1;
+    --line-black: #11111110;
+
+    // Glow Colours
+    --color-glow-white: #FCFCFC70;
+
+
+
+
+    // Text
+    // Text Colours
+    --color-text-primary-bk: #111111;
+    --color-text-primary-bk-light: #11111110;
+    --color-text-primary-bk-border-dark: #11111120;
+    --color-text-primary-bk-dark: #11111170;
+
+    --color-text-primary-wh: #FCFCFC;
+    --color-text-primary-wh-light: #FCFCFC60;
+    --color-text-primary-wh-dark: #FCFCFC80;
+
+    // Text Size
+    --font-size-xxsm: 10px;
+    --font-size-xsm: 12px;
+    --font-size-sm: 13px;
+
+    --font-size-primary-sm: 14px;
+    --font-size-primary: 16px;
+
+    --font-size-sd: 18px;
+    --font-size-sd-md: 24px;
+    --font-size-sd-lg: 34px;
+
+    --font-size-display-title-lg: 68px;
+    --font-size-display-title-md: 60px;
+    --font-size-display-title-sm: 50px;
+    --font-size-display-body: 40px;
+
+
+
+
+    // Z-index
+    --z-negative: -1;
+    --z-none: 0;
+    --z-base: 1;
+    --z-content: 10;
+    --z-hover: 100;
+    --z-page-open: 1000;
+    --z-page-overlay: 1500;
+    --z-nav: 2000;
+    --z-cursor-overlay: 10000;
 }

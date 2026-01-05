@@ -31,7 +31,7 @@ html {
     body {
         width: 100vw;
         transition: color .3s ease-in, background-color .3s ease-in;
-        background-color: #fcfcfc !important;
+        background-color: var(--bg-wh) !important;
     }
 
     body, main {
@@ -48,7 +48,7 @@ html {
 
     main {
         align-items: center;
-        color: #111111;
+        color: var(--color-text-primary-bk);
     }
 }
 
@@ -72,9 +72,9 @@ textarea::placeholder,
 form,
 button {
     font-family: 'geist', 'acumin-pro', 'Inter', 'Helvetica';
-    font-size: 16px;
+    font-size: var(--font-size-primary16);
     font-weight: 300;
-    color: #111111;
+    color: var(--color-text-primary-bk);
     word-wrap: break-word;
     text-wrap: pretty;
     text-decoration: none !important;
@@ -85,10 +85,10 @@ button {
 
 p {
     font-family: 'geist', 'acumin-pro', 'Inter', 'Helvetica';
-    font-size: 15px;
-    line-height: 20px;
+    font-size: var(--font-size-primary-sm);
+    line-height: 18px;
     font-weight: 300;
-    color: #111111;
+    color: var(--color-text-primary-bk);
     word-wrap: break-word;
     text-wrap: pretty;
     text-decoration: none !important;
@@ -139,25 +139,25 @@ video {
 /* Customized */
 
 .line {
-    background-color: #e9e9e9 !important;
+    background-color: var(--bg-lightgrey02) !important;
     height: 1px;
     width: 100%;
 }
 
 .line-fullopacity {
-    background-color: #111111 !important;
+    background-color: var(--color-text-primary-bk) !important;
     height: 1px;
     width: 100%;
 }
 
 .line-25opacity {
-    background-color: #11111125 !important;
+    background-color: var(--color-text-primary-bk-border-dark) !important;
     height: 1px;
     width: 100%;
 }
 
 .font12px {
-    font-size: 12px;
+    font-size: var(--font-size-xsm);
 }
 
 .italic {
@@ -177,7 +177,7 @@ video {
 }
 
 .numbers {
-    font-size: 12px;
+    font-size: var(--font-size-xsm);
     opacity: .6;
 }
 
@@ -185,9 +185,8 @@ video {
     width: 6px;
     height: 6px;
     border-radius: 10em;
-    // background-color: #1478e4;
-    background-color: #fcfcfc;
-    filter: drop-shadow(0 0 2px #fcfcfc70);
+    background-color: var(--bg-wh);
+    filter: drop-shadow(0 0 2px var(--color-glow-white));
 }
 
 @media only screen and (max-width: 999px) {
@@ -209,6 +208,6 @@ video {
     input::placeholder,
     textarea::placeholder,
     form {
-        font-size: 14px;
+        font-size: var(--font-size-primary-sm);
     }
 }

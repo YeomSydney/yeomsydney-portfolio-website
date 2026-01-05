@@ -186,11 +186,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 document.querySelectorAll('.casestudy-each-list').forEach(item => {
   const img = item.querySelector('img');
   if (!img) return;
 
   item.style.setProperty('--bg-image', `url(${img.src})`);
+});
+
+
+
+
+document.querySelectorAll('.allProjectThumbnails').forEach(box => {
+  let isAnimating = false;
+
+  box.addEventListener('mouseenter', () => {
+    if (isAnimating) return;
+
+    // 🔥 FORCE RESET TO RIGHT
+    box.classList.remove('is-leaving');
+    box.classList.add('is-resetting');
+
+    // next frame → allow animation
+    requestAnimationFrame(() => {
+      box.classList.remove('is-resetting');
+      box.classList.add('is-hovered');
+    });
+  });
+
+  box.addEventListener('mouseleave', () => {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    box.classList.remove('is-hovered');
+    box.classList.add('is-leaving');
+
+    box.addEventListener(
+      'transitionend',
+      () => {
+        isAnimating = false;
+      },
+      { once: true }
+    );
+  });
 });
 
 

@@ -2,7 +2,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 10000;
+    z-index: var(--z-cursor-overlay);
 
     padding: 0 10px;
     width: 22px;
@@ -11,15 +11,15 @@
     pointer-events: none;
 
     border-radius: 50%;
-    border: 1.2px solid #fcfcfc;
+    border: 1.2px solid var(--bg-wh);
     background-color: transparent;
 
     font-family: 'geist', 'aktiv-grotesk', 'acumin-pro', 'Inter', 'Helvetica';
-    font-size: 10px;
+    font-size: var(--font-size-xxsm);
     line-height: normal;
     text-transform: uppercase;
     word-wrap: break-word;
-    color: #fcfcfc;
+    color: var(--bg-wh);
     text-align: center;
     
     overflow: hidden;
@@ -32,5 +32,5 @@
 
 .hover-trigger {
     cursor: pointer !important;
-    z-index: 50;
+    z-index: var(--z-cursor-hover);
 }

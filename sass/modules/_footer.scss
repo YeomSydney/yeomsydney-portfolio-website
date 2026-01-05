@@ -3,7 +3,7 @@
     min-width: 100vw;
     min-height: 100vh;
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: var(--bg-lightgrey01);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,7 +25,7 @@
 
             h3 {
                 width: 75%;
-                font-size: 68px;
+                font-size: var(--font-size-display-title-lg);
                 text-align: center;
                 align-items: center;
                 margin: 0 auto;
@@ -46,23 +46,23 @@
             }
 
             span {
-                border: 1px solid #1d1d1d20;
-                background-color: #1d1d1d10;
+                border: 1px solid var(--color-text-primary-bk-border-dark);
+                background-color: var(--color-text-primary-bk-light);
                 backdrop-filter: blur(8px);
                 border-radius: 3em;
                 padding: .5em .8em;
-                font-size: 14px;
+                font-size: var(--font-size-primary-sm);
                 display: inline-block;
                 width: auto;
             }
 
             i {
                 padding: .5em .6em;
-                border: 1px solid #1d1d1d20;
-                background-color: #1d1d1d10;
+                border: 1px solid var(--color-text-primary-bk-border-dark);
+                background-color: var(--color-text-primary-bk-light);
                 backdrop-filter: blur(8px);
                 border-radius: 3em;
-                font-size: 14px;
+                font-size: var(--font-size-primary-sm);
                 display: inline-block;
                 width: auto;
             }
@@ -81,11 +81,13 @@
 
         .footer-credit-socialmedia {
             align-items: left;
-            border-top: 1px solid #d1d1d1;
+            border-top: 1px solid var(--line-grey);
             width: 100%;
 
             .footer-credit-copyright {
-                h3 { font-size: 14px; }
+                h3 {
+                    font-size: var(--font-size-primary-sm);
+                }
             }
 
             .footer-credit-links {
@@ -98,7 +100,7 @@
 
                 h3 {
                     opacity: .6;
-                    font-size: 14px;
+                    font-size: var(--font-size-primary-sm);
                 }
                 
                 ul {
@@ -116,7 +118,7 @@
                     transition: all ease .4s;
 
                     span, a {
-                        font-size: 14px;
+                        font-size: var(--font-size-primary-sm);
                     }
 
                     &:hover {
@@ -148,7 +150,7 @@
     
                 h3 {
                     width: 95%;
-                    font-size: 50px;
+                    font-size: var(--font-size-display-title-sm);
                     text-align: center;
                     align-items: center;
                     margin: 0 auto;
@@ -197,7 +199,7 @@
     
                 h3 {
                     width: 90%;
-                    font-size: 50px;
+                    font-size: var(--font-size-display-title-sm);
                     text-align: center;
                     align-items: center;
                     margin: 0 auto;
@@ -217,7 +219,7 @@
         
                 h3 {
                     width: 85%;
-                    font-size: 60px;
+                    font-size: var(--font-size-display-title-md);
                     text-align: center;
                     align-items: center;
                     margin: 0 auto;
