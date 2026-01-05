@@ -414,6 +414,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 flex-direction: row;
                                 column-gap: .5em;
                                 align-items: center;
+                                filter: drop-shadow(0 12px 10px #11111115);
 
                                 .jobLogo_img {
                                     max-height: 55px;
@@ -421,6 +422,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                     background-color: var(--bg-lightgrey01);
                                     border-radius: .7em;
                                     padding: .3em;
+                                    border: 1px solid var(--color-text-primary-wh);
 
                                     img {
                                         height: 100%;
@@ -450,22 +452,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
         h5 {
             display: none !important;
-        }
-
-        ul {
-            li .hero-more-projects-img {
-                img {
-                    display: inline-block;
-                    max-width: 90px;
-                    width: 100%;
-                    height: auto;
-                    transform: scale(1);
-                }
-            }
-
-            .hero-more-projects-text-details {
-                padding: .3em 0;
-            }
         }
 
         &.gallery {
@@ -519,6 +505,17 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 transition: all .3s ease;
                 width: 100%;
 
+                .hero-more-projects-img {
+                    img {
+                        display: inline-block;
+                        max-width: 90px;
+                        width: 100%;
+                        height: auto;
+                        transform: scale(1);
+                        border-radius: .5em;
+                    }
+                }
+
                 .hero-extra-works-text {
                     width: 100%;
 
@@ -532,6 +529,10 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         opacity: .6;
                         font-size: var(--font-size-sm);
                     }
+                }
+
+                .hero-more-projects-text-details {
+                    padding: .3em 0;
                 }
             }
         }
@@ -548,27 +549,18 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     height .45s cubic-bezier(.38,0,.2,1),
                     margin .45s cubic-bezier(.38,0,.2,1);
                 will-change: transform, width, height;
+                transform: all 0.3s ease;
 
                 .hero-more-projects-img {
                     overflow: hidden;
                     position: relative;
-                    border-radius: 0;
                     transition: all 0.3s ease;
 
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
-                        border-radius: 0 !important;
                         transition: transform .45s cubic-bezier(.38, 0, .2, 1);
-                    }
-
-                    &:hover {
-                        border-radius: 1em;
-
-                        img {
-                            border-radius: 1em;
-                        }
                     }
                 }
 
@@ -798,95 +790,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 }
 
 .about-section {
-    .about-box {
-        padding-top: 20%;
-    }
-    
-    .about-me-name {
-        transition: all 1s 0.7s;
 
-        .about-me-details-right-bar {
-            display: flex;
-            flex-direction: column;
-
-            .am-details-profile-photo {
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-    }
-
-    .about-me-02 {
-        display: flex;
-        flex-direction: column;
-        row-gap: 2em;
-
-        .about-me-details-right-bar {
-            display: flex;
-            flex-direction: column;
-            row-gap: 5em;
-
-            .am-details-intro {
-                p {
-                    opacity: .6;
-                    font-size: var(--font-size-sd);
-                    line-height: 24px;
-                    width: 100%;
-                }
-            }
-        }
-    }
-
-    .about-me-bg {
-        display: flex;
-        flex-direction: column;
-        row-gap: 1em;
-    }
-
-    .backgrounds-section {
-        transition: all 1s 0.7s;
-        column-gap: 3em;
-        display: flex;
-        flex-direction: column;
-
-        .about-bg-section-left {
-            display: flex;
-            flex-direction: column;
-            row-gap: 1em;
-            width: 100%;
-
-            h3 {
-                opacity: .6;
-            }
-        }
-    }
-
-    .about-bg-section-right {
-        display: flex;
-        flex-direction: column;
-        row-gap: 2em;
-
-        .work-experiences-detail {
-            h3 {
-                font-size: var(--font-size-sm);
-                opacity: .6;
-            }
-
-            h4 {
-                padding-bottom: .8em;
-                line-height: 20px;
-            }
-
-            .work-e-textbox {
-                h5, h6 {
-                    opacity: .6;
-                    line-height: 20px;
-                }
-            }
-        }
-    }
 }
 
 .contact-section {
@@ -1004,36 +908,38 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 }
 
 @media only screen and (max-width: 439px) {
-    .hero-section {
-        .hero-extra {
-            .hero-top-intro-para {
-                display: flex;
-                flex-direction: column;
-                row-gap: 5em;
-            }
-
-            .hero-extra-box-experience {
-                .hero-top-intro-para-jobDetail {
-                    display: grid;
-                    grid-template-columns: repeat(1, auto);
-                    justify-content: space-between;
-                    gap: 1em;
-                    width: 100%;
-                    align-items: center;
+    main {
+        .hero-section {
+            .hero-extra {
+                .hero-top-intro-para {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5em;
                 }
-            }
 
-            .hero-extra-works-box {
-                width: 100%;
+                .hero-extra-box-experience {
+                    .hero-top-intro-para-jobDetail {
+                        display: grid;
+                        grid-template-columns: repeat(1, auto);
+                        justify-content: space-between;
+                        gap: 1em;
+                        width: 100%;
+                        align-items: center;
+                    }
+                }
 
-                ul, &.list ul {
-                    grid-template-columns: repeat(1, 1fr);
-                    row-gap: 0;
-                    column-gap: 0;
-                    transition: all .5s ease;
-        
-                    li {
-                        padding: 1.2em 0;
+                .hero-extra-works-box {
+                    width: 100%;
+
+                    ul, &.list ul {
+                        grid-template-columns: repeat(1, 1fr);
+                        row-gap: 0;
+                        column-gap: 0;
+                        transition: all .5s ease;
+            
+                        li {
+                            padding: 1.2em 0;
+                        }
                     }
                 }
             }
@@ -1054,33 +960,46 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 }
             }
         }
-
-        .about-section {
-            .about-me-name {
-                .am-details-profile-photo {
-                    max-width: 300px;
-                    max-height: 300px;
-                }
-            }
-        }
     }
 }
 
 @media only screen and (max-width: 599px) {
-    .hero-section {
-        .work-gallery-each-box {
-            .casestudy-each-list-content {
-                padding: 0 2.4em 3em 2.4em;
+    main {
+        .hero-section {
+            .work-gallery-each-box {
+                .casestudy-each-list-content {
+                    padding: 0 2.4em 3em 2.4em;
+                }
+            }
+        }
+
+        .about-section {
+            .about-myself {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
             }
         }
     }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 743px) {
-    .hero-section {
-        .work-gallery-each-box {
-            .casestudy-each-list-content {
-                padding: 0 5em 3em 5em;
+    main {
+        .hero-section {
+            .work-gallery-each-box {
+                .casestudy-each-list-content {
+                    padding: 0 5em 3em 5em;
+                }
+            }
+        }
+
+        .about-section {
+            .about-myself {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10em;
             }
         }
     }
@@ -1231,79 +1150,181 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 }
             }
         }
-        
+
         .about-section {
-            padding-top: 50%;
-
-            .about-box {
-                padding: 0 1.4em;
-                width: 100%;
+            .about-container {
                 display: flex;
                 flex-direction: column;
-                row-gap: 8em;
-            }
+                gap: 5em;
+                padding: 15em 1.8em 10em 1.8em;
 
-            .about-me-name {
-                display: flex;
-                flex-direction: column;
-                row-gap: 1em;
-    
-                .about-me-details-right-bar {
+                .about-container-myself {
                     display: flex;
                     flex-direction: column;
-                    justify-content: flex-start;
+                    row-gap: 10em;
+                    width: 100%;
 
-                    .am-details-right {
+                    .about-myself {
+                        h2 {
+                            font-size: var(--font-size-display-title-md);
+                        }
+                
+                        h3 {
+                            text-transform: uppercase;
+                            font-size: var(--font-size-sm);
+                            line-height: 16px;
+                        }
+                    }
+                
+                    .about-myself-details {
                         display: flex;
-                        flex-direction: column;
-                        row-gap: 3em;
-
-                        .am-details-title-name {
+                        flex-direction: row;
+                        gap: 2em;
+                        width: 100%;
+                
+                        .about-myself-details-each {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: .5em;
+                
                             h2 {
-                                font-size: var(--font-size-display-body);
-                                line-height: 42px;
+                                text-transform: uppercase;
+                                opacity: .6;
+                                font-size: var(--font-size-xsm);
+                            }
+                
+                            ul {
+                                li {
+                                    font-size: var(--font-size-sm);
+                                    line-height: 16px;
+                                }
                             }
                         }
                     }
-    
-                    .am-details-profile-photo {
-                        img {
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
-                }
-            }
-
-            .backgrounds-section {
-                display: flex;
-                flex-direction: column;
-                row-gap: 3em;
-
-                .about-bg-section-left {
-                    h4 {
-                        font-size: var(--font-size-display-body);
-                        line-height: 42px;
-                    }
                 }
 
-                .about-me-details-right-bar {
-                    .am-details-greeting-text {
+                .about-myself-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5em;
+                    width: 100%;
+                }
+
+                .about-container-details {
+                    .about-details-left {
                         display: flex;
                         flex-direction: column;
-                        row-gap: 1em;
-
+                        gap: .4em;
+                
                         h3 {
                             font-size: var(--font-size-sm);
                             opacity: .6;
+                            text-transform: uppercase;
+                        }
+                
+                        h4 {
+                            font-size: var(--font-size-sd-lg);
+                            line-height: 38px;
+                        }
+                    }
+
+                    ul {
+                        grid-column-start: 3;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2em;
+
+                        .about-details-right {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 2em;
+
+                            h3 {
+                                font-size: var(--font-size-sm);
+                                opacity: .6;
+                                text-transform: uppercase;
+                            }
+
+                            li {
+                                display: flex;
+                                flex-direction: column;
+                                gap: .4em;
+
+                                h4 {
+                                    font-size: var(--font-size-primary-sm);
+                                }
+
+                                .about-each-detail-content {
+                                    h5, h6 {
+                                        font-size: var(--font-size-primary-sm);
+                                        line-height: 18px;
+                                        opacity: .6;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
 
-                .work-experiences-detail {
+                .about-myself-desc-wrapper {
+                    width: 100%;
                     display: flex;
                     flex-direction: column;
-                    row-gap: 1em;
+                    gap: 1.4em;
+
+                    .about-myself-desc-names {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .4em;
+        
+                        h3 {
+                            text-transform: uppercase;
+                            opacity: .6;
+                            font-size: var(--font-size-xsm);
+                        }
+        
+                        ul {
+                            li {
+                                font-size: var(--font-size-primary-sm);
+                                line-height: 18px;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+
+                    .about-myself-desc {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2em;
+                        width: 100%;
+                        grid-column-start: 3;
+        
+                        .about-profile-img {
+                            max-width: 350px;
+        
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                transition: transform .45s cubic-bezier(.38, 0, .2, 1);
+                            }
+                        }
+        
+                        .about-myself-desc-text {
+                            p {
+                                text-indent: 5em;
+                                font-size: var(--font-size-primary);
+                                line-height: 20px;
+                                opacity: .6;
+                            }
+                        }
+                    }
+                }
+
+                .about-container-details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5em;
                 }
             }
         }
@@ -1311,46 +1332,147 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 }
 
 @media only screen and (min-width: 744px) {
-    .hero-extra {
-        display: flex;
-        flex-direction: column;
+    main {
+        .hero-section {
+            .hero-extra {
+                display: flex;
+                flex-direction: column;
         
-        .hero-extra-box {
-            display: flex;
-            flex-direction: column;
-            row-gap: 250px;
-        }
-
-        .hero-bottom-intro-details {
-            ul {
-                width: 100%;
-                display: grid;
-                grid-template-columns: 2fr 1fr 1fr;
-                gap: .5em;
+                .hero-extra-box {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 250px;
+                }
+        
+                .hero-bottom-intro-details {
+                    ul {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: 2fr 1fr 1fr;
+                        gap: .5em;
+                    }
+                }
+            }
+        
+            .hero-extra-black {
+                .allProjectThumbnails {
+                    position: relative;
+                    min-width: 350px;
+                    max-width: 500px;
+                    width: 95% !important;
+                }
             }
         }
-    }
 
-    .hero-extra-black {
-        .allProjectThumbnails {
-            position: relative;
-            min-width: 350px;
-            max-width: 500px;
-            width: 95% !important;
-        }
-    }
+        .about-section {
+            .about-container {
+                display: flex;
+                flex-direction: column;
+                gap: 5em;
+                padding: 14em 2.4em 10em 2.4em;
 
-    .about-section {
-        .work-experiences-detail {
-            display: grid;
-            grid-template-columns: 10% auto;
-            justify-content: flex-start;
-        }
+                .about-container-myself {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10em;
+                    width: 100%;
 
-        .about-bg-section-right {
-            display: flex;
-            flex-direction: column;
-            row-gap: 1em;
+                    .about-myself {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1em;
+                
+                        h2 {
+                            font-size: var(--font-size-display-title-md);
+                        }
+                
+                        h3 {
+                            text-transform: uppercase;
+                            font-size: var(--font-size-sm);
+                            line-height: 16px;
+                        }
+                    }
+                
+                    .about-myself-details {
+                        grid-column-start: 3;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 2em;
+                        width: 100%;
+                
+                        .about-myself-details-each {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: .5em;
+                
+                            h2 {
+                                text-transform: uppercase;
+                                opacity: .6;
+                                font-size: var(--font-size-xsm);
+                            }
+                
+                            ul {
+                                li {
+                                    font-size: var(--font-size-sm);
+                                    line-height: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .about-myself-desc-wrapper {
+                    .about-myself-desc-names {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .4em;
+        
+                        h3 {
+                            text-transform: uppercase;
+                            opacity: .6;
+                            font-size: var(--font-size-xsm);
+                        }
+        
+                        ul {
+                            li {
+                                font-size: var(--font-size-primary-sm);
+                                line-height: 18px;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+
+                    .about-myself-desc {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2em;
+                        width: 100%;
+                        max-width: 450px;
+                        grid-column-start: 3;
+        
+                        .about-profile-img {
+                            min-width: 350px;
+                            max-width: 450px;
+        
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                transition: transform .45s cubic-bezier(.38, 0, .2, 1);
+                            }
+                        }
+        
+                        .about-myself-desc-text {
+                            p {
+                                text-indent: 5em;
+                                font-size: var(--font-size-primary);
+                                line-height: 20px;
+                                opacity: .6;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -1538,56 +1660,83 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         }
 
         .about-section {
-            padding-top: 7%;
-            padding: 0 2em;
-
-            .about-me-name {
-                display: grid !important;
-                grid-template-columns: auto 60% !important;
-                column-gap: 2em;
-                row-gap: 1em;
-                grid-template: repeat(2, 1fr);
-
-                .about-me-details-right-bar {
-                    grid-column-start: 2;
+            .about-container {
+                .about-myself-wrapper {
+                    display: grid;
+                    grid-template-columns: 3fr 1fr 350px;
+                    justify-content: space-between;
+                    width: 100%;
+                    align-items: flex-end;
+                    gap: 1.4em;
                 }
-            }
 
-            .am-details-greeting-text {
-                display: flex;
-                flex-direction: column;
-                row-gap: 1em;
+                .about-container-details {
+                    display: grid;
+                    grid-template-columns: 3fr auto 350px;
+                    width: 100%;
+                    gap: 1.4em;
 
-                h3 {
-                    font-size: var(--font-size-sm);
-                    opacity: .6;
-                }
-            }
-            
-            .am-details-right {
-                display: flex;
-                flex-direction: column;
-                row-gap: 3em;
+                    .about-details-left {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .4em;
 
-                .am-details-title-name {
-                    h2 {
-                        font-size: 34px !important;
-                        line-height: 44px !important;
+                        h3 {
+                            font-size: var(--font-size-sm);
+                            opacity: .6;
+                            text-transform: uppercase;
+                        }
+
+                        h4 {
+                            font-size: var(--font-size-sd-lg);
+                            line-height: 38px;
+                        }
+                    }
+
+                    ul {
+                        grid-column-start: 3;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2em;
+
+                        .about-details-right {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 2em;
+
+                            h3 {
+                                font-size: var(--font-size-sm);
+                                opacity: .6;
+                                text-transform: uppercase;
+                            }
+
+                            li {
+                                display: flex;
+                                flex-direction: column;
+                                gap: .4em;
+
+                                h4 {
+                                    font-size: var(--font-size-primary-sm);
+                                }
+
+                                .about-each-detail-content {
+                                    h5, h6 {
+                                        font-size: var(--font-size-primary-sm);
+                                        line-height: 18px;
+                                        opacity: .6;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-            }
 
-            .backgrounds-section {
-                width: 100%;
-                display: grid;
-                grid-template-columns: auto 60%;
-                justify-content: space-between;
-
-                .about-bg-section-left {
-                    h4 {
-                        font-size: 30px;
-                        line-height: 40px;
-                    }
+                .about-myself-desc-wrapper {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 2.2fr 1fr 350px;
+                    align-items: flex-end;
+                    gap: 1.4em;
                 }
             }
         }
@@ -2047,72 +2196,113 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         }
 
         .about-section {
-            .about-box {
-                padding: 22% 2.4em 12em 2.4em !important;
-            }
+            .about-container {
+                .about-container-myself {
+                    .about-myself-wrapper {
+                        display: grid;
+                        grid-template-columns: 2.2fr 1fr 450px;
+                        justify-content: space-between;
+                        width: 100%;
+                        align-items: flex-end;
+                        gap: 2em;
+                    }
 
-            .about-me-name {
-                width: 100%;
-                display: grid;
-                grid-template-columns: auto 55%;
-                align-items: start;
+                    .about-myself-desc-wrapper {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: 4fr 1.2fr auto;
+                        align-items: flex-end;
+                        gap: 2em;
 
-                .about-me-details-right-bar {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 3em;
-                    display: grid;
-                    grid-template-columns: 10% auto;
+                        .about-myself-desc {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 2em;
+                            width: 100%;
+                            max-width: 450px;
+                            grid-column-start: 3;
 
-                    .am-details-right {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 2em;
+                            .about-profile-img {
+                                min-width: 350px;
+                                max-width: 450px;
 
-                        .am-details-title-name {
-                            h2, span {
-                                font-size: var(--font-size-display-title-sm) !important;
-                                line-height: 52px !important;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    transition: transform .45s cubic-bezier(.38, 0, .2, 1);
+                                }
+                            }
+
+                            .about-myself-desc-text {
+                                p {
+                                    text-indent: 5em;
+                                    font-size: var(--font-size-primary);
+                                    line-height: 20px;
+                                    opacity: .6;
+                                }
                             }
                         }
                     }
-
-                    .am-details-profile-photo {
-                        img {
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
                 }
-            }
 
-            .about-me-02 {
-                display: flex;
-                flex-direction: column;
-                row-gap: 3em;
+                .about-container-details {
+                    display: grid;
+                    grid-template-columns: 2.2fr auto 450px;
+                    width: 100%;
+                    gap: 2em;
 
-                .am-details-intro {
-                    .am-details-greeting-text {
-                        display: grid;
-                        grid-template-columns: 10% auto;
+                    .about-details-left {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .4em;
 
                         h3 {
                             font-size: var(--font-size-sm);
                             opacity: .6;
+                            text-transform: uppercase;
+                        }
+
+                        h4 {
+                            font-size: var(--font-size-sd-lg);
                         }
                     }
-                }
-            }
 
-            .backgrounds-section {
-                display: grid;
-                grid-template-columns: auto 55%;
-                justify-content: space-between;
+                    ul {
+                        grid-column-start: 3;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2em;
 
-                .about-bg-section-left {
-                    h4 {
-                        font-size: var(--font-size-display-body) !important;
-                        line-height: 42px;
+                        .about-details-right {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 2em;
+
+                            h3 {
+                                font-size: var(--font-size-sm);
+                                opacity: .6;
+                                text-transform: uppercase;
+                            }
+
+                            li {
+                                display: flex;
+                                flex-direction: column;
+                                gap: .4em;
+
+                                h4 {
+                                    font-size: var(--font-size-primary-sm);
+                                }
+
+                                .about-each-detail-content {
+                                    h5, h6 {
+                                        font-size: var(--font-size-primary-sm);
+                                        line-height: 18px;
+                                        opacity: .6;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -2158,6 +2348,28 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 }
             }
         }
+
+        .about-section {
+            .about-myself-wrapper {
+                display: grid;
+                grid-template-columns: 2.2fr 4fr 550px !important;
+                justify-content: space-between;
+                width: 100%;
+                align-items: flex-end;
+                gap: 2em;
+            }
+
+            .about-myself-desc {
+                max-width: 550px !important;
+            }
+
+            .about-container-details {
+                display: grid;
+                grid-template-columns: 2.2fr auto 550px !important;
+                width: 100%;
+                gap: 2em;
+            }
+        }
     }
 }
 
@@ -2173,62 +2385,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                     h3 {
                         font-size: var(--font-size-display-body);
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1700px) {
-    main {
-        .about-section {
-            .about-me-name {
-                grid-template-columns: 19% auto 44% !important;
-            }
-
-            .about-me-02 {
-                .am-details-intro {
-                    p {
-                        font-size: var(--font-size-sd) !important;
-                        line-height: 26px !important;
-                        max-width: 650px !important;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1800px) {
-    main {
-        .about-section {
-            .about-me-name {
-                grid-template-columns: 15% auto 44% !important;
-            }
-
-            .about-me-02 {
-                .am-details-intro {
-                    p {
-                        max-width: 700px !important;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1900px) {
-    main {
-        .about-section {
-            .about-me-name {
-                grid-template-columns: 17% auto 44% !important;
-            }
-
-            .about-me-02 {
-                .am-details-intro {
-                    p {
-                        max-width: 750px !important;
                     }
                 }
             }
