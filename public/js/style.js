@@ -197,17 +197,16 @@ document.querySelectorAll('.casestudy-each-list').forEach(item => {
 
 
 
+// ====== Hovering Effect (Sliding in + out) ======
 document.querySelectorAll('.allProjectThumbnails').forEach(box => {
   let isAnimating = false;
 
   box.addEventListener('mouseenter', () => {
     if (isAnimating) return;
 
-    // 🔥 FORCE RESET TO RIGHT
     box.classList.remove('is-leaving');
     box.classList.add('is-resetting');
 
-    // next frame → allow animation
     requestAnimationFrame(() => {
       box.classList.remove('is-resetting');
       box.classList.add('is-hovered');
