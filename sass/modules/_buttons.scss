@@ -1,0 +1,199 @@
+.hero-section {
+    .hero-middle {
+        .hero-extra-goOtherPage {
+            label {
+                .btn-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: .2em;
+                    align-items: center;
+                    transition: all .4s ease-in;
+                    filter: drop-shadow(0 12px 10px #11111115);
+            
+                    h4 {
+                        font-size: var(--font-size-primary-sm);
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--bg-lightgrey01);
+                        border-radius: 3em;
+                        padding: .5em .8em;
+                        line-height: 1;
+                        border: 1px solid var(--bg-lightgrey02);
+                    }
+            
+                    i {
+                        font-size: var(--font-size-primary-sm);
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--bg-lightgrey01);
+                        border-radius: 3em;
+                        padding: .5em;
+                        line-height: 1;
+                        border: 1px solid var(--bg-lightgrey02);
+                    }
+                }
+            }
+        }
+
+        .hero-extra-works-box-black {
+            .work-gallery-each-box {
+                .casestudy-each-list {
+                    .btn-wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        column-gap: .2em;
+                        align-items: center;
+                        transform: translateX(0);
+                        transition: all .4s ease-in;
+                        filter: drop-shadow(0 12px 10px #11111115);
+
+                        h4 {
+                            font-size: var(--font-size-primary-sm);
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: var(--bg-wh-dark);
+                            border-radius: 3em;
+                            padding: .5em .8em;
+                            line-height: 1;
+                            border: 1px solid var(--bg-lightgrey02);
+                        }
+
+                        i {
+                            font-size: var(--font-size-primary-sm);
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: var(--bg-wh-dark);
+                            border-radius: 3em;
+                            padding: .5em;
+                            line-height: 1;
+                            border: 1px solid var(--bg-lightgrey02);
+                        }
+
+                        &:hover {
+                            transform: translateX(3px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.casestudy-section {
+    .casestudy-item {
+        .casestudy-container-archive {
+            .archive-details {
+                &-bottom {
+                    .btn-wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        column-gap: .2em;
+                        align-items: center;
+                        transform: translateX(0);
+                        transition: all .4s ease-in;
+                
+                        a {
+                            font-size: var(--font-size-primary-sm);
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: var(--bg-wh-dark);
+                            border-radius: 3em;
+                            padding: .5em .8em;
+                            line-height: 1;
+                            border: 1px solid var(--bg-lightgrey02);
+                        }
+                
+                        &:hover {
+                            transform: translateX(3px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .goback-btn-wrapper {
+        background-color: transparent;
+        display: none;
+        z-index: var(--z-nav);
+        align-items: center;
+
+        .goback-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: .3em;
+            align-items: center;
+            overflow: hidden;
+
+            .btn-wrapper {
+                align-items: center;
+                padding: 12px;
+                width: 100%;
+                transition: all .3s ease;
+                overflow: hidden;
+                backdrop-filter: blur(8px);
+                background-color: var(--color-text-primary-bk-dark);
+                border-radius: 10em;
+
+                i {
+                    opacity: .6;
+                    color: var(--bg-wh);
+                }
+
+                &:hover {
+                    i {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 743px) {
+    .hero-section {
+        .hero-middle {
+            .hero-extra-black {
+                .btn-wrapper {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    .casestudy-section {
+        .goback-btn-wrapper {
+            position: fixed;
+            right: 1.8em;
+            top: 50%;
+        }
+    }
+}
+
+@media only screen and (min-width: 744px) {
+    .casestudy-section {
+        .goback-btn-wrapper {
+            position: fixed;
+            right: 2.4em;
+            top: 50%;
+        }
+    }
+}
+
+@media only screen and (min-width: 744px) and (max-width: 999px) {
+    .hero-section {
+        .hero-middle {
+            .hero-extra-black {
+                .btn-wrapper {
+                    display: none;
+                }
+            }
+        }
+    }
+}

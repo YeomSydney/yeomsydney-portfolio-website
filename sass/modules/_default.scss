@@ -32,160 +32,46 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 .hero-section {
     background-color: var(--bg-wh);
 
-    .hero-top-bg {
+    .hero-top {
+        width: 100vw;
         height: 100vh;
 
-        .hero-scroll-down-box {
-            position: relative;
+        .hero-top-wrapper {
             width: 100%;
-            height: 100vh;
+            height: 100%;
 
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            gap: 3em;
 
-            .hero-top-main-view-img-bg {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                z-index: var(--z-base);
-                overflow: hidden;
-                pointer-events: auto;
-
-                .bg-layer {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-size: cover;
-                    background-position: center;
-                    border-radius: 0;
-                    opacity: 0;
-                    z-index: var(--z-none);
-                    pointer-events: auto;
-                    transition: opacity 0.3s ease-in-out;
-                }
-
-                .bg-layer.active {
-                    opacity: 1;
-                    z-index: var(--z-base);
+            .hero-top-02 {
+                .hero-top-02-myself {
+                    h2 {
+                        font-size: var(--font-size-xsm);
+                        line-height: 18px;
+                        text-transform: uppercase;
+                        opacity: .6;
+                    }
                 }
             }
-        }
-        
-        .hero-top-main-view {
-            &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.4); /* adjust opacity 0.2–0.4 */
-                border-radius: 0;
-                z-index: var(--z-base);
-                pointer-events: none;
-            }
 
-            .hero-projects-texts-wrapper {
-                width: 100%;
-                height: 100vh;
-                display: grid;
-                grid-row-start: 2;
-                align-items: flex-start;
-                pointer-events: none;
-            }
+            .hero-top-03 {
+                .hero-top-03-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .4em;
 
-            .hero-projects-texts {
-                width: 100%;
-                position: relative;
-                z-index: var(--z-content);
-
-                h3, h4, li a {
-                    color: var(--bg-wh);
-                }
-
-                .hero-projects-texts-thumbs-content {
-                    ul {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: .4em;
-
-                        li a {
-                            opacity: .6;
-                            transition: all 0.6s ease;
-                            vertical-align: text-top !important;
-
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            font-weight: 250;
-                            font-size: var(--font-size-display-body);
-                            line-height: 42px;
-                            transition: all .35s ease-in;
-
-                            div {
-                                opacity: 0;
-                                transition: all .35s ease-in;
-                            }
-
-                            &.active-text {
-                                opacity: 1;
-
-                                div {
-                                    opacity: 1;
-                                    color: var(--bg-wh);
-                                }
-                            }
-                        }
+                    h4 {
+                        font-size: var(--font-size-sm);
+                        text-transform: uppercase;
                     }
 
-                    .hero-project-info {
-                        .hero-project-info-wrapper {
-                            width: 100%;
-                            display: flex;
-                            flex-direction: row;
-                            column-gap: .5em;
-                            
-                            span,
-                            i {
-                                color: var(--bg-wh);
-                                line-height: 17px;
-                                font-size: var(--font-size-sm);
-                                display: inline-block;
-                            }
-
-                            i {
-                                background-color: var(--bg-wh-bg);
-                                backdrop-filter: blur(8px);
-                                border-radius: 3em;
-                                border: 1px solid var(--color-text-primary-wh-light);
-                                padding: .4em .6em;
-                                display: inline-flex;
-                                align-items: center;
-                            }
-                        
-                            .project-type {
-                                display: inline-flex;
-                                align-items: center;
-                                justify-content: center;
-                                text-transform: uppercase;
-                                background-color: var(--bg-wh-bg);
-                                backdrop-filter: blur(8px);
-                                border-radius: 3em;
-                                border: 1px solid var(--color-text-primary-wh-light);
-                                padding: 0.3em 0.8em;
-                                line-height: 1;
-                                font-size: var(--font-size-xsm);
-                            }
-                        }
+                    p {
+                        font-size: var(--font-size-sm);
+                        line-height: 18px;
+                        text-transform: uppercase;
+                        opacity: .6;
                     }
                 }
             }
@@ -214,39 +100,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     opacity: 1;
                     transform: translateX(3px);
                 }
-
-                .btn-wrapper {
-                    display: flex;
-                    flex-direction: row;
-                    column-gap: .2em;
-                    align-items: center;
-                    transition: all .4s ease-in;
-                    filter: drop-shadow(0 12px 10px #11111115);
-
-                    h4 {
-                        font-size: var(--font-size-primary-sm);
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: var(--bg-lightgrey01);
-                        border-radius: 3em;
-                        padding: .5em .8em;
-                        line-height: 1;
-                        border: 1px solid var(--bg-lightgrey02);
-                    }
-
-                    i {
-                        font-size: var(--font-size-primary-sm);
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: var(--bg-lightgrey01);
-                        border-radius: 3em;
-                        padding: .5em;
-                        line-height: 1;
-                        border: 1px solid var(--bg-lightgrey02);
-                    }
-                }
             }
         }
 
@@ -266,6 +119,10 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
             .hero-extra-box {
                 .hero-top-intro-para-about-box {
                     .hero-top-intro-para {
+                        h3 {
+                            text-indent: 3em;
+                        }
+
                         h3, span {
                             font-size: var(--font-size-sd-md);
                             line-height: 30px;
@@ -310,63 +167,85 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                     .works-view-toggle {
                         display: flex;
-                        flex-direction: row;
                         column-gap: .5em;
-                        transition: all .3s ease;
-
-                        i {
-                            font-size: var(--font-size-primary-sm);
-                        }
+                        align-items: center;
 
                         button {
-                            display: inline-grid;
-                            grid-auto-flow: column;
+                            position: relative;
+                            display: inline-flex;
                             align-items: center;
-                            column-gap: 4px;
+                            column-gap: .4em;
+
+                            width: fit-content;
 
                             font-size: var(--font-size-primary-sm);
-                            background-color: var(--bg-lightgrey02);
-                            border: 1px solid var(--line-black);
-                            border-radius: 3em;
-                            padding: .5em .8em;
-                            filter: drop-shadow(0 12px 10px #11111115);
-
-                            transition: all .3s ease;
+                            background: none;
+                            border: none;
+                            cursor: pointer;
 
                             i {
                                 font-size: var(--font-size-primary-sm);
+                                background-color: var(--bg-lightgrey01);
+                                border-radius: 3em;
+                                padding: .5em .8em;
+                                border: 1px solid var(--bg-lightgrey02);
+                                color: var(--color-text-primary-bk-border-dark);
+                                transition: color .25s ease, filter .25s ease;
+                                flex-shrink: 0;
                             }
 
+                            /* LABEL */
                             &::after {
-                                display: grid;
-                                grid-template-columns: 0fr;
-                                overflow: hidden;
+                                content: attr(data-text);
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
 
+                                background-color: var(--bg-lightgrey01);
+                                border-radius: 3em;
+                                padding: .5em .8em;
+                                border: 1px solid var(--bg-lightgrey02);
+
+                                max-width: 0;
                                 opacity: 0;
-                                transform: translateX(-6px);
+                                transform: translateX(-8px);
 
+                                overflow: hidden;
                                 white-space: nowrap;
-                                color: var(--color-accent-blue);
+
+                                pointer-events: none;
 
                                 transition:
-                                    grid-template-columns .35s ease,
+                                    max-width .35s ease,
                                     opacity .25s ease,
-                                    transform .25s ease;
+                                    transform .35s ease;
+
+                                transition-delay: 0s;
                             }
 
+                            /* ACTIVE or HOVER */
                             &:hover,
                             &.active {
-                                background-color: var(--color-accent-blue-bg);
-                                border: 1px solid var(--color-accent-blue);
-
-                                i { color: var(--color-accent-blue); }
+                                i {
+                                    color: var(--color-text-primary-bk);
+                                    filter: drop-shadow(0 12px 10px #11111115);
+                                }
 
                                 &::after {
-                                    content: attr(data-text);
-                                    grid-template-columns: 1fr;
+                                    max-width: 140px;
                                     opacity: 1;
                                     transform: translateX(0);
+                                    filter: drop-shadow(0 12px 10px #11111115);
+                                    white-space: nowrap;
+
+                                    transition-delay: .12s;
                                 }
+                            }
+
+                            &:not(.active):not(:hover)::after {
+                                max-width: 0;
+                                opacity: 0;
+                                transform: translateX(-8px);
                             }
                         }
                     }
@@ -495,22 +374,22 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         &.list ul {
             display: flex;
             flex-direction: column;
-            row-gap: 0;
+            gap: .5em;
 
             li {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: top;
                 border-top: 1px solid var(--line-black);
                 padding: .8em 0;
                 transition: all .3s ease;
                 width: 100%;
 
                 .hero-more-projects-img {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: .5em;
+
                     img {
                         display: inline-block;
-                        max-width: 90px;
+                        max-width: 100px;
                         width: 100%;
                         height: auto;
                         transform: scale(1);
@@ -679,44 +558,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                     flex-direction: column;
                                     row-gap: .4em;
                                 }
-
-                                .btn-wrapper {
-                                    display: flex;
-                                    flex-direction: row;
-                                    column-gap: .2em;
-                                    align-items: center;
-                                    transform: translateX(0);
-                                    transition: all .4s ease-in;
-                                    filter: drop-shadow(0 12px 10px #11111115);
-
-                                    h4 {
-                                        font-size: var(--font-size-primary-sm);
-                                        display: inline-flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        background-color: var(--bg-wh-dark);
-                                        border-radius: 3em;
-                                        padding: .5em .8em;
-                                        line-height: 1;
-                                        border: 1px solid var(--bg-lightgrey02);
-                                    }
-
-                                    i {
-                                        font-size: var(--font-size-primary-sm);
-                                        display: inline-flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        background-color: var(--bg-wh-dark);
-                                        border-radius: 3em;
-                                        padding: .5em;
-                                        line-height: 1;
-                                        border: 1px solid var(--bg-lightgrey02);
-                                    }
-
-                                    &:hover {
-                                        transform: translateX(3px);
-                                    }
-                                }
                             }
                         }
                     }
@@ -793,7 +634,11 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 }
 
 .about-section {
-
+    .about-myself {
+        h3 {
+            opacity: .6;
+        }
+    }
 }
 
 .contact-section {
@@ -805,30 +650,32 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     left: 0;
     bottom: 0;
     right: 0;
-    padding: 0 0 5em 0;
+    top: 0;
     background: transparent;
 
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
     overflow-y: auto;
     z-index: var(--z-page-overlay);
+    background-color: var(--color-text-primary-bk-border-dark);
 
     label,
     span,
     h2,
     h3,
     a {
-        color: var(--bg-wh);
+        color: var(--bg-br);
     }
 
     h2 {
-        background-color: var(--bg-wh-bg);
-        border: 1px solid var(--color-text-primary-wh-light);
+        background-color: var(--bg-lightgrey01);
+        border: 1px solid var(--bg-lightgrey02);
         backdrop-filter: blur(8px);
         border-radius: 3em;
         padding: .5em .8em;
+        filter: drop-shadow(0 12px 10px #11111115);
     }
 
     h2, h4 {
@@ -840,23 +687,25 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     }
 
     i {
-        color: var(--bg-wh);
+        color: var(--bg-dk);
         transition: all .3s ease;
         padding: .4em;
-        border: 1px solid var(--line-white);
-        background-color: var(--bg-wh-bg);
+        border: 1px solid var(--bg-lightgrey02);
+        background-color: var(--bg-lightgrey01);
         backdrop-filter: blur(8px);
         border-radius: 3em;
+        filter: drop-shadow(0 12px 10px #11111115);
 
         &:hover {
-            background-color: var(--bg-wh-dark);
+            background-color: var(--color-text-primary-wh-light);
         }
     }
 
     .contact-box {
         grid-column-start: 2;
         backdrop-filter: blur(20px);
-        background-color: var(--color-text-primary-bk-dark);
+        background-color: var(--color-text-primary-wh-dark);
+        border: 1px solid var(--bg-lightgrey01);
         border-radius: 1.5em;
 
         padding: 1.4em;
@@ -864,11 +713,12 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         min-width: 360px;
         width: 100%;
         height: auto;
+        filter: drop-shadow(0 20px 10px #11111110);
 
         .contact-details {
             display: flex;
             flex-direction: column;
-            row-gap: 2.5em;
+            gap: 2em;
 
             .contact-details-title {
                 display: flex;
@@ -880,7 +730,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
             .contact-details-box {
                 display: flex;
                 flex-direction: column;
-                row-gap: 2.5em;
+                gap: 5em;
 
                 h3 {
                     font-size: var(--font-size-sd-md);
@@ -889,19 +739,27 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                 .contact-details-socialmedia {
                     li {
-                        border-top: 1px solid var(--color-text-primary-wh-light);
+                        border-top: 1px solid var(--line-grey);
                         padding: 1em 0;
                         display: flex;
                         flex-direction: column;
-                        row-gap: .3em;
+                        gap: .4em;
 
                         h4 {
-                            font-size: var(--font-size-sm);
+                            font-size: var(--font-size-xsm);
+                            text-transform: uppercase;
+                            opacity: .6;
                         }
 
                         a {
                             display: inline-block;
                             width: 100%;
+                            transform: translateX(0);
+                            transition: all .3s ease;
+
+                            &:hover {
+                                transform: translate(3px);
+                            }
                         }
                     }
                 }
@@ -1011,55 +869,39 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (max-width: 743px) {
     main {
         .hero-section {
-            .hero-top-bg {
-                .hero-projects-texts-wrapper {
-                    height: 100%;
+            .hero-top {
+                padding: 0 1.8em 7em 1.8em;
 
-                    .hero-projects-texts {
-                        height: 100vh;
-                        width: 100%;
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        align-items: center;
-
-                        .hero-projects-texts-thumbs-content {
-                            padding: 1.6em 1.6em 2.4em 1.6em;
-                            display: flex;
-                            flex-direction: column;
-                            gap: 5em;
-                            align-items: start;
-                            width: 100%;
-
-                            ul {
-                                li a {
-                                    font-size: var(--font-size-display-body);
-                                    line-height: 42px;
-                                }
-                            }
-                        }
+                .hero-top-02 {
+                    .hero-top-02-myself-name {
+                        h3 { font-size: var(--font-size-display-title-sm); }
                     }
                 }
-            }
 
-            .hero-extra {
-                .hero-extra-box {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 7em;
-                }
-
-                .hero-bottom-intro-details {
-                    ul {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(1, 1fr);
-                        gap: 2em;
-                    }
+                .hero-top-03 {
+                    display: grid !important;
+                    grid-template-columns: 3.2fr 1.8fr;
                 }
             }
 
             .hero-middle {
+                .hero-extra {
+                    .hero-extra-box {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 7em;
+                    }
+
+                    .hero-bottom-intro-details {
+                        ul {
+                            width: 100%;
+                            display: grid;
+                            grid-template-columns: repeat(1, 1fr);
+                            gap: 2em;
+                        }
+                    }
+                }
+
                 .hero-extra > div:not(.hero-extra-works-box-black) {
                     padding-right: 1.8em;
                     padding-left: 1.8em;
@@ -1105,10 +947,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                         max-width: 500px;
                                         width: 70%;
                                     }
-
-                                    .btn-wrapper {
-                                        display: none;
-                                    }
                                 }
                             }
                         }
@@ -1135,6 +973,15 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                 .hero-extra-works-box {
                     width: 100%;
+
+                    ul, &.list ul {
+                        li {
+                            padding: 1.2em 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1em;
+                        }
+                    }
         
                     &.gallery ul {
                         width: 100%;
@@ -1337,32 +1184,55 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (min-width: 744px) {
     main {
         .hero-section {
-            .hero-extra {
-                display: flex;
-                flex-direction: column;
-        
-                .hero-extra-box {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 250px;
-                }
-        
-                .hero-bottom-intro-details {
-                    ul {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: 2fr 1fr 1fr;
-                        gap: .5em;
+            .hero-top {
+                padding: 0 2.4em 8em 2.4em;
+
+                .hero-top-02 {
+                    .hero-top-02-myself-name {
+                        h3 { font-size: var(--font-size-display-title-lg); }
                     }
                 }
             }
-        
-            .hero-extra-black {
-                .allProjectThumbnails {
-                    position: relative;
-                    min-width: 350px;
-                    max-width: 500px;
-                    width: 95% !important;
+            
+            .hero-middle {
+                .hero-extra {
+                    display: flex;
+                    flex-direction: column;
+            
+                    .hero-extra-box {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 250px;
+                    }
+            
+                    .hero-bottom-intro-details {
+                        ul {
+                            width: 100%;
+                            display: grid;
+                            grid-template-columns: 2fr 1fr 1fr;
+                            gap: .5em;
+                        }
+                    }
+                }
+            
+                .hero-extra-black {
+                    .allProjectThumbnails {
+                        position: relative;
+                        min-width: 350px;
+                        max-width: 500px;
+                        width: 95% !important;
+                    }
+                }
+
+                .hero-extra-works-box {
+                    ul, &.list ul {
+                        li {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: top;
+                        }
+                    }
                 }
             }
         }
@@ -1383,7 +1253,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     .about-myself {
                         display: flex;
                         flex-direction: column;
-                        gap: 1em;
+                        gap: 2em;
                 
                         h2 {
                             font-size: var(--font-size-display-title-md);
@@ -1416,8 +1286,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 
                             ul {
                                 li {
-                                    font-size: var(--font-size-sm);
-                                    line-height: 16px;
+                                    font-size: var(--font-size-primary-sm);
+                                    line-height: 18px;
                                 }
                             }
                         }
@@ -1515,34 +1385,16 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (min-width: 744px) and (max-width: 999px) {
     main {
         .hero-section {
-            .hero-top-bg {
-                .hero-projects-texts-wrapper {
-                    height: 100%;
+            .hero-top {
+                .hero-top-02 {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+                }
 
-                    .hero-projects-texts {
-                        height: 100vh;
-                        width: 100%;
-                        align-items: center;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-
-                        .hero-projects-texts-thumbs-content {
-                            padding: 1.6em 1.6em 2.4em 1.6em;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            align-items: center;
-                            width: 100%;
-
-                            ul {
-                                li a {
-                                    font-size: var(--font-size-display-body);
-                                    line-height: 42px;
-                                }
-                            }
-                        }
-                    }
+                .hero-top-03 {
+                    display: grid;
+                    grid-template-columns: 2.5fr 2fr 1.5fr;
                 }
             }
             
@@ -1631,10 +1483,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                             font-size: var(--font-size-sm) !important;
                                         }
                                     }
-
-                                    .btn-wrapper {
-                                        display: none;
-                                    }
                                 }
                             }
                         }
@@ -1643,6 +1491,15 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                 .hero-extra-works-box {
                     width: 100%;
+
+                    ul, &.list ul {
+                        li {
+                            display: grid;
+                            grid-template-columns: 3fr 1.5fr;
+                            gap: 2em;
+                            justify-content: space-between;
+                        }
+                    }
             
                     &.gallery ul {
                         width: 100%;
@@ -1749,10 +1606,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (max-width: 999px) {
     main {
         .hero-section {
-            .hero-projects-texts-wrapper {
-                height: 100%;
-            }
-
             .hero-middle {
                 display: flex;
                 flex-direction: column;
@@ -1810,13 +1663,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                     .hero-extra-works-box {
                         ul, &.list ul {
-                            li {
-                                display: grid;
-                                grid-template-columns: 3fr 1.5fr;
-                                gap: 2em;
-                                justify-content: space-between;
-                            }
-
                             .hero-extra-works-text {
                                 display: flex;
                                 flex-direction: column;
@@ -1843,113 +1689,26 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (min-width: 1000px) {
     main {
         .hero-section {
-            .hero-top-bg {
-                .hero-top-main-view {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    width: 100%;
-                    height: 100%;
+            .hero-top {
+                .hero-top-02 {
                     display: grid;
-                    grid-template-rows: 2fr 1fr 2fr;
-                    padding-top: 2em;
-                    padding-bottom: 2.4em;
+                    grid-template-columns: 1fr 1fr 3.5fr .5fr;
 
-                    .hero-projects-texts-wrapper {
-                        width: 100%;
-                        height: 100vh;
-                        display: grid;
-                        grid-row-start: 2;
-                        align-items: flex-start;
-                        pointer-events: none;
-                    }
-
-                    .hero-projects-texts {
-                        width: 100%;
-                        position: relative;
-                        z-index: var(--z-content);
-
-                        h3, h4, li a {
-                            color: var(--bg-wh);
+                    .hero-top-02-myself-name {
+                        grid-column-start: 3;
+                        
+                        h4 {
+                            padding: 0 .2em;
                         }
                     }
+                }
 
-                    .hero-projects-texts {
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        z-index: var(--z-content);
+                .hero-top-03 {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1.5fr 2.5fr;
 
-                        .hero-projects-texts-thumbs-content {
-                            display: grid;
-                            grid-template-columns: 1fr 2fr 2fr 1fr;
-                            justify-content: space-between;
-                            width: 100%;
-                            height: 100%;
-                            align-items: center;
-                            padding-right: 2.4em;
-                            padding-left: 2.4em;
-
-                            ul {
-                                grid-column-start: 2;
-                                row-gap: .3em;
-                                align-items: flex-start;
-
-                                li a {
-                                    font-size: var(--font-size-display-body);
-                                    line-height: 42px;
-                                    opacity: .6;
-                                    transition: opacity 0.6s ease;
-                                }
-                            }
-
-                            .hero-project-info {
-                                grid-column-start: 3;
-                                width: 100%;
-
-                                .hero-project-info-wrapper {
-                                    width: 100%;
-                                    display: flex;
-                                    flex-direction: row;
-                                    justify-content: flex-end;
-                                    column-gap: .5em;
-                                    
-                                    span,
-                                    i {
-                                        color: var(--bg-wh);
-                                        line-height: 17px;
-                                        font-size: var(--font-size-sm);
-                                        display: inline-block;
-                                    }
-
-                                    i {
-                                        background-color: var(--bg-wh-bg);
-                                        backdrop-filter: blur(8px);
-                                        border-radius: 3em;
-                                        border: 1px solid var(--color-text-primary-wh-light);
-                                        padding: .4em .6em;
-                                        display: inline-flex;
-                                        align-items: center;
-                                    }
-                                
-                                    .project-type {
-                                        display: inline-flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        background-color: var(--bg-wh-bg);
-                                        backdrop-filter: blur(8px);
-                                        border-radius: 3em;
-                                        border: 1px solid var(--color-text-primary-wh-light);
-                                        padding: 0.3em 0.8em;
-                                        line-height: 1;
-                                    }
-                                }
-                            }
-                        }
+                    .hero-top-03-wrapper {
+                        grid-column-start: 3;
                     }
                 }
             }
@@ -2240,8 +1999,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             .about-myself-desc-text {
                                 p {
                                     text-indent: 5em;
-                                    font-size: var(--font-size-primary);
-                                    line-height: 20px;
+                                    font-size: var(--font-size-sd);
+                                    line-height: 22px;
                                     opacity: .6;
                                 }
                             }

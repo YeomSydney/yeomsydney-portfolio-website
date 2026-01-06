@@ -27,6 +27,9 @@ if (!anyActive) {
 }
 
 
+
+
+// Toggle View Buttons
 const worksBox = document.querySelector('.hero-extra-works-box');
 const viewButtons = document.querySelectorAll('.works-view-toggle button');
 
@@ -35,14 +38,20 @@ viewButtons.forEach((btn) => {
     worksBox.classList.add("changing");
 
     setTimeout(() => {
-      viewButtons.forEach(b => b.classList.remove('active'));
+      // 1. Reset buttons
+      viewButtons.forEach(b => {
+        b.classList.remove('active');
+        b.classList.remove('label-open'); // 👈 key
+      });
+
+      // 2. Activate clicked button
       btn.classList.add('active');
+      btn.classList.add('label-open'); // 👈 only THIS keeps space
 
+      // 3. Toggle view
       const view = btn.dataset.view;
-
-      worksBox.classList.toggle("compact", view === "compact");
       worksBox.classList.toggle("list", view === "list");
-      worksBox.classList.toggle("gallery", view == "gallery");
+      worksBox.classList.toggle("gallery", view === "gallery");
 
       worksBox.classList.remove("changing");
     }, 200);
@@ -272,95 +281,54 @@ sections.forEach(section => observer.observe(section));
 // Open Case Studies
 document.addEventListener("DOMContentLoaded", function () {
 
-  // === 1. Hero Background & Loop ===
-  const layers = [
-    document.querySelector(".bg-layer.layer1"),
-    document.querySelector(".bg-layer.layer2")
-  ];
+  /* ================================
+     1. CASESTUDY INTERACTIONS
+  ================================= */
 
-  // Only hero lists with data-bg for looping
-  const heroButtons = Array.from(document.querySelectorAll(".casestudy-each-list[data-bg]"));
-  const projectTypeEl = document.querySelector(".project-type");
+  const casestudyButtons = document.querySelectorAll(".casestudy-each-list");
 
-  let currentIndex = 0;
-  let topLayer = 0;
-  let intervalId;
-
-  function setActiveButton(index) {
-    heroButtons.forEach(btn => btn.querySelector("a")?.classList.remove("active-text"));
-    const currentLink = heroButtons[index].querySelector("a");
-    if (currentLink) currentLink.classList.add("active-text");
-    projectTypeEl.textContent = heroButtons[index].getAttribute("data-type");
-  }
-
-  function switchBg(index) {
-    currentIndex = index;
-    const nextImage = heroButtons[index].getAttribute("data-bg");
-    const bottomLayer = topLayer;
-    topLayer = 1 - topLayer;
-
-    layers[topLayer].style.backgroundImage = `url(${nextImage})`;
-    layers[topLayer].classList.add("active");
-    layers[bottomLayer].classList.remove("active");
-
-    setActiveButton(index);
-  }
-
-  function startLoop() {
-    intervalId = setInterval(() => {
-      currentIndex = (currentIndex + 1) % heroButtons.length;
-      switchBg(currentIndex);
-    }, 3500);
-  }
-
-  // Initial setup
-  layers[topLayer].style.backgroundImage = `url(${heroButtons[0].getAttribute("data-bg")})`;
-  layers[topLayer].classList.add("active");
-  layers.forEach(layer => layer.style.cursor = "pointer");
-  setActiveButton(0);
-  startLoop();
-
-  // === Hover & Click on Hero Buttons ===
-  heroButtons.forEach((button, index) => {
+  casestudyButtons.forEach(button => {
     const targetClass = button.getAttribute("data-target");
 
+    // Hover (only visual / cursor-related logic)
     button.addEventListener("mouseenter", () => {
-      clearInterval(intervalId);
-      switchBg(index);
+      button.classList.add("is-hovered");
     });
 
     button.addEventListener("mouseleave", () => {
-      startLoop();
+      button.classList.remove("is-hovered");
     });
 
+    // Click → open casestudy
     button.addEventListener("click", (e) => {
       e.preventDefault();
+      if (!targetClass) return;
+
       const cs = document.querySelector(`.${targetClass}`);
-      if (cs) cs.classList.add("page-open");
+      if (!cs) return;
+
+      cs.classList.add("page-open");
+      cs.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 
-  // === Click on Background Layers ===
-  layers.forEach(layer => {
-    layer.addEventListener("click", () => {
-      const targetClass = heroButtons[currentIndex].getAttribute("data-target");
-      const cs = document.querySelector(`.${targetClass}`);
-      if (cs) {
-        cs.classList.add("page-open");
-        // Scroll the CaseStudy to top
-        cs.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
-  });
+  /* ================================
+     2. CUSTOM CURSOR
+  ================================= */
 
-  // === 2. Custom Cursor ===
   const mouseCursor = document.getElementById("mouse_cursor");
-  let cursorX = 0, cursorY = 0, currentX = 0, currentY = 0;
+  if (!mouseCursor) return;
 
-  function lerp(start, end, t) { return start * (1 - t) + end * t; }
-  function styling(s) {
-    mouseCursor.style.width = `${s}px`;
-    mouseCursor.style.height = `${s}px`;
+  let cursorX = 0, cursorY = 0;
+  let currentX = 0, currentY = 0;
+
+  function lerp(start, end, t) {
+    return start * (1 - t) + end * t;
+  }
+
+  function setCursorSize(size) {
+    mouseCursor.style.width = `${size}px`;
+    mouseCursor.style.height = `${size}px`;
   }
 
   window.addEventListener("mousemove", (e) => {
@@ -370,53 +338,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const hoverElements = document.querySelectorAll(
-    "a, label, button, i, .hover-trigger, .thumb, .displayedImage, .bg-layer, .casestudy-each-list, .casestudy-each-step-details-box-title, .cs-imgbox-textbox-span-box-2-title, .define-detail-box-each"
+    "a, button, label, i, .hover-trigger, .casestudy-each-list"
   );
 
   hoverElements.forEach(el => {
-    el.addEventListener("mouseover", (e) => {
-      let text = e.target.closest("[data-text]")?.getAttribute("data-text");
-      if (el.classList.contains("bg-layer")) text = heroButtons[currentIndex].getAttribute("data-text");
-      styling(120);
-      mouseCursor.textContent = text || "";
+    el.addEventListener("mouseenter", (e) => {
+      const text = e.target.closest("[data-text]")?.getAttribute("data-text") || "";
+      mouseCursor.textContent = text;
+      setCursorSize(120);
       el.style.cursor = "pointer";
     });
+
     el.addEventListener("mouseleave", () => {
       mouseCursor.textContent = "";
-      styling(25);
+      setCursorSize(25);
       el.style.cursor = "default";
     });
+
     el.addEventListener("click", () => {
-      mouseCursor.style.transform = `translate(calc(-50% + ${currentX}px), calc(-50% + ${currentY}px)) scale(0.85)`;
+      mouseCursor.style.transform += " scale(0.85)";
       setTimeout(() => {
-        mouseCursor.style.transform = `translate(calc(-50% + ${currentX}px), calc(-50% + ${currentY}px)) scale(1)`;
+        mouseCursor.style.transform = mouseCursor.style.transform.replace(" scale(0.85)", "");
       }, 80);
     });
   });
 
   function animateCursor() {
-    currentX = lerp(currentX, cursorX, 0.05);
-    currentY = lerp(currentY, cursorY, 0.05);
-    const currentScale = mouseCursor.style.transform.includes("scale(0.85)") ? "scale(0.85)" : "scale(1)";
-    mouseCursor.style.transform = `translate(calc(-80% + ${currentX}px), calc(-80% + ${currentY}px)) ${currentScale}`;
+    currentX = lerp(currentX, cursorX, 0.08);
+    currentY = lerp(currentY, cursorY, 0.08);
+    mouseCursor.style.transform = `translate(calc(-70% + ${currentX}px), calc(-70% + ${currentY}px))`;
     requestAnimationFrame(animateCursor);
   }
 
   animateCursor();
-
-  // === 3. Attach click to ALL casestudy-each-list ===
-  const allCaseStudyButtons = document.querySelectorAll(".casestudy-each-list");
-  allCaseStudyButtons.forEach(btn => {
-    const targetClass = btn.getAttribute("data-target");
-    if (!targetClass) return;
-
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const cs = document.querySelector(`.${targetClass}`);
-      if (cs) cs.classList.add("page-open");
-      cs?.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  });
 
 });
 
@@ -523,34 +477,123 @@ document.querySelectorAll("#nav-toggle1, #nav-toggle2").forEach(toggle => {
 });
 
 
+
+
 // Footer 2025 Copyright
 function fitTextToPaddingBox() {
-  const container = document.querySelector('.footer-credit');
-  const el = container?.querySelector('.copyright-year');
-  if (!container || !el) return;
+  const containers = document.querySelectorAll('.footer-container');
 
-  // Measure natural text width at a baseline size inside the same container
-  const clone = el.cloneNode(true);
-  clone.style.cssText = `
-    position:absolute; visibility:hidden; white-space:nowrap;
-    font-size:10px; line-height:1; margin:0; padding:0;
-    left:0; top:0;
-  `;
-  container.appendChild(clone);
-  const naturalWidth = clone.getBoundingClientRect().width;
-  clone.remove();
+  containers.forEach(container => {
+    const el = container.querySelector('.footer-credit-bottom h4');
+    if (!el) return;
 
-  // Available inner width = border-box width minus horizontal padding
-  const cs = getComputedStyle(container);
-  const containerWidth = container.getBoundingClientRect().width;
-  const innerWidth = containerWidth
-    - parseFloat(cs.paddingLeft || 0)
-    - parseFloat(cs.paddingRight || 0);
+    // Clone for measurement
+    const clone = el.cloneNode(true);
+    clone.style.cssText = `
+      position:absolute;
+      visibility:hidden;
+      white-space:nowrap;
+      font-size:10px;
+      line-height:1;
+      margin:0;
+      padding:0;
+      left:0;
+      top:0;
+    `;
 
-  // Scale font size proportionally
-  const newFontSize = 10 * (innerWidth / naturalWidth);
-  el.style.fontSize = `${newFontSize}px`;
+    container.appendChild(clone);
+    const naturalWidth = clone.getBoundingClientRect().width;
+    clone.remove();
+
+    if (!naturalWidth) return;
+
+    const cs = getComputedStyle(container);
+    const containerWidth = container.getBoundingClientRect().width;
+
+    const innerWidth =
+      containerWidth -
+      parseFloat(cs.paddingLeft || 0) -
+      parseFloat(cs.paddingRight || 0);
+
+    const newFontSize = 10 * (innerWidth / naturalWidth);
+    el.style.fontSize = `${newFontSize}px`;
+  });
 }
 
 window.addEventListener('load', fitTextToPaddingBox);
 window.addEventListener('resize', fitTextToPaddingBox);
+
+
+
+
+// Real time & Weather
+document.addEventListener("DOMContentLoaded", () => {
+  const timeEl = document.getElementById("footer-time");
+  const weatherEl = document.getElementById("footer-weather");
+
+  // ---------- TIME ----------
+  function updateTime() {
+    const now = new Date();
+
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const ampm = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    const utcOffset = now.getTimezoneOffset() / -60;
+    const utcSign = utcOffset >= 0 ? "+" : "-";
+    const utcString = `UTC${utcSign}${Math.abs(utcOffset)}`;
+
+    timeEl.textContent = `${hours}:${minutes} ${ampm} (${utcString})`;
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000);
+
+  // ---------- WEATHER ----------
+  const apiKey = '238d581aaca901802a77a9d5cd72f8c5';
+  const lat = 43.7;     // Toronto
+  const lon = -79.4;
+  const units = 'metric';
+
+  function getWeatherEmoji(condition) {
+    switch (condition) {
+      case 'Clear': return '☀️';
+      case 'Clouds': return '☁️';
+      case 'Rain': return '🌧️';
+      case 'Drizzle': return '🌦️';
+      case 'Thunderstorm': return '⛈️';
+      case 'Snow': return '❄️';
+      case 'Mist':
+      case 'Fog':
+      case 'Haze': return '🌫️';
+      default: return '🌡️';
+    }
+  }
+
+  async function updateWeather() {
+    try {
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`
+      );
+
+      if (!res.ok) throw new Error('Weather API error');
+
+      const data = await res.json();
+
+      const temp = Math.round(data.main.temp);
+      const condition = data.weather[0].main;
+      const emoji = getWeatherEmoji(condition);
+
+      weatherEl.textContent = `${emoji} ${temp}°C · Toronto`;
+    } catch (err) {
+      console.error(err);
+      weatherEl.textContent = 'Weather unavailable';
+    }
+  }
+
+  updateWeather();
+  setInterval(updateWeather, 10 * 60 * 1000);
+});

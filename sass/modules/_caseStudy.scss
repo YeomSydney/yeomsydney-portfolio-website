@@ -43,42 +43,6 @@
     transition: transform .5s ease-in-out, opacity .4s ease-in-out;
 }
 
-.goback-btn-wrapper {
-    background-color: transparent;
-    display: none;
-    z-index: var(--z-nav);
-    align-items: center;
-
-    .goback-btn {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: .3em;
-        align-items: center;
-        overflow: hidden;
-
-        .btn-wrapper {
-            align-items: center;
-            padding: 12px;
-            width: 100%;
-            transition: all .3s ease;
-            overflow: hidden;
-            backdrop-filter: blur(8px);
-            background-color: var(--color-text-primary-bk-dark);
-            border-radius: 10em;
-
-            i {
-                opacity: .6;
-                color: var(--bg-wh);
-            }
-
-            &:hover {
-                i { opacity: 1; }
-            }
-        }
-    }
-}
-
 /* Case Study Each Page */
 .main-casestudy.casestudy-item {
     background-color: var(--bg-wh) !important;
@@ -1064,31 +1028,6 @@
                         row-gap: .4em;
                     }
                 }
-
-                .btn-wrapper {
-                    display: flex;
-                    flex-direction: row;
-                    column-gap: .2em;
-                    align-items: center;
-                    transform: translateX(0);
-                    transition: all .4s ease-in;
-
-                    a {
-                        font-size: var(--font-size-primary-sm);
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: var(--bg-wh-dark);
-                        border-radius: 3em;
-                        padding: .5em .8em;
-                        line-height: 1;
-                        border: 1px solid var(--bg-lightgrey02);
-                    }
-
-                    &:hover {
-                        transform: translateX(3px);
-                    }
-                }
             }
         }
 
@@ -1374,12 +1313,6 @@
                 }
             }
         }
-
-        .goback-btn-wrapper {
-            position: fixed;
-            right: 1.8em;
-            top: 50%;
-        }
     }
 }
 
@@ -1625,12 +1558,6 @@
                     }
                 }
             }
-        }
-
-        .goback-btn-wrapper {
-            position: fixed;
-            right: 2.4em;
-            top: 50%;
         }
     }
 }
