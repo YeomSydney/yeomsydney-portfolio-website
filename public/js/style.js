@@ -108,6 +108,7 @@ function easeOutCubic(t) {
 
 
 
+// URL
 document.addEventListener("DOMContentLoaded", () => {
   const pages = {
     home: "nav-toggle2",
@@ -596,4 +597,98 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateWeather();
   setInterval(updateWeather, 10 * 60 * 1000);
+});
+
+
+
+
+/* Search */
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("site-search");
+  if (!searchInput) return;
+
+  const pages = {
+    home: { inputId: "nav-toggle2", name: "Home", pageId: "page-projects" },
+    about: { inputId: "nav-toggle1", name: "About", pageId: "page-about" },
+    contact: { inputId: "nav-toggle3", name: "Contact", pageId: "page-contact" },
+    branding: { inputId: "nav-toggle-branding", name: "Branding", pageId: "page-branding" },
+    uxui: { inputId: "nav-toggle-uxui", name: "UX/UI", pageId: "page-uxui" }
+  };
+
+  // Create modal
+  let searchModal = document.createElement("div");
+  searchModal.className = "search-modal";
+  document.body.appendChild(searchModal);
+
+  // Close modal on click
+  searchModal.addEventListener("click", () => {
+    searchModal.classList.remove("active");
+  });
+
+  function getMessage(query) {
+    if (!query) return "";
+
+    const matchedKey = Object.keys(pages).find(key => query.includes(key));
+    if (matchedKey) {
+      return `➡ Will go to ${pages[matchedKey].name} page`;
+    } else if (query === "404") {
+      return "⚠ Will go to 404 page";
+    } else {
+      return `🌍 Will search Google for "${query}"`;
+    }
+  }
+
+  function navigate(query) {
+    const matchedKey = Object.keys(pages).find(key => query.includes(key));
+    if (matchedKey) {
+      const page = pages[matchedKey];
+
+      // Close any open CaseStudy pages
+      document.querySelectorAll('.casestudy-item.page-open').forEach(cs => cs.classList.remove('page-open'));
+
+      // Check input if exists
+      const targetInput = document.getElementById(page.inputId);
+      if (targetInput) targetInput.checked = true;
+
+      // Update hash
+      window.location.hash = matchedKey === "home" ? "" : `#/${matchedKey}`;
+
+      // Scroll page to top
+      const pageEl = document.getElementById(page.pageId);
+      pageEl?.scrollTo({ top: 0, behavior: "auto" });
+    } else if (query === "404") {
+      window.location.href = "404.html";
+    } else {
+      window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, "_blank");
+    }
+  }
+
+  // Real-time preview as user types
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase().trim();
+    const message = getMessage(query);
+
+    if (message) {
+      searchModal.textContent = message;
+      searchModal.classList.add("active");
+    } else {
+      searchModal.classList.remove("active");
+    }
+  });
+
+  // Execute navigation on Enter
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter") return;
+
+    const query = searchInput.value.toLowerCase().trim();
+    if (!query) return;
+
+    navigate(query);
+
+    // Clear input
+    searchInput.value = "";
+
+    // Hide modal after navigation
+    searchModal.classList.remove("active");
+  });
 });

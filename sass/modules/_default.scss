@@ -768,6 +768,32 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     }
 }
 
+/* SEARCH MODAL OVERLAY */
+.search-modal {
+    position: fixed;
+    inset: 0;
+    display: none; /* default */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    /* dark overlay */
+    z-index: var(--z-searchOverlay);
+    color: var(--bg-bk-light);
+    font-size: var(--font-size-primary);
+    text-align: center;
+    padding: 1em;
+    pointer-events: all;
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translateY(-10px);
+
+    &.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media only screen and (max-width: 439px) {
     main {
         .hero-section {
