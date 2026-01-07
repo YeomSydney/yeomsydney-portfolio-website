@@ -78,8 +78,8 @@
             flex-direction: row;
             justify-content: center;
             gap: .5em;
-            z-index: var(--z-nav) !important;
             align-items: center;
+            z-index: var(--z-nav-menu) !important;
 
             .nav-block-text-left-main,
             .nav-block-text-bottom-main {
@@ -175,6 +175,32 @@
                         transform .25s ease;
                 }
 
+                .search-key {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: .4em;
+
+                    span {
+                        background-color: var(--color-text-primary-wh-dark);
+                        border: 1px solid var(--bg-lightgrey01);
+                        filter: blur(10px);
+                        border-radius: 4px;
+                        filter: drop-shadow(0 6px 5px #11111115);
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
+                        align-items: center;
+                        inset: 0;
+                        padding: .2em;
+                    }
+
+                    span, p, i {
+                        font-size: var(--font-size-sm);
+                    }
+                }
+
                 /* INPUT */
                 input {
                     display: block;
@@ -185,19 +211,24 @@
                     border: none;
                     outline: none;
 
-                    font-size: var(--font-size-primary-sm);
+                    font-size: var(--font-size-primary-sm) !important;
                     color: var(--bg-dk);
                     line-height: 1;
 
                     &::placeholder {
                         color: var(--bg-dk);
                         opacity: .6;
+                        font-size: var(--font-size-primary-sm) !important;
                     }
 
                     &:focus,
                     &:hover {
                         width: 200px;
                         border-color: var(--color-text-primary-bk);
+
+                        &::placeholder {
+                            opacity: .2;
+                        }
                     }
                 }
 
