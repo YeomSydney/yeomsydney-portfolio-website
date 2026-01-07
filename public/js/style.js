@@ -111,87 +111,108 @@ function easeOutCubic(t) {
 // URL
 document.addEventListener("DOMContentLoaded", () => {
   const pages = {
-    home: "nav-toggle2",
-    about: "nav-toggle1"
+    home: {
+      toggle: "nav-toggle2",
+      section: "page-projects",
+      path: "/"
+    },
+    about: {
+      toggle: "nav-toggle1",
+      section: "page-about",
+      path: "/about"
+    }
   };
 
-  function navigate(page) {
+  /* -----------------------------
+      CORE NAVIGATION
+  ----------------------------- */
+
+  function navigate(page, push = true) {
     if (!(page in pages)) {
-      console.warn("Page not found:", page);
-      window.location.href = "/";
+      navigate("home");
       return;
     }
 
-    // Close any open CaseStudy pages first
-    document.querySelectorAll('.casestudy-item.page-open').forEach(cs => {
-      cs.classList.remove('page-open');
-    });
+    // Close any open case studies
+    document.querySelectorAll(".casestudy-item.page-open").forEach(el =>
+      el.classList.remove("page-open")
+    );
 
-    // Set the correct input state
-    const targetInput = document.getElementById(pages[page]);
-    if (targetInput) targetInput.checked = true;
+    // Toggle correct page
+    const toggleInput = document.getElementById(pages[page].toggle);
+    if (toggleInput) toggleInput.checked = true;
 
-    // Update URL hash without reloading
-    window.location.hash = page === "home" ? "" : `#/${page}`;
-
-    // Scroll Home/About pages to top if needed
-    const pageId = page === "home" ? "page-projects" : page === "about" ? "page-about" : null;
-    if (pageId) {
-      const pageEl = document.getElementById(pageId);
-      pageEl?.scrollTo({ top: 0, behavior: "auto" });
+    // Update URL
+    if (push) {
+      history.pushState({ page }, "", pages[page].path);
     }
+
+    // Scroll to top of page
+    const section = document.getElementById(pages[page].section);
+    section?.scrollTo({ top: 0, behavior: "auto" });
   }
 
-  // Bind nav link clicks
+  /* -----------------------------
+      URL → PAGE
+  ----------------------------- */
+
+  function getPageFromURL() {
+    const path = window.location.pathname.replace("/", "");
+    return path === "about" ? "about" : "home";
+  }
+
+  /* -----------------------------
+      NAV LINK CLICKS
+  ----------------------------- */
+
   document.querySelectorAll("[data-url]").forEach(el => {
-    el.addEventListener("click", (e) => {
+    el.addEventListener("click", e => {
       e.preventDefault();
       navigate(el.dataset.url);
     });
   });
 
-  // Handle hash changes/back-forward navigation
-  window.addEventListener("hashchange", () => {
-    const hashPage = location.hash.replace("#/", "") || "home";
-    if (hashPage in pages) {
-      navigate(hashPage);
-    } else {
-      window.location.href = "/";
-    }
+  /* -----------------------------
+      BACK / FORWARD
+  ----------------------------- */
+
+  window.addEventListener("popstate", e => {
+    const page = e.state?.page || getPageFromURL();
+    navigate(page, false);
   });
 
-  // Initial page load
-  const initialPage = location.hash.replace("#/", "") || "home";
-  navigate(initialPage);
+  /* -----------------------------
+      INITIAL LOAD
+  ----------------------------- */
 
-  // Enable page transitions AFTER initial load
-  const allPages = document.querySelectorAll("#page-about, #page-projects");
-  allPages.forEach(page => {
-    // force browser to compute style first
-    page.offsetHeight; // triggers reflow
+  navigate(getPageFromURL(), false);
+
+  /* -----------------------------
+      ENABLE TRANSITIONS AFTER LOAD
+  ----------------------------- */
+
+  document.querySelectorAll("#page-about, #page-projects").forEach(page => {
+    page.offsetHeight; // force reflow
     page.style.transition = "transform 0.5s ease, opacity 0.5s ease";
   });
 
-  // Reveal Scroll Effect
-  const reveals = document.querySelectorAll(".reveal");
+  /* -----------------------------
+      REVEAL ON SCROLL
+  ----------------------------- */
 
   const observer = new IntersectionObserver(
-    (entries) => {
+    entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
-          observer.unobserve(entry.target); // reveal once
+          observer.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.2, // 20% visible before triggering
-    }
+    { threshold: 0.2 }
   );
 
-  reveals.forEach(section => {
-    observer.observe(section);
-  });
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 });
 
 
