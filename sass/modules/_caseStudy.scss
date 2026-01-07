@@ -196,11 +196,20 @@
                 }
 
                 .cs-process-box-wrapper {
-                    background-color: var(--color-text-primary-bk);
+                    // background-color: var(--color-text-primary-bk);
 
                     h2, h3, h4, h6,
                     a, p, li, span {
-                        color: var(--bg-wh);
+                        // color: var(--bg-wh);
+                        color: var(--bg-dk);
+                    }
+
+                    .casestudy-each-step {
+                        background-color: var(--color-glow-white);
+                        border: 1px solid var(--bg-lightgrey01);
+                        border-radius: 1em;
+                        padding: 2em 1.4em !important;
+                        filter: drop-shadow(0 20px 10px #11111115);
                     }
                 }
 
@@ -288,7 +297,7 @@
                                     display: flex;
                                     flex-direction: column;
                                     justify-content: flex-start;
-                                    border-top: 1px solid var(--color-text-primary-bk-light);
+                                    border-top: 1px solid var(--bg-wh-dark);
                                     padding-top: 1em;
 
                                     .define-reason-title {
@@ -460,7 +469,7 @@
                                             width: 100%;
                                             height: auto;
                                             padding-top: 1em;
-                                            border-top: 1px solid var(--bg-wh-dark);
+                                            border-top: 1px solid var(--line-black);
                                             display: flex;
                                             flex-direction: column;
 
@@ -480,7 +489,7 @@
                                                 i {
                                                     transform: rotateZ(0);
                                                     transition: all 0.4s ease;
-                                                    color: var(--bg-wh);
+                                                    color: var(--bg-dk);
                                                 }
 
                                                 &:hover {
