@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------------
         DATA
     ------------------------------ */
-
     const items = [
         {
             type: "page",
@@ -29,12 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
             keywords: ["about", "about me", "education", "experience", "work experience"],
             open: () => {
                 document.getElementById("nav-toggle1")?.click();
-                history.replaceState(null, "", "#/about");
-                scrollToTop("page-about");
                 closeAllCases();
+                history.replaceState(null, "", "#/about"); // ← ensures URL shows "/#/about"
+                scrollToTop("page-about");
             }
         },
-
         {
             type: "case",
             label: "Gentle Dazs",
@@ -70,19 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const funResponses = [
-        /* -----------------------------
-            GREETINGS / CASUAL
-        ----------------------------- */
         { triggers: ["hello", "hi", "hey"], message: ["Hi there 👋 Search anything!"] },
         { triggers: ["howdy"], message: ["Howdy 🤠"] },
         { triggers: ["good morning", "morning", "coffee", "breakfast"], message: ["Good morning ☀️"] },
         { triggers: ["good afternoon", "afternoon", "lunch"], message: ["Good afternoon. Time flies!"] },
         { triggers: ["good evening", "evening", "night", "dinner", "good night"], message: ["Late night browsing? 🌙"] },
         { triggers: ["sleep", "sleep sydney", "go to bed"], message: ["Go to bed too! 😴"] },
-
-        /* -----------------------------
-            PERSONAL / ABOUT SYDNEY
-        ----------------------------- */
         { triggers: ["sydney", "sydney yeom", "seunghyeon", "yeom", "염승현", "승현"], message: ["Yes, Sydney is here. She’s busy designing 🖌️"] },
         { triggers: ["who made this"], message: ["Guess who! 😎"] },
         { triggers: ["who are you"], message: ["I'm Sydney's search assistant! 😎"] },
@@ -90,10 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { triggers: ["what are you hiding"], message: ["Shh… nothing 🤫"] },
         { triggers: ["secret", "what is your secret", "what's your secret"], message: ["Tell me yours first, then I’ll tell you 😏"] },
         { triggers: ["what do you do", "job", "what's your job", "what are you doing"], message: ["I'm a search assistant 💃"] },
-
-        /* -----------------------------
-            FUN / MOOD
-        ----------------------------- */
         { triggers: ["cool", "nice", "awesome", "amazing", "fabulous", "sick"], message: ["You think so? Thanks!"] },
         { triggers: ["wow", "whoa", "woah", "ooo"], message: ["I take it as a compliment!"] },
         { triggers: ["meow", "miaow", "purr", "cat", "kitty"], message: ["Purrrr 🐈‍⬛🐾"] },
@@ -102,32 +89,16 @@ document.addEventListener("DOMContentLoaded", () => {
         { triggers: ["fuck", "fuck you"], message: ["abcdefu 🎵"] },
         { triggers: ["pretty", "beautiful", "you're pretty"], message: ["Thank you 🫶"] },
         { triggers: ["bestie", "friend", "friends", "best friends"], message: ["🫵🤝"] },
-
-        /* -----------------------------
-            COFFEE / FOOD
-        ----------------------------- */
         { triggers: ["coffee", "expresso"], message: ["Go tell Sydney your favourite coffee shop ☕️"] },
         { triggers: ["starbucks"], message: ["Yes, my favourite ☕✨"] },
         { triggers: ["tim hortons", "tims", "horton", "hortons"], message: ["Iced capp with croissant for all seasons 🥐"] },
         { triggers: ["no coffee", "no starbucks"], message: ["Can’t take it! I need coffee 🫠"] },
-
-        /* -----------------------------
-            HOLIDAYS / SEASONS
-        ----------------------------- */
         { triggers: ["happy new year", "new year", "2026"], message: ["Happy New Year! 🎉"] },
         { triggers: ["2025"], message: ["Hope your 2025 was amazing! 💫"] },
         { triggers: ["merry christmas", "christmas", "x-mas"], message: ["Merry Christmas! 🎄🎅"] },
-
-        /* -----------------------------
-            PORTFOLIO / PROJECT
-        ----------------------------- */
         { triggers: ["portfolio", "website"], message: ["You’re already here! Enjoy!"] },
         { triggers: ["project", "work", "casestudy", "case study"], message: ["Sydney’s favourites are Gentle Dazs & Trace Toronto ✨"] },
         { triggers: ["help"], message: ["Try searching for home, about, or project names (e.g. Gentle Dazs)."] },
-
-        /* -----------------------------
-            PLAYFUL / RANDOM
-        ----------------------------- */
         { triggers: ["yes"], message: ["Say no 😏"] },
         { triggers: ["no"], message: ["Say yes 😏"] },
         { triggers: ["okay"], message: ["👌"] },
@@ -142,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         HELPERS
     ------------------------------ */
     const normalize = str => str.toLowerCase().trim();
-    let selectedIndex = -1; // For arrow key selection
+    let selectedIndex = -1;
     let currentMatches = [];
 
     function show(content) {
@@ -231,18 +202,26 @@ document.addEventListener("DOMContentLoaded", () => {
     ------------------------------ */
     preview.addEventListener("click", e => {
         const hint = e.target.closest(".preview-hint");
-        if (!hint) return;
-        const idx = parseInt(hint.dataset.index);
-        if (!isNaN(idx)) currentMatches[idx].open();
-        input.value = "";
-        hide();
+        if (hint) {
+            const idx = parseInt(hint.dataset.index);
+            if (!isNaN(idx)) currentMatches[idx].open();
+            input.value = "";
+            hide();
+            return;
+        }
+
+        if (e.target.closest(".search-engine")) {
+            window.open(`https://www.google.com/search?q=${encodeURIComponent(input.value)}`, "_blank");
+            input.value = "";
+            hide();
+        }
     });
 
     /* ------------------------------
         ARROW KEYS + ENTER
     ------------------------------ */
     input.addEventListener("keydown", e => {
-        if (currentMatches.length === 0) return;
+        const query = normalize(input.value);
 
         if (e.key === "ArrowDown") {
             e.preventDefault();
@@ -254,15 +233,27 @@ document.addEventListener("DOMContentLoaded", () => {
             updateHighlight();
         } else if (e.key === "Enter") {
             e.preventDefault();
-            if (selectedIndex >= 0) {
+
+            // Check arrow selection first
+            if (selectedIndex >= 0 && currentMatches[selectedIndex]) {
                 currentMatches[selectedIndex].open();
-                input.value = "";
-                hide();
-            } else if (currentMatches.length) {
-                currentMatches[0].open();
-                input.value = "";
-                hide();
             }
+            else {
+                // Check for partial or exact matches
+                const matches = items.filter(item =>
+                    item.keywords.some(k => k.startsWith(query) || k === query)
+                );
+                if (matches.length > 0) {
+                    matches[0].open();
+                }
+                else {
+                    // Nothing matches → Google
+                    window.open(`https://www.google.com/search?q=${encodeURIComponent(input.value)}`, "_blank");
+                }
+            }
+
+            input.value = "";
+            hide();
         }
     });
 
@@ -316,4 +307,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     modal.addEventListener("click", hide);
+
+    /* ------------------------------
+        CLICKABLE LOGO, THUMBNAILS & BUTTONS UPDATE URL
+    ------------------------------ */
+    document.querySelector(".main-nav-pc-top.main-nav-logo h3")?.addEventListener("click", () => {
+        const homeItem = items.find(i => i.slug === "home");
+        if (homeItem) homeItem.open();
+    });
+
+    document.querySelectorAll(".casestudy-each-list, .btn-wrapper[data-text]").forEach(el => {
+        el.addEventListener("click", () => {
+            const targetSlug = el.closest(".casestudy-each-list")?.dataset.target;
+            const caseItem = items.find(i => i.selector?.includes(targetSlug));
+            if (caseItem) caseItem.open();
+
+            const pageLabel = el.dataset.url;
+            const pageItem = items.find(i => i.slug === pageLabel);
+            if (pageItem) pageItem.open();
+        });
+    });
 });
