@@ -32,13 +32,13 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/public/images/favicon-dark-ui.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" href="/public/images/favicon-light-ui.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="/public/images/favicons/favicon-dark-ui.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="/public/images/favicons/favicon-light-ui.png" media="(prefers-color-scheme: dark)">
 </head>
 
 <body id="content-wrapper" class="scroll-container">
     <header>
-        <nav id="main-nav-pc">
+        <nav id="main-nav-pc" role="navigation">
             <div class="nav-top-pc">
                 <div class="main-nav-pc-top main-nav-left">
                     <h4>Toronto, Canada</h4>
@@ -117,7 +117,7 @@
         </nav>
     </header>
 
-    <main id="container">
+    <main id="container" role="main">
         <!--
         nav-toggle1: about
         nav-toggle2: project
@@ -2803,7 +2803,7 @@
                                     <div class="allProjectThumbnails reveal">
                                         <div class="thumbnail-strip">
                                             <img class="base-image" src="./public/images/iwasntthere/iwasntthere_thumbnail.png" loading="lazy">
-                                            <img class="hover-image" src="./public/images/placeholder55.png" loading="lazy">
+                                            <img class="hover-image" src="./public/images/iwasntthere/iwasntthere_thumbnail-02.png" loading="lazy">
                                         </div>
                                     </div>
                                 </div>
@@ -3600,6 +3600,10 @@
 
 <!-- Custom JS -->
 <script src="./public/js/style.js" type="module"></script>
+<script src="./public/js/components/url.js" type="module"></script>
+<script src="./public/js/components/footer.js" type="module"></script>
+<script src="./public/js/components/search.js" type="module"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
 <!-- <script src="./public/js/mail.js" type="module"></script> -->
 
