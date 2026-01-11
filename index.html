@@ -7,17 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary SEO -->
-    <title>Seunghyeon Sydney Yeom</title>
-    <meta name="description"
-        content="Portfolio of Sydney Yeom — I'm a designer and developer focused on typography, systems, and thoughtful digital experiences.">
+    <title>Sydney Yeom — Branding Designer</title>
+    <meta name="description" content="Sydney Yeom — I'm a branding designer focused on typography, systems, and thoughtful digital experiences.">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Sydney Yeom – Designer & Developer">
-    <meta property="og:description"
-        content="Portfolio of Sydney Yeom. Focused on typography, systems, and thoughtful digital experiences.">
+    <meta property="og:title" content="Sydney Yeom – Branding Designer">
+    <meta property="og:description" content="Toronto-based designer showcasing branding & UX/UI work">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yeomsydney.com">
-    <meta property="og:image" content="https://yourdomain.com/public/images/og-image.jpg">
+    <meta property="og:image" content="https://yeomsydney.github.io/yeomsydney-portfolio-website/public/images/og-image.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -30,10 +28,25 @@
     <link href="./public/css/main.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- JSON -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/public/images/favicons/favicon-dark-ui.png" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/png" href="/public/images/favicons/favicon-light-ui.png" media="(prefers-color-scheme: dark)">
+    <!-- Default / fallback -->
+    <link rel="icon" href="/yeomsydney-portfolio-website/favicon.ico">
+    
+    <!-- Light mode -->
+    <link rel="icon" type="image/svg+xml" href="/yeomsydney-portfolio-website/favicon-light-ui.svg"
+        media="(prefers-color-scheme: light)">
+    
+    <!-- Dark mode -->
+    <link rel="icon" type="image/svg+xml" href="/yeomsydney-portfolio-website/favicon-dark-ui.svg"
+        media="(prefers-color-scheme: dark)">
+    
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="/yeomsydney-portfolio-website/apple-touch-icon.png">
 </head>
 
 <body id="content-wrapper" class="scroll-container">
@@ -94,7 +107,7 @@
                 </div>
             </div>
 
-            <div id="search-preview-modal" class="search-modal">
+            <div id="search-preview-modal" class="search-modal" role="dialog"  aria-modal="true"  aria-labelledby="search-title"  hidden>
                 <div class="search-modal-wrapper">
                     <div class="search-intro">
                         <h3>Hello there, I'm a search assistant.</h3>
@@ -2174,10 +2187,10 @@
                 
                             <div class="archive-details-imgs">
                                 <ul class="archive-details-imgs-wrapper">
-                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster01.png"></li>
-                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster02.png"></li>
-                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster03.png"></li>
-                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster04.png"></li>
+                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster01.png" loading="lazy"></li>
+                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster02.png" loading="lazy"></li>
+                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster03.png" loading="lazy"></li>
+                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster04.png" loading="lazy"></li>
                                 </ul>
                             </div>
                         </div>
@@ -2213,10 +2226,10 @@
                 
                             <div class="archive-details-imgs">
                                 <ul class="archive-details-imgs-wrapper">
-                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster01.png"></li>
-                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster02.png"></li>
-                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster03.png"></li>
-                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster04.png"></li>
+                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster01.png" loading="lazy"></li>
+                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster02.png" loading="lazy"></li>
+                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster03.png" loading="lazy"></li>
+                                    <li><img src="./public/images/doyoublankme/doyoublankme_poster04.png" loading="lazy"></li>
                                 </ul>
                             </div>
                         </div>
@@ -2841,7 +2854,7 @@
                 
                                             <span class="hero-top-intro-para-jobLogo">
                                                 <div class="jobLogo_img">
-                                                    <img src="./public/images/logos/logo_m416.png">
+                                                    <img src="./public/images/logos/logo_m416.png" loading="lazy">
                                                 </div>
                                                 <div class="jobLogo_text">
                                                     <p>M416 Studio</p>
@@ -2862,7 +2875,7 @@
                 
                                             <span class="hero-top-intro-para-jobLogo">
                                                 <div class="jobLogo_img">
-                                                    <img src="./public/images/logos/logo_yorku.png">
+                                                    <img src="./public/images/logos/logo_yorku.png" loading="lazy">
                                                 </div>
                 
                                                 <div class="jobLogo_text">
@@ -3589,32 +3602,16 @@
 <!-- Mouse Cursor -->
 <div id="mouse_cursor"><span class="cursor-blur"></span></div>
 
-<!-- Install CDN -->
-<!-- Vue JS -->
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <!-- GSAP + ScrollTrigger -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
-<!-- Icons -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 <!-- Custom JS -->
 <script src="./public/js/style.js" type="module"></script>
 <script src="./public/js/components/url.js" type="module"></script>
 <script src="./public/js/components/footer.js" type="module"></script>
 <script src="./public/js/components/search.js" type="module"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
 <!-- <script src="./public/js/mail.js" type="module"></script> -->
-
-<!-- JQuery -->
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 
 </body>
 </html>

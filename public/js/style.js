@@ -460,3 +460,7 @@ document.querySelectorAll("#nav-toggle1, #nav-toggle2").forEach(toggle => {
     document.querySelector('.mobileNavBox')?.classList.remove('is-active');
   });
 });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/yeomsydney-portfolio-website/sw.js");
+}

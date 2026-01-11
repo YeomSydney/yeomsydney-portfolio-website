@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("search-preview-modal");
     const preview = modal.querySelector(".search-preview-text");
 
+    let lastFocusedElement = null;
+
     if (!input || !modal || !preview) return;
 
     /* ------------------------------
@@ -117,6 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentMatches = [];
 
     function show(content) {
+        if (!modal.classList.contains("active")) {
+            lastFocusedElement = document.activeElement;
+        }
         preview.innerHTML = content;
         modal.classList.add("active");
     }
@@ -125,6 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.remove("active");
         preview.innerHTML = "";
         selectedIndex = -1;
+
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+            lastFocusedElement = null;
+        }
     }
 
     function findFun(query) {
@@ -301,12 +311,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (e.key === "Escape") {
-            input.blur();
             hide();
         }
     });
 
-    modal.addEventListener("click", hide);
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) hide();
+    });
 
     /* ------------------------------
         CLICKABLE LOGO, THUMBNAILS & BUTTONS UPDATE URL

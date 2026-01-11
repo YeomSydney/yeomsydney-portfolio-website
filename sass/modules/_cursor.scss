@@ -1,3 +1,9 @@
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+    #mouse_cursor {
+        display: none;
+    }
+}
+
 #mouse_cursor {
     position: fixed;
     left: 0;
