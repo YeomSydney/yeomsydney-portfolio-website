@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const hoverElements = document.querySelectorAll(
-    "a, button, label, i, .hover-trigger, .casestudy-each-list"
+    "a, button, label, i, .hover-trigger, .casestudy-each-list, .casestudy-each-step-details-box-title"
   );
 
   hoverElements.forEach(el => {
@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function animateCursor() {
     currentX = lerp(currentX, cursorX, 0.08);
     currentY = lerp(currentY, cursorY, 0.08);
-    mouseCursor.style.transform = `translate(calc(-70% + ${currentX}px), calc(-70% + ${currentY}px))`;
+    mouseCursor.style.transform = `translate(calc(-50% + ${currentX}px), calc(-90% + ${currentY}px))`;
     requestAnimationFrame(animateCursor);
   }
 
@@ -666,7 +666,7 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "Gentle Dazs",
       slug: "gentle-dazs",
       selector: ".casestudy-item-13",
-      keywords: ["gentle dazs", "gentledazs", "gentle", "dazs", "ice cream", "sunglasses", "glasses", "branding", "product", "package", "packaging"],
+      keywords: ["gentle dazs", "gentledazs", "gentle", "dazs", "ice cream", "sunglasses", "glasses", "branding", "product", "package", "packaging", "logo"],
       open: () => openCase(".casestudy-item-13", "gentle-dazs")
     },
     {
@@ -674,7 +674,7 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "Trace Toronto",
       slug: "trace-toronto",
       selector: ".casestudy-item-14",
-      keywords: ["trace toronto", "tracetoronto", "trace", "toronto", "city", "dashboard", "app", "branding", "uxui", "ux/ui"],
+      keywords: ["trace toronto", "tracetoronto", "trace", "toronto", "city", "dashboard", "app", "branding", "uxui", "ux/ui", "logo"],
       open: () => openCase(".casestudy-item-14", "trace-toronto")
     },
     {
@@ -682,7 +682,7 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "Lights of Seoul",
       slug: "lights-of-seoul",
       selector: ".casestudy-item-12",
-      keywords: ["lights of seoul", "lightsofseoul", "lights", "seoul", "festival", "lantern", "multiculture", "branding", "uxui", "ux/ui"],
+      keywords: ["lights of seoul", "lightsofseoul", "lights", "seoul", "festival", "lantern", "multiculture", "branding", "uxui", "ux/ui", "logo"],
       open: () => openCase(".casestudy-item-12", "lights-of-seoul")
     },
     {
@@ -690,7 +690,7 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "I Wasn’t There",
       slug: "i-wasnt-there",
       selector: ".casestudy-item-2",
-      keywords: ["i wasn't there", "iwasn'tthere", "i was not", "book", "editorial", "typography", "poem", "mono", "type"],
+      keywords: ["i wasn't there", "iwasn'tthere", "i was not", "book", "booklet", "editorial", "typography", "poem", "mono", "type"],
       open: () => openCase(".casestudy-item-2", "i-wasnt-there")
     }
   ];
@@ -711,6 +711,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ----------------------------- */
     { triggers: ["sydney", "sydney yeom", "seunghyeon", "yeom", "염승현", "승현"], message: ["Yes, Sydney is here. She’s busy designing 🖌️"] },
     { triggers: ["who made this"], message: ["Guess who! 😎"] },
+    { triggers: ["who are you"], message: ["I'm Sydney's search assistant! 😎"] },
     { triggers: ["are you human"], message: ["Depends on how you define human 🤔"] },
     { triggers: ["what are you hiding"], message: ["Shh… nothing 🤫"] },
     { triggers: ["secret", "what is your secret", "what's your secret"], message: ["Tell me yours first, then I’ll tell you 😏"] },

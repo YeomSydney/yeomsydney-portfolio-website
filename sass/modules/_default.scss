@@ -81,7 +81,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             inset: 0;
                             backdrop-filter: blur(2.5px);
                             // background-color: var(--color-text-primary-bk-light);
-                            background-color: #e53e3e;
+                            background-color: var(--color-accent-red);
                             border: 1px solid var(--bg-lightgrey01);
                             filter: drop-shadow(0 10px 10px #11111115);
                             border-radius: .15em;
@@ -700,7 +700,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         inset: 0;
                         backdrop-filter: blur(2.5px);
                         // background-color: var(--color-text-primary-bk-light);
-                        background-color: #e53e3e;
+                        background-color: var(--color-accent-red);
                         border: 1px solid var(--bg-lightgrey01);
                         filter: drop-shadow(0 10px 10px #11111115);
                         border-radius: .15em;
@@ -729,8 +729,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     transition: transform 0.5s ease, opacity 0.5s ease;
     overflow-y: auto;
     z-index: var(--z-page-overlay);
-    background-color: var(--color-text-primary-bk-border-dark);
-    // backdrop-filter: blur(4px);
 
     label,
     span,
@@ -775,7 +773,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     .contact-box {
         grid-column-start: 2;
         backdrop-filter: blur(20px);
-        background-color: var(--color-text-primary-wh-dark);
+        background-color: var(--line-white);
         border: 1px solid var(--bg-lightgrey01);
         border-radius: 1.5em;
 

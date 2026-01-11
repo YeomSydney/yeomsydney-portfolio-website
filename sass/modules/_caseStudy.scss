@@ -49,6 +49,7 @@
 }
 
 .archive-project.casestudy-item {
+    backdrop-filter: blur(4px);
     background-color: var(--bg-bk-light) !important;
 }
 
@@ -196,11 +197,8 @@
                 }
 
                 .cs-process-box-wrapper {
-                    // background-color: var(--color-text-primary-bk);
-
                     h2, h3, h4, h6,
                     a, p, li, span {
-                        // color: var(--bg-wh);
                         color: var(--bg-dk);
                     }
 
@@ -396,7 +394,6 @@
                     }
                 }
 
-                .casestudy-textbox,
                 .cs-process-box-wrapper {
                     display: flex;
                     flex-direction: column;
@@ -406,23 +403,18 @@
                     .cs-text-wrapping-box-process {
                         display: flex;
                         flex-direction: column;
-                        row-gap: 6em;
+                        row-gap: 3em;
 
                         .cs-text-wrapping-box-process-top {
-                            .cs-text-wrapping-box-process-top-textbox {
-                                display: grid;
-                                grid-column-start: 1;
-                                row-gap: 1em;
-                                
-                                h3 {
-                                    font-size: var(--font-size-sd);
-                                }
+                            h3 {
+                                font-size: var(--font-size-xsm);
+                                text-transform: uppercase;
+                            }
 
-                                p {
-                                    font-size: var(--font-size-sd-md);
-                                    line-height: 30px;
-                                    width: 80%;
-                                }
+                            p {
+                                font-size: var(--font-size-sd-md);
+                                line-height: 30px;
+                                width: 80%;
                             }
                         }
 
@@ -434,7 +426,6 @@
                                     display: flex;
                                     flex-direction: column;
                                     row-gap: 12em;
-                                    border-top: 1px solid var(--color-text-primary-wh-dark);
                                     padding: 1em .2em;
 
                                     .casestudy-each-step-title {
@@ -473,7 +464,8 @@
                                             display: flex;
                                             flex-direction: column;
 
-                                            .casestudy-each-step-details-box-title {
+                                            .casestudy-each-step-details-box-title,
+                                            .casestudy-each-step-details-box-title-noHover {
                                                 display: flex;
                                                 flex-direction: row;
                                                 justify-content: space-between;
@@ -491,12 +483,14 @@
                                                     transition: all 0.4s ease;
                                                     color: var(--bg-dk);
                                                 }
+                                            }
 
+                                            .casestudy-each-step-details-box-title {
                                                 &:hover {
                                                     h4 {
                                                         opacity: 1;
                                                     }
-
+                                            
                                                     i {
                                                         transform: rotateZ(90deg);
                                                     }
@@ -518,7 +512,8 @@
                                             }
                                             
                                             &.active {
-                                                .casestudy-each-step-details-box-title {
+                                                .casestudy-each-step-details-box-title,
+                                                .casestudy-each-step-details-box-title--noHover {
                                                     i {
                                                         transform: rotateZ(90deg);
                                                     }
@@ -978,6 +973,104 @@
                     }
                 }
             }
+
+            .casestudy-text-container {
+                min-height: 100vh;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+                padding: 8em 0;
+                gap: 15em;
+
+                h3 {
+                    text-transform: uppercase;
+                    font-size: var(--font-size-xsm);
+                    opacity: .6;
+                    line-height: 16px;
+                }
+
+                .casestudy-textbox {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5em;
+
+                    .casestudy-projectBG {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5em;
+
+                        .casestudy-projectBG-left {
+                            display: grid;
+                            grid-template-columns: 2fr 1fr 1fr;
+
+                            .cs-proj-left-1, span, h4 {
+                                font-weight: 200;
+                            }
+
+                            i {
+                                font-size: var(--font-size-display-title-sm);
+                            }
+                        }
+
+                        .casestudy-projectBG-right {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 2fr;
+                            justify-content: space-between;
+                            width: 100%;
+
+                            .casestudy-projectBG-right-context {
+                                grid-column-start: 3;
+                                display: grid;
+                                grid-template-columns: 1fr 3fr;
+                                gap: 2em;
+
+                                p {
+                                    font-size: var(--font-size-primary-sm);
+                                    line-height: 18px;
+                                }
+                            }
+                        }
+                    }
+
+                    &-prob-solu {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 2fr;
+
+                        .cs-textbox-prob-solu-container {
+                            grid-column-start: 3;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 3em;
+
+                            h2 {
+                                font-size: var(--font-size-sd-sm);
+                                text-transform: uppercase;
+                            }
+
+                            .casestudy-prob-solu-projectBG {
+                                ul {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 2em;
+
+                                    li {
+                                        display: grid;
+                                        grid-template-columns: 1fr 3fr;
+                                        gap: 2em;
+
+                                        p {
+                                            font-size: var(--font-size-primary-sm);
+                                            line-height: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -1075,6 +1168,29 @@
                                 display: grid;
                                 grid-template-columns: repeat(1, 1fr);
                                 gap: 2em;
+                            }
+                        }
+                    }
+
+                    &-middle {
+                        .casestudy-textbox {
+                            .casestudy-projectBG {
+                                .casestudy-projectBG-left {
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                                
+                                .casestudy-projectBG-right {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                }
+                            }
+
+                            &-prob-solu {
+                                display: flex;
+                                flex-direction: column;
+                                width: 100%;
                             }
                         }
                     }
@@ -1178,7 +1294,14 @@
                     }
 
                     &-middle {
-                        .casestudy-textbox,
+                        .casestudy-text-container {
+                            .casestudy-projectBG-left {
+                                .cs-proj-left-1, span, h4 {
+                                    font-size: var(--font-size-display-title-sm);
+                                }
+                            }
+                        }
+                        
                         .cs-process-box-wrapper {
                             .cs-text-wrapping-box-process {
                                 .casestudy-step {
@@ -1187,7 +1310,7 @@
                                     .casestudy-step-box {
                                         display: flex;
                                         flex-direction: column;
-                                        gap: 4em;
+                                        gap: 1em;
 
                                         .casestudy-each-step {
                                             width: 100%;
@@ -1211,58 +1334,7 @@
                             padding-right: 1.8em;
                         }
 
-                        .casestudy-textbox {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 1em;
-
-                            h3 {
-                                opacity: .6;
-                                font-size: var(--font-size-primary-sm);
-                            }
-
-                            .casestudy-projectBG {
-                                width: 100%;
-                                display: flex;
-                                flex-direction: column;
-                                gap: 3em;
-
-                                .casestudy-projectBG-left {
-                                    h4, span {
-                                        font-size: var(--font-size-sd-md);
-                                        line-height: 28px;
-                                    }
-
-                                    .cs-proj-left-1 {
-                                        color: var(--color-accent-blue);
-                                    }
-
-                                    .cs-proj-left-2 {
-                                        opacity: .6;
-                                    }
-                                }
-
-                                .casestudy-projectBG-right {
-                                    p {
-                                        opacity: .6;
-                                    }
-                                }
-                            }
-                        }
-
-                        .casestudy-textbox-prob-solu {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 3em;
-
-                            h3 {
-                                opacity: .6;
-                                font-size: var(--font-size-primary-sm);
-                            }
-                        }
-
                         .cs-process-box-wrapper,
-                        .casestudy-textbox-prob-solu,
                         .cs-each-step-section-wrapper {
                             padding-top: 8em;
                             padding-bottom: 8em;
@@ -1315,6 +1387,14 @@
                                     display: flex;
                                     flex-direction: column;
                                     row-gap: .5em;
+
+                                    .cs-img-wb-square {
+                                        display: grid;
+                                        grid-template-columns: repeat(1, auto);
+                                        width: 100%;
+                                        height: auto;
+                                        gap: .5em;
+                                    }
                                 }
                             }
                         }
@@ -1382,83 +1462,16 @@
                 }
 
                 &-middle {
-
-                    .casestudy-textbox,
-                    .cs-process-box-wrapper {
-                        .cs-text-wrapping-box-process {
-                            .casestudy-step-box {
-                                display: grid;
-                                grid-template-columns: repeat(2, 1fr);
-                                gap: 2em;
-                            }
-                        }
-                    }
-
                     .cs-process-box-wrapper {
                         padding-left: 2em;
                         padding-right: 2em;
                     }
 
-                    .casestudy-textbox {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1em;
-
-                        h3 {
-                            opacity: .6;
-                            font-size: var(--font-size-primary-sm);
-                        }
-
-                        .casestudy-projectBG {
-                            width: 100%;
-                            display: flex;
-                            flex-direction: column;
-                            gap: 3em;
-
-                            .casestudy-projectBG-left {
-
-                                h4,
-                                span {
-                                    font-size: var(--font-size-sd-md);
-                                    line-height: 28px;
-                                }
-
-                                .cs-proj-left-1 {
-                                    color: var(--color-accent-blue);
-                                }
-
-                                .cs-proj-left-2 {
-                                    opacity: .6;
-                                }
-                            }
-
-                            .casestudy-projectBG-right {
-                                p {
-                                    opacity: .6;
-                                }
-                            }
-                        }
-                    }
-
-                    .casestudy-textbox-prob-solu {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 3em;
-
-                        h3 {
-                            opacity: .6;
-                            font-size: var(--font-size-primary-sm);
-                        }
-                    }
-
-                    .casestudy-textbox,
-                    .casestudy-textbox-prob-solu,
                     .cs-each-step-section-wrapper {
                         width: 85%;
                     }
 
                     .cs-process-box-wrapper,
-                    .casestudy-textbox-prob-solu,
                     .cs-each-step-section-wrapper {
                         padding-top: 8em;
                         padding-bottom: 8em;
@@ -1548,6 +1561,17 @@
         .main-casestudy .casestudy-item-bg {
             .casestudy-container {
                 &-middle {
+                    .casestudy-text-container {
+                        .casestudy-projectBG-left {
+                
+                            .cs-proj-left-1,
+                            span,
+                            h4 {
+                                font-size: var(--font-size-display-title-md);
+                            }
+                        }
+                    }
+
                     .casestudy-step {
                         .cs-each-step-title-wrapping-box {
                             .cs-es-title {
@@ -1580,6 +1604,13 @@
                 }
 
                 &-middle {
+                    .cs-process-box-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1em;
+                        width: 100%;
+                    }
+
                     .casestudy-detail-box {
                         .casestudy-detail-imgbox {
                             video, img {
@@ -1589,8 +1620,34 @@
                             }
                         }
 
-                        .casestudy-textbox {
-                            padding: 8em .5em;
+                        .casestudy-text-container {
+                            padding: 8em 1.8em;
+
+                            .casestudy-textbox {
+                                .casestudy-projectBG {
+                                    .casestudy-projectBG-right-context {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 1em;
+                                    }
+                                }
+
+                                &-prob-solu {
+                                    .casestudy-prob-solu-projectBG {
+                                        ul {
+                                            display: flex;
+                                            flex-direction: column;
+                                            gap: 3em;
+                                        }
+
+                                        li {
+                                            display: flex;
+                                            flex-direction: column;
+                                            gap: 1em;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -1719,7 +1776,7 @@
                     grid-template-columns: repeat(4, 1fr);
                     justify-content: space-between;
                     width: 100%;
-                    gap: .7em;
+                    gap: .5em;
                 }
             }
 
@@ -1776,84 +1833,9 @@
                     }
 
                     .cs-process-box-wrapper {
+                        width: 100%;
                         padding-left: 2.4em;
                         padding-right: 2.4em;
-                    }
-
-                    .casestudy-textbox,
-                    .cs-process-box-wrapper {
-                        width: 100%;
-
-                        .casestudy-projectBG {
-                            display: grid;
-                            grid-template-columns: 2fr 1fr 3fr;
-
-                            .casestudy-projectBG-left {
-                                h4, span {
-                                    font-size: var(--font-size-sd-md);
-                                    line-height: 30px;
-                                }
-
-                                .cs-proj-left-1 {
-                                    color: var(--color-accent-blue);
-                                }
-
-                                .cs-proj-left-2 {
-                                    opacity: .6;
-                                }
-                            }
-
-                            .casestudy-projectBG-right {
-                                display: flex;
-                                flex-direction: column;
-                                row-gap: 2em;
-                                grid-column-start: 3;
-                                opacity: .6;
-
-                                &-context {
-                                    display: flex;
-                                    flex-direction: column;
-                                    row-gap: 1em;
-                                }
-                            }
-                        }
-                    }
-
-                    .casestudy-textbox-prob-solu {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: 2fr 1fr 3fr;
-                        padding: 10em 0;
-
-                        h3 {
-                            opacity: .6;
-                            font-size: var(--font-size-primary-sm);
-                        }
-
-                        .casestudy-projectBG {
-                            grid-column-start: 3;
-                            
-                            ul {
-                                display: flex;
-                                flex-direction: column;
-                                row-gap: 3em;
-                            }
-                    
-                            li {
-                                display: flex;
-                                flex-direction: column;
-                                row-gap: .5em;
-                    
-                                h4 {
-                                    color: var(--color-accent-blue);
-                                    font-size: var(--font-size-primary-sm);
-                                }
-                    
-                                p {
-                                    opacity: .6;
-                                }
-                            }
-                        }
                     }
 
                     .cs-each-step-section-wrapper {
@@ -1866,15 +1848,6 @@
                             .cs-each-step-section-wrapper-textbox {
                                 grid-column-start: 2;
                             }
-                        }
-                    }
-
-                    .casestudy-textbox {
-                        padding: 10em .5em;
-
-                        h3 {
-                            opacity: .6;
-                            font-size: var(--font-size-primary-sm);
                         }
                     }
 
@@ -1966,6 +1939,16 @@
                 row-gap: 2em;
                 width: 100%;
             }
+
+            .cs-process-box-wrapper {
+                .cs-text-wrapping-box-process {
+                    .casestudy-step-box {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: .5em;
+                    }
+                }
+            }
         }
     }
 }
@@ -1975,17 +1958,6 @@
         .casestudy-item-bg {
             .casestudy-container {
                 &-middle {
-                    .casestudy-textbox .casestudy-projectBG,
-                    .casestudy-textbox-prob-solu {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: 2fr 1fr 2fr;
-                    }
-
-                    .casestudy-textbox-prob-solu {
-                        padding: 10em 0;
-                    }
-
                     .cs-each-step-section-wrapper {
                         .cs-each-step-section-box {
                             display: grid;

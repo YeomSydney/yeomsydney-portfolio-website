@@ -274,7 +274,7 @@
             input:not(:placeholder-shown) {
                 opacity: 1;
             }
-            
+
             .search-key {
                 display: flex;
                 flex-direction: row;
@@ -316,8 +316,4 @@
             }
         }
     }
-}
-
-@media only screen and (min-width: 1000px) {
-
 }
