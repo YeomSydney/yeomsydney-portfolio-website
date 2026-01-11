@@ -1,22 +1,3 @@
-// === Toggle ===
-document.querySelectorAll('.casestudy-each-step-details-box').forEach(box => {
-  box.addEventListener('click', () => {
-    box.classList.toggle('active');
-  });
-});
-
-document.querySelectorAll('.cs-imgbox-textbox-span-box-2').forEach(box => {
-  box.addEventListener('click', () => {
-    box.classList.toggle('desc-active');
-  });
-});
-
-document.querySelectorAll('.define-detail-box-each').forEach(box => {
-  box.addEventListener('click', () => {
-    box.classList.toggle('define-active');
-  });
-});
-
 
 // === Set 'Home' Active by Default if None Set ===
 const anyActive = document.querySelector('[data-page].nav-active, [data-page].selected');
@@ -162,15 +143,18 @@ let isSnapping = false;
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting || isSnapping) return;
+      if (!entry.isIntersecting) {
+        entry.target.classList.remove('snapped');
+        return;
+      }
 
       isSnapping = true;
 
       requestAnimationFrame(() => {
-        entry.target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        if (!entry.target.classList.contains('snapped')) {
+          entry.target.classList.add('snapped');
+          entry.target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
 
       // release lock slightly after scroll finishes
@@ -193,6 +177,87 @@ sections.forEach(section => observer.observe(section));
 
 // Open Case Studies & Cursor
 document.addEventListener("DOMContentLoaded", function () {
+
+  /* ================================
+     NAV LOGIC (FINAL)
+  ================================= */
+
+  const navItems = document.querySelectorAll(".nav-menu-each");
+  const contactItem = document.querySelector('[data-page="contact"]');
+
+  let currentPage = "home";
+
+  /* Set page-active state */
+  function setPage(page) {
+    navItems.forEach(item => {
+      item.classList.remove("is-page-active");
+      item.classList.remove("is-active");
+
+      if (item.dataset.page === page) {
+        item.classList.add("is-page-active");
+        item.classList.add("is-active");
+      }
+    });
+
+    currentPage = page;
+  }
+
+  /* Contact open */
+  function openContact() {
+    document.body.classList.add("nav-lock");
+    contactItem.classList.add("is-active");
+  }
+
+  /* Contact close */
+  function closeContact() {
+    document.body.classList.remove("nav-lock");
+    contactItem.classList.remove("is-active");
+
+    // restore page highlight (home/about stays full opacity)
+    navItems.forEach(item => {
+      if (item.dataset.page === currentPage) {
+        item.classList.add("is-active");
+      }
+    });
+  }
+
+  /* Initial page */
+  setPage("home");
+
+  navItems.forEach(item => {
+    item.addEventListener("click", () => {
+      const page = item.dataset.page;
+
+      if (page === "contact") {
+        openContact();
+        return;
+      }
+
+      setPage(page);
+    });
+  });
+
+  /* Expose close hook for modal */
+  window.closeContactNav = closeContact;
+
+  // === Toggle ===
+  document.querySelectorAll('.cs-imgbox-textbox-span-box-2').forEach(box => {
+    box.addEventListener('click', () => {
+      box.classList.toggle('desc-active');
+    });
+  });
+
+  document.querySelectorAll('.define-detail-box-each').forEach(box => {
+    box.addEventListener('click', () => {
+      box.classList.toggle('define-active');
+    });
+  });
+
+  document.querySelectorAll('.casestudy-each-step-details-box').forEach(box => {
+    box.addEventListener('click', () => {
+      box.classList.toggle('active');
+    });
+  });
 
   /* ================================
      1. CASESTUDY INTERACTIONS
@@ -221,6 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!cs) return;
 
       cs.classList.add("page-open");
+      updateCaseStudyUI();
       cs.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
@@ -308,12 +374,6 @@ function updateCaseStudyUI() {
   }
 }
 
-// observe class changes on all case study pages
-caseStudies.forEach(page => {
-  new MutationObserver(updateCaseStudyUI)
-    .observe(page, { attributes: true, attributeFilter: ['class'] });
-});
-
 // initial state
 updateCaseStudyUI();
 
@@ -334,13 +394,25 @@ function closeCaseStudy(page) {
 
 // Example: bind close button
 const closeBtn = document.querySelector('.close-page-btn');
-closeBtn.addEventListener('click', () => {
-  const activePage = document.querySelector('.casestudy-item.page-open');
-  closeCaseStudy(activePage);
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    const activePage = document.querySelector('.casestudy-item.page-open');
+    closeCaseStudy(activePage);
+  });
+}
+
+document.querySelector('[data-open="contact"]')?.addEventListener('click', () => {
+  document.getElementById('nav-toggle3').checked = true;
+});
+
+document.querySelector('.contact-close-btn')?.addEventListener('click', () => {
+  contactBtn.classList.remove('is-active');
+  if (lastActivePage) lastActivePage.classList.add('is-active');
 });
 
 // Close all project views when nav toggles are clicked
 ['nav-toggle1', 'nav-toggle2', 'nav-toggle4'].forEach(id => {
+
   const navToggle = document.getElementById(id);
   if (navToggle) {
     navToggle.addEventListener('click', () => {

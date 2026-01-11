@@ -150,23 +150,30 @@
             .casestudy-container-right {
                 display: flex;
                 flex-direction: column;
-                row-gap: 4em;
+                gap: 4em;
 
                 .casestudy-details,
                 .casestudy-details-3c {
                     .casestudy-eachDetail {
                         display: flex;
                         flex-direction: column;
-                        row-gap: .5em;
+                        gap: .5em;
 
                         h3 {
                             font-size: var(--font-size-xsm);
                             opacity: .6;
+                            text-transform: uppercase;
                         }
 
                         h4, ul li {
                             font-size: var(--font-size-primary-sm);
                             line-height: 17px;
+                        }
+
+                        p {
+                            font-size: var(--font-size-primary);
+                            line-height: 20px;
+                            opacity: .6;
                         }
 
                         .tagline {
@@ -177,7 +184,7 @@
                         ul {
                             display: flex;
                             flex-direction: column;
-                            row-gap: .3em;
+                            gap: .2em;
                         }
                     }
                 }
@@ -204,10 +211,9 @@
 
                     .casestudy-each-step {
                         background-color: var(--color-glow-white);
-                        border: 1px solid var(--bg-lightgrey01);
+                        border: 1px solid var(--bg-lightgrey02);
                         border-radius: 1em;
-                        padding: 2em 1.4em !important;
-                        filter: drop-shadow(0 20px 10px #11111115);
+                        padding: 1.6em 1.6em !important;
                     }
                 }
 
@@ -438,7 +444,7 @@
                                             display: flex;
                                             flex-direction: column;
                                             justify-content: flex-start;
-                                            row-gap: .6em;
+                                            row-gap: .5em;
 
                                             .cs-es-subtitle {
                                                 opacity: .6;
@@ -1027,8 +1033,9 @@
                                 gap: 2em;
 
                                 p {
-                                    font-size: var(--font-size-primary-sm);
-                                    line-height: 18px;
+                                    font-size: var(--font-size-primary);
+                                    line-height: 20px;
+                                    opacity: .6;
                                 }
                             }
                         }
@@ -1061,8 +1068,9 @@
                                         gap: 2em;
 
                                         p {
-                                            font-size: var(--font-size-primary-sm);
-                                            line-height: 18px;
+                                            font-size: var(--font-size-primary);
+                                            line-height: 20px;
+                                            opacity: .6;
                                         }
                                     }
                                 }
@@ -1167,7 +1175,7 @@
                             .casestudy-details-3c {
                                 display: grid;
                                 grid-template-columns: repeat(1, 1fr);
-                                gap: 2em;
+                                gap: .5em;
                             }
                         }
                     }
@@ -1456,7 +1464,7 @@
                             display: grid;
                             grid-template-columns: repeat(3, 1fr);
                             justify-content: space-between !important;
-                            column-gap: 3em;
+                            gap: .5em;
                         }
                     }
                 }
@@ -1804,14 +1812,15 @@
                         .casestudy-container-right-3c {
                             display: flex;
                             flex-direction: column;
-                            row-gap: 2em;
+                            row-gap: .5em;
+                            width: 100%;
                         }
 
                         .casestudy-details-3c {
                             display: grid;
                             grid-template-columns: repeat(3, 1fr);
                             justify-content: space-between;
-                            column-gap: 3em;
+                            gap: .5em;
                             width: 100%;
                         }
 
@@ -1820,7 +1829,7 @@
                             .casestudy-eachDetail {
                                 display: flex;
                                 flex-direction: column;
-                                row-gap: 0.4em;
+                                gap: .5em;
                             }
                         }
                     }

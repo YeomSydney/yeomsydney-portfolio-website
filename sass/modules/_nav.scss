@@ -75,48 +75,62 @@
         .nav-center {
             width: 100%;
             display: flex;
-            flex-direction: row;
             justify-content: center;
             gap: .5em;
-            align-items: center;
             z-index: var(--z-nav-menu) !important;
 
-            .nav-block-text-left-main,
             .nav-block-text-bottom-main {
                 display: flex;
-                flex-direction: row;
                 justify-content: center;
                 position: relative;
-
                 border-radius: 10em;
                 padding: 4px 10px;
                 overflow: hidden;
                 align-items: center;
                 box-shadow: 0px 8px 10px var(--color-text-primary-bk-light);
-                transition: background-color .2s, color .2s;
 
                 &::before {
                     content: "";
                     position: absolute;
-                    z-index: var(--z-negative);
                     inset: 0;
+                    z-index: var(--z-negative);
                     backdrop-filter: blur(8px);
                     background-color: var(--color-text-primary-wh-dark);
                     border: 1px solid var(--bg-lightgrey01);
                     border-radius: 3em;
-                    filter: drop-shadow(0 12px 10px #11111115);
                 }
 
                 .nav-menu-each {
-                    label, a {
+                    position: relative;
+
+                    button,
+                    a {
+                        background: none;
+                        border: none;
+                        padding: 0;
+                        font: inherit;
+                        cursor: pointer;
+
                         .nav-menu {
-                        font-size: var(--font-size-primary-sm);
-                        opacity: .6;
-                        line-height: 1;
+                            font-size: var(--font-size-primary-sm);
+                            line-height: 1;
+                            opacity: 0.6; /* default */
+                            transition: opacity 0.2s ease;
                         }
                     }
 
-                    &:hover span {
+                    /* Hover effect */
+                    &:hover .nav-menu {
+                        opacity: 1;
+                    }
+
+                    /* Page-active (home/about) stays highlighted always */
+                    &.is-page-active .nav-menu {
+                        opacity: 1;
+                    }
+
+                    /* Contact modal active only while open */
+                    &.is-active.is-contact .nav-menu {
                         opacity: 1;
                     }
                 }
@@ -124,14 +138,10 @@
                 li {
                     padding: 8px 13px;
 
-                a,
-                span {
-                    color: var(--bg-dk);
-                }
-                }
-
-                .nav-menu-each.selected span {
-                    opacity: 1;
+                    a,
+                    span {
+                        color: var(--bg-dk);
+                    }
                 }
             }
         }
