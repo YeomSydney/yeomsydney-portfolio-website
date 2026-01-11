@@ -550,8 +550,8 @@ window.addEventListener('resize', fitTextToPaddingBox);
 
 // Real time & Weather
 document.addEventListener("DOMContentLoaded", () => {
-  const timeEl = document.getElementById("footer-time");
-  const weatherEl = document.getElementById("footer-weather");
+  const timeEls = document.querySelectorAll(".footer-time");
+  const weatherEls = document.querySelectorAll(".footer-weather");
 
   // ---------- TIME ----------
   function updateTime() {
@@ -561,14 +561,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const minutes = now.getMinutes().toString().padStart(2, "0");
     const ampm = hours >= 12 ? "PM" : "AM";
 
-    hours = hours % 12;
-    hours = hours ? hours : 12;
+    hours = hours % 12 || 12;
 
     const utcOffset = now.getTimezoneOffset() / -60;
     const utcSign = utcOffset >= 0 ? "+" : "-";
     const utcString = `UTC${utcSign}${Math.abs(utcOffset)}`;
 
-    timeEl.textContent = `${hours}:${minutes} ${ampm} (${utcString})`;
+    const text = `${hours}:${minutes} ${ampm} (${utcString})`;
+
+    timeEls.forEach(el => {
+      el.textContent = text;
+    });
   }
 
   updateTime();
@@ -609,7 +612,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const condition = data.weather[0].main;
       const emoji = getWeatherEmoji(condition);
 
-      weatherEl.textContent = `${emoji} ${temp}°C · Toronto`;
+      weatherEls.forEach(el => {
+        el.textContent = `${emoji} ${temp}°C · Toronto`;
+      });
     } catch (err) {
       console.error(err);
       weatherEl.textContent = 'Weather unavailable';
