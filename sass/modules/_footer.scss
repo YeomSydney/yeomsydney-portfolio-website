@@ -19,10 +19,18 @@
 
         .footer-credit-top {
             &-line {
+                display: flex;
+                flex-direction: column;
+                gap: .5em;
+
                 h3 {
-                    font-size: var(--font-size-primary-sm);
+                    font-size: var(--font-size-xsm);
                     opacity: .6;
                     text-transform: uppercase;
+                }
+
+                h4 {
+                    font-size: var(--font-size-sd-lg);
                 }
             }
 
@@ -187,7 +195,7 @@
 
 @media only screen and (min-width: 744px) {
     .footer-container {
-        padding: 5em 1.8em 2.4em 1.8em;
+        padding: 3em 1.8em 2.4em 1.8em;
 
         .footer-container-misc {
             display: flex;
