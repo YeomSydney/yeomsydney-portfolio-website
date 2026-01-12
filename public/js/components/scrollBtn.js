@@ -4,7 +4,6 @@ document.body.addEventListener("click", (e) => {
 
     e.preventDefault();
 
-    // If you're using Lenis/Locomotive etc., call their API instead
     if (window.lenis?.scrollTo) {
         window.lenis.scrollTo(0, { duration: 1.4, easing: t => 1 - Math.pow(1 - t, 3) });
         return;

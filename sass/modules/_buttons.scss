@@ -156,6 +156,29 @@
     }
 }
 
+.gotop-btn {
+    width: 100%;
+    align-items: center;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+
+    button {
+        text-align: center;
+        border-radius: 3em;
+        background-color: var(--color-text-primary-wh-dark);
+        border: 1px solid var(--bg-lightgrey01);
+        font-size: var(--font-size-primary-sm);
+        padding: 8px 13px;
+        box-shadow: 0px 8px 10px var(--color-text-primary-bk-light);
+        opacity: .6;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
 @media only screen and (max-width: 743px) {
     .hero-section {
         .hero-middle {

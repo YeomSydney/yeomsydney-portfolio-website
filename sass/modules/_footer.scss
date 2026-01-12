@@ -145,8 +145,11 @@
 
 @media only screen and (max-width: 743px) {
     .footer-container {
-        padding: 5em 1.8em 2.4em 1.8em;
+        padding: 6em 1.8em 2.4em 1.8em;
         height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         .footer-container-wrapper {
             width: 100%;

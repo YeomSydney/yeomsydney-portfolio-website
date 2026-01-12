@@ -74,17 +74,20 @@
 
         .nav-center {
             width: 100%;
+            z-index: var(--z-nav-menu) !important;
             display: flex;
+            flex-direction: row;
             justify-content: center;
             gap: .5em;
-            z-index: var(--z-nav-menu) !important;
+            transition: all .3s ease;
 
-            .nav-block-text-bottom-main {
+            ul {
                 display: flex;
                 justify-content: center;
                 position: relative;
-                border-radius: 10em;
-                padding: 4px 10px;
+                gap: .2em;
+                border-radius: 3em;
+                padding: 4px;
                 overflow: hidden;
                 align-items: center;
                 box-shadow: 0px 8px 10px var(--color-text-primary-bk-light);
@@ -102,45 +105,67 @@
 
                 .nav-menu-each {
                     position: relative;
-
-                    button,
-                    a {
+                    padding: 8px;
+                    border-radius: 3em;
+                    transition:
+                        background-color 0.3s ease,
+                        padding 0.3s ease,
+                        border-radius 0.3s ease;
+                
+                    button {
+                        display: flex;
+                        flex-direction: row;
+                        gap: .3em;
+                        justify-content: center;
+                        align-items: center;
+                        
                         background: none;
                         border: none;
                         padding: 0;
                         font: inherit;
                         cursor: pointer;
 
+                        i {
+                            font-size: var(--font-size-primary);
+                            opacity: 0.6;
+                            padding: 0 0 1.5px 0;
+                        }
+
                         .nav-menu {
+                            opacity: 0;
+                            visibility: hidden;
+                            transform: translateX(-4px);
+                            max-width: 0px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            transition:
+                                opacity 0.25s ease,
+                                transform 0.25s ease,
+                                max-width 0.35s ease;
                             font-size: var(--font-size-primary-sm);
-                            line-height: 1;
-                            opacity: 0.6; /* default */
-                            transition: opacity 0.2s ease;
+                            color: var(--bg-wh);
                         }
                     }
+                    
+                    &:hover,
+                    &.is-page-active,
+                    &.is-active.is-contact .nav-link {
+                        background-color: var(--color-text-primary-bk);
+                        padding: 8px 16px;
+                        box-shadow: 0px 2px 4px var(--color-text-primary-bk-border-dark);
 
-                    /* Hover effect */
-                    &:hover .nav-menu {
-                        opacity: 1;
-                    }
 
-                    /* Page-active (home/about) stays highlighted always */
-                    &.is-page-active .nav-menu {
-                        opacity: 1;
-                    }
+                        .nav-menu {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateX(0);
+                            max-width: 120px;
+                        }
 
-                    /* Contact modal active only while open */
-                    &.is-active.is-contact .nav-menu {
-                        opacity: 1;
-                    }
-                }
-
-                li {
-                    padding: 8px 13px;
-
-                    a,
-                    span {
-                        color: var(--bg-dk);
+                        i {
+                            opacity: 1;
+                            color: var(--bg-wh);
+                        }
                     }
                 }
             }
@@ -151,13 +176,17 @@
 @media only screen and (max-width: 743px) {
     #main-nav-pc {
         .nav-top-pc {
-            padding: .8em 1.8em;
+            padding: 1.2em 1.8em;
 
             .main-nav-pc-top {
                 display: flex;
                 flex-direction: row;
                 gap: .8em;
                 align-items: flex-start;
+
+                &.main-nav-left {
+                    display: none;
+                }
 
                 &.main-nav-logo {
                     label h3 {
@@ -316,12 +345,12 @@
     }
 }
 
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 1199px) {
     #main-nav-pc {
         .nav-top-pc {
             .main-nav-pc-top {
                 &.main-nav-call h5 span {
-                    display: none;
+                    display: none !important;
                 }
             }
         }

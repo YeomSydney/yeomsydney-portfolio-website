@@ -4,10 +4,6 @@
     height: 100%;
     align-items: center;
 
-    .hidden-line-1200 {
-        display: none;
-    }
-
     .casestudy-container-wrapping-box {
         position: fixed;
         top: 0;
@@ -630,198 +626,6 @@
 
                     .cs-img-design-box-top {
                         h3 { opacity: .6; }
-                    }
-
-                    .cs-imgbox {
-                        .cs-imgbox-textbox {
-                            width: 100%;
-                            display: none;
-                            flex-direction: column;
-                            row-gap: 3em;
-
-                            .cs-imgbox-textbox-span-box-container {
-                                display: grid;
-                                grid-template-columns: repeat(1, 1fr);
-                                gap: 3em;
-                            }
-
-                            .cs-imgbox-textbox-span-box-1 {
-                                display: flex;
-                                flex-direction: column;
-                                row-gap: .5em;
-
-                                span, li {
-                                    line-height: 20px;
-                                }
-
-                                .cs-imgbox-textbox-span-box-2-subtitle {
-                                    text-transform: uppercase;
-                                    font-size: var(--font-size-xsm);
-                                    opacity: .6;
-                                }
-
-                                &-title {
-                                    text-transform: uppercase;
-                                    opacity: .6;
-                                    font-size: var(--font-size-xsm);
-                                }
-
-                                &-sizing {
-                                    display: flex;
-                                    flex-direction: row;
-                                    column-gap: 1.4em;
-                                    align-items: baseline;
-                                    padding: 4em 0;
-                                }
-                            }
-
-                            .cs-imgbox-textbox-span-box-3 {
-                                display: flex;
-                                flex-direction: column;
-                                gap: 1em;
-
-                                ul {
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: .5em;
-                                    opacity: .6;
-                                }
-                            }
-
-                            .cs-imgbox-textbox-span-box-1-container {
-                                display: flex;
-                                flex-direction: column;
-                                row-gap: 3em;
-
-                                .cs-imgbox-textbox-span-box-2-title-noInteraction {
-                                    display: flex;
-                                    flex-direction: row;
-                                    justify-content: space-between;
-
-                                    h4 {
-                                        color: var(--color-accent-blue);
-                                        font-size: var(--font-size-primary-sm);
-                                        padding: auto 0;
-                                    }
-                                }
-
-                                .cs-imgbox-textbox-span-box-2-noInteraction-container {
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 1em;
-                                }
-
-                                .cs-imgbox-textbox-span-box-2-noInteraction {
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: .4em;
-                                    padding-bottom: 1em;
-                                    border-bottom: 1px solid var(--line-black);
-
-                                    h3, h4 {
-                                        font-size: var(--font-size-primary-sm);
-                                    }
-
-                                    h3 {
-                                        opacity: .6;
-                                    }
-                                }
-
-                                .cs-imgbox-textbox-desc {
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 1.5em;
-
-                                    .cs-imgbox-textbox-each {
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: .5em;
-
-                                        h5 {
-                                            opacity: .6;
-                                        }
-                                    }
-                                }
-                            }
-
-                            .cs-imgbox-textbox-span-box-1-container,
-                            .cs-imgbox-textbox-span-box-2-container {
-                                display: flex;
-                                flex-direction: column;
-                                
-                                .cs-imgbox-textbox-span-box-2 {
-                                    border-top: 1px solid #302d2520;
-                                    padding-top: 1em;
-                                    padding-bottom: 1em;
-
-                                    .cs-imgbox-textbox-span-box-2-title {
-                                        display: flex;
-                                        flex-direction: row;
-                                        justify-content: space-between;
-
-                                        i {
-                                            transform: rotateZ(0);
-                                            transition: all 0.4s ease;
-                                        }
-
-                                        h4, i {
-                                            font-size: var(--font-size-primary-sm);
-                                        }
-                                    }
-
-                                    &:hover {
-                                        h4 {
-                                            opacity: .6;
-                                        }
-
-                                        i {
-                                            transform: rotateZ(90deg);
-                                        }
-                                    }
-
-                                    .desc-info {
-                                        font-size: var(--font-size-primary-sm);
-                                        line-height: 18px;
-                                        max-height: 0;
-                                        opacity: 0;
-                                        overflow: hidden;
-                                        padding: 0;
-                                        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-                                    }
-
-                                    &.desc-active {
-                                        .cs-imgbox-textbox-span-box-2-title {
-                                            h4 {
-                                                opacity: .6;
-                                            }
-
-                                            i {
-                                                transform: rotateZ(90deg);
-                                            }
-                                        }
-
-                                        .desc-info {
-                                            opacity: 1;
-                                            max-height: 500px;
-                                            height: 100%;
-                                            padding-top: 1em;
-                                        }
-                                    }
-
-                                    .cs-imgbox-textbox-div {
-                                        display: flex;
-                                        flex-direction: column;
-                                        row-gap: 3em;
-
-                                        div {
-                                            display: flex;
-                                            flex-direction: column;
-                                            row-gap: 1em;
-                                        }
-                                    }
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -1541,10 +1345,6 @@
     .casestudy-section {
         .casestudy-container {
             &-middle {
-                .hidden-line-1200 {
-                    display: none;
-                }
-
                 .cs-img-wrapping-box {
                     display: flex;
                     flex-direction: column;
@@ -1642,10 +1442,6 @@
             div.casestudy-container-middle .casestudy-detail-box > div:not(.cs-process-box-wrapper) {
                 padding-left: 2.4em;
                 padding-right: 2.4em;
-            }
-
-            .hidden-line-1200 {
-                display: none;
             }
 
             .casestudy-step {
