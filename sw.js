@@ -1,37 +1,38 @@
-const IMAGE_CACHE_NAME = "yeomsydney-images-v1";
+const CACHE_NAME = "yeomsydney-v2"; // bump version
+const IMAGE_CACHE_NAME = "yeomsydney-images-v2"; // bump version
+const ASSETS = [
+    "/",
+    "/index.html",
+    "/public/css/main.css",
+    "/public/js/style.js",
+    "/public/js/components/url.js",
+    "/public/js/components/footer.js",
+    "/public/js/components/search.js",
+    "/favicon.ico",
+    "/favicon-16x16.png",
+    "/favicon-32x32.png",
+    "/favicon-light-ui.svg",
+    "/favicon-dark-ui.svg",
+    "/apple-touch-icon.png",
+    "/android-chrome-192x192.png",
+    "/android-chrome-512x512.png"
+];
 
-/* Install */
-self.addEventListener("install", () => {
+self.addEventListener("install", (e) => {
+    e.waitUntil(
+        caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+    );
     self.skipWaiting();
 });
 
-/* Activate */
-self.addEventListener("activate", () => {
-    self.clients.claim();
-});
-
-/* Fetch */
-self.addEventListener("fetch", (event) => {
-    // Only handle images
-    if (event.request.destination !== "image") return;
-
-    event.respondWith(
-        caches.open(IMAGE_CACHE_NAME).then((cache) =>
-            cache.match(event.request).then((cachedResponse) => {
-                if (cachedResponse) {
-                    return cachedResponse;
-                }
-
-                return fetch(event.request).then((networkResponse) => {
-                    // Safety check
-                    if (!networkResponse || networkResponse.status !== 200) {
-                        return networkResponse;
-                    }
-
-                    cache.put(event.request, networkResponse.clone());
-                    return networkResponse;
-                });
-            })
+self.addEventListener("activate", (e) => {
+    e.waitUntil(
+        caches.keys().then(keys =>
+            Promise.all(
+                keys.filter(key => key !== CACHE_NAME && key !== IMAGE_CACHE_NAME)
+                    .map(key => caches.delete(key))
+            )
         )
     );
+    self.clients.claim();
 });

@@ -1,4 +1,3 @@
-
 // === Set 'Home' Active by Default if None Set ===
 const anyActive = document.querySelector('[data-page].nav-active, [data-page].selected');
 if (!anyActive) {
@@ -7,10 +6,7 @@ if (!anyActive) {
   );
 }
 
-
-
-
-// Toggle View Buttons
+// === Toggle View Buttons ===
 const worksBox = document.querySelector('.hero-extra-works-box');
 const viewButtons = document.querySelectorAll('.works-view-toggle button');
 
@@ -22,12 +18,12 @@ viewButtons.forEach((btn) => {
       // 1. Reset buttons
       viewButtons.forEach(b => {
         b.classList.remove('active');
-        b.classList.remove('label-open'); // 👈 key
+        b.classList.remove('label-open');
       });
 
       // 2. Activate clicked button
       btn.classList.add('active');
-      btn.classList.add('label-open'); // 👈 only THIS keeps space
+      btn.classList.add('label-open');
 
       // 3. Toggle view
       const view = btn.dataset.view;
@@ -39,57 +35,7 @@ viewButtons.forEach((btn) => {
   });
 });
 
-
-
-// Back to top, 1000ms
-document.body.addEventListener("click", (e) => {
-  const btn = e.target.closest(".gotop-btn");
-  if (!btn) return;
-
-  e.preventDefault();
-
-  // If you're using Lenis/Locomotive etc., call their API instead
-  if (window.lenis?.scrollTo) {
-    window.lenis.scrollTo(0, { duration: 1.4, easing: t => 1 - Math.pow(1 - t, 3) });
-    return;
-  }
-
-  const scroller = getScrollableAncestor(btn) || document.scrollingElement || document.documentElement;
-  animateToTop(scroller, 1000, easeOutCubic);
-});
-
-function getScrollableAncestor(el) {
-  let p = el.parentElement;
-  while (p) {
-    const s = getComputedStyle(p);
-    const canScrollY = (s.overflowY === "auto" || s.overflowY === "scroll") && p.scrollHeight > p.clientHeight;
-    if (canScrollY) return p;
-    p = p.parentElement;
-  }
-  return null;
-}
-
-function animateToTop(container, duration = 1000, easing = t => t) {
-  const start = container.scrollTop;
-  const startTime = performance.now();
-
-  function frame(now) {
-    const t = Math.min((now - startTime) / duration, 1);
-    const eased = easing(t);
-    container.scrollTop = start * (1 - eased);
-    if (t < 1) requestAnimationFrame(frame);
-  }
-
-  requestAnimationFrame(frame);
-}
-
-function easeOutCubic(t) {
-  return 1 - Math.pow(1 - t, 3);
-}
-
-
-
-
+// === Casestudy BG ===
 document.querySelectorAll('.casestudy-each-list').forEach(item => {
   const img = item.querySelector('img');
   if (!img) return;
@@ -97,10 +43,7 @@ document.querySelectorAll('.casestudy-each-list').forEach(item => {
   item.style.setProperty('--bg-image', `url(${img.src})`);
 });
 
-
-
-
-// ====== Hovering Effect (Sliding in + out) ======
+// === Hovering Effect (Sliding in + out) ===
 document.querySelectorAll('.allProjectThumbnails').forEach(box => {
   let isAnimating = false;
 
@@ -133,13 +76,9 @@ document.querySelectorAll('.allProjectThumbnails').forEach(box => {
   });
 });
 
-
-
-
+// === Snapping Effect ===
 const sections = document.querySelectorAll('.work-gallery-each-box .casestudy-each-list');
-
 let isSnapping = false;
-
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
@@ -174,14 +113,10 @@ sections.forEach(section => observer.observe(section));
 
 
 
-
-// Open Case Studies & Cursor
+// === Open Case Studies & Cursor ===
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ================================
-     NAV LOGIC (FINAL)
-  ================================= */
-
+  /* === NAV LOGIC (FINAL) === */
   const navItems = document.querySelectorAll(".nav-menu-each");
   const contactItem = document.querySelector('[data-page="contact"]');
 
@@ -260,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* ================================
-     1. CASESTUDY INTERACTIONS
+    1. CASESTUDY INTERACTIONS
   ================================= */
 
   const casestudyButtons = document.querySelectorAll(".casestudy-each-list");
@@ -292,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* ================================
-     2. CUSTOM CURSOR
+    2. CUSTOM CURSOR
   ================================= */
 
   const mouseCursor = document.getElementById("mouse_cursor");
@@ -350,7 +285,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   animateCursor();
-
 });
 
 
@@ -428,7 +362,7 @@ document.querySelector('.contact-close-btn')?.addEventListener('click', () => {
 
 
 
-// Open Individual Pages
+// === Open Individual Pages ===
 function openPage(pageClass) {
   // Close any open CaseStudy pages first
   document.querySelectorAll('.casestudy-item.page-open').forEach(el => {
@@ -447,20 +381,19 @@ function openPage(pageClass) {
   window.scrollTo({ top: 0, behavior: 'auto' });
 }
 
-// Bind nav toggles
+// === Bind nav toggles ===
 document.querySelectorAll("#nav-toggle1, #nav-toggle2").forEach(toggle => {
   toggle.addEventListener("click", (e) => {
     const targetPage = toggle.id === "nav-toggle1" ? "#page-about" : "#page-projects";
     openPage(targetPage);
 
-    // Set input checked state
-    toggle.checked = true;
+    toggle.checked = true; // Set input checked state
 
-    // Close mobile nav if open
-    document.querySelector('.mobileNavBox')?.classList.remove('is-active');
+    document.querySelector('.mobileNavBox')?.classList.remove('is-active'); // Close mobile nav if open
   });
 });
 
+// === Service Worker ===
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/yeomsydney-portfolio-website/sw.js");
+  navigator.serviceWorker.register("/sw.js");
 }

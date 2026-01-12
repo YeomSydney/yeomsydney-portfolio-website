@@ -1,26 +1,49 @@
 {
-    "name": "Sydney Yeom — Branding Designer",
-    "short_name": "Sydney Yeom",
-    "description": "Branding designer focused on typography, systems, and thoughtful digital experiences.",
+    "name": "Sydney Yeom — Portfolio",
+    "short_name": "YeomSydney",
+    "description": "Portfolio of Sydney Yeom, a branding designer focused on typography, systems, and thoughtful digital experiences.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#FCFCFC",
+    "background_color": "#fcfcfc",
     "theme_color": "#000000",
+    "orientation": "portrait",
     "icons": [
+        {
+            "src": "/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
         {
             "src": "/apple-touch-icon.png",
             "sizes": "180x180",
             "type": "image/png"
         },
         {
-            "src": "/icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png"
+            "src": "/favicon-light-ui.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "maskable any"
         },
         {
-            "src": "/icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png"
+            "src": "/favicon-dark-ui.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "maskable any"
         }
     ]
 }

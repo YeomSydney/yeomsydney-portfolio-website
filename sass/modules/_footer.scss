@@ -31,6 +31,7 @@
 
                 h4 {
                     font-size: var(--font-size-sd-lg);
+                    white-space: nowrap;
                 }
             }
 
@@ -258,9 +259,10 @@
         .footer-container-wrapper {
             .footer-credit-top {
                 display: grid;
-                grid-template-columns: 1fr 1fr 2fr;
+                grid-template-columns: 2.2fr auto 450px;
                 justify-content: space-between;
                 width: 100%;
+                gap: 2em;
 
                 &-connect {
                     grid-column-start: 3;
@@ -279,9 +281,10 @@
         .footer-container-wrapper {
             .footer-credit-top {
                 display: grid;
-                grid-template-columns: 3fr 1fr 2fr;
+                grid-template-columns: 2.2fr 4fr 550px !important;
                 justify-content: space-between;
                 width: 100%;
+                gap: 2em;
 
                 &-connect {
                     grid-column-start: 3;

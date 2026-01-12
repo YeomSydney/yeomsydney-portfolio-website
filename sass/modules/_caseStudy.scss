@@ -101,19 +101,6 @@
     overflow: scroll;
 
     .casestudy-container {
-        .emphasis {
-            background-color: var(--color-accent-red-bg) !important;
-            color: var(--color-accent-red) !important;
-        }
-
-        .emphasis-text {
-            color: var(--color-accent-red) !important;
-        }
-
-        .print-item-border {
-            border: 1px solid var(--color-accent-red) !important;
-        }
-
         .casestudy-container-top {
             .casestudy-container-left {
                 display: flex;
@@ -368,38 +355,6 @@
                     }
                 }
 
-                .casestudy-table-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2em;
-
-                    .casestudy-table-wrapper-title {
-                        display: grid;
-                        grid-template-columns: 1fr 2fr 1fr;
-                        gap: 1em;
-
-                        h3 {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            align-items: center;
-                            vertical-align: middle;
-                            column-gap: .4em;
-                            grid-column-start: 2;
-                        }
-
-                        span {
-                            display: grid;
-                            grid-column-start: 2;
-                            font-size: var(--font-size-sd);
-                        }
-                    }
-                    
-                    .casestudy-table-wrapper-content {
-                        width: 100%;
-                    }
-                }
-
                 .cs-process-box-wrapper {
                     display: flex;
                     flex-direction: column;
@@ -546,7 +501,7 @@
 
                 .cs-img-wrapping-box-container {
                     width: 100%;
-                    padding: 7em 0em;
+                    padding: 10em 0em;
 
                     .cs-img-wb-first {
                         width: 100%;
@@ -632,40 +587,38 @@
                                         align-items: baseline;
                                         width: 100%;
                                     }
-    
-                                    .print-sizing {
-                                        width: 100%;
-                                        display: flex;
-                                        flex-direction: column;
-                                        row-gap: .8em !important;
-                                        
-                                        .print-sizing-box-model {
-                                            width: 8.5em;
-                                            height: 11em;
-                                            border: 1px solid #302d2550 !important;
-                                            background-color: #302d2505 !important;
-                                            border-radius: 2px;
-                                            opacity: .5 !important;
-                                        }
-    
-                                        .item-03-print-sizing-box {
-                                            width: 3.9em;
-                                            height: 8.3em;
-                                            border-radius: 2px;
-                                        }
+                                }
+                            }
+                        }
+                    }
 
-                                        .print-sizing-text {
-                                            width: 100%;
-                                            display: flex;
-                                            flex-direction: column;
-                                            row-gap: .3em;
-                                            white-space: nowrap !important;
+                    .cs-img-wrapping-box-section-divider-wb-container {
+                        .cs-img-supporting-text {
+                            h3 {
+                                text-transform: uppercase;
+                            }
 
-                                            p {
-                                                white-space: nowrap !important;
-                                            }
-                                        }
-                                    }
+                            .cs-img-supporting-text-each-main {
+                                display: flex;
+                                flex-direction: column;
+                                grid-column-start: 3;
+                                gap: 2em;
+
+                                h4, span {
+                                    font-size: var(--font-size-sd-lg);
+                                    line-height: 38px;
+                                }
+
+                                p {
+                                    font-size: var(--font-size-primary);
+                                    line-height: 20px;
+                                    opacity: .6;
+                                }
+
+                                ul {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 1em;
                                 }
                             }
                         }
@@ -732,41 +685,6 @@
                                     flex-direction: column;
                                     gap: .5em;
                                     opacity: .6;
-                                }
-                            }
-
-                            .print-sizing {
-                                display: flex;
-                                flex-direction: column;
-                                row-gap: .8em !important;
-
-                                .print-sizing-box-model {
-                                    width: 8.5em;
-                                    height: 11em;
-                                    border: 1px solid #302d2550 !important;
-                                    background-color: #302d2505 !important;
-                                }
-
-                                .item-03-print-sizing-box {
-                                    width: 3.9em;
-                                    height: 8.3em;
-                                    border: 1px solid #302d2550;
-                                    border-radius: 2px;
-                                    white-space: nowrap;
-                                }
-
-                                .item-03-print-sizing-4by9 {
-                                    width: 4em;
-                                    height: 9em;
-                                    border: 1px solid #302d2550;
-                                    border-top-left-radius: 50px;
-                                    border-top-right-radius: 50px;
-                                    border-bottom-left-radius: 2px;
-                                    border-bottom-left-radius: 2px;
-                                }
-
-                                span {
-                                    font-size: var(--font-size-xsm);
                                 }
                             }
 
@@ -901,52 +819,6 @@
                                             row-gap: 1em;
                                         }
                                     }
-
-                                    .print-sizing {
-                                        display: flex;
-                                        flex-direction: column;
-                                        
-                                        .print-sizing-box-model {
-                                            width: 8.5em;
-                                            height: 11em;
-                                            border: 1px solid #302d2550;
-                                            border-radius: 2px;
-                                        }
-
-                                        .item-03-print-sizing-6by9 {
-                                            width: 6em;
-                                            height: 9em;
-                                            border: 1px solid #302d2550;
-                                            border-radius: 2px;
-                                        }
-
-                                        .item-03-print-sizing-8by1025 {
-                                            width: 8em;
-                                            height: 10.25em;
-                                            border: 1px solid #302d2550;
-                                            border-radius: 2px;
-                                        }
-
-                                        .print-sizing-text {
-                                            display: flex;
-                                            flex-direction: column;
-                                            white-space: nowrap;
-                                        }
-                                    }
-                                }
-                            }
-
-                            .print-dimension {
-                                display: flex;
-                                flex-direction: column;
-                                row-gap: .5em;
-
-                                .print-dimension-container {
-                                    display: flex;
-                                    flex-direction: row;
-                                    align-items: baseline;
-                                    column-gap: 1em;
-                                    padding: 1em 0;
                                 }
                             }
                         }
@@ -1012,7 +884,7 @@
                             grid-template-columns: 2fr 1fr 1fr;
 
                             .cs-proj-left-1, span, h4 {
-                                font-weight: 200;
+                                // text-transform: uppercase;
                             }
 
                             i {
@@ -1175,7 +1047,7 @@
                             .casestudy-details-3c {
                                 display: grid;
                                 grid-template-columns: repeat(1, 1fr);
-                                gap: .5em;
+                                gap: 2em;
                             }
                         }
                     }
@@ -1403,6 +1275,10 @@
                                         height: auto;
                                         gap: .5em;
                                     }
+
+                                    .cs-img-supporting-text-each {
+                                        padding: 5em 0;
+                                    }
                                 }
                             }
                         }
@@ -1455,7 +1331,7 @@
                         .casestudy-container-right-3c {
                             display: flex;
                             flex-direction: column;
-                            row-gap: 2em;
+                            gap: 2em;
                             width: 100%;
                         }
 
@@ -1571,11 +1447,8 @@
                 &-middle {
                     .casestudy-text-container {
                         .casestudy-projectBG-left {
-                
-                            .cs-proj-left-1,
-                            span,
-                            h4 {
-                                font-size: var(--font-size-display-title-md);
+                            .cs-proj-left-1, span, h4 {
+                                font-size: var(--font-size-display-title-sm);
                             }
                         }
                     }
@@ -1723,14 +1596,13 @@
 
                         .cs-img-wrapping-box-section-divider-wb-container {
                             .cs-img-supporting-text {
-                                padding: 3em 0;
+                                padding: 5em 0;
 
                                 &-each {
                                     display: grid;
-                                    grid-template-columns: auto 1fr 1fr 1fr;
+                                    grid-template-columns: 1fr 1fr 2.5fr 1.5fr;
                                     width: 100%;
                                     height: auto;
-                                    gap: 1em;
                                 }
                             }
                         }
@@ -1812,7 +1684,7 @@
                         .casestudy-container-right-3c {
                             display: flex;
                             flex-direction: column;
-                            row-gap: .5em;
+                            gap: 2em;
                             width: 100%;
                         }
 
