@@ -176,18 +176,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.closeContactNav = closeContact;
 
   // === Toggle ===
-  document.querySelectorAll('.cs-imgbox-textbox-span-box-2').forEach(box => {
-    box.addEventListener('click', () => {
-      box.classList.toggle('desc-active');
-    });
-  });
-
-  document.querySelectorAll('.define-detail-box-each').forEach(box => {
-    box.addEventListener('click', () => {
-      box.classList.toggle('define-active');
-    });
-  });
-
   document.querySelectorAll('.casestudy-each-step-details-box').forEach(box => {
     box.addEventListener('click', () => {
       box.classList.toggle('active');
