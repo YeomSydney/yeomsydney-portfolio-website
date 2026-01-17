@@ -124,7 +124,7 @@ button {
 
 img,
 video {
-    border-radius: 1em;
+    border-radius: .7em;
     box-sizing: border-box;
     width: 100%;
     height: auto;
@@ -134,7 +134,6 @@ video {
     border: none !important;
     outline: none !important;
     vertical-align: text-top;
-    background-color: var(--bg-lightgrey01);
 }
 
 /* Customized */

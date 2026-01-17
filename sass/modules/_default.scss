@@ -168,15 +168,27 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 }
 
                 .hero-bottom-intro-details {
-                    ul li {
+                    li a {
                         display: flex;
-                        flex-direction: column;
-                        row-gap: .3em;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: .4em .8em;
+                        background-color: var(--bg-lightgrey02);
+                        border-radius: 3em;
+                        transition: all .3s ease-in;
+                        vertical-align: middle;
 
-                        h3 { opacity: .6; }
-
-                        h3, h4 {
+                        h3, i {
                             font-size: var(--font-size-primary-sm);
+                        }
+
+                        &:hover {
+                            background-color: var(--bg-bk);
+                        
+                            h3, i {
+                                color: var(--bg-wh);
+                            }
                         }
                     }
                 }
@@ -205,7 +217,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                     .works-view-toggle {
                         display: flex;
-                        column-gap: .5em;
+                        flex-direction: row;
                         align-items: center;
 
                         button {
@@ -213,9 +225,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             display: inline-flex;
                             align-items: center;
                             column-gap: .4em;
-
                             width: fit-content;
-
                             font-size: var(--font-size-primary-sm);
                             background: none;
                             border: none;
@@ -223,42 +233,13 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                             i {
                                 font-size: var(--font-size-primary-sm);
-                                background-color: var(--bg-lightgrey01);
+                                background-color: var(--bg-lightgrey02);
                                 border-radius: 3em;
                                 padding: .5em .8em;
-                                border: 1px solid var(--bg-lightgrey02);
+                                border: 1px solid var(--bg-lightgrey01);
                                 color: var(--color-text-primary-bk-border-dark);
                                 transition: color .25s ease, filter .25s ease;
                                 flex-shrink: 0;
-                            }
-
-                            /* LABEL */
-                            &::after {
-                                content: attr(data-text);
-                                display: inline-flex;
-                                align-items: center;
-                                justify-content: center;
-
-                                background-color: var(--bg-lightgrey01);
-                                border-radius: 3em;
-                                padding: .5em .8em;
-                                border: 1px solid var(--bg-lightgrey02);
-
-                                max-width: 0;
-                                opacity: 0;
-                                transform: translateX(-8px);
-
-                                overflow: hidden;
-                                white-space: nowrap;
-
-                                pointer-events: none;
-
-                                transition:
-                                    max-width .35s ease,
-                                    opacity .25s ease,
-                                    transform .35s ease;
-
-                                transition-delay: 0s;
                             }
 
                             /* ACTIVE or HOVER */
@@ -266,24 +247,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             &.active {
                                 i {
                                     color: var(--color-text-primary-bk);
-                                    filter: drop-shadow(0 12px 10px #11111115);
+                                    background-color: var(--line-black);
                                 }
-
-                                &::after {
-                                    max-width: 140px;
-                                    opacity: 1;
-                                    transform: translateX(0);
-                                    filter: drop-shadow(0 12px 10px #11111115);
-                                    white-space: nowrap;
-
-                                    transition-delay: .12s;
-                                }
-                            }
-
-                            &:not(.active):not(:hover)::after {
-                                max-width: 0;
-                                opacity: 0;
-                                transform: translateX(-8px);
                             }
                         }
                     }
@@ -395,7 +360,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 flex-direction: row;
                                 column-gap: .5em;
                                 align-items: center;
-                                filter: drop-shadow(0 12px 10px #11111115);
 
                                 .jobLogo_img {
                                     max-height: 55px;
@@ -454,7 +418,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     }
 
                     .hero-more-projects-img {
-                        img {
+                        video, img {
                             display: inline-block;
                             max-width: 800px;
                             width: 100%;
@@ -474,22 +438,57 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         &.list ul {
             display: flex;
             flex-direction: column;
-            gap: .5em;
+            gap: 3em;
 
             li {
                 border-top: 1px solid var(--line-black);
-                padding: .8em 0;
+                padding: .8em 0 7em 0;
                 transition: all .3s ease;
                 width: 100%;
+
+                .hero-more-projects-thumbnails {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .4em;
+
+                    &-title {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: .4em .8em;
+                        background-color: var(--bg-lightgrey02);
+                        border-radius: 3em;
+                        transition: all .3s ease-in;
+                        vertical-align: middle;
+
+                        h3, i {
+                            font-size: var(--font-size-primary-sm) !important;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .hero-more-projects-thumbnails {
+                        &-title {
+                            background-color: var(--bg-bk);
+
+                            h3, i {
+                                color: var(--bg-wh);
+                            }
+                        }
+                    }
+                }
 
                 .hero-more-projects-img {
                     display: flex;
                     flex-wrap: wrap;
-                    gap: .5em;
+                    gap: .3em;
+                    width: 100%;
 
-                    img {
+                    video, img {
                         display: inline-block;
-                        max-width: 100px;
+                        max-width: 130px;
                         width: 100%;
                         height: auto;
                         transform: scale(1);
@@ -501,19 +500,13 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     width: 100%;
 
                     h3 {
-                        font-size: var(--font-size-primary-sm) !important;
-                        line-height: 18px;
+                        font-size: var(--font-size-sm) !important;
                     }
 
-                    h4, h5 {
+                    h5 {
                         display: flex !important;
-                        opacity: .6;
                         font-size: var(--font-size-sm);
                     }
-                }
-
-                .hero-more-projects-text-details {
-                    padding: .3em 0;
                 }
             }
         }
@@ -537,7 +530,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     position: relative;
                     transition: all 0.3s ease;
 
-                    img {
+                    video, img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
@@ -591,10 +584,15 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     overflow: hidden;
                     scroll-snap-align: start;
                     scroll-snap-stop: always;
+                    align-items: center;
+                    justify-self: center;
 
                     .casestudy-each-list-content {
                         width: 100%;
                         height: 100%;
+                        justify-self: center;
+                        padding-top: 5em;
+                        padding-bottom: 2.4em;
 
                         &::before {
                             content: "";
@@ -603,6 +601,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             background-image: var(--bg-image);
                             background-size: cover;
                             background-position: center;
+                            height: 100%;
 
                             filter: blur(20px) brightness(0.7);
                             transform: scale(1.2);
@@ -610,10 +609,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         }
 
                         .allProjectDetails {
-                            grid-column-start: 2;
-                            display: flex;
-                            flex-direction: column;
-                            row-gap: 4em;
                             z-index: var(--z-content);
 
                             &-top {
@@ -659,45 +654,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 }
                             }
                         }
-                    }
-                }
-
-                .allProjectThumbnails {
-                    position: relative;
-                    overflow: hidden;
-                    border-radius: 1em;
-
-                    .base-image {
-                        width: 100%;
-                        display: block;
-                        z-index: 1;
-                    }
-
-                    .hover-image {
-                        position: absolute;
-                        inset: 0;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: contain;
-                        z-index: 2;
-                        pointer-events: none;
-                        border-radius: 0;
-
-                        transform: translateX(100%);
-                        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-                    }
-
-                    &.is-hovered .hover-image {
-                        transform: translateX(0);
-                    }
-
-                    &.is-leaving .hover-image {
-                        transform: translateX(-100%);
-                    }
-
-                    &.is-resetting .hover-image {
-                        transition: none;
-                        transform: translateX(100%);
                     }
                 }
             }
@@ -1201,9 +1157,10 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 .allProjectDetails {
                                     width: 100%;
                                     display: flex;
+                                    height: 100%;
                                     flex-direction: column;
-                                    gap: 2em;
-                                    padding: 7em 0 0 0;
+                                    gap: 3em;
+                                    padding: 3em 0;
 
                                     &-top {
                                         h3 {
@@ -1217,11 +1174,21 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                         }
                                     }
 
+                                    .allProjectDetails-wrapper {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 3em;
+                                    }
+
                                     .allProjectThumbnails {
                                         position: relative;
-                                        min-width: 350px;
-                                        max-width: 500px;
-                                        width: 70%;
+                                        min-width: 250px;
+
+                                        .thumbnail-strip {
+                                            .hover-image {
+                                                display: none;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -1495,9 +1462,45 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 .hero-extra-black {
                     .allProjectThumbnails {
                         position: relative;
+                        overflow: hidden;
+                        border-radius: .7em;
+
                         min-width: 350px;
                         max-width: 500px;
-                        width: 95% !important;
+                        width: 95%;
+
+                        .base-image {
+                            width: 100%;
+                            display: block;
+                            z-index: 1;
+                        }
+
+                        .hover-image {
+                            position: absolute;
+                            inset: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            z-index: 2;
+                            pointer-events: none;
+                            border-radius: 0;
+
+                            transform: translateX(100%);
+                            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                        }
+
+                        &.is-hovered .hover-image {
+                            transform: translateX(0);
+                        }
+
+                        &.is-leaving .hover-image {
+                            transform: translateX(-100%);
+                        }
+
+                        &.is-resetting .hover-image {
+                            transition: none;
+                            transform: translateX(100%);
+                        }
                     }
                 }
 
@@ -1739,26 +1742,14 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 flex-direction: column;
                                 justify-content: flex-start;
                                 align-items: center;
-                                gap: 3em;
-                                padding: 3em 2.4em;
+                                gap: 5em;
                                 
                                 .allProjectDetails {
                                     width: 100%;
-                                    display: grid;
-                                    grid-template-columns: 1fr auto;
-                                    justify-content: space-between;
-                                    gap: 2em;
-                                    padding: 6em 0 0 0;
 
-                                    &-top {
+                                    .allProjectDetails-wrapper {
                                         h3 {
                                             font-size: var(--font-size-sd-lg) !important;
-                                        }
-                                    }
-
-                                    &-bottom {
-                                        ul li {
-                                            font-size: var(--font-size-sm) !important;
                                         }
                                     }
                                 }
@@ -1939,7 +1930,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         flex-direction: column;
                         row-gap: 2em;
                     }
-
+                    
                     .hero-extra-works-box {
                         ul, &.list ul {
                             .hero-extra-works-text {
@@ -1965,6 +1956,12 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 gap: 5em;
                                 width: 100%; 
                             }
+                        }
+                    }
+
+                    .allProjectDetails-wrapper {
+                        .allProjectDetails-bottom-roles {
+                            display: none !important;
                         }
                     }
                 }
@@ -2121,7 +2118,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             display: grid;
                             grid-template-columns: 3fr 1fr 2fr;
                             justify-content: space-between;
-                            border-top: 1px solid var(--line-black);
                             transition: all .3s ease;
 
                             .hero-more-projects-text-details {
@@ -2240,20 +2236,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                     .work-gallery-each-box {
                         .casestudy-each-list-content {
-                            width: 100%;
-                            height: 100%;
-
-                            display: grid;
-                            grid-template-columns: .7fr 2.5fr 2.8fr .1fr;
-                            align-items: center;
-
-                            .allProjectDetails {
-                                &-bottom {
-                                    display: flex;
-                                    flex-direction: column;
-                                    row-gap: 4em !important;
-                                }
-                            }
+                            padding: 0 2.4em;
                         }
                     }
                 }
@@ -2375,6 +2358,38 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     }
 }
 
+@media only screen and (min-width: 744px) and (max-width: 1199px) {
+    main {
+        .hero-section{
+            .allProjectDetails {
+                display: grid;
+                grid-template-columns: 2fr auto 3fr;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                padding: 0 2.4em;
+        
+                .allProjectDetails-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3em;
+        
+                    .allProjectDetails-bottom {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 2em !important;
+                    }
+                }
+        
+                .allProjectThumbnails {
+                    grid-column-start: 3;
+                    justify-self: end;
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: 1200px) {
     main {
         .hero-section {
@@ -2410,6 +2425,31 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         justify-content: space-between;
                         row-gap: 7em;
                         column-gap: .5em;
+                    }
+                }
+            }
+
+            .hero-extra-black {
+                .allProjectDetails {
+                    display: grid;
+                    grid-template-columns: 3fr 3fr !important;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+
+                    .allProjectDetails-wrapper {
+                        display: grid;
+                        grid-template-columns: 2fr 1fr !important;
+
+                        .allProjectDetails-bottom {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 2em !important;
+                        }
+                    }
+
+                    .allProjectThumbnails {
+                        justify-self: end;
                     }
                 }
             }

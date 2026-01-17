@@ -8,20 +8,20 @@
             │
             ├── Text
             │   ├── Primary Black: #111111
-            │   └── Primary White: #FCFCFC
+            │   └── Primary White: #F6F6F6
             │
             ├── Background
-            │   ├── White: #FCFCFC
-            │   ├── LightGrey 01: #F5F5F5
+            │   ├── White: #F6F6F6
+            │   ├── LightGrey 01: #F9F9F9
             │   └── LightGrey 02: #EFEFEF
             │
             ├── Line
-            │   ├── White: #F9F9F960
+            │   ├── White: #FAFAFA60
             │   ├── LightGrey: #D1D1D1
             │   └── Dark (Black): #11111110
             │
             └── Glow
-                └── Glow White: #FCFCFC70
+                └── Glow White: #F6F6F670
     */
 
 
@@ -38,22 +38,23 @@
     --color-accent-lightgreen: #B7FF00;
 
     // Background Colours
-    --bg-wh: #FCFCFC;
-    --bg-wh-bg: #FCFCFC20;
-    --bg-wh-dark: #FCFCFC40;
+    --bg-wh: #F6F6F6;
+    --bg-wh-bg: #F6F6F620;
+    --bg-wh-dark: #F6F6F640;
 
-    --bg-lightgrey01: #F5F5F5;
+    --bg-lightgrey01: #f0f0f0;
     --bg-lightgrey02: #EFEFEF;
 
+    --bg-bk: #111111;
     --bg-bk-light: #11111180;
     
     // Line Colours
-    --line-white: #F9F9F960;
+    --line-white: #FAFAFA60;
     --line-grey: #d1d1d1;
     --line-black: #11111110;
 
     // Glow Colours
-    --color-glow-white: #FCFCFC70;
+    --color-glow-white: #F6F6F670;
 
 
 
@@ -65,9 +66,9 @@
     --color-text-primary-bk-border-dark: #11111120;
     --color-text-primary-bk-dark: #11111170;
 
-    --color-text-primary-wh: #FCFCFC;
-    --color-text-primary-wh-light: #FCFCFC60;
-    --color-text-primary-wh-dark: #FCFCFC80;
+    --color-text-primary-wh: #F6F6F6;
+    --color-text-primary-wh-light: #F6F6F660;
+    --color-text-primary-wh-dark: #F6F6F680;
 
     // Text Size
     --font-size-xxsm: 10px;

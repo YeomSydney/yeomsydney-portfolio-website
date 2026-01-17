@@ -95,13 +95,14 @@
                         align-items: center;
                         transform: translateX(0);
                         transition: all .4s ease-in;
+                        filter: drop-shadow(0 12px 10px #11111115);
                 
                         a {
                             font-size: var(--font-size-primary-sm);
                             display: inline-flex;
                             align-items: center;
                             justify-content: center;
-                            background-color: var(--bg-wh-dark);
+                            background-color: var(--bg-lightgrey01);
                             border-radius: 3em;
                             padding: .5em .8em;
                             line-height: 1;
