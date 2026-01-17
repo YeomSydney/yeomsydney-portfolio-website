@@ -78,45 +78,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Footer 2025 Copyright
-function fitTextToPaddingBox() {
-    const containers = document.querySelectorAll('.footer-container');
+// function fitTextToPaddingBox() {
+//     const containers = document.querySelectorAll('.footer-container');
 
-    containers.forEach(container => {
-        const el = container.querySelector('.footer-credit-bottom h4');
-        if (!el) return;
+//     containers.forEach(container => {
+//         const el = container.querySelector('.footer-credit-bottom h4');
+//         if (!el) return;
 
-        // Clone for measurement
-        const clone = el.cloneNode(true);
-        clone.style.cssText = `
-        position:absolute;
-        visibility:hidden;
-        white-space:nowrap;
-        font-size:10px;
-        line-height:1;
-        margin:0;
-        padding:0;
-        left:0;
-        top:0;
-    `;
+//         // Clone for measurement
+//         const clone = el.cloneNode(true);
+//         clone.style.cssText = `
+//         position:absolute;
+//         visibility:hidden;
+//         white-space:nowrap;
+//         font-size:10px;
+//         line-height:1;
+//         margin:0;
+//         padding:0;
+//         left:0;
+//         top:0;
+//     `;
 
-        container.appendChild(clone);
-        const naturalWidth = clone.getBoundingClientRect().width;
-        clone.remove();
+//         container.appendChild(clone);
+//         const naturalWidth = clone.getBoundingClientRect().width;
+//         clone.remove();
 
-        if (!naturalWidth) return;
+//         if (!naturalWidth) return;
 
-        const cs = getComputedStyle(container);
-        const containerWidth = container.getBoundingClientRect().width;
+//         const cs = getComputedStyle(container);
+//         const containerWidth = container.getBoundingClientRect().width;
 
-        const innerWidth =
-            containerWidth -
-            parseFloat(cs.paddingLeft || 0) -
-            parseFloat(cs.paddingRight || 0);
+//         const innerWidth =
+//             containerWidth -
+//             parseFloat(cs.paddingLeft || 0) -
+//             parseFloat(cs.paddingRight || 0);
 
-        const newFontSize = 10 * (innerWidth / naturalWidth);
-        el.style.fontSize = `${newFontSize}px`;
-    });
-}
+//         const newFontSize = 10 * (innerWidth / naturalWidth);
+//         el.style.fontSize = `${newFontSize}px`;
+//     });
+// }
 
-window.addEventListener('load', fitTextToPaddingBox);
-window.addEventListener('resize', fitTextToPaddingBox);
+// window.addEventListener('load', fitTextToPaddingBox);
+// window.addEventListener('resize', fitTextToPaddingBox);
