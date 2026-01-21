@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             slug: "gentle-dazs",
             selector: ".casestudy-item-3",
             keywords: ["gentle dazs", "gentledazs", "gentle", "dazs", "ice cream", "sunglasses", "glasses", "branding", "product", "package", "packaging", "logo"],
-            open: () => openCase(".casestudy-item-13", "gentle-dazs")
+            open: () => openCase(".casestudy-item-3", "gentle-dazs")
         },
         {
             type: "case",
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             slug: "trace-toronto",
             selector: ".casestudy-item-4",
             keywords: ["trace toronto", "tracetoronto", "trace", "toronto", "city", "dashboard", "app", "branding", "uxui", "ux/ui", "logo"],
-            open: () => openCase(".casestudy-item-14", "trace-toronto")
+            open: () => openCase(".casestudy-item-4", "trace-toronto")
         },
         {
             type: "case",
