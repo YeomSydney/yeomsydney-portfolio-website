@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             type: "case",
             label: "Gentle Dazs",
             slug: "gentle-dazs",
-            selector: ".casestudy-item-13",
+            selector: ".casestudy-item-3",
             keywords: ["gentle dazs", "gentledazs", "gentle", "dazs", "ice cream", "sunglasses", "glasses", "branding", "product", "package", "packaging", "logo"],
             open: () => openCase(".casestudy-item-13", "gentle-dazs")
         },
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             type: "case",
             label: "Trace Toronto",
             slug: "trace-toronto",
-            selector: ".casestudy-item-14",
+            selector: ".casestudy-item-4",
             keywords: ["trace toronto", "tracetoronto", "trace", "toronto", "city", "dashboard", "app", "branding", "uxui", "ux/ui", "logo"],
             open: () => openCase(".casestudy-item-14", "trace-toronto")
         },
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             type: "case",
             label: "Lights of Seoul",
             slug: "lights-of-seoul",
-            selector: ".casestudy-item-12",
+            selector: ".casestudy-item-2",
             keywords: ["lights of seoul", "lightsofseoul", "lights", "seoul", "festival", "lantern", "multiculture", "branding", "uxui", "ux/ui", "logo"],
             open: () => openCase(".casestudy-item-12", "lights-of-seoul")
         },
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
             type: "case",
             label: "I Wasn’t There",
             slug: "i-wasnt-there",
-            selector: ".casestudy-item-2",
+            selector: ".casestudy-item-0",
             keywords: ["i wasn't there", "iwasn'tthere", "i was not", "book", "booklet", "editorial", "typography", "poem", "mono", "type"],
             open: () => openCase(".casestudy-item-2", "i-wasnt-there")
         }
