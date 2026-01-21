@@ -11,6 +11,42 @@ document.addEventListener("DOMContentLoaded", () => {
             section: "page-about",
             path: "#/about",
             seoKey: "about"
+        },
+        "gentle-dazs": {
+            selector: ".casestudy-item-3",
+            path: "#/gentle-dazs",
+            type: "case",
+            seo: {
+                title: "Gentle Dazs — Sydney Yeom",
+                description: "Gentle Dazs is a branding and packaging case study by Sydney Yeom."
+            }
+        },
+        "trace-toronto": {
+            selector: ".casestudy-item-4",
+            path: "#/trace-toronto",
+            type: "case",
+            seo: {
+                title: "Trace Toronto — Sydney Yeom",
+                description: "Trace Toronto is a UX/UI and branding case study by Sydney Yeom."
+            }
+        },
+        "lights-of-seoul": {
+            selector: ".casestudy-item-2",
+            path: "#/lights-of-seoul",
+            type: "case",
+            seo: {
+                title: "Lights of Seoul — Sydney Yeom",
+                description: "Lights of Seoul is a branding and festival identity case study by Sydney Yeom."
+            }
+        },
+        "i-wasnt-there": {
+            selector: ".casestudy-item-0",
+            path: "#/i-wasnt-there",
+            type: "case",
+            seo: {
+                title: "I Wasn’t There — Sydney Yeom",
+                description: "I Wasn’t There is an editorial and typography-focused book design case study by Sydney Yeom."
+            }
         }
     };
 
