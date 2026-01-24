@@ -1,10 +1,52 @@
-// === Set 'Home' Active by Default if None Set ===
-const anyActive = document.querySelector('[data-page].nav-active, [data-page].selected');
-if (!anyActive) {
-  document.querySelectorAll('[data-page="home"]').forEach((el) =>
-    el.classList.add('nav-active', 'selected')
-  );
-}
+document.addEventListener("DOMContentLoaded", () => {
+  /* ------------------------------
+      NAV STATE HELPERS
+  ------------------------------ */
+
+  function clearNavActive() {
+    document.querySelectorAll(".nav-menu-each").forEach(el => {
+      el.classList.remove("is-active", "is-page-active");
+    });
+  }
+
+  function setNavActive(page) {
+    clearNavActive();
+    document
+      .querySelectorAll(`.nav-menu-each[data-page="${page}"]`)
+      .forEach(el => {
+        el.classList.add("is-active", "is-page-active");
+      });
+  }
+
+  /* ------------------------------
+      NAV MENU CLICKS
+  ------------------------------ */
+
+  document.querySelectorAll(".nav-menu-each").forEach(item => {
+    item.addEventListener("click", () => {
+      const page = item.dataset.page;
+      if (!page) return;
+      setNavActive(page);
+    });
+  });
+
+  /* ------------------------------
+      LOGO → HOME FIX (IMPORTANT)
+  ------------------------------ */
+
+  document
+    .querySelector(".main-nav-logo")
+    ?.addEventListener("click", () => {
+      setNavActive("home");
+    });
+
+  /* ------------------------------
+      INITIAL STATE (ON LOAD)
+      assumes Home is default
+  ------------------------------ */
+
+  setNavActive("home");
+});
 
 // === Toggle View Buttons ===
 const worksBox = document.querySelector('.hero-extra-works-box');

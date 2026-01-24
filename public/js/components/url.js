@@ -3,18 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
         home: {
             toggle: "nav-toggle2",
             section: "page-projects",
-            path: "#/",
+            path: "/",
             seoKey: "home"
         },
         about: {
             toggle: "nav-toggle1",
             section: "page-about",
-            path: "#/about",
+            path: "/about",
             seoKey: "about"
         },
         "gentle-dazs": {
             selector: ".casestudy-item-3",
-            path: "#/gentle-dazs",
+            path: "/gentle-dazs",
             type: "case",
             seo: {
                 title: "Gentle Dazs — Sydney Yeom",
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         "trace-toronto": {
             selector: ".casestudy-item-4",
-            path: "#/trace-toronto",
+            path: "/trace-toronto",
             type: "case",
             seo: {
                 title: "Trace Toronto — Sydney Yeom",
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         "lights-of-seoul": {
             selector: ".casestudy-item-2",
-            path: "#/lights-of-seoul",
+            path: "/lights-of-seoul",
             type: "case",
             seo: {
                 title: "Lights of Seoul — Sydney Yeom",
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         "i-wasnt-there": {
             selector: ".casestudy-item-0",
-            path: "#/i-wasnt-there",
+            path: "/i-wasnt-there",
             type: "case",
             seo: {
                 title: "I Wasn’t There — Sydney Yeom",
