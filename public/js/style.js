@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setNavActive(page) {
+    if (!page) return;
     clearNavActive();
     document
       .querySelectorAll(`.nav-menu-each[data-page="${page}"]`)
@@ -24,14 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".nav-menu-each").forEach(item => {
     item.addEventListener("click", () => {
-      const page = item.dataset.page;
-      if (!page) return;
-      setNavActive(page);
+      setNavActive(item.dataset.page);
     });
   });
 
   /* ------------------------------
-      LOGO → HOME FIX (IMPORTANT)
+      LOGO → HOME
   ------------------------------ */
 
   document
@@ -41,8 +40,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   /* ------------------------------
-      INITIAL STATE (ON LOAD)
-      assumes Home is default
+      HERO / CTA BUTTONS (NEW)
+      works for Read More / View More
+  ------------------------------ */
+
+  document.addEventListener("click", e => {
+    const trigger = e.target.closest("[data-url]");
+    if (!trigger) return;
+
+    const page = trigger.dataset.url;
+    setNavActive(page);
+  });
+
+  /* ------------------------------
+      INITIAL STATE
   ------------------------------ */
 
   setNavActive("home");
