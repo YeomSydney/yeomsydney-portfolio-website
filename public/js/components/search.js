@@ -16,11 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
             label: "Home",
             slug: "home",
             keywords: ["home", "hero"],
-            open: () => {
-                document.getElementById("nav-toggle2")?.click();
-                history.replaceState(null, "", "/");
-                scrollToTop("page-projects");
+            open: (silent = false) => {
                 closeAllCases();
+                resetToMainLayout();
+                if (!silent) history.replaceState(null, "", "/");
+                showPage("home");
+                setActiveNav("home");
+                scrollToSection("page-projects");
             }
         },
         {
@@ -28,11 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
             label: "About",
             slug: "about",
             keywords: ["about", "about me", "education", "experience", "work experience"],
-            open: () => {
-                document.getElementById("nav-toggle1")?.click();
+            open: (silent = false) => {
                 closeAllCases();
-                history.replaceState(null, "/about");
-                scrollToTop("page-about");
+                resetToMainLayout();
+                if (!silent) history.replaceState(null, "", "/about");
+                showPage("about");
+                setActiveNav("about");
+                scrollToSection("page-about");
             }
         },
         {
@@ -114,6 +118,30 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------------
         HELPERS
     ------------------------------ */
+    function showPage(slug) {
+        document.querySelectorAll("[data-page-section]").forEach(section => {
+            section.classList.remove("is-visible");
+        });
+
+        document
+            .querySelector(`[data-page-section="${slug}"]`)
+            ?.classList.add("is-visible");
+    }
+
+    function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        el.scrollIntoView({
+            behavior: "auto",
+            block: "start"
+        });
+    }
+
+    function resetToMainLayout() {
+        document.body.classList.remove("case-open");
+    }
+
     const normalize = str => str.toLowerCase().trim();
     let selectedIndex = -1;
     let currentMatches = [];
@@ -155,9 +183,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>`;
     }
 
-    function scrollToTop(pageId) {
-        document.getElementById(pageId)?.scrollTo({ top: 0, behavior: "auto" });
-    }
+    // function scrollToTop(pageId) {
+    //     document.getElementById(pageId)?.scrollTo({ top: 0, behavior: "auto" });
+    // }
 
     function closeAllCases() {
         document.querySelectorAll(".casestudy-item.page-open").forEach(el => el.classList.remove("page-open"));
@@ -169,6 +197,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const el = document.querySelector(selector);
         if (el) el.classList.add("page-open");
         history.replaceState(null, "", "/" + slug);
+    }
+
+    function setActiveNav(slug) {
+        // Clear
+        document.querySelectorAll(".nav-menu-each").forEach(el => {
+            el.classList.remove("is-active", "is-page-active");
+        });
+
+        // Activate
+        document
+            .querySelectorAll(`.nav-menu-each[data-page="${slug}"]`)
+            .forEach(el => {
+                el.classList.add("is-active", "is-page-active");
+            });
     }
 
     /* ------------------------------
@@ -277,16 +319,22 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------------
         OPEN / RESTORE FROM HASH
     ------------------------------ */
-    function openFromHash() {
-        const slug = location.hash.replace("#/", "");
-        if (!slug || slug === "") return closeAllCases();
+    function openFromPath() {
+        const slug = location.pathname.replace("/", "") || "home";
         const match = items.find(i => i.slug === slug);
-        if (!match) return closeAllCases();
-        match.open();
+
+        if (!match) {
+            showPage("home");
+            setActiveNav("home");
+            return;
+        }
+
+        showPage(slug);
+        match.open(true);
     }
 
-    window.addEventListener("load", openFromHash);
-    window.addEventListener("popstate", openFromHash);
+    window.addEventListener("load", openFromPath);
+    window.addEventListener("popstate", openFromPath);
 
     /* ------------------------------
         CLOSE BUTTON FOR CASES

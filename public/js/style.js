@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
       INITIAL STATE
   ------------------------------ */
 
-  setNavActive("home");
+  const path = location.pathname.replace("/", "") || "home";
+  setNavActive(path);
 });
 
 // === Toggle View Buttons ===
