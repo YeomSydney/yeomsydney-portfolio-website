@@ -19,10 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
             open: (silent = false) => {
                 closeAllCases();
                 resetToMainLayout();
-                if (!silent) history.replaceState(null, "", "/");
                 showPage("home");
+                if (!silent) history.replaceState(null, "", "/");
                 setActiveNav("home");
-                scrollToSection("page-projects");
             }
         },
         {
@@ -33,10 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
             open: (silent = false) => {
                 closeAllCases();
                 resetToMainLayout();
-                if (!silent) history.replaceState(null, "", "/about");
                 showPage("about");
+                if (!silent) history.replaceState(null, "", "/about");
                 setActiveNav("about");
-                scrollToSection("page-about");
             }
         },
         {
@@ -119,20 +117,20 @@ document.addEventListener("DOMContentLoaded", () => {
         HELPERS
     ------------------------------ */
     function showPage(slug) {
-        document.querySelectorAll("[data-page-section]").forEach(section => {
-            section.classList.remove("is-visible");
+        document.querySelectorAll("[data-page-section]").forEach(sec => {
+            sec.classList.remove("is-visible");
         });
 
-        document
-            .querySelector(`[data-page-section="${slug}"]`)
-            ?.classList.add("is-visible");
-    }
+        const target = document.querySelector(
+            `[data-page-section="${slug}"]`
+        );
 
-    function scrollToSection(id) {
-        const el = document.getElementById(id);
-        if (!el) return;
+        if (!target) return;
 
-        el.scrollIntoView({
+        target.classList.add("is-visible");
+
+        // 👇 THIS IS THE KEY
+        target.scrollIntoView({
             behavior: "auto",
             block: "start"
         });
@@ -182,10 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="silhouette">${rest}</span>
             </div>`;
     }
-
-    // function scrollToTop(pageId) {
-    //     document.getElementById(pageId)?.scrollTo({ top: 0, behavior: "auto" });
-    // }
 
     function closeAllCases() {
         document.querySelectorAll(".casestudy-item.page-open").forEach(el => el.classList.remove("page-open"));
@@ -324,12 +318,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const match = items.find(i => i.slug === slug);
 
         if (!match) {
-            showPage("home");
-            setActiveNav("home");
+            items.find(i => i.slug === "home")?.open(true);
             return;
         }
 
-        showPage(slug);
         match.open(true);
     }
 

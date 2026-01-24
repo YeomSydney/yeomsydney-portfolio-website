@@ -867,6 +867,21 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     }
 }
 
+.page-section {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    transition: opacity 0.4s ease;
+}
+
+.page-section.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+}
+
 /* SEARCH MODAL OVERLAY */
 .search-modal {
     position: fixed;

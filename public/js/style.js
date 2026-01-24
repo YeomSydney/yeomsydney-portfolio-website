@@ -30,6 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ------------------------------
+    CONTACT POPUP
+------------------------------ */
+
+  document.querySelectorAll('[data-open="contact"]').forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+
+      const toggle = document.getElementById("nav-toggle3");
+      if (toggle) toggle.checked = true;
+    });
+  });
+
+  /* ------------------------------
       LOGO → HOME
   ------------------------------ */
 
