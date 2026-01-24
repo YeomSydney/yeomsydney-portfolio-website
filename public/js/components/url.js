@@ -56,28 +56,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const SEO_MAP = {
         home: {
-            title: "Sydney Yeom — Designer",
+            title: "Sydney Yeom",
             description: "Sydney Yeom is a designer focused on typography, branding, and structured systems."
         },
         about: {
-            title: "About — Sydney Yeom",
+            title: "Sydney Yeom",
             description: "About Sydney Yeom, a designer focused on typography, branding, and structured systems."
         },
         cases: {
             "gentle-dazs": {
-                title: "Gentle Dazs — Sydney Yeom",
+                title: "Sydney Yeom | Gentle Dazs",
                 description: "Gentle Dazs is a branding and packaging case study by Sydney Yeom."
             },
             "trace-toronto": {
-                title: "Trace Toronto — Sydney Yeom",
+                title: "Sydney Yeom | Trace Toronto",
                 description: "Trace Toronto is a UX/UI and branding case study by Sydney Yeom."
             },
             "lights-of-seoul": {
-                title: "Lights of Seoul — Sydney Yeom",
+                title: "Sydney Yeom | Lights of Seoul",
                 description: "Lights of Seoul is a branding and festival identity case study by Sydney Yeom."
             },
             "i-wasnt-there": {
-                title: "I Wasn’t There — Sydney Yeom",
+                title: "Sydney Yeom | I Wasn’t There",
                 description: "I Wasn’t There is an editorial and typography-focused book design case study by Sydney Yeom."
             }
         }
