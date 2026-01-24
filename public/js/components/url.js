@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ----------------------------- */
 
     function getPageFromURL() {
-        const hash = location.hash.replace("#/", "");
+        const hash = location.hash.replace("/", "");
         return hash === "about" ? "about" : "home";
     }
 

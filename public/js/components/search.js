@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             keywords: ["home", "hero"],
             open: () => {
                 document.getElementById("nav-toggle2")?.click();
-                // history.replaceState(null, "", "#/");
+                history.replaceState(null, "", "/");
                 scrollToTop("page-projects");
                 closeAllCases();
             }
@@ -150,8 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function buildSilhouette(query, firstKeyword) {
         const rest = firstKeyword.slice(query.length);
         return `<div class="search-preview">
-              <span class="typed">${query}</span>
-              <span class="silhouette">${rest}</span>
+                <span class="typed">${query}</span>
+                <span class="silhouette">${rest}</span>
             </div>`;
     }
 
@@ -161,14 +161,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function closeAllCases() {
         document.querySelectorAll(".casestudy-item.page-open").forEach(el => el.classList.remove("page-open"));
-        // history.replaceState(null, "", "#/");
+        history.replaceState(null, "", "/");
     }
 
     function openCase(selector, slug) {
         closeAllCases();
         const el = document.querySelector(selector);
         if (el) el.classList.add("page-open");
-        history.replaceState(null, "", "#/" + slug);
+        history.replaceState(null, "", "/" + slug);
     }
 
     /* ------------------------------
