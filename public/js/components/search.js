@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             open: () => {
                 document.getElementById("nav-toggle1")?.click();
                 closeAllCases();
-                history.replaceState(null, "#/about");
+                history.replaceState(null, "/about");
                 scrollToTop("page-about");
             }
         },
@@ -161,14 +161,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function closeAllCases() {
         document.querySelectorAll(".casestudy-item.page-open").forEach(el => el.classList.remove("page-open"));
-        history.replaceState(null, "", "#/");
+        history.replaceState(null, "", "/");
     }
 
     function openCase(selector, slug) {
         closeAllCases();
         const el = document.querySelector(selector);
         if (el) el.classList.add("page-open");
-        history.replaceState(null, "", "#/" + slug);
+        history.replaceState(null, "", "/" + slug);
     }
 
     /* ------------------------------
