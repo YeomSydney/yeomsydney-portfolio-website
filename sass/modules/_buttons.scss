@@ -104,14 +104,14 @@
     i {
         font-size: var(--font-size-primary-sm);
     }
+}
 
-    .goback-btn:hover {
-        background-color: var(--bg-bk);
-    
-        h4,
-        i {
-            color: var(--bg-wh);
-        }
+.goback-btn:hover {
+    background-color: var(--bg-bk);
+
+    h4,
+    i {
+        color: var(--bg-wh);
     }
 }
 
