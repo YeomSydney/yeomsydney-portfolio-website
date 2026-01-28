@@ -12,62 +12,34 @@ document.addEventListener("DOMContentLoaded", () => {
     ------------------------------ */
     const items = [
         {
-            type: "page",
             label: "Home",
-            slug: "home",
-            keywords: ["home", "hero"],
-            open: (silent = false) => {
-                closeAllCases();
-                resetToMainLayout();
-                showPage("home");
-                if (!silent) history.replaceState(null, "", "/");
-                setActiveNav("home");
-            }
+            keywords: ["home"],
+            url: "/"
         },
         {
-            type: "page",
             label: "About",
-            slug: "about",
-            keywords: ["about", "about me", "education", "experience", "work experience"],
-            open: (silent = false) => {
-                closeAllCases();
-                resetToMainLayout();
-                showPage("about");
-                if (!silent) history.replaceState(null, "", "/about");
-                setActiveNav("about");
-            }
+            keywords: ["about", "about me"],
+            url: "/about"
         },
         {
-            type: "case",
             label: "Gentle Dazs",
-            slug: "gentle-dazs",
-            selector: ".casestudy-item-3",
-            keywords: ["gentle dazs", "gentledazs", "gentle", "dazs", "ice cream", "sunglasses", "glasses", "branding", "product", "package", "packaging", "logo"],
-            open: () => openCase(".casestudy-item-3", "gentle-dazs")
+            keywords: ["gentle dazs", "branding", "packaging"],
+            url: "/gentle-dazs"
         },
         {
-            type: "case",
             label: "Trace Toronto",
-            slug: "trace-toronto",
-            selector: ".casestudy-item-4",
-            keywords: ["trace toronto", "tracetoronto", "trace", "toronto", "city", "dashboard", "app", "branding", "uxui", "ux/ui", "logo"],
-            open: () => openCase(".casestudy-item-4", "trace-toronto")
+            keywords: ["trace", "toronto", "ux", "app"],
+            url: "/trace-toronto"
         },
         {
-            type: "case",
             label: "Lights of Seoul",
-            slug: "lights-of-seoul",
-            selector: ".casestudy-item-2",
-            keywords: ["lights of seoul", "lightsofseoul", "lights", "seoul", "festival", "lantern", "multiculture", "branding", "uxui", "ux/ui", "logo"],
-            open: () => openCase(".casestudy-item-2", "lights-of-seoul")
+            keywords: ["lights", "seoul", "festival"],
+            url: "/lights-of-seoul"
         },
         {
-            type: "case",
             label: "I Wasn’t There",
-            slug: "i-wasnt-there",
-            selector: ".casestudy-item-0",
-            keywords: ["i wasn't there", "iwasn'tthere", "i was not", "book", "booklet", "editorial", "typography", "poem", "mono", "type"],
-            open: () => openCase(".casestudy-item-0", "i-wasnt-there")
+            keywords: ["i wasn't there", "book", "typography"],
+            url: "/i-wasnt-there"
         }
     ];
 
@@ -116,28 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------------
         HELPERS
     ------------------------------ */
-    function showPage(slug) {
-        document.querySelectorAll("[data-page-section]").forEach(sec => {
-            sec.classList.remove("is-visible");
-        });
-
-        const target = document.querySelector(
-            `[data-page-section="${slug}"]`
-        );
-
-        if (!target) return;
-
-        target.classList.add("is-visible");
-
-        // 👇 THIS IS THE KEY
-        target.scrollIntoView({
-            behavior: "auto",
-            block: "start"
-        });
-    }
-
-    function resetToMainLayout() {
-        document.body.classList.remove("case-open");
+    function goTo(url) {
+        window.location.href = url;
     }
 
     const normalize = str => str.toLowerCase().trim();
@@ -169,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function findMatches(query) {
         return items.filter(item =>
-            item.keywords.some(k => k.startsWith(query) || k === query)
+            item.keywords.some(k => k.startsWith(query))
         );
     }
 
@@ -179,32 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="typed">${query}</span>
                 <span class="silhouette">${rest}</span>
             </div>`;
-    }
-
-    function closeAllCases() {
-        document.querySelectorAll(".casestudy-item.page-open").forEach(el => el.classList.remove("page-open"));
-        history.replaceState(null, "", "/");
-    }
-
-    function openCase(selector, slug) {
-        closeAllCases();
-        const el = document.querySelector(selector);
-        if (el) el.classList.add("page-open");
-        history.replaceState(null, "", "/" + slug);
-    }
-
-    function setActiveNav(slug) {
-        // Clear
-        document.querySelectorAll(".nav-menu-each").forEach(el => {
-            el.classList.remove("is-active", "is-page-active");
-        });
-
-        // Activate
-        document
-            .querySelectorAll(`.nav-menu-each[data-page="${slug}"]`)
-            .forEach(el => {
-                el.classList.add("is-active", "is-page-active");
-            });
     }
 
     /* ------------------------------
@@ -250,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const hint = e.target.closest(".preview-hint");
         if (hint) {
             const idx = parseInt(hint.dataset.index);
-            if (!isNaN(idx)) currentMatches[idx].open();
+            if (!isNaN(idx)) goTo(currentMatches[idx].url);
             input.value = "";
             hide();
             return;
@@ -282,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Check arrow selection first
             if (selectedIndex >= 0 && currentMatches[selectedIndex]) {
-                currentMatches[selectedIndex].open();
+                goTo(currentMatches[selectedIndex].url);
             }
             else {
                 // Check for partial or exact matches
@@ -290,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     item.keywords.some(k => k.startsWith(query) || k === query)
                 );
                 if (matches.length > 0) {
-                    matches[0].open();
+                    goTo(matches[0].url);
                 }
                 else {
                     // Nothing matches → Google
@@ -309,33 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
             else el.classList.remove("highlighted");
         });
     }
-
-    /* ------------------------------
-        OPEN / RESTORE FROM HASH
-    ------------------------------ */
-    function openFromPath() {
-        const slug = location.pathname.replace("/", "") || "home";
-        const match = items.find(i => i.slug === slug);
-
-        if (!match) {
-            items.find(i => i.slug === "home")?.open(true);
-            return;
-        }
-
-        match.open(true);
-    }
-
-    window.addEventListener("load", openFromPath);
-    window.addEventListener("popstate", openFromPath);
-
-    /* ------------------------------
-        CLOSE BUTTON FOR CASES
-    ------------------------------ */
-    document.querySelectorAll(".goback-btn-wrapper .close-page-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            closeAllCases();
-        });
-    });
 
     /* ------------------------------
         SHORTCUTS
@@ -357,25 +256,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modal.addEventListener("click", (e) => {
         if (e.target === modal) hide();
-    });
-
-    /* ------------------------------
-        CLICKABLE LOGO, THUMBNAILS & BUTTONS UPDATE URL
-    ------------------------------ */
-    document.querySelector(".main-nav-pc-top.main-nav-logo h3")?.addEventListener("click", () => {
-        const homeItem = items.find(i => i.slug === "home");
-        if (homeItem) homeItem.open();
-    });
-
-    document.querySelectorAll(".casestudy-each-list, .btn-wrapper[data-text]").forEach(el => {
-        el.addEventListener("click", () => {
-            const targetSlug = el.closest(".casestudy-each-list")?.dataset.target;
-            const caseItem = items.find(i => i.selector?.includes(targetSlug));
-            if (caseItem) caseItem.open();
-
-            const pageLabel = el.dataset.url;
-            const pageItem = items.find(i => i.slug === pageLabel);
-            if (pageItem) pageItem.open();
-        });
     });
 });

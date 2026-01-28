@@ -7,31 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary SEO -->
-    <title>Sydney Yeom — Branding Designer</title>
-    <meta name="description"
-        content="Sydney Yeom — I'm a branding & UX/UI designer focused on typography, systems, and thoughtful digital experiences.">
+    <title>About — Sydney Yeom</title>
+    <meta name="description" content="About Sydney Yeom, a branding designer focused on typography and systems.">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Sydney Yeom – Branding & UX/UI Designer">
-    <meta property="og:description" content="Toronto-based designer showcasing branding & UX/UI work">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yeomsydney.com">
+    <meta property="og:title" content="About — Sydney Yeom">
+    <meta property="og:description" content="About Sydney Yeom, a branding designer focused on typography and systems.">
+    <meta property="og:url" content="https://yeomsydney.com/about/">
     <meta property="og:image" content="https://yeomsydney.com/public/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sydney Yeom – Designer & Developer">
-    <meta name="twitter:description"
-        content="Portfolio of Sydney Yeom. Focused on typography, systems, and thoughtful digital experiences.">
+    <meta name="twitter:title" content="About — Sydney Yeom">
+    <meta name="twitter:description" content="About Sydney Yeom, a branding designer focused on typography and systems.">
     <meta name="twitter:image" content="https://yeomsydney.com/public/images/og-image.jpg">
 
     <!-- Styles -->
-    <link href="./public/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/main.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-
+    
     <!-- JSON -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#000000">
@@ -39,22 +36,22 @@
     <!-- Favicon & Icons -->
     <!-- Default / fallback for browsers -->
     <link rel="icon" href="/favicon.ico" sizes="any">
-
+    
     <!-- PNG favicons for older browsers -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-
+    
     <!-- Light / Dark mode SVG favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon-light-ui.svg" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/svg+xml" href="/favicon-dark-ui.svg" media="(prefers-color-scheme: dark)">
-
+    
     <!-- Apple touch icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
+    
     <!-- Android / PWA icons -->
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-
+    
     <!-- Manifest -->
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#000000">
@@ -62,11 +59,12 @@
     <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    
     <!-- Font stylesheet -->
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body id="content-wrapper" class="scroll-container">
+
+<body id="content-wrapper" class="scroll-container" data-page="about">
     <header>
         <nav id="main-nav-pc" role="navigation">
             <div class="nav-top-pc">
@@ -75,15 +73,15 @@
                 </div>
     
                 <div class="main-nav-pc-top main-nav-logo">
-                    <label for="nav-toggle2">
-                        <h3 class="nav-menu">Sydney Yeom</h3>
-                    </label>
+                    <a href="/" class="nav-logo-link">
+                        <h3>Sydney Yeom</h3>
+                    </a>
     
                     <h4>Branding Designer</h4>
                 </div>
     
                 <div class="main-nav-pc-top main-nav-call">
-                    <label for="nav-toggle3">
+                    <label for="contact-toggle" aria-label="Close contact panel">
                         <div class="dot"></div>
                         <h5>Available <span>for Projects</span></h5>
                     </label>
@@ -93,23 +91,37 @@
             <div class="nav-center-pc">
                 <div class="nav-center">
                     <ul class="nav-block-text-bottom-main">
-                        <li class="nav-menu-each" data-page="home" data-url="home">
-                            <a class="nav-link" href="index.html" type="button" data-text="Home">
+                        <li class="nav-menu-each hover-trigger" data-page="home" data-text="Home">
+                            <a href="/" class="nav-link">
                                 <i class="ri-home-line"></i>
                                 <span class="nav-menu">Home</span>
                             </a>
                         </li>
-    
-                        <li class="nav-menu-each is-active" data-page="about" data-url="about">
-                            <a class="nav-link" href="about.html" type="button" data-text="About">
+                    
+                        <li class="nav-menu-each hover-trigger is-active" aria-current="page" data-page="about" data-text="About">
+                            <a href="/about/" class="nav-link">
                                 <i class="ri-user-3-line"></i>
                                 <span class="nav-menu">About</span>
                             </a>
                         </li>
-    
-                        <li class="nav-menu-each" data-page="contact">
-                            <button type="button" class="nav-link" data-open="contact" data-text="Contact">
+                    
+                        <li class="nav-menu-each hover-trigger" data-page="casestudies" data-text="Case Studies">
+                            <a href="/#casestudies" class="nav-link">
+                                <i class="ri-briefcase-line"></i>
+                                <span class="nav-menu">Case Studies</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav-menu-each hover-trigger" data-page="archives" data-text="Archive">
+                            <a href="/#archives" class="nav-link">
                                 <i class="ri-archive-stack-line"></i>
+                                <span class="nav-menu">Archives</span>
+                            </a>
+                        </li>
+                    
+                        <li class="nav-menu-each hover-trigger" data-page="contact" data-text="Contact">
+                            <button type="button" class="nav-link" data-open="contact">
+                                <i class="ri-mail-line"></i>
                                 <span class="nav-menu">Contact</span>
                             </button>
                         </li>
@@ -152,8 +164,11 @@
         </nav>
     </header>
 
-    <main id="container" role="main">
-        <section id="page-about" class="about-section">
+    <main id="container">
+        <input type="checkbox" name="contact-toggle" id="contact-toggle" hidden>
+
+        <!-- About -->
+        <section id="page-about" class="about-section" data-page-section="about">
             <div class="about-container">
                 <div class="about-container-myself">
                     <div class="about-myself-wrapper">
@@ -164,10 +179,9 @@
                                     <div class="point-colour-box"></div>
                                 </div>
                             </div>
-                            <h3>This is Sydney. I am a branding designer. I began with UX/UI & Front-end development and now
-                                obsessed with grids and type.</h3>
+                            <h3>I am Sydney, a branding designer. I began with UX/UI & Front-end development and now obsessed with grids and type.</h3>
                         </div>
-        
+
                         <div class="about-myself-details">
                             <div class="about-myself-details-each reveal">
                                 <h2>Focusing on</h2>
@@ -177,7 +191,7 @@
                                     <li>Data Visualization</li>
                                 </ul>
                             </div>
-        
+
                             <div class="about-myself-details-each reveal">
                                 <h2>Knowledge of</h2>
                                 <ul>
@@ -187,7 +201,7 @@
                             </div>
                         </div>
                     </div>
-        
+
                     <div class="about-myself-desc-wrapper">
                         <div class="about-myself-desc-names reveal">
                             <h3>My name is</h3>
@@ -196,13 +210,12 @@
                                 <li>염승현 ( 🇰🇷 )</li>
                             </ul>
                         </div>
-        
+                        
                         <div class="about-myself-desc">
                             <div class="about-profile-img reveal">
-                                <img class="hover-trigger" data-text="It's me!" src="./public/images/profile/profile_img.jpg"
-                                    loading="lazy">
+                                <img src="/public/images/profile/profile_img.jpg" loading="lazy">
                             </div>
-        
+
                             <div class="about-myself-desc-text reveal">
                                 <p>Hi there, I’m Seunghyeon Sydney Yeom, but most people call me Sydney. I’m a graphic
                                     designer with two and a half years of experience in UX/UI design and web development. I
@@ -214,15 +227,15 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="line reveal"></div>
-        
+
                 <div class="about-container-details">
                     <div class="about-details-left reveal">
                         <h3>Education</h3>
                         <h4>in Design.</h4>
                     </div>
-        
+
                     <ul>
                         <div class="about-details-right">
                             <h3 class="reveal">Degrees</h3>
@@ -233,7 +246,7 @@
                                     <h6>York University, North York, ON, Canada</h6>
                                 </div>
                             </li>
-        
+                            
                             <li class="reveal">
                                 <h4>Diploma of Interactive Media Design</h4>
                                 <div class="about-each-detail-content">
@@ -242,9 +255,9 @@
                                 </div>
                             </li>
                         </div>
-        
+
                         <div class="line reveal"></div>
-        
+
                         <div class="about-details-right">
                             <h3 class="reveal">Misc.</h3>
                             <li class="reveal">
@@ -254,7 +267,7 @@
                                     <h6>Porto Design Summer School, Porto, Portugal</h6>
                                 </div>
                             </li>
-        
+
                             <li class="reveal">
                                 <h4>Design Studio Tours in Chicago</h4>
                                 <div class="about-each-detail-content">
@@ -262,7 +275,7 @@
                                     <h6>Design Studios, Chicage, Illinois, The USA</h6>
                                 </div>
                             </li>
-        
+
                             <li class="reveal">
                                 <h4>Industry Night</h4>
                                 <div class="about-each-detail-content">
@@ -270,7 +283,7 @@
                                     <h6>FIP - Fanshawe College, London, ON, Canada</h6>
                                 </div>
                             </li>
-        
+
                             <li class="reveal">
                                 <h4>Front-end Developer Training</h4>
                                 <div class="about-each-detail-content">
@@ -281,15 +294,15 @@
                         </div>
                     </ul>
                 </div>
-        
+
                 <div class="line reveal"></div>
-        
+
                 <div class="about-container-details">
                     <div class="about-details-left reveal">
                         <h3>Work Experience</h3>
                         <h4>in Branding, Printing, & UX/UI Design.</h4>
                     </div>
-        
+
                     <ul>
                         <div class="about-details-right reveal">
                             <h3>M416 Studio</h3>
@@ -301,9 +314,9 @@
                                 </div>
                             </li>
                         </div>
-        
+                    
                         <div class="line reveal"></div>
-        
+                    
                         <div class="about-details-right reveal">
                             <h3>Take Two Bakery</h3>
                             <li>
@@ -314,9 +327,9 @@
                                 </div>
                             </li>
                         </div>
-        
+
                         <div class="line reveal"></div>
-        
+                        
                         <div class="about-details-right reveal">
                             <h3>Dalvorem International</h3>
                             <li>
@@ -327,9 +340,9 @@
                                 </div>
                             </li>
                         </div>
-        
+
                         <div class="line reveal"></div>
-        
+                        
                         <div class="about-details-right reveal">
                             <h3>Printing Services, York University</h3>
                             <li>
@@ -342,15 +355,15 @@
                         </div>
                     </ul>
                 </div>
-        
+
                 <div class="line reveal"></div>
-        
+
                 <div class="about-container-details">
                     <div class="about-details-left reveal">
                         <h3>Exhibition</h3>
                         <h4>in Graphic Design.</h4>
                     </div>
-        
+                
                     <ul>
                         <div class="about-details-right reveal">
                             <h3>Gallery 1313</h3>
@@ -362,9 +375,9 @@
                                 </div>
                             </li>
                         </div>
-        
+                
                         <div class="line reveal"></div>
-        
+                
                         <div class="about-details-right reveal">
                             <h3>Facing the Backlash</h3>
                             <li>
@@ -377,7 +390,7 @@
                         </div>
                     </ul>
                 </div>
-        
+
                 <!-- Go Top -->
                 <div class="gotop-btn reveal" data-text="Go Top">
                     <button>
@@ -386,7 +399,7 @@
                     </button>
                 </div>
             </div>
-        
+
             <div class="footer-container">
                 <div class="footer-container-wrapper">
                     <div class="footer-credit-top">
@@ -394,41 +407,40 @@
                             <h3>Hello, there, this is Sydney</h3>
                             <h4>Get in Touch! ツ゚</h4>
                         </div>
-        
+            
                         <div class="footer-credit-top-connect">
                             <div class="footer-credit-connectBox footer-credit-socialmedia">
                                 <h3 class="footer-credit-connectBox-title">Connect</h3>
                                 <ul>
                                     <li>
-                                        <a class="ft-credit-connectBox-each" href="https://www.linkedin.com/in/sydney-yeom/"
-                                            target="_blank">
+                                        <a class="ft-credit-connectBox-each"
+                                            href="https://www.linkedin.com/in/sydney-yeom/" target="_blank">
                                             <i class="ri-linkedin-fill"></i>
                                         </a>
                                     </li>
-        
+            
                                     <li>
-                                        <a class="ft-credit-connectBox-each" href="https://www.behance.net/sydneyyeom"
-                                            target="_blank">
+                                        <a class="ft-credit-connectBox-each"
+                                            href="https://www.behance.net/sydneyyeom" target="_blank">
                                             <i class="ri-behance-fill"></i>
                                         </a>
                                     </li>
-        
+            
                                     <li>
-                                        <a class="ft-credit-connectBox-each" href="https://www.instagram.com/theissue.xyz/"
-                                            target="_blank">
+                                        <a class="ft-credit-connectBox-each"
+                                            href="https://www.instagram.com/theissue.xyz/" target="_blank">
                                             <i class="ri-instagram-fill"></i>
                                         </a>
                                     </li>
-        
+            
                                     <li>
-                                        <a class="ft-credit-connectBox-each" href="https://github.com/YeomSydney"
-                                            target="_blank">
+                                        <a class="ft-credit-connectBox-each" href="https://github.com/YeomSydney" target="_blank">
                                             <i class="ri-github-fill"></i>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
-        
+            
                             <div class="footer-credit-connectBox footer-credit-calls">
                                 <h3 class="footer-credit-connectBox-title">Let's Talk</h3>
                                 <ul>
@@ -440,7 +452,7 @@
                                         </a>
                                         <h5>Always open to talk!</h5>
                                     </li>
-        
+            
                                     <li>
                                         <span class="ft-credit-call-each" href="#" target="_blank">
                                             <h4>2026 Digital Planner</h4>
@@ -452,17 +464,17 @@
                             </div>
                         </div>
                     </div>
-        
+            
                     <div class="footer-credit-bottom">
                         <!-- <h4>©SydneyYeom</h4> -->
                     </div>
                 </div>
-        
+            
                 <div class="footer-container-misc">
                     <ul>
-                        <li><a href="index.html">© 2026 Sydney Yeom All rights reserved</a></li>
+                        <li><a href="/">© 2026 Sydney Yeom All rights reserved</a></li>
                     </ul>
-        
+            
                     <ul>
                         <li class="footer-time">--:--</li>
                         <li class="footer-weather">Loading Weather...</li>
@@ -472,6 +484,50 @@
         </section>
     </main>
 
+    <!-- Contact -->
+    <section id="page-contact" class="contact-section">
+        <div class="contact-box">
+            <div class="contact-details">
+                <div class="contact-details-title">
+                    <h2>Get in Touch</h2>
+    
+                    <label for="contact-toggle" data-text="Close" aria-label="Close contact panel">
+                        <span class="nav-menu"><i class="ri-close-large-line"></i></span>
+                    </label>
+                </div>
+    
+                <div class="contact-details-box">
+                    <h3>This is Sydney, a branding designer. ツ゚</h3>
+    
+                    <ul class="contact-details-socialmedia">
+                        <li>
+                            <h4>Email</h4>
+                            <a href="mailto:desn.yeomsydney@gmail.com" data-text="Send Me an Email">yeomsydney@gmail.com</a>
+                        </li>
+    
+                        <li>
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/sydney-yeom/" target="_blank"
+                                data-text="Follow Me!">@seunghyeon</a>
+                        </li>
+    
+                        <li>
+                            <h4>Behance</h4>
+                            <a href="https://www.behance.net/sydneyyeom" target="_blank"
+                                data-text="Follow Me!">@sydneyyeom</a>
+                        </li>
+    
+                        <li>
+                            <h4>Instagram</h4>
+                            <a href="https://www.instagram.com/theissue.xyz" target="_blank"
+                                data-text="Follow Me!">@theissue.xyz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Mouse Cursor -->
     <div id="mouse_cursor"><span class="cursor-blur"></span></div>
     
@@ -480,12 +536,11 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     
     <!-- Custom JS -->
-    <script src="./public/js/style.js" type="module"></script>
-    <script src="./public/js/components/url.js" type="module"></script>
-    <script src="./public/js/components/footer.js" type="module"></script>
-    <script src="./public/js/components/search.js" type="module"></script>
-    <script src="./public/js/components/scrollBtn.js" type="module"></script>
-    
-    <!-- <script src="./public/js/mail.js" type="module"></script> -->
+    <script src="/public/js/style.js" type="module"></script>
+    <script src="/public/js/components/footer.js" type="module"></script>
+    <script src="/public/js/components/casestudy.js" type="module"></script>
+    <script src="/public/js/components/search.js" type="module"></script>
+    <script src="/public/js/components/scrollBtn.js" type="module"></script>
+    <script src="/public/js/components/reveal.js" type="module"></script>
 </body>
 </html>

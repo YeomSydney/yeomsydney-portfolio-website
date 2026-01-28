@@ -1,95 +1,32 @@
-/* Page Transition */
-#page-about {
-    opacity: 0;
-    transform: scale(0.85) translateY(30px);
-    pointer-events: none;
-    visibility: hidden;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-#page-projects {
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    transform: scale(1) translateY(0);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-// Page: About
-/* Page About active */
-#nav-toggle1:checked~#page-about {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    pointer-events: auto;
-    visibility: visible;
-}
-
-/* Page Projects inactive */
-#nav-toggle1:checked~#page-projects {
-    opacity: 0;
-    transform: scale(0.85) translateY(30px);
-    pointer-events: none;
-    visibility: hidden;
-}
-
-/* Page Projects active */
-#nav-toggle2:checked~#page-projects {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    pointer-events: auto;
-    visibility: visible;
-}
-
-/* Page About inactive */
-#nav-toggle2:checked~#page-about {
-    opacity: 0;
-    transform: scale(0.85) translateY(30px);
-    pointer-events: none;
-    visibility: hidden;
-}
-
-// Page: Casestudy Closed
-#nav-toggle4:checked ~ .goback-btn-wrapper {
-    display: flex;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    transform: translateY(0);
-}
-
-// Page: Contact
-/* Closed state */
-.contact-section {
-    pointer-events: none; /* disable interaction */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(1em);
-}
-
-/* OPEN state */
-#nav-toggle3:checked ~ .contact-section {
-    pointer-events: auto; /* NOW clickable */
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: transform 0.5s ease, opacity 0.5s ease, scale(1) ease;
-}
-
 main {
+    /* Page Transition */
+    #page-about,
+    #page-projects,
+    #page-casestudy {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: scale(1) translateY(0);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
     .hero-section,
-    .about-section {
+    .about-section,
+    #page-projects,
+    #page-casestudy {
         width: 100vw;
-        height: 100vh;
-
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-
-        overflow: scroll;
+        min-height: 100vh; // full viewport height
+        position: relative; // keep in flow
+        overflow: visible; // allow scroll inside children if needed
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1) translateY(0);
+        transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
     .about-section {
         background-color: var(--bg-wh);
-        
+
         .about-box {
             display: flex;
             flex-direction: column;
@@ -110,5 +47,9 @@ main {
                 width: 100%;
             }
         }
+    }
+
+    .work-gallery-each-box .casestudy-each-list {
+        transition: transform 0.4s ease, opacity 0.4s ease;
     }
 }
