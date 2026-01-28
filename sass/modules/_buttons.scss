@@ -89,6 +89,7 @@
 }
 
 .goback-btn,
+.award-btn,
 .project-badge {
     display: flex;
     flex-direction: row;
@@ -106,12 +107,27 @@
     }
 }
 
-.goback-btn:hover {
+.goback-btn:hover,
+.award-btn:hover {
     background-color: var(--bg-bk);
 
     h4,
     i {
         color: var(--bg-wh);
+    }
+}
+
+.award-btn {
+    width: 100%;
+
+    a {
+        display: flex;
+        flex-direction: row;
+        gap: .4em;
+        align-items: center;
+        vertical-align: middle;
+        justify-content: space-between;
+        width: 100%;
     }
 }
 
