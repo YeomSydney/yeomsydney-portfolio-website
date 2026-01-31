@@ -17,13 +17,13 @@
         background-color: var(--color-text-primary-wh-dark);
         backdrop-filter: blur(12px);
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        padding: 1em 2.4em;
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        padding: .8em 2.4em;
         z-index: 2001 !important;
         transition: background-color 0.3s ease;
+        border-radius: 3em;
 
         .main-nav-pc-top {
             display: flex;
@@ -180,7 +180,7 @@
 @media only screen and (max-width: 743px) {
     #main-nav-pc {
         .nav-top-pc {
-            padding: 1em 1.8em;
+            padding: .8em 1.8em;
 
             .main-nav-pc-top {
                 display: flex;
@@ -213,9 +213,7 @@
 @media only screen and (min-width: 744px) {
     #main-nav-pc {
         .nav-top-pc {
-            padding: 1em 2.4em;
-
-            width: 100%;
+            padding: .8em 2.4em;
             display: grid;
             grid-template-columns: 1fr 1fr 3fr 1fr;
 

@@ -29,6 +29,8 @@ html {
     overflow: scroll;
 
     body {
+        margin: 0;
+        padding: 0;
         width: 100vw;
         transition: color .3s ease-in, background-color .3s ease-in;
         background-color: var(--bg-wh) !important;
