@@ -56,6 +56,11 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     }
                 }
 
+                .hero-top-02-myself-name {
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 .hero-top-02-name-effect {
                     position: relative;
                     display: inline-block;
@@ -1283,7 +1288,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                 .hero-top-02 {
                     .hero-top-02-myself-name {
-                        span { font-size: var(--font-size-display-title-lg); }
+                        span { font-size: var(--font-size-display-title-ex); }
                     }
                 }
             }
