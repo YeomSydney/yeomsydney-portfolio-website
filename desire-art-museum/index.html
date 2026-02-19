@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic setup -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Desire Art Museum — Sydney Yeom</title>
+    <meta name="description"
+        content="Lights of Seoul is a lantern festival held on Toronto Island that reinterprets Korean cultural traditions within a Canadian context.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lights of Seoul — Sydney Yeom">
+    <meta property="og:description"
+        content="Lights of Seoul is a lantern festival held on Toronto Island that reinterprets Korean cultural traditions within a Canadian context.">
+    <meta property="og:url" content="https://yeomsydney.com/desire-art-museum/">
+    <meta property="og:image" content="https://yeomsydney.com/public/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Desire Art Museum — Sydney Yeom">
+    <meta name="twitter:description"
+        content="Lights of Seoul is a lantern festival held on Toronto Island that reinterprets Korean cultural traditions within a Canadian context.">
+    <meta name="twitter:image" content="https://yeomsydney.com/public/images/og-image.jpg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- JSON -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Favicon & Icons -->
+    <!-- Default / fallback for browsers -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+
+    <!-- PNG favicons for older browsers -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+    <!-- Light / Dark mode SVG favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon-light-ui.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="/favicon-dark-ui.svg" media="(prefers-color-scheme: dark)">
+
+    <!-- Apple touch icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Android / PWA icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body id="content-wrapper" class="scroll-container" data-page="desire-art-museum">
+    <header>
+        <nav id="main-nav-pc" role="navigation">
+            <div class="nav-top-pc">
+                <div class="main-nav-pc-top main-nav-left">
+                    <h4>Toronto, Canada</h4>
+                </div>
+    
+                <div class="main-nav-pc-top main-nav-logo">
+                    <a href="/" class="nav-logo-link">
+                        <h3>Sydney Yeom</h3>
+                    </a>
+    
+                    <h4>Branding Designer</h4>
+                </div>
+    
+                <div class="main-nav-pc-top main-nav-call" data-open="contact">
+                    <label for="contact-toggle" aria-label="Close contact panel">
+                        <div class="dot"></div>
+                        <h5>Available <span>for Projects</span></h5>
+                    </label>
+                </div>
+            </div>
+    
+            <div class="nav-center-pc">
+                <div class="nav-center">
+                    <ul class="nav-block-text-bottom-main">
+                        <li class="nav-menu-each hover-trigger" aria-current="page" data-page="home" data-text="Home">
+                            <a href="/" class="nav-link">
+                                <i class="ri-home-line"></i>
+                                <span class="nav-menu">Home</span>
+                            </a>
+                        </li>
+    
+                        <li class="nav-menu-each hover-trigger" data-page="about" data-text="About">
+                            <a href="/about/" class="nav-link">
+                                <i class="ri-user-3-line"></i>
+                                <span class="nav-menu">About</span>
+                            </a>
+                        </li>
+    
+                        <li class="nav-menu-each hover-trigger" data-page="casestudies" data-text="Case Studies">
+                            <a href="/" class="nav-link">
+                                <i class="ri-briefcase-line"></i>
+                                <span class="nav-menu">Case Studies</span>
+                            </a>
+                        </li>
+    
+                        <li class="nav-menu-each hover-trigger" data-page="contact" data-text="Contact">
+                            <button type="button" class="nav-link" data-open="contact">
+                                <i class="ri-mail-line"></i>
+                                <span class="nav-menu">Contact</span>
+                            </button>
+                        </li>
+                    </ul>
+    
+                    <div class="nav-search">
+                        <i class="ri-search-line search-icon"></i>
+                        <input type="text" id="site-search" placeholder="Search" autocomplete="off" />
+                        <div class="search-key">
+                            <span class="letter-key">K</span>
+                            <p class="plus">+</p>
+                            <span><i class="ri-command-fill"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="search-preview-modal" class="search-modal" role="dialog" aria-modal="true"
+                aria-labelledby="search-title" hidden>
+                <div class="search-modal-wrapper">
+                    <div class="search-intro">
+                        <h3>Hello there, I'm a search assistant.</h3>
+                    </div>
+                    <div class="search-preview-text"></div>
+                    <div class="search-default">
+                        <h3>Tips</h3>
+                        <ul>
+                            <li>Open by
+                                <span>K</span> + <span><i class="ri-command-fill"></i></span>
+                            </li>
+    
+                            <li>Select by arrow keys
+                                <span><i class="ri-arrow-up-s-line"></i></span> / <span><i
+                                        class="ri-arrow-down-s-line"></i></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <input type="checkbox" name="contact-toggle" id="contact-toggle" hidden>
+
+    <main id="container" role="main">
+        <!-- Case Study -->
+        <article id="page-casestudy" class="casestudy-section">
+            <div class="casestudy-container-wrapping-box">
+                <div class="casestudy-item-2 main-casestudy casestudy-item">
+                    <div class="casestudy-item-bg">
+                        <div class="casestudy-container">
+                            <div class="casestudy-container-top reveal">
+                                <div class="casestudy-container-left">
+                                    <div class="page">
+                                        <span>03</span>
+                                        <span class="opacity60"> / 04</span>
+                                    </div>
+                
+                                    <div class="casestudy-title">
+                                        <h3>Desire Art Museum</h3>
+                                    </div>
+                                </div>
+                
+                                <div class="casestudy-container-right">
+                                    <div class="casestudy-details">
+                                        <div class="casestudy-eachDetail">
+                                            <h3>Overview</h3>
+                                            <h4 class="tagline">What Do You Desire?</h4>
+                                            <p class="opacity60">Lights of Seoul is a lantern festival held on Toronto Island
+                                                that
+                                                reinterprets Korean cultural traditions within a Canadian context. Through
+                                                radiant
+                                                lantern artworks, the festival transforms light into a shared cultural
+                                                experience—inviting visitors into a collective space of celebration, reflection,
+                                                and
+                                                connection.</p>
+                                        </div>
+                                    </div>
+                
+                                    <div class="casestudy-container-right-3c">
+                                        <div class="casestudy-details-3c">
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Year</h3>
+                                                <h4>January 2026</h4>
+                                            </div>
+                
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Duration</h3>
+                                                <h4>12 Weeks</h4>
+                                            </div>
+                
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Type</h3>
+                                                <ul>
+                                                    <h4>Branding</h4>
+                                                    <h4>Museum</h4>
+                                                    <h4>Wayfinding</h4>
+                                                </ul>
+                                            </div>
+                                        </div>
+                
+                                        <div class="casestudy-details-3c">
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Role</h3>
+                                                <ul>
+                                                    <li>Branding Designer</li>
+                                                </ul>
+                                            </div>
+                
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Tools Used</h3>
+                                                <ul>
+                                                    <li>Adobe Photoshop</li>
+                                                    <li>Adobe Illustrator</li>
+                                                    <li>Adobe InDesign</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="casestudy-container-middle">
+                                <div class="casestudy-detail-box">
+                                    <div class="casestudy-detail-imgbox reveal">
+                                        <img src="/public/images/lightsofseoul/lightofseoul_thumbnail_520h.jpg" loading="lazy">
+                                    </div>
+                
+                                    <div class="casestudy-text-container">
+                                        <div class="casestudy-textbox">
+                                            <div class="casestudy-projectBG">
+                                                <div class="casestudy-projectBG-left reveal">
+                                                    <h4>
+                                                        <span class="cs-proj-left-1">Transferring cultural festival from Seoul
+                                                            to Toronto</span>
+                                                    </h4>
+                                                </div>
+                
+                                                <div class="casestudy-projectBG-right reveal">
+                                                    <div class="casestudy-projectBG-right-context">
+                                                        <h3 class="reveal">Project Background</h3>
+                                                        <p>Lights of Seoul reimagines the Seoul Lantern Festival (서울빛초롱축제) as a
+                                                            site-specific cultural event in Toronto. The project explores how a
+                                                            traditional
+                                                            Korean festival can be translated into a multicultural environment
+                                                            while
+                                                            preserving its original spirit.
+                                                            <br><br>
+                                                            Rooted in the theme of gathering, wishing, and unity, the festival
+                                                            adopts the
+                                                            message “Lights on the water, where we become one.” Set in Toronto—a
+                                                            city shaped
+                                                            by diverse cultural backgrounds—the festival reframes light as a
+                                                            symbol of
+                                                            connection, bringing people together through shared experience
+                                                            rather than
+                                                            cultural familiarity alone.
+                                                            <br></br>
+                                                            The project involved designing a complete festival system, from core
+                                                            identity to
+                                                            applied materials, ensuring cohesion across physical and digital
+                                                            touchpoints.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <div class="casestudy-textbox-prob-solu">
+                                            <div class="cs-textbox-prob-solu-container">
+                                                <h2 class="reveal">Challenges & Goals <i class="ri-arrow-right-down-line"></i>
+                                                </h2>
+                
+                                                <div class="casestudy-prob-solu-projectBG">
+                                                    <ul>
+                                                        <li class="reveal challenges">
+                                                            <h3>Challenges</h3>
+                                                            <p>The primary challenge was establishing a cohesive and adaptable
+                                                                visual system
+                                                                that could scale across multiple
+                                                                applications—posters, digital advertising, wayfinding, and
+                                                                environmental
+                                                                graphics—while maintaining a unified identity
+                                                                throughout the festival.</p>
+                                                        </li>
+                
+                                                        <li class="reveal">
+                                                            <h3>Goals</h3>
+                                                            <p>The goal was to define and structure a clear design
+                                                                system—colour, typography,
+                                                                and layout that would support consistency across all materials,
+                                                                guide visitors
+                                                                intuitively through the festival, and present the festival as a
+                                                                single, unified
+                                                                brand experience</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div class="cs-process-box-wrapper">
+                                        <div class="cs-text-wrapping-box-process">
+                                            <div class="cs-text-wrapping-box-process-top">
+                                                <h3 class="reveal">Approach & Key Process</h3>
+                                            </div>
+                
+                                            <div class="casestudy-step">
+                                                <div class="casestudy-step-box reveal">
+                                                    <div class="casestudy-each-step">
+                                                        <div class="casestudy-each-step-title">
+                                                            <span class="cs-each-step-title-wrapping-box">
+                                                                <span class="numbers">01</span>
+                                                                <span class="cs-es-title">Context</span>
+                                                                <span class="cs-es-subtitle">Discover</span>
+                                                            </span>
+                                                        </div>
+                
+                                                        <div class="casestudy-each-step-details">
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Original Festival Reference</h4><i class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Studied the visual language and
+                                                                    cultural values
+                                                                    of the Seoul Lantern Festival.</span>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Target Audiences</h4><i class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Identified key audiences in Toronto,
+                                                                    including
+                                                                    local residents and visitors, to understand expectations
+                                                                    within a
+                                                                    multicultural context.</span>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Cultural Translation</h4><i class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Explored ways to communicate Korean
+                                                                    authenticity while allowing the festival to feel accessible
+                                                                    and
+                                                                    relevant to a
+                                                                    diverse audience.</span>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Visual Culture Research</h4><i class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Examined Korean colour symbolism and
+                                                                    familiar
+                                                                    graphic motifs.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="casestudy-each-step">
+                                                        <div class="casestudy-each-step-title">
+                                                            <span class="cs-each-step-title-wrapping-box">
+                                                                <span class="numbers">02</span>
+                                                                <span class="cs-es-title">Direction</span>
+                                                                <span class="cs-es-subtitle">Frame</span>
+                                                            </span>
+                                                        </div>
+                
+                                                        <div class="casestudy-each-step-details">
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title-noHover">
+                                                                    <h4>Synthesizing</h4>
+                                                                </div>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Visitors' Experiences</h4><i class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Defined visitor experience goals that
+                                                                    balanced
+                                                                    immersion in Korean culture with openness to cross-cultural
+                                                                    interpretation.</span>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Core Element Selection</h4><i class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Identified essential elements of the
+                                                                    original
+                                                                    festival to retain, adapt, or reinterpret for the Toronto
+                                                                    setting.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="casestudy-each-step">
+                                                        <div class="casestudy-each-step-title">
+                                                            <span class="cs-each-step-title-wrapping-box">
+                                                                <span class="numbers">03</span>
+                                                                <span class="cs-es-title">Design</span>
+                                                                <span class="cs-es-subtitle">Develop</span>
+                                                            </span>
+                                                        </div>
+                
+                                                        <div class="casestudy-each-step-details">
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title-noHover">
+                                                                    <h4>Concept Development</h4>
+                                                                </div>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>System Construction</h4><i class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Built a flexible visual system,
+                                                                    including grid
+                                                                    rules, layout structures, iconography, colour palette, and
+                                                                    typography.</span>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Content Strategy</h4><i class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Designed content and copy to support
+                                                                    clarity,
+                                                                    wayfinding, and audience engagement throughout the
+                                                                    festival.</span>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Prototyping</h4><i class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Prototyped key applications through
+                                                                    print and
+                                                                    digital mockups to evaluate consistency and
+                                                                    scalability.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="casestudy-each-step">
+                                                        <div class="casestudy-each-step-title">
+                                                            <span class="cs-each-step-title-wrapping-box">
+                                                                <span class="numbers">04</span>
+                                                                <span class="cs-es-title">Outcome</span>
+                                                                <span class="cs-es-subtitle">Showcase</span>
+                                                            </span>
+                                                        </div>
+                
+                                                        <div class="casestudy-each-step-details">
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title-noHover">
+                                                                    <h4>Mockup & System Finalization</h4>
+                                                                </div>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title-noHover">
+                                                                    <h4>Feedback & Iteration</h4>
+                                                                </div>
+                                                            </div>
+                
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title-noHover">
+                                                                    <h4>Final Showcase</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div class="cs-img-wrapping-box-container">
+                                        <div class="cs-img-wrapping-box">
+                                            <div class="cs-img-wb-details-each-box-container">
+                                                <div class="cs-img-supporting-text">
+                                                    <div class="cs-img-supporting-text-each">
+                                                        <h3 class="reveal">Concept</h3>
+                                                        <div class="cs-img-supporting-text-each-main">
+                                                            <h4 class="reveal">What does <span class="italic">Lights of
+                                                                    Seoul</span> bring from Seoul?</h4>
+                                                            <p class="reveal">Lights of Seoul draws inspiration from traditional
+                                                                Korean lantern festivals, where
+                                                                paper lanterns are hung along streets
+                                                                and released onto rivers as symbols of hope and wishes.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="cs-img-wb-details-each-box">
+                                                    <img src="/public/images/lightsofseoul/Revision_Mockups03.jpg" loading="lazy"
+                                                        class="reveal">
+                                                    <img src="/public/images/lightsofseoul/Revision_Mockups04.jpg" loading="lazy"
+                                                        class="reveal">
+                                                </div>
+                
+                                                <div class="cs-img-supporting-text">
+                                                    <div class="cs-img-supporting-text-each">
+                                                        <h3 class="reveal">Message</h3>
+                                                        <div class="cs-img-supporting-text-each-main">
+                                                            <h4 class="reveal">We all become the one.</h4>
+                                                            <p class="reveal">By bringing these cultural practices to
+                                                                Toronto—a multicultural
+                                                                city—the festival becomes a platform for sharing individual
+                                                                stories and diverse backgrounds through
+                                                                customized lanterns.
+                                                                As lanterns float into the sky or across the water, participants
+                                                                not only take part in a Seoul
+                                                                tradition, but also
+                                                                contribute to a collective celebration of culture, connection,
+                                                                and belonging.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="cs-img-wb-details-each-box">
+                                                    <video autoplay muted loop playsinline preload="metadata" class="reveal">
+                                                        <source src="/public/videos/lightsofseoul_visualdirection01.mp4"
+                                                            type="video/mp4">
+                                                    </video>
+                
+                                                    <img src="/public/images/lightsofseoul/Lights_of_Seoul_Banner01.jpg" loading="lazy"
+                                                        class="reveal">
+                                                    <img src="/public/images/lightsofseoul/Lights_of_Seoul_Banner02.jpg" loading="lazy"
+                                                        class="reveal">
+                
+                                                    <div class="cs-img-wb-square reveal">
+                                                        <img src="/public/images/lightsofseoul/Flag01.jpg" loading="lazy">
+                                                        <img src="/public/images/lightsofseoul/Flag02.jpg" loading="lazy">
+                                                    </div>
+                
+                                                    <img src="/public/images/lightsofseoul/Lights_of_Seoul_Truck01.jpg" loading="lazy"
+                                                        class="reveal">
+                
+                                                    <div class="cs-img-wb-square reveal">
+                                                        <img src="/public/images/lightsofseoul/ToteBag01.jpg" loading="lazy">
+                                                        <img src="/public/images/lightsofseoul/PaperBag01.jpg" loading="lazy">
+                                                    </div>
+                
+                                                    <img src="/public/images/lightsofseoul/Tickets01_ASetof3.jpg" loading="lazy"
+                                                        class="reveal">
+                                                    <img src="/public/images/lightsofseoul/Digital_Laptop01.jpg" loading="lazy"
+                                                        class="reveal">
+                                                    <img src="/public/images/lightsofseoul/Digital_Ticket01.jpg" loading="lazy"
+                                                        class="reveal">
+                                                    <img src="/public/images/lightsofseoul/Digital_MobilePhone.jpg" loading="lazy"
+                                                        class="reveal">
+                
+                                                    <img src="/public/images/lightsofseoul/Wayfinding01.jpg" loading="lazy"
+                                                        class="reveal">
+                                                    <img src="/public/images/lightsofseoul/Wayfinding03.jpg" loading="lazy"
+                                                        class="reveal">
+                
+                                                    <div class="cs-img-wb-square">
+                                                        <video autoplay muted loop playsinline preload="metadata" class="reveal">
+                                                            <source src="/public/videos/lightsofseoul_wayfinding01.mp4"
+                                                                type="video/mp4">
+                                                        </video>
+                                                        <img src="/public/images/lightsofseoul/Wayfinding04.jpg" loading="lazy"
+                                                            class="reveal">
+                                                    </div>
+                
+                                                    <img src="/public/images/lightsofseoul/Wayfinding02.jpg" loading="lazy"
+                                                        class="reveal">
+                
+                                                    <div class="cs-img-wb-square reveal">
+                                                        <img src="/public/images/lightsofseoul/ID01.jpg" loading="lazy">
+                                                        <img src="/public/images/lightsofseoul/ID02.jpg" loading="lazy">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="casestudy-each-list">
+                                    <div class="project-badge reveal">
+                                        <h4>Next Project</h4>
+                                    </div>
+                                
+                                    <a href="/i-wasnt-there/" class="next-project-img reveal" data-text="View Casestudy">
+                                        <img src="/public/images/iwasntthere/iwasntthere_thumbnail.jpg" loading="lazy">
+                                    </a>
+                                
+                                    <div class="cs-next-project-text reveal">
+                                        <h3>I Wasn't There</h3>
+                                        <h4>Editorial</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Go Top -->
+                        <div class="gotop-btn reveal" data-text="Go Top">
+                            <button>
+                                <i class="ri-arrow-up-line"></i>
+                                <span>Go to Top</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Footer -->
+                        <div class="footer-container">
+                            <div class="footer-container-wrapper">
+                                <div class="footer-credit-top">
+                                    <div class="footer-credit-top-line">
+                                        <h3>Hello, there, this is Sydney</h3>
+                                        <h4>Get in Touch! ツ゚</h4>
+                                    </div>
+                        
+                                    <div class="footer-credit-top-connect">
+                                        <div class="footer-credit-connectBox footer-credit-socialmedia">
+                                            <h3 class="footer-credit-connectBox-title">Connect</h3>
+                                            <ul>
+                                                <li>
+                                                    <a class="ft-credit-connectBox-each" href="https://www.linkedin.com/in/sydney-yeom/"
+                                                        target="_blank">
+                                                        <i class="ri-linkedin-fill"></i>
+                                                    </a>
+                                                </li>
+                        
+                                                <li>
+                                                    <a class="ft-credit-connectBox-each" href="https://www.behance.net/sydneyyeom"
+                                                        target="_blank">
+                                                        <i class="ri-behance-fill"></i>
+                                                    </a>
+                                                </li>
+                        
+                                                <li>
+                                                    <a class="ft-credit-connectBox-each" href="https://www.instagram.com/theissue.xyz/"
+                                                        target="_blank">
+                                                        <i class="ri-instagram-fill"></i>
+                                                    </a>
+                                                </li>
+                        
+                                                <li>
+                                                    <a class="ft-credit-connectBox-each" href="https://github.com/YeomSydney" target="_blank">
+                                                        <i class="ri-github-fill"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                        
+                                        <div class="footer-credit-connectBox footer-credit-calls">
+                                            <h3 class="footer-credit-connectBox-title">Let's Talk</h3>
+                                            <ul>
+                                                <li>
+                                                    <a class="ft-credit-call-each"
+                                                        href="https://calendly.com/yeomsydney/project-discussion-call" target="_blank">
+                                                        <h4>Book a Call</h4>
+                                                        <i class="ri-arrow-right-line"></i>
+                                                    </a>
+                                                    <h5>Always open to talk!</h5>
+                                                </li>
+                        
+                                                <li>
+                                                    <span class="ft-credit-call-each" href="#" target="_blank">
+                                                        <h4>2026 Digital Planner</h4>
+                                                        <i class="ri-arrow-right-line"></i>
+                                                    </span>
+                                                    <h5>Stay Tuned</h5>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="footer-credit-bottom">
+                                    <!-- <h4>©SydneyYeom</h4> -->
+                                </div>
+                            </div>
+                        
+                            <div class="footer-container-misc">
+                                <ul>
+                                    <li><a href="/">© 2026 Sydney Yeom All rights reserved</a></li>
+                                </ul>
+                        
+                                <ul>
+                                    <li class="footer-time">--:--</li>
+                                    <li class="footer-weather">Loading Weather...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    
+    <!-- Contact -->
+    <section id="page-contact" class="contact-section">
+        <div class="contact-box">
+            <div class="contact-details">
+                <div class="contact-details-title">
+                    <h2>Get in Touch</h2>
+    
+                    <label data-close="contact" data-text="Close" aria-label="Close contact panel">
+                        <span class="nav-menu"><i class="ri-close-large-line"></i></span>
+                    </label>
+                </div>
+    
+                <div class="contact-details-box">
+                    <h3>This is Sydney, a branding designer. ツ゚</h3>
+    
+                    <ul class="contact-details-socialmedia">
+                        <li>
+                            <h4>Email</h4>
+                            <a href="mailto:desn.yeomsydney@gmail.com" data-text="Send Me an Email">yeomsydney@gmail.com</a>
+                        </li>
+    
+                        <li>
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/sydney-yeom/" target="_blank"
+                                data-text="Follow Me!">@seunghyeon</a>
+                        </li>
+    
+                        <li>
+                            <h4>Behance</h4>
+                            <a href="https://www.behance.net/sydneyyeom" target="_blank"
+                                data-text="Follow Me!">@sydneyyeom</a>
+                        </li>
+    
+                        <li>
+                            <h4>Instagram</h4>
+                            <a href="https://www.instagram.com/theissue.xyz" target="_blank"
+                                data-text="Follow Me!">@theissue.xyz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mouse Cursor -->
+    <div id="mouse_cursor"><span class="cursor-blur"></span></div>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="/public/js/style.js" type="module"></script>
+    <script src="/public/js/components/footer.js" type="module"></script>
+    <script src="/public/js/components/casestudy.js" type="module"></script>
+    <script src="/public/js/components/archive.js" type="module"></script>
+    <script src="/public/js/components/search.js" type="module"></script>
+    <script src="/public/js/components/scrollBtn.js" type="module"></script>
+    <script src="/public/js/components/toggle.js" type="module"></script>
+    <script src="/public/js/components/reveal.js" type="module"></script>
+</body>
+</html>
