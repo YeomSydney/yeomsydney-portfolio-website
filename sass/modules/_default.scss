@@ -39,76 +39,79 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         .hero-top-wrapper {
             width: 100%;
             height: 100%;
-            padding-top: 10%;
 
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 3em;
+            align-items: center;
 
-            .hero-top-02 {
-                .hero-top-02-myself {
-                    h2 {
-                        font-size: var(--font-size-xsm);
+            .hero-top-01 {
+                display: flex;
+                flex-direction: column;
+                gap: 5em;
+
+                .hero-top-02 {
+                    span {
+                        font-size: var(--font-size-primary);
                         line-height: 18px;
-                        text-transform: uppercase;
-                        opacity: .6;
-                    }
-                }
-
-                .hero-top-02-myself-name {
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .hero-top-02-name-effect {
-                    position: relative;
-                    display: inline-block;
-                    width: fit-content;
-                
-                    &.name-text {
-                        position: relative;
-                        z-index: 2;
                     }
 
                     .point-colour-box {
-                        position: absolute;
-                        left: 0;
-                        top: 55%;
-                        transform: translateY(-45%);
-                        width: 100%;
-                        height: .8em;
-                        z-index: var(--z-negative);
-                        
-                        &::before {
-                            content: "";
-                            position: absolute;
-                            inset: 0;
-                            backdrop-filter: blur(2.5px);
-                            background-color: var(--color-accent-red);
-                            border: 1px solid var(--bg-lightgrey01);
-                            filter: drop-shadow(0 10px 10px #11111115);
-                            border-radius: .15em;
-                        }
+                        text-transform: uppercase;
+                        line-height: 64px;
+                        font-size: var(--font-size-display-title-md);
+                        padding: .2em 0;
+                        font-weight: 400;
                     }
                 }
-            }
 
-            .hero-top-03 {
-                .hero-top-03-wrapper {
+                .hero-top-03 {
                     display: flex;
                     flex-direction: column;
-                    gap: .4em;
+                    gap: .5em;
+                    align-items: flex-start;
 
-                    h4 {
-                        font-size: var(--font-size-primary-sm);
-                        text-transform: uppercase;
+                    .hero-top-imgs {
+                        position: relative;
+                        display: inline-block;
+                    
+                        img {
+                            border-radius: 0;
+                            max-width: 110px;
+                            height: auto;
+                            position: relative;
+                            z-index: 2;
+                        }
+
+                        .point-colour-box {
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%); /* true vertical center */
+                            width: 100%;
+                            height: .8em;
+                            z-index: var(--z-negative);
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                inset: 0;
+                                backdrop-filter: blur(2.5px);
+                                background-color: var(--color-accent-red);
+                                border-radius: .15em;
+                            }
+                        }
                     }
 
-                    p {
-                        font-size: var(--font-size-primary-sm);
-                        line-height: 16px;
-                        opacity: .6;
+                    ul {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: .5em;
+
+                        li {
+                            font-size: var(--font-size-sm);
+                        }
                     }
                 }
             }
@@ -955,15 +958,9 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     main {
         .hero-section {
             .hero-top {
-                padding: 0 1.8em 7em 1.8em;
+                padding: 0 1.8em;
 
-                .hero-top-02 {
-                    .hero-top-02-myself-name {
-                        span { font-size: var(--font-size-display-title-sm); }
-                    }
-                }
-
-                .hero-top-03 {
+                .hero-top-wrapper {
                     display: grid !important;
                     grid-template-columns: 3.2fr 1.8fr;
                 }
@@ -1284,13 +1281,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     main {
         .hero-section {
             .hero-top {
-                padding: 0 2.4em 8em 2.4em;
-
-                .hero-top-02 {
-                    .hero-top-02-myself-name {
-                        span { font-size: var(--font-size-display-title-ex); }
-                    }
-                }
+                padding: 0 2.4em;
             }
             
             .hero-middle {
@@ -1520,13 +1511,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     main {
         .hero-section {
             .hero-top {
-                .hero-top-02 {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1em;
-                }
-
-                .hero-top-03 {
+                .hero-top-wrapper {
                     display: grid;
                     grid-template-columns: 2.5fr 2fr 1.5fr;
                 }
@@ -1828,24 +1813,11 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     main {
         .hero-section {
             .hero-top {
-                .hero-top-02 {
+                .hero-top-wrapper {
                     display: grid;
-                    grid-template-columns: 1fr 1fr 3.5fr .5fr;
+                    grid-template-columns: 1fr 1fr 2fr 2fr;
 
-                    .hero-top-02-myself-name {
-                        grid-column-start: 3;
-                        
-                        h4 {
-                            padding: 0 .2em;
-                        }
-                    }
-                }
-
-                .hero-top-03 {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1.5fr 2.5fr;
-
-                    .hero-top-03-wrapper {
+                    .hero-top-01 {
                         grid-column-start: 3;
                     }
                 }
