@@ -7,21 +7,21 @@
             │   └── LightGreen: B7FF00
             │
             ├── Text
-            │   ├── Primary Black: #0f0200
-            │   └── Primary White: #F6F6F6
+            │   ├── Primary Black: #020814
+            │   └── Primary White: #F7F8FA
             │
             ├── Background
-            │   ├── White: #F6F6F6
+            │   ├── White: #F7F8FA
             │   ├── LightGrey 01: #F9F9F9
             │   └── LightGrey 02: #EFEFEF
             │
             ├── Line
             │   ├── White: #FAFAFA60
             │   ├── LightGrey: #D1D1D1
-            │   └── Dark (Black): #0f020010
+            │   └── Dark (Black): #02081410
             │
             └── Glow
-                └── Glow White: #F6F6F670
+                └── Glow White: #F7F8FA70
     */
 
 
@@ -38,41 +38,40 @@
     --color-accent-lightgreen: #e1ff00;
 
     // Background Colours
-    --bg-wh: #F6F6F6;
-    --bg-wh-bg: #F6F6F620;
-    --bg-wh-dark: #F6F6F640;
+    --bg-wh: #F7F8FA;
+    --bg-wh-bg: #F7F8FA20;
+    --bg-wh-dark: #F7F8FA40;
 
-    --bg-lightgrey01: #f0f0f0;
-    --bg-lightgrey02: #EFEFEF;
+    --bg-lightgrey01: #f0f2f5;
+    --bg-lightgrey02: #eceff3;
 
     --bg-search-modal: #EFEFEF50;
 
-    --bg-bk: #0f0200;
-    --bg-bk-light: #0f020080;
+    --bg-bk: #020814;
+    --bg-bk-light: #02081480;
 
-    --color-contact-box: #0f020045;
+    --color-contact-box: #02081445;
     
     // Line Colours
     --line-white: #FAFAFA60;
-    --line-grey: #d1d1d1;
-    --line-black: #0f020010;
+    --line-black: #02081410;
 
     // Glow Colours
-    --color-glow-white: #F6F6F670;
+    --color-glow-white: #F7F8FA70;
 
 
 
 
     // Text
     // Text Colours
-    --color-text-primary-bk: #0f0200;
-    --color-text-primary-bk-light: #0f020010;
-    --color-text-primary-bk-border-dark: #0f020020;
-    --color-text-primary-bk-dark: #0f020070;
+    --color-text-primary-bk: #020814;
+    --color-text-primary-bk-light: #02081410;
+    --color-text-primary-bk-border-dark: #02081420;
+    --color-text-primary-bk-dark: #02081470;
 
-    --color-text-primary-wh: #F6F6F6;
-    --color-text-primary-wh-light: #F6F6F660;
-    --color-text-primary-wh-dark: #F6F6F680;
+    --color-text-primary-wh: #F7F8FA;
+    --color-text-primary-wh-light: #F7F8FA60;
+    --color-text-primary-wh-dark: #F7F8FA80;
 
     --color-text-search-modal: #767676;
 
