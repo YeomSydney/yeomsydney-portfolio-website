@@ -92,7 +92,7 @@
                 justify-content: center;
                 position: relative;
                 gap: .2em;
-                border-radius: 3em;
+                border-radius: .5em;
                 padding: 4px;
                 overflow: hidden;
                 align-items: center;
@@ -106,13 +106,13 @@
                     backdrop-filter: blur(8px);
                     background-color: var(--color-text-primary-wh-dark);
                     border: 1px solid var(--bg-lightgrey01);
-                    border-radius: 3em;
+                    border-radius: .5em;
                 }
 
                 .nav-menu-each {
                     position: relative;
                     padding: 8px;
-                    border-radius: 3em;
+                    border-radius: .5em;
                     transition:
                         background-color 0.3s ease,
                         padding 0.3s ease,
@@ -246,7 +246,7 @@
             gap: 10px;
             align-items: center;
     
-            border-radius: 10em;
+            border-radius: .5em;
             padding: 9px 16px;
             overflow: hidden;
     
@@ -263,7 +263,7 @@
                 backdrop-filter: blur(8px);
                 background-color: var(--color-text-primary-wh-dark);
                 border: 1px solid var(--bg-lightgrey01);
-                border-radius: 10em;
+                border-radius: .5em;
     
                 filter: drop-shadow(0 12px 10px #11111115);
             }
