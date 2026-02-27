@@ -1,3 +1,18 @@
+.archive-section {
+    .goback-btn-wrapper {
+        background-color: transparent;
+        z-index: var(--z-nav);
+        align-items: center;
+        position: fixed;
+        top: 5em;
+        right: 2.4em;
+
+        .goback-btn {
+            align-items: center;
+        }
+    }
+}
+
 .btn-wrapper {
     display: flex;
     flex-direction: row;
