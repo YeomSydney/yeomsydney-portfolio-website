@@ -30,7 +30,7 @@
                 }
 
                 h4 {
-                    font-size: var(--font-size-sd-lg);
+                    font-size: var(--font-size-display-body);
                     white-space: nowrap;
                 }
             }
@@ -119,6 +119,10 @@
                                 }
                             }
 
+                            .deactivated {
+                                h4, i { opacity: .6; }
+                            }
+
                             h5 {
                                 font-size: var(--font-size-sm);
                                 opacity: .6;
@@ -146,7 +150,7 @@
 
 @media only screen and (max-width: 743px) {
     .footer-container {
-        padding: 6em 1.8em 2.4em 1.8em;
+        padding: 6em 1.8em 1.8em 1.8em;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -200,7 +204,7 @@
 
 @media only screen and (min-width: 744px) {
     .footer-container {
-        padding: 3em 1.8em 2.4em 1.8em;
+        padding: 3em 1.8em 1.8em 1.8em;
 
         .footer-container-misc {
             display: flex;

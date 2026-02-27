@@ -13,7 +13,6 @@
         width: 100vw;
         height: 100vh;
         
-        pointer-events: none;
         z-index: var(--z-page-open) !important;
     }
 }
@@ -338,7 +337,7 @@
                                             }
 
                                             span, li {
-                                                line-height: 20px;
+                                                line-height: 18px;
                                                 font-size: var(--font-size-primary-sm);
                                             }
                                             
@@ -1110,8 +1109,8 @@
         .casestudy-item {
             .casestudy-container-top,
             div.casestudy-container-middle .casestudy-detail-box > div:not(.cs-process-box-wrapper) {
-                padding-left: 2.4em;
-                padding-right: 2.4em;
+                padding-left: 1.8em;
+                padding-right: 1.8em;
             }
 
             .casestudy-step {
@@ -1181,8 +1180,8 @@
 
                     .cs-process-box-wrapper {
                         width: 100%;
-                        padding-left: 2.4em;
-                        padding-right: 2.4em;
+                        padding-left: 1.8em;
+                        padding-right: 1.8em;
                     }
 
                     .cs-each-step-section-wrapper {

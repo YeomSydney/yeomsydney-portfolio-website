@@ -35,7 +35,7 @@
     --color-accent-red: #e53e3e;
     --color-accent-red-bg: #E1391210;
 
-    --color-accent-lightgreen: #B7FF00;
+    --color-accent-lightgreen: #e1ff00;
 
     // Background Colours
     --bg-wh: #F6F6F6;
@@ -44,6 +44,8 @@
 
     --bg-lightgrey01: #f0f0f0;
     --bg-lightgrey02: #EFEFEF;
+
+    --bg-search-modal: #EFEFEF50;
 
     --bg-bk: #0f0200;
     --bg-bk-light: #0f020080;
@@ -72,6 +74,8 @@
     --color-text-primary-wh-light: #F6F6F660;
     --color-text-primary-wh-dark: #F6F6F680;
 
+    --color-text-search-modal: #767676;
+
     // Text Size
     --font-size-xxsm: 10px;
     --font-size-xsm: 12px;
@@ -84,6 +88,7 @@
     --font-size-sd-md: 24px;
     --font-size-sd-lg: 34px;
 
+    --font-size-display-title-ex-lg: 110px;
     --font-size-display-title-ex: 90px;
     --font-size-display-title-lg: 68px;
     --font-size-display-title-md: 60px;

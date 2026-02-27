@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
             url: "/about"
         },
         {
+            label: "Contact",
+            keywords: ["contact", "co", "con"],
+            url: "/contact"
+        },
+        {
             label: "Gentle Dazs",
             keywords: ["gentle dazs", "branding", "packaging"],
             url: "/gentle-dazs"
@@ -62,8 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { triggers: ["meow", "miaow", "purr", "cat", "kitty"], message: ["Purrrr 🐈‍⬛🐾"] },
         { triggers: ["bark", "dog", "puppy", "woof"], message: ["Woof Woof 🐕 🐾"] },
         { triggers: ["shit"], message: ["🫢😧"] },
-        { triggers: ["fuck", "fuck you"], message: ["abcdefu 🎵"] },
-        { triggers: ["pretty", "beautiful", "you're pretty"], message: ["Thank you 🫶"] },
+        { triggers: ["pretty", "beautiful"], message: ["Thank you 🫶"] },
         { triggers: ["bestie", "friend", "friends", "best friends"], message: ["🫵🤝"] },
         { triggers: ["coffee", "expresso"], message: ["Go tell Sydney your favourite coffee shop ☕️"] },
         { triggers: ["starbucks"], message: ["Yes, my favourite ☕✨"] },
@@ -75,14 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
         { triggers: ["portfolio", "website"], message: ["You’re already here! Enjoy!"] },
         { triggers: ["project", "work", "casestudy", "case study"], message: ["Sydney’s favourites are Gentle Dazs & Trace Toronto ✨"] },
         { triggers: ["help"], message: ["Try searching for home, about, or project names (e.g. Gentle Dazs)."] },
-        { triggers: ["yes"], message: ["Say no 😏"] },
-        { triggers: ["no"], message: ["Say yes 😏"] },
+        { triggers: ["yes"], message: ["😏"] },
+        { triggers: ["no"], message: ["😏"] },
         { triggers: ["okay"], message: ["👌"] },
-        { triggers: ["what"], message: ["Hmm? Need help?"] },
+        { triggers: ["what"], message: ["Need help?"] },
         { triggers: ["you"], message: ["Yes, you 🫵"] },
         { triggers: ["?"], message: ["Fingers crossed 🤞"] },
         { triggers: ["!"], message: ["‼️🫢"] },
         { triggers: ["."], message: ["Yes, period."] },
+        { triggers: ["email"], message: ["Contact me via yeomsydney@gmail.com!"] },
+        { triggers: ["linkedin", "li"], message: ["Find me @sydney-yeom in LinkedIn!"] },
+        { triggers: ["instagram", "ins"], message: ["Find me @theissue.xyz in Instagram!"] },
     ];
 
     /* ------------------------------
