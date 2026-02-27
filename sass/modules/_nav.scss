@@ -193,12 +193,12 @@
 
                 &.main-nav-logo {
                     h3 {
-                        font-size: var(--font-size-xsm);
+                        font-size: var(--font-size-sm);
                     }
 
                     h4 {
                         opacity: 0.6;
-                        font-size: var(--font-size-xsm);
+                        font-size: var(--font-size-sm);
                     }
                 }
             }
@@ -220,19 +220,19 @@
             .main-nav-pc-top {
                 display: flex;
                 flex-direction: row;
-                gap: .8em;
+                gap: .6em;
                 align-items: center;
 
                 &.main-nav-logo {
                     grid-column-start: 3;
 
                     h3 {
-                        font-size: var(--font-size-xsm);
+                        font-size: var(--font-size-sm);
                     }
 
                     h4 {
                         opacity: 0.6;
-                        font-size: var(--font-size-xsm);
+                        font-size: var(--font-size-sm);
                     }
                 }
             }
