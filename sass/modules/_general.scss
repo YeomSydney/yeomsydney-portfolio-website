@@ -73,9 +73,9 @@ input::placeholder,
 textarea::placeholder,
 form,
 button {
-    font-family: 'geist', 'acumin-pro', 'Inter', 'Helvetica';
+    font-family: 'General Sans', 'geist', 'acumin-pro', 'Helvetica';
     font-size: var(--font-size-primary);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--color-text-primary-bk);
     word-wrap: break-word;
     text-wrap: pretty;
@@ -86,10 +86,10 @@ button {
 }
 
 p {
-    font-family: 'geist', 'acumin-pro', 'Inter', 'Helvetica';
+    font-family: 'General Sans', 'geist', 'acumin-pro', 'Helvetica';
     font-size: var(--font-size-primary-sm);
     line-height: 18px;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--color-text-primary-bk);
     word-wrap: break-word;
     text-wrap: pretty;
