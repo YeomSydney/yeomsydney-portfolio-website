@@ -27,6 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
             url: "/contact"
         },
         {
+            label: "Desire Art Museum",
+            keywords: ["desire", "art", "museum", "branding"],
+            url: "/desire-art-museum"
+        },
+        {
+            label: "The Favric Expo",
+            keywords: ["favric", "the favric", "the", "expo"],
+            url: "/the-favric-expo"
+        },
+        {
             label: "Gentle Dazs",
             keywords: ["gentle dazs", "branding", "packaging"],
             url: "/gentle-dazs"

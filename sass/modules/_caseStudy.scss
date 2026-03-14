@@ -431,15 +431,8 @@
                                     }
 
                                     p {
-                                        font-size: var(--font-size-primary);
-                                        line-height: 20px;
-                                        opacity: .6;
-                                    }
-
-                                    ul {
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 1em;
+                                        font-size: var(--font-size-sd);
+                                        line-height: 22px;
                                     }
                                 }
                             }
@@ -470,72 +463,21 @@
                     flex-direction: column;
                     gap: .5em;
 
-                    .casestudy-projectBG {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 8em;
-
-                        .casestudy-projectBG-left {
-                            display: grid;
-                            grid-template-columns: 2fr 1fr 1fr;
-
-                            i {
-                                font-size: var(--font-size-display-title-sm);
-                            }
-                        }
-
-                        .casestudy-projectBG-right {
-                            display: grid;
-                            grid-template-columns: 1fr 1fr 2fr;
-                            justify-content: space-between;
-                            width: 100%;
-
-                            .casestudy-projectBG-right-context {
-                                grid-column-start: 3;
-                                display: grid;
-                                grid-template-columns: 1fr 3fr;
-                                gap: 2em;
-
-                                p {
-                                    font-size: var(--font-size-primary);
-                                    line-height: 20px;
-                                    opacity: .6;
-                                }
-                            }
-                        }
-                    }
-
                     &-prob-solu {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr 2fr;
-
                         .cs-textbox-prob-solu-container {
-                            grid-column-start: 3;
                             display: flex;
                             flex-direction: column;
                             gap: 3em;
 
-                            h2 {
-                                font-size: var(--font-size-sd-sm);
-                                text-transform: uppercase;
-                            }
-
                             .casestudy-prob-solu-projectBG {
-                                ul {
+                                .challenges {
                                     display: flex;
                                     flex-direction: column;
-                                    gap: 2em;
+                                    gap: 1em;
 
-                                    li {
-                                        display: grid;
-                                        grid-template-columns: 1fr 3fr;
-                                        gap: 2em;
-
-                                        p {
-                                            font-size: var(--font-size-primary);
-                                            line-height: 20px;
-                                            opacity: .6;
-                                        }
+                                    p {
+                                        font-size: var(--font-size-sd);
+                                        line-height: 22px;
                                     }
                                 }
                             }
@@ -569,19 +511,6 @@
 
                     &-middle {
                         .casestudy-textbox {
-                            .casestudy-projectBG {
-                                .casestudy-projectBG-left {
-                                    display: flex;
-                                    flex-direction: column;
-                                }
-                                
-                                .casestudy-projectBG-right {
-                                    display: flex;
-                                    flex-direction: column;
-                                    width: 100%;
-                                }
-                            }
-
                             &-prob-solu {
                                 display: flex;
                                 flex-direction: column;
@@ -674,6 +603,12 @@
                                     font-size: var(--font-size-display-title-sm);
                                 }
                             }
+                        }
+
+                        .cs-img-supporting-text-each {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1em
                         }
                         
                         .cs-process-box-wrapper {
@@ -920,8 +855,27 @@
                 &-middle {
                     .casestudy-text-container {
                         .casestudy-projectBG-left {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 4fr;
+
+                            h4 {
+                                grid-column-start: 3;
+                            }
+
                             .cs-proj-left-1, span, h4 {
                                 font-size: var(--font-size-display-title-sm);
+                            }
+                        }
+
+                        .casestudy-textbox-prob-solu {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 2.5fr 1.5fr;
+
+                            .cs-textbox-prob-solu-container {
+                                grid-column-start: 3;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 3em;
                             }
                         }
                     }
@@ -976,6 +930,19 @@
                             }
                         }
                     }
+
+                    .cs-img-wrapping-box {
+                        .cs-img-supporting-text {
+                            padding: 5em 0;
+                    
+                            &-each {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr 2.5fr 1.5fr;
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1013,32 +980,6 @@
 
                         .casestudy-text-container {
                             padding: 8em 1.8em;
-
-                            .casestudy-textbox {
-                                .casestudy-projectBG {
-                                    .casestudy-projectBG-right-context {
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 1em;
-                                    }
-                                }
-
-                                &-prob-solu {
-                                    .casestudy-prob-solu-projectBG {
-                                        ul {
-                                            display: flex;
-                                            flex-direction: column;
-                                            gap: 3em;
-                                        }
-
-                                        li {
-                                            display: flex;
-                                            flex-direction: column;
-                                            gap: 1em;
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -1055,17 +996,6 @@
                     display: grid;
                     justify-content: space-between;
                     align-items: flex-start;
-                    
-                    .cs-img-supporting-text {
-                        padding: 5em 0;
-                
-                        &-each {
-                            display: grid;
-                            grid-template-columns: 1fr 1fr 2.5fr 1.5fr;
-                            width: 100%;
-                            height: auto;
-                        }
-                    }
                 }
 
                 .casestudy-detail-box {
