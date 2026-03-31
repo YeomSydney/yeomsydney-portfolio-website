@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic setup -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>One Spoon — Sydney Yeom</title>
+    <meta name="description"
+        content="One Spoon is a civic dashboard designed to help residents stay informed about the city’s progress on public initiatives and infrastructure projects.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="One Spoon — Sydney Yeom">
+    <meta property="og:description"
+        content="One Spoon is a civic dashboard designed to help residents stay informed about the city’s progress on public initiatives and infrastructure projects.">
+    <meta property="og:url" content="https://yeomsydney.com/trace-toronto/">
+    <meta property="og:image" content="https://yeomsydney.com/public/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="One Spoon — Sydney Yeom">
+    <meta name="twitter:description"
+        content="One Spoon is a civic dashboard designed to help residents stay informed about the city’s progress on public initiatives and infrastructure projects.">
+    <meta name="twitter:image" content="https://yeomsydney.com/public/images/og-image.jpg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- JSON -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Favicon & Icons -->
+    <!-- Default / fallback for browsers -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+
+    <!-- PNG favicons for older browsers -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+    <!-- Light / Dark mode SVG favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon-light-ui.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="/favicon-dark-ui.svg" media="(prefers-color-scheme: dark)">
+
+    <!-- Apple touch icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Android / PWA icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body id="content-wrapper" class="scroll-container" data-page="casestudies">
+    <header>
+        <nav id="main-nav-pc" role="navigation">
+            <div class="nav-top-pc">
+                <div class="main-nav-pc-top main-nav-left">
+                    <h4>Toronto, Canada</h4>
+                </div>
+
+                <div class="main-nav-pc-top main-nav-logo">
+                    <a href="/" class="nav-logo-link">
+                        <h3>Sydney Yeom</h3>
+                    </a>
+
+                    <h4>Branding Designer</h4>
+                </div>
+
+                <div class="main-nav-pc-top main-nav-call" data-open="contact">
+                    <a href="/contact/">
+                        <div class="dot"></div>
+                        <h5>Available <span>for Projects <i class="ri-arrow-right-up-line"></i></span></h5>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-center-pc">
+                <div class="nav-center">
+                    <ul class="nav-block-text-bottom-main">
+                        <li class="nav-menu-each hover-trigger" aria-current="page" data-page="home" data-text="Home">
+                            <a href="/" class="nav-link">
+                                <i class="ri-home-line"></i>
+                                <span class="nav-menu">Home</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-menu-each hover-trigger" data-page="about" data-text="About">
+                            <a href="/about/" class="nav-link">
+                                <i class="ri-user-3-line"></i>
+                                <span class="nav-menu">About</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-menu-each hover-trigger" data-page="casestudies" data-text="Case Studies">
+                            <a href="/" class="nav-link">
+                                <i class="ri-briefcase-line"></i>
+                                <span class="nav-menu">Case Studies</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-menu-each hover-trigger" data-page="contact" data-text="Contact">
+                            <a href="/contact/" class="nav-link">
+                                <i class="ri-mail-line"></i>
+                                <span class="nav-menu">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="nav-search">
+                        <i class="ri-search-line search-icon"></i>
+                        <input type="text" id="site-search" placeholder="Search" autocomplete="off" />
+                        <div class="search-key">
+                            <span class="letter-key">K</span>
+                            <p class="plus">+</p>
+                            <span><i class="ri-command-fill"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="search-preview-modal" class="search-modal" role="dialog" aria-modal="true"
+                aria-labelledby="search-title" hidden>
+                <div class="search-modal-wrapper">
+                    <div class="search-intro">
+                        <h3>Hello there, I'm a search assistant.</h3>
+                    </div>
+                    <div class="search-preview-text"></div>
+                    <div class="search-default">
+                        <h3>Tips</h3>
+                        <ul>
+                            <li>Open by
+                                <span>K</span> + <span><i class="ri-command-fill"></i></span>
+                            </li>
+
+                            <li>Select by arrow keys
+                                <span><i class="ri-arrow-up-s-line"></i></span> / <span><i
+                                        class="ri-arrow-down-s-line"></i></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="container" role="main">
+        <article id="page-casestudy" class="casestudy-section">
+            <div class="casestudy-container-wrapping-box">
+                <div class="casestudy-item-4 main-casestudy casestudy-item"
+                    data-behance="https://www.behance.net/gallery/242005417/Trace-Toronto">
+                    <div class="casestudy-item-bg">
+                        <div class="casestudy-container">
+                            <div class="casestudy-container-top reveal">
+                                <div class="casestudy-container-left">
+                                    <div class="page">
+                                        <span>04</span>
+                                        <span class="opacity60"> / 05</span>
+                                    </div>
+
+                                    <div class="casestudy-title">
+                                        <h3>One Spoon</h3>
+                                    </div>
+                                </div>
+
+                                <div class="casestudy-container-right">
+                                    <div class="casestudy-details">
+                                        <div class="casestudy-eachDetail">
+                                            <h3>Overview</h3>
+                                            <h4 class="tagline">Making Progress Visible.</h4>
+                                            <p class="opacity60">Trace Toronto is a civic dashboard designed to help
+                                                residents
+                                                stay informed about the city’s progress on public
+                                                initiatives and infrastructure projects. By making government data more
+                                                transparent and accessible, the platform aims to
+                                                strengthen trust between the city and its residents while offering a
+                                                clearer
+                                                understanding of ongoing developments
+                                                across Toronto.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="casestudy-container-right-3c">
+                                        <div class="casestudy-details-3c">
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Year</h3>
+                                                <h4>December 2025</h4>
+                                            </div>
+
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Duration</h3>
+                                                <h4>10 Weeks</h4>
+                                            </div>
+
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Type</h3>
+                                                <ul>
+                                                    <h4>Brand Identity</h4>
+                                                    <h4>UX/UI (App)</h4>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="casestudy-details-3c">
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Role</h3>
+                                                <ul>
+                                                    <li>Branding Designer</li>
+                                                    <li>UX/UI (App) Designer</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="casestudy-eachDetail">
+                                                <h3>Tools Used</h3>
+                                                <ul>
+                                                    <li>Adobe Photoshop</li>
+                                                    <li>Adobe Illustrator</li>
+                                                    <li>Adobe InDesign</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="casestudy-container-middle">
+                                <div class="casestudy-detail-box">
+                                    <div class="casestudy-detail-imgbox">
+                                        <img src="/public/images/tracetoronto/tracetoronto-banner05.jpg" loading="lazy"
+                                            class="reveal">
+                                    </div>
+
+                                    <div class="casestudy-text-container">
+                                        <div class="casestudy-textbox">
+                                            <div class="casestudy-projectBG">
+                                                <div class="casestudy-projectBG-left reveal">
+                                                    <h4>
+                                                        <span class="cs-proj-left-1">We know the government works hard
+                                                            for citizens, however, it is hard for citizens
+                                                            to clearly see the progress being made sometimes.
+                                                            Recognizing the importance of public trust, I developed a
+                                                            campaign under the City of Toronto
+                                                            brand allowing the public to easily track the government’s
+                                                            execution, processes, and progress on projects.</span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="casestudy-textbox-prob-solu">
+                                            <div class="cs-textbox-prob-solu-container">
+                                                <div class="casestudy-prob-solu-projectBG">
+                                                    <div class="reveal challenges">
+                                                        <h3>Challenges</h3>
+                                                        <p>The government has initiated many projects to improve
+                                                            citizens’ quality of life and support urban development.
+                                                            While
+                                                            citizens assume that the government has been working on many
+                                                            initiatives for the city, it is unclear what projects are
+                                                            being developed, how far they have progressed, and what
+                                                            outcomes are expected.
+                                                            <br><br>
+                                                            According to Evidence for Democracy’s 2023 survey, nearly
+                                                            49% of Canadians reported being dissatisfied with government
+                                                            transparency. This highlighted the need for an idea that
+                                                            could reconnect the broken bridge of communication between
+                                                            the
+                                                            government and citizens through improved transparency. It
+                                                            needed to be either a strong campaign that could
+                                                            remain memorable to the public or a powerful platform that
+                                                            could be used in real life. As a branch under the City of
+                                                            Toronto, the project also needed to remain aligned with the
+                                                            city’s brand while delivering an effective solution.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cs-process-box-wrapper">
+                                        <div class="cs-text-wrapping-box-process">
+                                            <div class="cs-text-wrapping-box-process-top">
+                                                <h3 class="reveal">Approach & Key Process</h3>
+                                            </div>
+
+                                            <div class="casestudy-step reveal">
+                                                <div class="casestudy-step-box">
+                                                    <div class="casestudy-each-step">
+                                                        <div class="casestudy-each-step-title">
+                                                            <span class="cs-each-step-title-wrapping-box">
+                                                                <span class="numbers">01</span>
+                                                                <span class="cs-es-title">Context</span>
+                                                                <span class="cs-es-subtitle">Discover</span>
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="casestudy-each-step-details">
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Research on Civic Transparency</h4><i
+                                                                        class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Explored how Torontonians
+                                                                    access and
+                                                                    understand information related to government
+                                                                    projects,
+                                                                    identifying gaps in clarity,
+                                                                    accessibility, and trust.</span>
+                                                            </div>
+
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Comparative Research</h4><i
+                                                                        class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Reviewed how other cities
+                                                                    communicate
+                                                                    public initiatives and present data to residents,
+                                                                    examining
+                                                                    best practices in
+                                                                    transparency and public engagement.</span>
+                                                            </div>
+
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Understanding the City’s Identity</h4><i
+                                                                        class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Analyzed Toronto’s existing
+                                                                    visual
+                                                                    language and branding systems to ensure consistency
+                                                                    and
+                                                                    respect for established civic
+                                                                    identity.</span>
+                                                            </div>
+
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Target Audience</h4><i
+                                                                        class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Identified key user groups,
+                                                                    their
+                                                                    expectations, and levels of civic engagement to
+                                                                    better
+                                                                    understand how different
+                                                                    audiences interact with public information.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="casestudy-each-step">
+                                                        <div class="casestudy-each-step-title">
+                                                            <span class="cs-each-step-title-wrapping-box">
+                                                                <span class="numbers">02</span>
+                                                                <span class="cs-es-title">Direction</span>
+                                                                <span class="cs-es-subtitle">Frame</span>
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="casestudy-each-step-details">
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div
+                                                                    class="casestudy-each-step-details-box-title-noHover">
+                                                                    <h4>Synthesizing</h4>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Experience Strategy</h4><i
+                                                                        class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Established how users would
+                                                                    navigate
+                                                                    and interact with the system, prioritizing clarity,
+                                                                    accessibility, and trust.</span>
+                                                            </div>
+
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>User Flow Design</h4><i
+                                                                        class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Mapped user journeys to
+                                                                    structure
+                                                                    information logically and reduce cognitive friction
+                                                                    throughout the experience.</span>
+                                                            </div>
+
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Persona Development</h4><i
+                                                                        class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Developed representative user
+                                                                    profiles
+                                                                    to ground design decisions in realistic behaviors
+                                                                    and
+                                                                    needs.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="casestudy-each-step">
+                                                        <div class="casestudy-each-step-title">
+                                                            <span class="cs-each-step-title-wrapping-box">
+                                                                <span class="numbers">03</span>
+                                                                <span class="cs-es-title">Design</span>
+                                                                <span class="cs-es-subtitle">Develop</span>
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="casestudy-each-step-details">
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>Concept Development</h4><i
+                                                                        class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Translated insights into a
+                                                                    cohesive
+                                                                    concept that balances transparency, clarity, and
+                                                                    civic
+                                                                    tone.</span>
+                                                            </div>
+
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div class="casestudy-each-step-details-box-title">
+                                                                    <h4>System Design</h4><i
+                                                                        class="ri-subtract-fill"></i>
+                                                                </div>
+                                                                <span class="extra-info">Built a consistent design
+                                                                    system
+                                                                    including layout structures, typography, colour
+                                                                    usage, and
+                                                                    interaction patterns to
+                                                                    support scalable information delivery.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="casestudy-each-step">
+                                                        <div class="casestudy-each-step-title">
+                                                            <span class="cs-each-step-title-wrapping-box">
+                                                                <span class="numbers">04</span>
+                                                                <span class="cs-es-title">Outcome</span>
+                                                                <span class="cs-es-subtitle">Showcase</span>
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="casestudy-each-step-details">
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div
+                                                                    class="casestudy-each-step-details-box-title-noHover">
+                                                                    <h4>Mockup Creation</h4>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div
+                                                                    class="casestudy-each-step-details-box-title-noHover">
+                                                                    <h4>Iteration & Refinement</h4>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="casestudy-each-step-details-box">
+                                                                <div
+                                                                    class="casestudy-each-step-details-box-title-noHover">
+                                                                    <h4>Final Outcome</h4>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cs-img-wrapping-box-container">
+                                        <div class="cs-img-wrapping-box">
+                                            <div class="cs-img-wb-details-each-box-container">
+                                                <div class="cs-img-supporting-text">
+                                                    <div class="cs-img-supporting-text-each">
+                                                        <h3 class="reveal">Solution</h3>
+                                                        <div class="cs-img-supporting-text-each-main">
+                                                            <h4 class="reveal">Trace Toronto, Making Progress Visible.
+                                                            </h4>
+                                                            <p class="reveal">Starting off, I named the sub-brand Trace
+                                                                Toronto, a straightforward and literal name that
+                                                                reflects the idea of tracing what has
+                                                                changed and what is currently changing in Toronto. At
+                                                                the same time, it indirectly encourages citizens to be
+                                                                more active
+                                                                in tracking government projects and paying closer
+                                                                attention to the city.
+                                                                <br><br>
+                                                                To bridge the gap in public trust and strengthen
+                                                                transparency, I introduced a dashboard platform that
+                                                                follows the design
+                                                                language of the City of Toronto brand. The platform
+                                                                extend the campaign, helping citizens feel closer to the
+                                                                city
+                                                                and improving communication between the government and
+                                                                the public.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="cs-img-wb-details-each-box">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-logo.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-logo-space.jpg"
+                                                        loading="lazy" class="reveal">
+
+                                                    <img src="/public/images/tracetoronto/tracetoronto-banner01.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-banner03.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-banner02.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-banner04.jpg"
+                                                        loading="lazy" class="reveal">
+
+                                                    <div class="cs-img-wb-square reveal">
+                                                        <img src="/public/images/tracetoronto/tracetoronto-cap01.jpg"
+                                                            loading="lazy">
+                                                        <img src="/public/images/tracetoronto/tracetoronto-file01.jpg"
+                                                            loading="lazy">
+                                                    </div>
+
+                                                    <div class="cs-img-wb-square reveal">
+                                                        <img src="/public/images/tracetoronto/tracetoronto-app01.jpg"
+                                                            loading="lazy">
+                                                        <img src="/public/images/tracetoronto/tracetoronto-envelope01.jpg"
+                                                            loading="lazy">
+                                                    </div>
+
+                                                    <img src="/public/images/tracetoronto/tracetoronto-appstore02.jpg"
+                                                        loading="lazy" class="reveal">
+
+                                                    <div class="cs-img-wb-square reveal">
+                                                        <img src="/public/images/tracetoronto/tracetoronto-app02.jpg"
+                                                            loading="lazy">
+                                                        <img src="/public/images/tracetoronto/tracetoronto-appstore01.jpg"
+                                                            loading="lazy">
+                                                    </div>
+
+                                                    <img src="/public/images/tracetoronto/tracetoronto-app03.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-mac02.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-mac01.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-casestudy01.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-casestudy02.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-casestudy03.jpg"
+                                                        loading="lazy" class="reveal">
+                                                    <img src="/public/images/tracetoronto/tracetoronto-casestudy04.jpg"
+                                                        loading="lazy" class="reveal">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="casestudy-each-list">
+                                    <div class="project-badge reveal">
+                                        <h4>Next Project</h4>
+                                    </div>
+
+                                    <a href="/lights-of-seoul/" class="next-project-img reveal"
+                                        data-text="View Casestudy">
+                                        <img src="/public/images/lightsofseoul/lightsofseoul_thumbnail_square.jpg"
+                                            loading="lazy">
+                                    </a>
+
+                                    <div class="cs-next-project-text reveal">
+                                        <h3>Lights of Seoul</h3>
+                                        <h4>Brand Identity</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Go Top -->
+                        <div class="gotop-btn reveal" data-text="Go to Top">
+                            <button>
+                                <i class="ri-arrow-up-line"></i>
+                                <span>Go to Top</span>
+                            </button>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="footer-container">
+                            <div class="footer-container-wrapper">
+                                <div class="footer-credit-top">
+                                    <div class="footer-credit-top-line">
+                                        <h3>Hello, there, this is Sydney</h3>
+                                        <h4>Get in Touch! ツ゚</h4>
+                                    </div>
+
+                                    <div class="footer-credit-top-connect">
+                                        <div class="footer-credit-connectBox footer-credit-socialmedia">
+                                            <h3 class="footer-credit-connectBox-title">Connect</h3>
+                                            <ul>
+                                                <li>
+                                                    <a class="ft-credit-connectBox-each"
+                                                        href="https://www.linkedin.com/in/sydney-yeom/" target="_blank">
+                                                        <i class="ri-linkedin-fill"></i>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a class="ft-credit-connectBox-each"
+                                                        href="https://www.behance.net/sydneyyeom" target="_blank">
+                                                        <i class="ri-behance-fill"></i>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a class="ft-credit-connectBox-each"
+                                                        href="https://www.instagram.com/theissue.xyz/" target="_blank">
+                                                        <i class="ri-instagram-fill"></i>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a class="ft-credit-connectBox-each"
+                                                        href="https://github.com/YeomSydney" target="_blank">
+                                                        <i class="ri-github-fill"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="footer-credit-connectBox footer-credit-calls">
+                                            <h3 class="footer-credit-connectBox-title">Let's Talk</h3>
+                                            <ul>
+                                                <li>
+                                                    <a class="ft-credit-call-each"
+                                                        href="https://calendly.com/yeomsydney/project-discussion-call"
+                                                        target="_blank">
+                                                        <h4>Book a Call</h4>
+                                                        <i class="ri-arrow-right-line"></i>
+                                                    </a>
+                                                    <h5>Always open to talk!</h5>
+                                                </li>
+
+                                                <li>
+                                                    <span class="ft-credit-call-each deactivated" href="#"
+                                                        target="_blank">
+                                                        <h4>Digital Planner</h4>
+                                                        <i class="ri-arrow-right-line"></i>
+                                                    </span>
+                                                    <h5>Stay Tuned</h5>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="footer-credit-bottom">
+                                    <!-- <h4>©SydneyYeom</h4> -->
+                                </div>
+                            </div>
+
+                            <div class="footer-container-misc">
+                                <ul>
+                                    <li><a href="/">© 2026 Sydney Yeom All rights reserved</a></li>
+                                </ul>
+
+                                <ul>
+                                    <li class="footer-time">--:--</li>
+                                    <li class="footer-weather">Loading Weather...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Mouse Cursor -->
+    <div id="mouse_cursor"><span class="cursor-blur"></span></div>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="/public/js/style.js" type="module"></script>
+    <script src="/public/js/components/footer.js" type="module"></script>
+    <script src="/public/js/components/casestudy.js" type="module"></script>
+    <script src="/public/js/components/archive.js" type="module"></script>
+    <script src="/public/js/components/search.js" type="module"></script>
+    <script src="/public/js/components/scrollBtn.js" type="module"></script>
+    <script src="/public/js/components/toggle.js" type="module"></script>
+    <script src="/public/js/components/reveal.js" type="module"></script>
+</body>
+
+</html>

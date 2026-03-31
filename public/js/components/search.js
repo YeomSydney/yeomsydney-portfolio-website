@@ -55,6 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
             label: "I Wasn’t There",
             keywords: ["i wasn't there", "book", "typography"],
             url: "/i-wasnt-there"
+        },
+        {
+            label: "One Spoon",
+            keywords: ["one", "spoon", "onespoon", "museum"],
+            url: "/one-spoon"
         }
     ];
 
