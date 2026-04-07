@@ -380,7 +380,7 @@
                             
                             width: 100%;
                             grid-auto-flow: row;
-                            align-items: start;
+                            align-items: center;
                             justify-content: space-between;
 
                             h3 {
@@ -433,6 +433,12 @@
                                     p {
                                         font-size: var(--font-size-sd);
                                         line-height: 22px;
+                                    }
+
+                                    .note {
+                                        font-size: var(--font-size-primary-sm);
+                                        opacity: .6;
+                                        font-style: italic;
                                     }
                                 }
                             }

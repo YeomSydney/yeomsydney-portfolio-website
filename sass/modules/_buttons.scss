@@ -90,7 +90,8 @@
 
 .goback-btn,
 .award-btn,
-.project-badge {
+.project-badge,
+.view-more-btn {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -108,7 +109,8 @@
 }
 
 .goback-btn:hover,
-.award-btn:hover {
+.award-btn:hover,
+.view-more-btn:hover {
     background-color: var(--bg-bk);
 
     h4,
@@ -117,7 +119,8 @@
     }
 }
 
-.award-btn {
+.award-btn,
+.view-more-btn {
     width: 100%;
 
     a {
