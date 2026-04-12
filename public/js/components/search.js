@@ -60,6 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
             label: "One Spoon",
             keywords: ["one", "spoon", "onespoon", "museum"],
             url: "/one-spoon"
+        },
+        {
+            label: "Brass Fork",
+            keywords: ["brass", "fork", "burger", "hamburger", "fast food", "brass fork"],
+            url: "/brassfork"
         }
     ];
 
