@@ -65,6 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
             label: "Brass Fork",
             keywords: ["brass", "fork", "burger", "hamburger", "fast food", "brass fork"],
             url: "/brassfork"
+        },
+        {
+            label: "Lazy Donut",
+            keywords: ["donut", "cafe", "lazy", "lazy donut"],
+            url: "/lazydonut"
         }
     ];
 
