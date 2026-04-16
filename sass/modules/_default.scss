@@ -208,7 +208,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
             .hero-casestudy-title,
             .hero-top-intro-para-moreworks-box,
             .hero-extra-black,
-            .hero-extra-box-experience,
             .hero-extra-box-contact {
                 .hero-top-intro-para {
                     .hero-top-intro-para-title {
@@ -274,7 +273,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 }
             }
 
-            .hero-extra-box-experience,
             .hero-extra-box-contact {
                 h2 {
                     line-height: 18px;
@@ -849,7 +847,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     row-gap: 5em;
                 }
 
-                .hero-extra-box-experience,
                 .hero-extra-box-contact {
                     .hero-top-intro-para-jobDetail {
                         display: grid;
@@ -1055,7 +1052,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 .hero-top-intro-para-about-box,
                 .hero-extra-black,
                 .hero-top-intro-para-moreworks-box,
-                .hero-extra-box-experience,
                 .hero-extra-box-contact {
                     .hero-top-intro-para {
                         h3 {
@@ -1481,7 +1477,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (min-width: 440px) and (max-width: 999px) {
     main {
         .hero-section {
-            .hero-extra-box-experience,
             .hero-extra-box-contact {
                 .hero-top-intro-para-jobDetail {
                     display: grid;
@@ -1552,7 +1547,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         }
                     }
 
-                    .hero-extra-box-experience,
                     .hero-extra-box-contact {
                         .hero-top-intro-para {
                             ul {
@@ -1722,10 +1716,9 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                gap: 15em !important;
+                gap: 18em !important;
                 padding-top: 8em !important;
 
-                .hero-extra-box-experience,
                 .hero-extra-box-contact {
                     display: flex;
                     flex-direction: column;
@@ -1831,7 +1824,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                row-gap: 15em !important;
+                row-gap: 20em !important;
             }
             
             .hero-extra {
@@ -1962,8 +1955,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         }
                     }
                 }
-
-                .hero-extra-box-experience,
+                
                 .hero-extra-box-contact {
                     padding: 3em 1.8em;
                     display: grid;
@@ -2228,7 +2220,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 }
             }
 
-            .hero-extra-box-experience,
             .hero-extra-box-contact {
                 ul {
                     display: grid;
@@ -2308,7 +2299,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (min-width: 1400px) {
     main {
         .hero-section {
-            .hero-extra-box-experience,
             .hero-extra-box-contact {
                 .hero-top-intro-para {
                     display: flex;
