@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { triggers: ["."], message: ["Yes, period."] },
         { triggers: ["email"], message: ["Contact me via yeomsydney@gmail.com!"] },
         { triggers: ["linkedin", "li"], message: ["Find me @sydney-yeom in LinkedIn!"] },
-        { triggers: ["instagram", "ins"], message: ["Find me @theissue.xyz in Instagram!"] },
+        { triggers: ["instagram", "ins"], message: ["Find me @sydney.s.yeom in Instagram!"] },
     ];
 
     /* ------------------------------
