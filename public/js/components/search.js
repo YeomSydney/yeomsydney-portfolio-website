@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             label: "One Spoon",
             keywords: ["one", "spoon", "onespoon", "museum"],
-            url: "/one-spoon"
+            url: "/onespoon"
         },
         {
             label: "Brass Fork",
