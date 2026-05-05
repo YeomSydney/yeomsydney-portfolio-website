@@ -179,8 +179,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 font-size: var(--font-size-primary-sm);
                                 background-color: var(--bg-lightgrey);
                                 border-radius: .5em;
-                                padding: .5em .8em;
-                                border: 1px solid var(--bg-wh);
+                                padding: .5em .6em;
                                 color: var(--color-text-primary-bk-border-dark);
                                 transition: color .25s ease, filter .25s ease;
                                 flex-shrink: 0;
@@ -191,7 +190,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             &.active {
                                 i {
                                     color: var(--bg-bk);
-                                    background-color: var(--line-black);
+                                    background-color: var(--color-bg-toggle);
                                 }
                             }
                         }
