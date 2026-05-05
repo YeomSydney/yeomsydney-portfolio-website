@@ -128,15 +128,16 @@
 
     button {
         align-items: center;
-        padding: 8px 10px !important;
-        border-radius: .5em;
-        background-color: var(--bg-lightgrey);
         transform: translateY(0px);
         transition: transform .3s ease;
 
         i {
             font-size: var(--font-size-primary);
             color: var(--bg-bk);
+        }
+
+        span {
+            font-size: var(--font-size-primary-sm);
         }
 
         &:hover {

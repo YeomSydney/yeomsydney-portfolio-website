@@ -109,7 +109,7 @@
                     .casestudy-each-step {
                         border: 1px solid var(--line-black);
                         border-radius: .5em;
-                        padding: 1.6em 1.6em !important;
+                        padding: 1.2em !important;
                     }
                 }
 
@@ -465,8 +465,8 @@
         .casestudy-item {
             .casestudy-container-top,
             div.casestudy-container-middle .casestudy-detail-box > div:not(.cs-process-box-wrapper) {
-                padding-left: 1.8em;
-                padding-right: 1.8em;
+                padding-left: 1.2em;
+                padding-right: 1.2em;
             }
 
             .casestudy-item-bg {
@@ -612,8 +612,8 @@
         .casestudy-item {
             .casestudy-container-top,
             div.casestudy-container-middle .casestudy-detail-box > div:not(.cs-process-box-wrapper) {
-                padding-left: 2em;
-                padding-right: 2em;
+                padding-left: 1.4em;
+                padding-right: 1.4em;
             }
         }
         
@@ -661,7 +661,7 @@
 
                 &-middle {
                     .cs-process-box-wrapper {
-                        padding: 8em 2em;
+                        padding: 8em 1.2em;
                     }
 
                     .cs-img-wrapping-box {
@@ -805,7 +805,7 @@
                         }
 
                         .casestudy-text-container {
-                            padding: 8em 1.8em;
+                            padding: 8em 1.2em;
                         }
                     }
                 }
@@ -826,8 +826,8 @@
         .casestudy-item {
             .casestudy-container-top,
             div.casestudy-container-middle .casestudy-detail-box > div:not(.cs-process-box-wrapper) {
-                padding-left: 1.8em;
-                padding-right: 1.8em;
+                padding-left: 1.2em;
+                padding-right: 1.2em;
             }
 
             .casestudy-step {
@@ -892,7 +892,7 @@
                 &-middle {
                     .cs-process-box-wrapper {
                         width: 100%;
-                        padding: 10em 1.8em;
+                        padding: 10em 1.2em;
                     }
 
                     .cs-img-wrapping-box {

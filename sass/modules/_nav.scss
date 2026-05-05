@@ -10,10 +10,10 @@
         flex-direction: row;
         justify-content: space-between;
         position: fixed;
-        top: 4px;
-        left: 4px;
-        right: 4px;
-        padding: .8em 1.2em;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 1em 1.2em;
         z-index: 2001 !important;
         transition: background-color 0.3s ease;
         border-radius: .5em;
@@ -81,7 +81,7 @@
                 position: relative;
                 gap: 1.5em;
                 border-radius: .5em;
-                padding: .6em 1.3em;
+                padding: .6em 1.2em .7em 1.2em;
                 overflow: hidden;
                 align-items: center;
 
@@ -95,9 +95,7 @@
                 }
 
                 li {
-                    transition:
-                        background-color 0.3s ease, padding 0.3s ease,
-                        border-radius 0.3s ease;
+                    transition: all 0.3s ease;
                 
                     a {
                         span {
@@ -154,7 +152,6 @@
 @media only screen and (min-width: 744px) {
     #main-nav-pc {
         .nav-top-pc {
-            padding: .8em 1.8em;
             display: grid;
             grid-template-columns: 1fr 1fr 3fr 1fr;
 
