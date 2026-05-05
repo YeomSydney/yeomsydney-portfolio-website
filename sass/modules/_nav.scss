@@ -30,6 +30,7 @@
             span {
                 color: var(--bg-dk);
                 font-size: var(--font-size-sm);
+                font-family: 'Neue Montreal Regular', 'General Sans', 'Helvetica';
             }
 
             &.main-nav-left {
@@ -79,7 +80,7 @@
                 justify-content: center;
                 position: relative;
                 gap: 1.5em;
-                border-radius: 10em;
+                border-radius: .5em;
                 padding: .6em 1.3em;
                 overflow: hidden;
                 align-items: center;
@@ -91,22 +92,20 @@
                     inset: 0;
                     z-index: var(--z-negative);
                     backdrop-filter: blur(8px);
-                    background-color: var(--bg-wh-nav);
+                    background-color: var(--color-cursor);
                 }
 
-                .nav-menu-each {
+                li {
                     transition:
                         background-color 0.3s ease, padding 0.3s ease,
                         border-radius 0.3s ease;
                 
-                    a, button {
-                        font: inherit;
-                        cursor: pointer;
-
+                    a {
                         span {
-                            color: var(--bg-dk);
+                            color: var(--bg-wh);
                             opacity: .6;
                             font-size: var(--font-size-primary-sm);
+                            font-family: 'Neue Montreal Regular', 'General Sans', 'Helvetica';
                         }
                     }
 
@@ -238,7 +237,7 @@
                 &:focus,
                 &:hover {
                     width: 200px;
-                    border-color: var(--color-text-primary-bk);
+                    border-color: var(--bg-bk);
     
                     &::placeholder {
                         opacity: .2;
@@ -261,7 +260,7 @@
 
                 span {
                     background-color: var(--bg-wh-nav);
-                    border: 1px solid var(--bg-lightgrey01);
+                    border: 1px solid var(--bg-wh);
                     filter: blur(10px);
                     border-radius: 4px;
                     filter: drop-shadow(0 6px 5px #11111115);

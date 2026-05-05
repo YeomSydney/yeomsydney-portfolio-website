@@ -20,6 +20,17 @@
 
 .hidden { display: none; }
 
+@media (pointer: coarse) {
+    html,
+    body {
+        cursor: auto;
+    }
+}
+
+html, body, * {
+    cursor: none;
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -50,7 +61,7 @@ html {
 
     main {
         align-items: center;
-        color: var(--color-text-primary-bk);
+        color: var(--bg-bk);
     }
 }
 
@@ -76,7 +87,7 @@ button {
     font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
     font-size: var(--font-size-primary);
     font-weight: 400;
-    color: var(--color-text-primary-bk);
+    color: var(--bg-bk);
     word-wrap: break-word;
     text-wrap: pretty;
     text-decoration: none !important;
@@ -89,8 +100,8 @@ p {
     font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
     font-size: var(--font-size-primary-sm);
     font-weight: 400;
-    line-height: 18px;
-    color: var(--color-text-primary-bk);
+    line-height: 16px;
+    color: var(--bg-bk);
     word-wrap: break-word;
     text-wrap: pretty;
     text-decoration: none !important;
@@ -101,32 +112,28 @@ p {
 
 label, a {
     pointer-events: auto !important;
-    cursor: pointer !important;
 }
 
 button {
     outline: none;
     border: none;
     background-color: transparent;
-    cursor: pointer !important;
 }
 
 input {
     display: none;
     border: none;
     outline: none;
-    cursor: pointer !important;
 }
 
 a,
 button {
-    cursor: pointer !important;
     user-select: none;
 }
 
 img,
 video {
-    border-radius: .7em;
+    border-radius: .5em;
     box-sizing: border-box;
     width: 100%;
     height: auto;
@@ -141,7 +148,7 @@ video {
 /* Customized */
 
 .line {
-    background-color: var(--bg-lightgrey02) !important;
+    background-color: var(--bg-lightgrey) !important;
     height: 1px;
     width: 100%;
 }
@@ -160,11 +167,10 @@ video {
 }
 
 .dot {
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     border-radius: 10em;
     background-color: var(--bg-wh);
-    filter: drop-shadow(0 0 2px var(--color-glow-white));
 }
 
 @media only screen and (max-width: 999px) {

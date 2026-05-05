@@ -78,8 +78,8 @@
     flex-direction: row;
     align-items: center;
     padding: .4em .8em;
-    background-color: var(--bg-lightgrey02);
-    border-radius: 3em;
+    background-color: var(--bg-lightgrey);
+    border-radius: 10em;
     transition: all .3s ease-in;
     vertical-align: middle;
     gap: .4em;
@@ -134,9 +134,9 @@
         align-items: center;
 
         padding: 8px 10px !important;
-        border-radius: 3em;
-        background-color: var(--color-text-primary-bk);
-        border: 1px solid var(--bg-lightgrey02);
+        border-radius: 10em;
+        background-color: var(--bg-bk);
+        border: 1px solid var(--bg-lightgrey);
         box-shadow: 0px 12px 10px #11111115;
 
         transition:
@@ -166,7 +166,7 @@
         }
 
         &:hover {
-            background-color: var(--color-text-primary-bk);
+            background-color: var(--bg-bk);
             box-shadow: 0px 2px 4px var(--color-text-primary-bk-border-dark);
             display: flex;
             flex-direction: row;

@@ -1,10 +1,10 @@
 .footer-container {
     width: 100vw;
-    // height: 100vh;
-    background-color: var(--bg-lightgrey01);
+    background-color: var(--bg-lightgrey);
     display: flex;
     flex-direction: column;
     gap: 8em;
+    // border-top: 1px solid var(--line-black);
 
     .footer-container-wrapper {
         box-sizing: border-box;
@@ -59,8 +59,7 @@
                             display: inline-block;
                             inset: 0;
                             background-color: var(--color-text-primary-wh-dark);
-                            border: 1px solid var(--bg-lightgrey01);
-                            border-radius: 3em;
+                            border-radius: em;
                             filter: drop-shadow(0 15px 10px #11111115);
                             padding: .5em;
                             transform: translateX(0);

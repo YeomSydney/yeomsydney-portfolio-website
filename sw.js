@@ -1,5 +1,5 @@
-const CACHE_NAME = "yeomsydney-v2"; // bump version
-const IMAGE_CACHE_NAME = "yeomsydney-images-v2"; // bump version
+const CACHE_NAME = "yeomsydney-v2";
+const IMAGE_CACHE_NAME = "yeomsydney-images-v2";
 const ASSETS = [
     "/",
     "/index.html",

@@ -1,4 +1,3 @@
-// reveal.js
 document.addEventListener("DOMContentLoaded", () => {
     // IntersectionObserver to trigger reveal animation
     const revealObserver = new IntersectionObserver(

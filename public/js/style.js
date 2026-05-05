@@ -26,59 +26,89 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const mouseCursor = document.getElementById("mouse_cursor");
   if (!mouseCursor) return;
-
   let cursorX = 0, cursorY = 0;
   let currentX = 0, currentY = 0;
 
+  /* ---------- helpers ---------- */
   function lerp(start, end, t) {
     return start * (1 - t) + end * t;
   }
 
-  function setCursorSize(size) {
-    mouseCursor.style.width = `${size}px`;
-    mouseCursor.style.height = `${size}px`;
+  function setCursorText(text = "") {
+    mouseCursor.textContent = text;
   }
 
+  function setDefaultCursor() {
+    mouseCursor.classList.remove("is-hover", "has-text");
+    setCursorText("");
+    mouseCursor.style.width = "16px";
+    mouseCursor.style.height = "16px";
+    mouseCursor.style.padding = "0";
+
+  }
+
+  function setHoverCursor(text) {
+    mouseCursor.classList.add("is-hover");
+
+    if (text) {
+      mouseCursor.classList.add("has-text");
+      setCursorText(text);
+      // auto width based on text
+      mouseCursor.style.width = "auto";
+      mouseCursor.style.height = "auto";
+      mouseCursor.style.padding = "6px 10px";
+    } else {
+      mouseCursor.classList.remove("has-text");
+      setCursorText("");
+      mouseCursor.style.width = "16px";
+      mouseCursor.style.height = "16px";
+      mouseCursor.style.padding = "0";
+    }
+  }
+
+  /* ---------- mouse move ---------- */
   window.addEventListener("mousemove", e => {
-    mouseCursor.style.display = "inline-block";
+    mouseCursor.style.display = "flex";
     cursorX = e.clientX;
     cursorY = e.clientY;
   });
 
+  /* ---------- hover targets ---------- */
   const hoverTargets = document.querySelectorAll(
-    "a, button, label, i, .hover-trigger"
+    "a, button, [role='button'], .hover-trigger"
   );
 
   hoverTargets.forEach(el => {
     el.addEventListener("mouseenter", e => {
       const text = e.target.closest("[data-text]")?.dataset.text || "";
-      mouseCursor.textContent = text;
-      setCursorSize(120);
-      el.style.cursor = "pointer";
+      setHoverCursor(text);
     });
 
     el.addEventListener("mouseleave", () => {
-      mouseCursor.textContent = "";
-      setCursorSize(25);
-      el.style.cursor = "default";
+      setDefaultCursor();
     });
 
     el.addEventListener("click", () => {
-      mouseCursor.style.transform += "scale(0.85)";
+      mouseCursor.style.transform += " scale(0.9)";
       setTimeout(() => {
         mouseCursor.style.transform =
-          mouseCursor.style.transform.replace("scale(0.85)", "");
-      }, 80);
+          mouseCursor.style.transform.replace(" scale(0.9)", "");
+      }, 0);
     });
   });
 
+  /* ---------- smooth follow ---------- */
   function animateCursor() {
-    currentX = lerp(currentX, cursorX, 0.08);
-    currentY = lerp(currentY, cursorY, 0.08);
+    currentX = lerp(currentX, cursorX, 0.22);
+    currentY = lerp(currentY, cursorY, 0.22);
+
     mouseCursor.style.transform =
-      `translate(calc(-50% + ${currentX}px), calc(-90% + ${currentY}px))`;
+      `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
     requestAnimationFrame(animateCursor);
   }
 
   animateCursor();
+
+  /* ---------- init ---------- */
+  setDefaultCursor();
 });

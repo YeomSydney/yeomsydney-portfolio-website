@@ -10,21 +10,22 @@
     top: 0;
     z-index: var(--z-cursor-overlay);
 
-    padding: 0 10px;
-    width: 22px;
-    height: 22px;
-    mix-blend-mode: difference;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    white-space: nowrap;
     pointer-events: none;
 
-    border-radius: 50%;
-    border: 1.2px solid var(--bg-wh);
-    background-color: transparent;
+    // border-radius: 50%;
+    border-radius: 0.5em;
+    background-color: var(--color-cursor);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
     font-size: var(--font-size-xsm);
     font-weight: 400;
     line-height: normal;
-    // text-transform: uppercase;
     word-wrap: break-word;
     color: var(--bg-wh);
     text-align: center;
@@ -38,6 +39,5 @@
 }
 
 .hover-trigger {
-    cursor: pointer !important;
     z-index: var(--z-cursor-hover);
 }
