@@ -73,7 +73,7 @@ input::placeholder,
 textarea::placeholder,
 form,
 button {
-    font-family: 'General Sans', 'geist', 'acumin-pro', 'Helvetica';
+    font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
     font-size: var(--font-size-primary);
     font-weight: 400;
     color: var(--color-text-primary-bk);
@@ -86,10 +86,10 @@ button {
 }
 
 p {
-    font-family: 'General Sans', 'geist', 'acumin-pro', 'Helvetica';
+    font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
     font-size: var(--font-size-primary-sm);
-    line-height: 18px;
     font-weight: 400;
+    line-height: 18px;
     color: var(--color-text-primary-bk);
     word-wrap: break-word;
     text-wrap: pretty;

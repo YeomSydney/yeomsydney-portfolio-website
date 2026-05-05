@@ -16,33 +16,24 @@
 .btn-wrapper {
     display: flex;
     flex-direction: row;
-    column-gap: .2em;
+    column-gap: .4em;
     align-items: center;
     transition: all .3s ease-in;
-    filter: drop-shadow(0 12px 10px #11111115);
 
     h4 {
-        font-size: var(--font-size-primary-sm);
+        font-size: var(--font-size-primary-sm) !important;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--bg-lightgrey01);
-        border-radius: 3em;
-        padding: .5em .8em;
         line-height: 1;
-        border: 1px solid var(--bg-lightgrey02);
     }
 
     i {
-        font-size: var(--font-size-primary-sm);
+        font-size: var(--font-size-primary-sm) !important;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--bg-lightgrey01);
-        border-radius: 3em;
-        padding: .5em;
         line-height: 1;
-        border: 1px solid var(--bg-lightgrey02);
     }
 
     &:hover {
@@ -53,34 +44,25 @@
 .cs-btn-wrapper {
     display: flex;
     flex-direction: row;
-    column-gap: .2em;
+    column-gap: .4em;
     align-items: center;
     transform: translateX(0);
     transition: all .4s ease-in;
-    filter: drop-shadow(0 12px 10px #11111115);
 
     h4 {
-        font-size: var(--font-size-primary-sm);
+        font-size: var(--font-size-primary-sm) !important;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--bg-wh-dark);
-        border-radius: 3em;
-        padding: .5em .8em;
         line-height: 1;
-        border: 1px solid var(--bg-lightgrey02);
     }
 
     i {
-        font-size: var(--font-size-primary-sm);
+        font-size: var(--font-size-primary-sm) !important;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--bg-wh-dark);
-        border-radius: 3em;
-        padding: .5em;
         line-height: 1;
-        border: 1px solid var(--bg-lightgrey02);
     }
 
     &:hover {
@@ -179,7 +161,7 @@
                 opacity 0.25s ease,
                 transform 0.25s ease,
                 max-width 0.35s ease;
-            font-size: var(--font-size-primary-sm);
+            font-size: var(--font-size-primary-sm) !important;
             color: var(--bg-wh);
         }
 
@@ -219,10 +201,6 @@
 }
 
 @media only screen and (min-width: 744px) {
-
-}
-
-@media only screen and (min-width: 744px) and (max-width: 999px) {
     .cs-btn-wrapper {
         display: none;
     }

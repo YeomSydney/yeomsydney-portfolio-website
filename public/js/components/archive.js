@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .forEach(el => el.classList.remove("page-open"));
 
         archiveSection.classList.remove("is-active");
-        document.body.classList.remove("archive-open", "nav-lock");
+        document.body.classList.remove("archive-open");
 
         if (window.lenis?.scrollTo) {
             window.lenis.scrollTo("#archives", { duration: 1.2 });
