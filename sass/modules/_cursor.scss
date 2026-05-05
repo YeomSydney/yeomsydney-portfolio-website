@@ -10,17 +10,17 @@
     top: 0;
     z-index: var(--z-cursor-overlay);
 
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     padding: 0;
     white-space: nowrap;
     pointer-events: none;
 
     // border-radius: 50%;
-    border-radius: 0.5em;
+    border-radius: .5em;
     background-color: var(--color-cursor);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 
     font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
     font-size: var(--font-size-xsm);

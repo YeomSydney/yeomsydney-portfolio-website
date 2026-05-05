@@ -59,10 +59,8 @@
                             display: inline-block;
                             inset: 0;
                             background-color: var(--color-text-primary-wh-dark);
-                            border-radius: em;
-                            filter: drop-shadow(0 15px 10px #11111115);
+                            border-radius: .5em;
                             padding: .5em;
-                            transform: translateX(0);
 
                             .ft-credit-connectBox-each {
                                 display: flex;
@@ -79,10 +77,6 @@
                                 i {
                                     font-size: var(--font-size-sd);
                                 }
-                            }
-
-                            &:hover {
-                                transform: translateX(3px);
                             }
                         }
                     }

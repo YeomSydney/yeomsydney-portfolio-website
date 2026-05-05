@@ -84,7 +84,6 @@
                 padding: .6em 1.3em;
                 overflow: hidden;
                 align-items: center;
-                box-shadow: 0px 8px 10px var(--color-text-primary-bk-light);
 
                 &::before {
                     content: "";
@@ -186,8 +185,6 @@
             border-radius: .5em;
             padding: 6px 12px;
             overflow: hidden;
-    
-            box-shadow: 0px 8px 10px var(--color-text-primary-bk-light);
             transition: background-color .25s ease;
 
             &::before {
@@ -200,7 +197,7 @@
                 background-color: var(--bg-wh-nav);
                 border-radius: .5em;
     
-                filter: drop-shadow(0 12px 10px #11111115);
+                filter: var(--button-dropshadow);
             }
     
             .search-icon {
@@ -261,9 +258,9 @@
                 span {
                     background-color: var(--bg-wh-nav);
                     border: 1px solid var(--bg-wh);
-                    filter: blur(10px);
-                    border-radius: 4px;
-                    filter: drop-shadow(0 6px 5px #11111115);
+                    filter: blur(8px);
+                    border-radius: .5em;
+                    filter: var(--button-dropshadow);
                     width: 20px;
                     height: 20px;
                     text-align: center;

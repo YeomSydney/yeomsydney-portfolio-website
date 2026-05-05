@@ -121,7 +121,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         align-items: center;
                         padding: .5em .8em;
                         background-color: var(--bg-lightgrey);
-                        border-radius: 10em;
+                        border-radius: .5em;
                         transition: all .3s ease-in;
                         vertical-align: middle;
 
@@ -178,7 +178,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             i {
                                 font-size: var(--font-size-primary-sm);
                                 background-color: var(--bg-lightgrey);
-                                border-radius: 10em;
+                                border-radius: .5em;
                                 padding: .5em .8em;
                                 border: 1px solid var(--bg-wh);
                                 color: var(--color-text-primary-bk-border-dark);
@@ -227,23 +227,11 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             a {
                                 display: flex;
                                 flex-direction: row;
-                                gap: .3em;
+                                gap: .4em;
                                 align-items: center;
 
                                 h4, i {
                                     font-size: var(--font-size-primary-sm);
-                                    border-radius: 10em;
-                                    background-color: var(--bg-wh);
-                                    border: 1px solid var(--bg-lightgrey);
-                                    filter: drop-shadow(0 12px 10px #11111115);
-                                }
-
-                                h4 {
-                                    padding: 8px 14px;
-                                }
-
-                                i {
-                                    padding: 8px;
                                 }
                             }
 
@@ -267,7 +255,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 
                                 h4, i {
                                     font-size: var(--font-size-primary-sm);
-                                    border-radius: 10em;
+                                    border-radius: .5em;
                                     background-color: var(--bg-wh);
                                     border: 1px solid var(--bg-lightgrey);
                                 }
@@ -366,7 +354,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         align-items: center;
                         padding: .5em .8em;
                         background-color: var(--bg-wh);
-                        border-radius: 10em;
+                        border-radius: .5em;
                         transition: all .3s ease-in;
                         vertical-align: middle;
 
@@ -538,7 +526,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
             li {
                 background-color: transparent;
-                border-radius: 10em;
+                border-radius: .5em;
                 border: 1px solid var(--color-text-primary-bk-dark);
                 padding: .6em 1.2em;
                 opacity: .6;
@@ -590,7 +578,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         backdrop-filter: blur(2.5px);
                         background-color: var(--color-accent-red);
                         border: 1px solid var(--bg-wh);
-                        filter: drop-shadow(0 10px 10px #11111115);
+                        filter: var(--button-dropshadow);
                         border-radius: .15em;
                     }
                 }
@@ -663,8 +651,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     span {
                         background-color: var(--color-text-primary-wh-dark);
                         border: 1px solid var(--bg-wh);
-                        border-radius: 4px;
-                        filter: drop-shadow(0 6px 5px #11111115);
                         text-align: center;
                         align-items: center;
                         inset: 0;

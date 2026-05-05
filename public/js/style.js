@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function setDefaultCursor() {
     mouseCursor.classList.remove("is-hover", "has-text");
     setCursorText("");
-    mouseCursor.style.width = "16px";
-    mouseCursor.style.height = "16px";
+    mouseCursor.style.width = "18px";
+    mouseCursor.style.height = "18px";
     mouseCursor.style.padding = "0";
 
   }
@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       mouseCursor.classList.remove("has-text");
       setCursorText("");
-      mouseCursor.style.width = "16px";
-      mouseCursor.style.height = "16px";
+      mouseCursor.style.width = "26px";
+      mouseCursor.style.height = "26px";
       mouseCursor.style.padding = "0";
     }
   }

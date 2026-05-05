@@ -31,15 +31,14 @@
 
 
 
-
-    // Accent Colours
+    // Accent
     --color-accent-red: #e53e3e;
-    --color-accent-lightgreen: #e1ff00;
+    --color-accent-lightgreen: #bcd311;
 
-    // Nav Colours
+    // Nav
     --bg-wh-nav: #f9f8f790;
 
-    // Background Colours
+    // Background
     --bg-wh: #f9f8f7;
     --bg-lightgrey: #efeeed;
     --bg-search-modal: #E0E0E050;
@@ -47,10 +46,10 @@
     --bg-bk: #101010;
     --bg-bk-light: #10101080;
     
-    // Line Colours
+    // Line
     --line-black: #10101020;
 
-    // Glow Colours
+    // Preview Hint
     --color-preview-hint: #f9f8f770;
 
     // Nav Icons
@@ -82,12 +81,12 @@
 
     --font-size-display-title-ex-lg: 110px;
     --font-size-display-title-ex: 90px;
+
     --font-size-display-title-lg: 68px;
     --font-size-display-title-md: 60px;
     --font-size-display-title-sm: 50px;
+
     --font-size-display-body: 40px;
-
-
 
 
     // Z-index
@@ -103,4 +102,9 @@
     --z-nav-menu: 2500;
     --z-top-above-all: 9999;
     --z-cursor-overlay: 10000;
+
+
+
+    // Drop Shadow
+    --button-dropshadow: drop-shadow(0 8px 6px #10101020);
 }

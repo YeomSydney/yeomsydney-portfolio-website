@@ -580,7 +580,7 @@
             align-items: center;
 
             .next-project-img {
-                filter: drop-shadow(0 12px 10px #11111115);
+                filter: var(--button-dropshadow);
 
                 img {
                     max-width: 350px;
@@ -732,7 +732,7 @@
                         align-items: center;
 
                         .next-project-img {
-                            filter: drop-shadow(0 12px 10px #11111115);
+                            filter: var(--button-dropshadow);
 
                             img {
                                 max-width: 350px;
