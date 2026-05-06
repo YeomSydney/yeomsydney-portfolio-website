@@ -104,7 +104,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                         p, span {
                             font-size: var(--font-size-sd-md);
-                            line-height: 28px;
+                            line-height: 110%;
                         }
 
                         span {
@@ -833,8 +833,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                     .hero-top-desc-details {
                         p {
-                            font-size: var(--font-size-sd);
-                            line-height: 22px;
+                            font-size: var(--font-size-sd-md);
+                            line-height: 110%;
                         }
                     }
                 }
