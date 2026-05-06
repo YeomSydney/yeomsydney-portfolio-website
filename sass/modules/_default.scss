@@ -1139,7 +1139,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                         p {
                             font-size: var(--font-size-primary);
-                            line-height: 17px;
+                            line-height: 18px;
                             width: 90%;
                         }
                     }
@@ -1902,7 +1902,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 p {
                                     text-indent: 5em;
                                     font-size: var(--font-size-sd);
-                                    line-height: 22px;
+                                    line-height: 125%;
                                     opacity: .6;
                                 }
                             }
@@ -1961,7 +1961,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 .about-each-detail-content {
                                     h5, h6 {
                                         font-size: var(--font-size-primary-sm);
-                                        line-height: 18px;
+                                        line-height: 125%;
                                         opacity: .6;
                                     }
                                 }
