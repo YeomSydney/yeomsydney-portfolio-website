@@ -129,9 +129,11 @@ html.full-mode-active {
             grid-column-start: unset !important;
 
             .list-layout {
-                border-top: solid 1px var(--line-black);
+                
 
                 .hero-project-list-row {
+                    border-top: solid 1px var(--line-black);
+                    
                     span {
                         font-size: var(--font-size-sm);
                         color: var(--color-text-secondary);

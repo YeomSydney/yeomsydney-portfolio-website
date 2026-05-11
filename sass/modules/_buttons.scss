@@ -1,10 +1,11 @@
 .btn-default,
 .full-mode-btn {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     column-gap: .4em;
     align-items: center;
     transition: all .3s ease-in;
+    padding: .5em 0;
 
     h4 {
         font-size: var(--font-size-primary-sm) !important;
@@ -36,7 +37,7 @@
     width: auto;
     border-radius: .3em;
     padding: .5em .8em;
-    background-color: var(--line-white);
+    background-color: var(--color-preview-hint);
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -45,7 +46,7 @@
 .gotop-btn {
     width: 100%;
     align-items: center;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     pointer-events: none;
 
@@ -113,7 +114,7 @@
 }
 
 .project-badge {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     padding: .4em .8em;

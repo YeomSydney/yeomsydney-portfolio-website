@@ -283,6 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         row.forEach(className => {
             const project = projects[projectIndex];
+            
             if (!project) return;
             const card = document.createElement("div");
             card.className =
