@@ -87,6 +87,9 @@ main {
     }
 
     .contact-section {
+        height: 100vh !important;
+        width: 100vw !important;
+        
         .footer-container-top,
         .footer-container-bottom {
             opacity: 0;

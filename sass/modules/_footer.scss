@@ -1,3 +1,15 @@
+body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top  {
+    h3, p, span, i, a, ul, li {
+        color: var(--bg-wh);
+        transition: color 0.25s ease;
+    }
+
+    h4 {
+        color: var(--color-ft-text);
+        transition: color 0.25s ease;
+    }
+}
+
 .footer-container {
     width: 100vw;
     height: 100%;
@@ -297,7 +309,11 @@
 @media only screen and (min-width: 1000px) {
     .footer-container {
         width: 100vw;
-        height: 100vh;
+        height: 100%;
+
+        .footer-container-main {
+            padding-bottom: 7em;
+        }
 
         .footer-container-wrapper {
             display: grid;

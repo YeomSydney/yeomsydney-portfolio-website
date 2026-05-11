@@ -286,17 +286,17 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!project) return;
             const card = document.createElement("div");
             card.className =
-                `hero-cp-row-each ${className} reveal`;
+                `hero-cp-row-each ${className}`;
 
             card.innerHTML = `
                 <a href="${project.url}" class="hero-project-link" data-text="${project.message}">
-                    <div class="hero-cp-row-imgbox">
+                    <div class="hero-cp-row-imgbox reveal">
                         <img src="${project.image}" alt="(${project.title})">
                     </div>
 
-                    <div class="grid-layout">
+                    <div class="grid-layout reveal">
                         <div class="hero-casestudy-previews-info-wrapper">
-                            <div class="hero-casestudy-previews-info reveal">
+                            <div class="hero-casestudy-previews-info">
                                 <div class="hero-casestudy-previews-info-title">
                                     <div class="hero-cp-each-title">
                                         <h3>${project.title}</h3>
