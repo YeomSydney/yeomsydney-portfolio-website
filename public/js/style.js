@@ -1,14 +1,78 @@
 /* =====================================
     GLOBAL.JS
+    - Page/Section Reveal Effects
     - Nav active state
+      - Colour Change (Whole:Footer)
     - Custom cursor
 ===================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  /* ---------- reveal system ---------- */
+  function revealElements(selector, options = {}) {
+    const elements = document.querySelectorAll(selector);
+    if (!elements.length) return;
+
+    /* --- instant reveal --- */
+    if (options.instant) {
+      elements.forEach(element => {
+        requestAnimationFrame(() => {
+          element.classList.add("is-visible");
+        });
+      });
+
+      return;
+    }
+
+    /* --- scroll reveal --- */
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+
+      {
+        threshold: options.threshold || 0.15
+      }
+    );
+
+    elements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+
+  /* ---------- hero reveal ---------- */
+  revealElements(
+    ".hero-top-desc, .hero-top-name",
+    { instant: true }
+  );
+
+  /* ---------- about reveal ---------- */
+  revealElements(
+    ".about-myself-wrapper, .about-myself-desc-wrapper",
+    { threshold: 0.25 }
+  );
+
+  /* ---------- casestudy reveal ---------- */
+  revealElements(
+    ".casestudy-title h3, .casestudy-details, .casestudy-container-right-3c",
+    { threshold: 0.25 }
+  );
+
+  /* ---------- footer/contact reveal ---------- */
+  revealElements(
+    ".footer-container-top, .footer-container-bottom",
+    { threshold: 0.25 }
+  );
+
   /* ===============================
     NAV ACTIVE STATE (HTML-DRIVEN)
-=============================== */
+  =============================== */
 
   const currentPage = document.body.dataset.page;
 
@@ -74,27 +138,43 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ---------- hover targets ---------- */
-  const hoverTargets = document.querySelectorAll(
-    "a, button, [role='button'], .hover-trigger"
-  );
+  document.addEventListener("mouseenter", e => {
+    const target = e.target.closest(
+      "a, button, [role='button'], .hover-trigger"
+    );
 
-  hoverTargets.forEach(el => {
-    el.addEventListener("mouseenter", e => {
-      const text = e.target.closest("[data-text]")?.dataset.text || "";
-      setHoverCursor(text);
-    });
+    if (!target) return;
 
-    el.addEventListener("mouseleave", () => {
-      setDefaultCursor();
-    });
+    const text = target.dataset.text || "";
 
-    el.addEventListener("click", () => {
-      mouseCursor.style.transform += " scale(0.9)";
-      setTimeout(() => {
-        mouseCursor.style.transform =
-          mouseCursor.style.transform.replace(" scale(0.9)", "");
-      }, 0);
-    });
+    setHoverCursor(text);
+  }, true);
+
+  document.addEventListener("mouseleave", e => {
+    const target = e.target.closest(
+      "a, button, [role='button'], .hover-trigger"
+    );
+
+    if (!target) return;
+    setDefaultCursor();
+
+  }, true);
+
+  document.addEventListener("click", e => {
+    const target = e.target.closest(
+      "a, button, [role='button'], .hover-trigger"
+    );
+
+    if (!target) return;
+    mouseCursor.style.transform += " scale(0.9)";
+
+    setTimeout(() => {
+      mouseCursor.style.transform =
+        mouseCursor.style.transform.replace(
+          " scale(0.9)",
+          ""
+        );
+    }, 0);
   });
 
   /* ---------- smooth follow ---------- */
@@ -108,6 +188,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   animateCursor();
+
+  /* ---------- footer observer ---------- */
+  const footer = document.querySelector("footer");
+
+  if (footer) {
+    const footerObserver = new IntersectionObserver (
+
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            document.body.classList.add("footer-active");
+            mouseCursor.style.backgroundColor =
+              "var(--color-cursor-ft)";
+          } else {
+            document.body.classList.remove("footer-active");
+
+            mouseCursor.style.backgroundColor =
+              "var(--color-cursor)";
+          }
+        });
+      },
+      {
+        threshold: 0.75
+      }
+    );
+
+    footerObserver.observe(footer);
+  }
 
   /* ---------- init ---------- */
   setDefaultCursor();

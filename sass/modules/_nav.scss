@@ -1,3 +1,39 @@
+body.footer-active {
+    #main-nav-pc {
+        .nav-top-pc {
+            .main-nav-pc-top {
+                h3,h4,h5,span,i {
+                    color: var(--bg-wh);
+                    transition: color 0.25s ease;
+                }
+    
+                h4 {
+                    color: var(--color-ft-text);
+                }
+            }
+        }
+
+        .nav-center {
+            ul {
+                &::before {
+                    background-color: var(--color-cursor-ft);
+                    transition:
+                        background-color 0.5s ease,
+                        backdrop-filter 0.5s ease;
+                }
+        
+                li a span {
+                    color: var(--bg-wh);
+
+                    transition:
+                        color 0.5s ease,
+                        opacity 0.5s ease;
+                }
+            }
+        }
+    }
+}
+
 #main-nav-pc {
     display: flex;
     flex-direction: column;
@@ -15,8 +51,6 @@
         right: 0;
         padding: 1em 1.2em;
         z-index: 2001 !important;
-        transition: background-color 0.3s ease;
-        border-radius: .5em;
 
         .main-nav-pc-top {
             display: flex;
@@ -35,7 +69,7 @@
 
             &.main-nav-left {
                 h4{
-                    opacity: .6;
+                    color: var(--color-text-secondary);
                 }
             }
 
@@ -80,7 +114,7 @@
                 justify-content: center;
                 position: relative;
                 gap: 1.5em;
-                border-radius: .5em;
+                border-radius: .3em;
                 padding: .6em 1.2em .7em 1.2em;
                 overflow: hidden;
                 align-items: center;
@@ -92,6 +126,9 @@
                     z-index: var(--z-negative);
                     backdrop-filter: blur(8px);
                     background-color: var(--color-cursor);
+                    transition:
+                            background-color 0.5s ease,
+                            backdrop-filter 0.5s ease,
                 }
 
                 li {
@@ -103,6 +140,10 @@
                             opacity: .6;
                             font-size: var(--font-size-primary-sm);
                             font-family: 'Neue Montreal Regular', 'General Sans', 'Helvetica';
+
+                            transition:
+                                color 0.5s ease,
+                                opacity 0.5s ease;
                         }
                     }
 
@@ -131,13 +172,12 @@
                 }
 
                 &.main-nav-logo {
-                    h3 {
+                    h3, h4 {
                         font-size: var(--font-size-sm);
                     }
 
                     h4 {
-                        opacity: 0.6;
-                        font-size: var(--font-size-sm);
+                        color: var(--color-text-secondary);
                     }
                 }
             }
@@ -165,7 +205,7 @@
                     grid-column-start: 3;
 
                     h4 {
-                        opacity: 0.6;
+                        color: var(--color-text-secondary);
                     }
                 }
             }
@@ -179,7 +219,7 @@
             gap: 10px;
             align-items: center;
     
-            border-radius: .5em;
+            border-radius: .3em;
             padding: 6px 12px;
             overflow: hidden;
             transition: background-color .25s ease;
@@ -192,7 +232,7 @@
     
                 backdrop-filter: blur(8px);
                 background-color: var(--bg-wh-nav);
-                border-radius: .5em;
+                border-radius: .3em;
     
                 filter: var(--button-dropshadow);
             }
@@ -224,7 +264,7 @@
     
                 &::placeholder {
                     color: var(--bg-dk);
-                    opacity: .6;
+                    color: var(--color-text-secondary);
                     font-size: var(--font-size-primary-sm) !important;
                 }
     
@@ -256,7 +296,7 @@
                     background-color: var(--bg-wh-nav);
                     border: 1px solid var(--bg-wh);
                     filter: blur(8px);
-                    border-radius: .5em;
+                    border-radius: .3em;
                     filter: var(--button-dropshadow);
                     width: 20px;
                     height: 20px;

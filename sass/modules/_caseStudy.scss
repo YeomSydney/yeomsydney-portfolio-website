@@ -58,19 +58,18 @@
 
                         h3 {
                             font-size: var(--font-size-xsm);
-                            opacity: .6;
+                            color: var(--color-text-secondary);
                             text-transform: uppercase;
                         }
 
                         h4, ul li {
                             font-size: var(--font-size-primary-sm);
-                            line-height: 18px;
+                            line-height: 125%;
                         }
 
                         p {
                             font-size: var(--font-size-primary);
-                            line-height: 120%;
-                            opacity: .6;
+                            color: var(--color-text-secondary);
                             width: 90%;
                         }
 
@@ -130,12 +129,6 @@
                                 font-size: var(--font-size-xsm);
                                 text-transform: uppercase;
                             }
-
-                            p {
-                                font-size: var(--font-size-sd-md);
-                                line-height: 30px;
-                                width: 80%;
-                            }
                         }
 
                         .casestudy-step {
@@ -161,7 +154,7 @@
                                             row-gap: .5em;
 
                                             .cs-es-subtitle {
-                                                opacity: .6;
+                                                color: var(--color-text-secondary);
                                                 font-size: var(--font-size-primary-sm);
                                             }
                                         }
@@ -193,7 +186,7 @@
                                                 vertical-align: middle;
                                                 
                                                 h4 {
-                                                    opacity: .6;
+                                                    color: var(--color-text-secondary);
                                                     font-size: var(--font-size-primary-sm);
                                                     margin: 0;
                                                 }
@@ -228,7 +221,7 @@
 
                                             span, li {
                                                 font-size: var(--font-size-primary-sm);
-                                                line-height: 120%;
+                                                line-height: 125%;
                                             }
                                             
                                             &.active {
@@ -268,14 +261,9 @@
                         flex-direction: column;
                     
                         h3 {
-                            opacity: .6;
+                            color: var(--color-text-secondary);
                             padding: 4px 0;
                             font-size: var(--font-size-xsm);
-                        }
-                    
-                        h4 {
-                            padding: 4px 0;
-                            line-height: 20px;
                         }
                     
                         .cs-img-wb-details-each-box-container {
@@ -289,14 +277,9 @@
                             justify-content: space-between;
 
                             h3 {
-                                opacity: .6;
+                                color: var(--color-text-secondary);
                                 padding: 4px 0;
                                 font-size: var(--font-size-xsm);
-                            }
-
-                            h4 {
-                                padding: 4px 0;
-                                line-height: 20px;
                             }
 
                             .cs-img-wb-details-each-box-container {
@@ -332,17 +315,16 @@
 
                                     h4, span {
                                         font-size: var(--font-size-sd-lg);
-                                        line-height: 38px;
+                                        line-height: 125%;
                                     }
 
                                     p {
                                         font-size: var(--font-size-sd);
-                                        line-height: 22px;
                                     }
 
                                     .note {
                                         font-size: var(--font-size-primary-sm);
-                                        opacity: .6;
+                                        color: var(--color-text-secondary);
                                         font-style: italic;
                                     }
                                 }
@@ -361,13 +343,6 @@
                 height: 100%;
                 padding: 8em 0;
                 gap: 8em;
-
-                h3 {
-                    text-transform: uppercase;
-                    font-size: var(--font-size-xsm);
-                    opacity: .6;
-                    line-height: 16px;
-                }
 
                 .casestudy-textbox {
                     display: flex;
@@ -388,7 +363,7 @@
 
                                     p {
                                         font-size: var(--font-size-sd);
-                                        line-height: 120%;
+                                        line-height: 125%;
                                     }
                                 }
                             }
@@ -479,7 +454,6 @@
 
                         .tagline {
                             font-size: var(--font-size-sd);
-                            line-height: 24px;
                         }
 
                         .casestudy-container-left {
@@ -496,10 +470,6 @@
                             display: flex;
                             flex-direction: column;
                             row-gap: 4em;
-
-                            p {
-                                line-height: 18px;
-                            }
                         }
                     }
 
@@ -601,7 +571,7 @@
 
                 h4 {
                     font-size: var(--font-size-sm);
-                    opacity: .6;
+                    color: var(--color-text-secondary);
                 }
             }
         }
@@ -753,7 +723,7 @@
 
                             h4 {
                                 font-size: var(--font-size-sm);
-                                opacity: .6;
+                                color: var(--color-text-secondary);
                             }
                         }
                     }

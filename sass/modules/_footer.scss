@@ -1,141 +1,125 @@
 .footer-container {
     width: 100vw;
-    // height: 100vh;
-    // background-color: var(--bg-lightgrey);
+    height: 100%;
+    background-color: var(--bg-bk);
     display: flex;
     flex-direction: column;
-    gap: 8em;
+    justify-content: space-between;
 
-    .footer-container-wrapper {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        border-top: 1px solid var(--line-black);
+    h3, h4, p, span, i, a, ul, li {
+        color: var(--bg-wh);
+    }
 
+    .footer-container-main {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        overflow: hidden;
+        gap: 10em;
 
-        .footer-credit-top {
-            &-line {
+        .fc-semi-label {
+            color: var(--color-ft-text);
+            font-size: var(--font-size-xsm);
+            text-transform: uppercase;
+        }
+
+        .fc-info-container {
+            display: flex;
+            flex-direction: column;
+            gap: .8em;
+
+            .fc-social-details {
+                width: 100%;
                 display: flex;
-                flex-direction: column;
-                gap: 1em;
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 1.5em;
+                align-items: center;
 
-                h3 {
-                    font-size: var(--font-size-xsm);
-                    opacity: .6;
-                    text-transform: uppercase;
-                }
-
-                h4 {
-                    font-size: var(--font-size-display-body);
-                    white-space: nowrap;
-                }
-            }
-
-            &-connect {
-                .footer-credit-connectBox {
-                    display: flex;
-                    flex-direction: column;
-                    gap: .5em;
-
-                    &-title {
-                        font-size: var(--font-size-xsm);
-                        text-transform: uppercase;
-                        opacity: .6;
-                    }
-                }
-
-                .footer-credit-socialmedia {
-                    ul {
-                        display: flex;
-                        flex-direction: row;
-                        gap: .5em;
-                        flex-wrap: wrap;
-
-                        li {
-                            display: inline-block;
-                            inset: 0;
-                            background-color: var(--color-text-primary-wh-dark);
-                            border-radius: .5em;
-                            padding: .5em;
-
-                            .ft-credit-connectBox-each {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
-                                gap: .8em;
-                                align-items: center;
-
-                                h4 {
-                                    display: inline-block;
-                                    font-size: var(--font-size-primary-sm);
-                                }
-
-                                i {
-                                    font-size: var(--font-size-sd);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .footer-credit-calls {
-                    ul {
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1em;
-
-                        li {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
-                            gap: .4em;
-                            padding: .5em 0;
-
-                            .ft-credit-call-each {
-                                display: flex;
-                                flex-direction: row;
-                                gap: .4em;
-                                transform: translateX(0);
-                                transition: all .3s ease;
-
-                                h4, i {
-                                    font-size: var(--font-size-sd);
-                                }
-
-                                &:hover {
-                                    transform: translateX(3px);
-                                }
-                            }
-
-                            .deactivated {
-                                h4, i { opacity: .6; }
-                            }
-
-                            h5 {
-                                font-size: var(--font-size-sm);
-                                opacity: .6;
-                            }
-                        }
-                    }
+                span, h4, a {
+                    font-size: var(--font-size-primary-sm);
                 }
             }
         }
 
-        .footer-credit-bottom {
-            h4 {
-                line-height: 1;
-                display: inline-block;
-                text-align: center;
-                white-space: nowrap;
-                transition: font-size 0.3s ease-in-out;
-                margin: 0;
-                padding: 0;
+        .fc-bt-connect {
+            .fc-bt-connect-info {
+                display: flex;
+                flex-direction: column;
+                gap: 1.25em;
+
+                .fc-bt-connect-desc {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5em;
+
+                    span {
+                        color: var(--color-ft-text);
+                        line-height: 125%;
+                    }
+                }
+
+                .fc-bt-connect-btns {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: 1.5em;
+                    align-items: center;
+                }
+            }
+        }
+
+        .fc-bt-connect-info {
+            h3 {
+                font-size: var(--font-size-sd);
+            }
+
+            h4,
+            p,
+            span,
+            li,
+            a {
+                font-size: var(--font-size-primary-sm);
+            }
+
+            p {
+                text-indent: 5em;
+            }
+        }
+
+        .footer-container-top {
+            .fc-contact {
+                display: flex;
+                flex-direction: column;
+                gap: 2em;
+                width: 100%;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5em;
+
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5em;
+                    }
+                }
+
+                h3 {
+                    font-size: var(--font-size-primary-sm);
+                    color: var(--color-ft-text);
+                }
+            }
+        }
+
+        .footer-container-bottom {
+            .fc-contact {
+                width: 100%;
+                
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3em;
+                }
             }
         }
     }
@@ -147,14 +131,107 @@
             align-items: center;
             gap: 1em;
     
-            li {
+            li, a {
                 font-size: var(--font-size-xsm);
-                opacity: .6;
+                color: var(--color-text-secondary);
                 text-transform: uppercase;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .footer-container {
+        padding: 13em 1.4em 10em 1.4em;
+
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        width: 100%;
+
+        .footer-container-main,
+        .footer-container-misc {
+            grid-column: 1 / 13;
+
+            .footer-container-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 3em;
     
-            a {
-                font-size: var(--font-size-xsm);
+                .fc-top-title,
+                .fc-about {
+                    h3 {
+                        font-size: var(--font-size-display-body);
+                    }
+                }
+
+                .fc-top-contact ul {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: 2em;
+                }
+            }
+    
+            .fc-top-contact {
+                li a {
+                    font-size: var(--font-size-sd);
+                }
+            }
+
+            .footer-container-bottom {
+                display: flex;
+                flex-direction: column;
+                gap: 7em;
+
+                .fc-about {
+                    p {
+                        font-size: var(--font-size-sd);
+                    }
+                }
+                
+                .fc-bt-connect {
+                    .fc-bt-connect-desc h3 {
+                        font-size: var(--font-size-sd);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 743px) and (min-width:600px) {
+    .footer-container {
+        padding: 13em 1.4em 7em 1.4em;
+
+        .footer-container-wrapper {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            width: 100%;
+    
+            .fc-top-title,
+            .fc-about {
+                grid-column: 1 / 6;
+    
+                h3 {
+                    font-size: var(--font-size-display-body);
+                }
+            }
+    
+            .fc-top-contact {
+                li a {
+                    font-size: var(--font-size-sd);
+                }
+            }
+    
+            .fc-bt-connect {
+                .fc-bt-connect-desc h3 {
+                    font-size: var(--font-size-primary);
+                }
+            }
+    
+            .fc-contact {
+                grid-column: 7 / 13;
+                width: 100%;
             }
         }
     }
@@ -162,34 +239,6 @@
 
 @media only screen and (max-width: 743px) {
     .footer-container {
-        padding: 0 1.4em 1.8em 1.4em;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .footer-container-wrapper {
-            width: 100%;
-            padding-top: 2em;
-
-            .footer-credit-top {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: left;
-                gap: 4em;
-                width: 100%;
-    
-                &-connect {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    gap: 3em;
-                }
-            }
-        }
-
         .footer-container-misc {
             display: flex;
             flex-direction: column;
@@ -200,10 +249,32 @@
 
 @media only screen and (min-width: 744px) {
     .footer-container {
-        padding: 0 1.2em 1.2em 1.2em;
+        padding: 13em 1.4em 1.4em 1.4em;
 
         .footer-container-wrapper {
-            padding-top: 1em;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            width: 100%;
+
+            .fc-top-title,
+            .fc-about {
+                grid-column: 1 / 6;
+
+                h3 {
+                    font-size: var(--font-size-display-title-sm);
+                }
+            }
+
+            .fc-top-contact {
+                li a {
+                    font-size: var(--font-size-sd-md);
+                }
+            }
+
+            .fc-contact {
+                grid-column: 8 / 13;
+                width: 100%;
+            }
         }
 
         .footer-container-misc {
@@ -215,75 +286,39 @@
     }
 }
 
-@media only screen and (min-width: 744px) and (max-width: 999px) {
-    .footer-container {
-        .footer-container-wrapper {
-            width: 100%;
-
-            .footer-credit-top {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: left;
-                gap: 3em;
-                width: 100%;
-
-                &-connect {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 3em;
-                }
-            }
-        }
-    }
-}
-
 @media only screen and (max-width: 999px) {
     .footer-container {
-        padding-bottom: 7em;
+        .footer-container-main {
+            padding-bottom: 7em;
+        }
     }
 }
 
 @media only screen and (min-width: 1000px) {
     .footer-container {
-        .footer-container-wrapper {
-            .footer-credit-top {
-                display: grid;
-                grid-template-columns: 2.2fr auto 450px;
-                justify-content: space-between;
-                width: 100%;
-                gap: 2em;
+        width: 100vw;
+        height: 100vh;
 
-                &-connect {
-                    grid-column-start: 3;
-                    display: flex;
-                    flex-direction: column;
-                    width: 100%;
-                    gap: 3em;
+        .footer-container-wrapper {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            width: 100%;
+    
+            .fc-top-title {
+                grid-column: 1 / 6;
+    
+                h3 {
+                    font-size: var(--font-size-display-title-md);
                 }
             }
-        }
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .footer-container {
-        .footer-container-wrapper {
-            .footer-credit-top {
-                display: grid;
-                grid-template-columns: 2.2fr 4fr 550px !important;
-                justify-content: space-between;
+    
+            .fc-about {
+                grid-column: 1 / 4;
+            }
+    
+            .fc-contact {
+                grid-column: 9 / 13;
                 width: 100%;
-                gap: 2em;
-
-                &-connect {
-                    grid-column-start: 3;
-                    display: flex;
-                    flex-direction: column;
-                    width: 100%;
-                    gap: 3em;
-                }
             }
         }
     }

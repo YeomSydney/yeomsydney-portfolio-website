@@ -88,6 +88,7 @@ button {
     font-size: var(--font-size-primary);
     font-weight: 400;
     color: var(--bg-bk);
+    letter-spacing: -1%;
     word-wrap: break-word;
     text-wrap: pretty;
     text-decoration: none !important;
@@ -98,10 +99,11 @@ button {
 
 p {
     font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
-    font-size: var(--font-size-primary-sm);
+    font-size: var(--font-size-primary);
     font-weight: 400;
-    line-height: 16px;
+    line-height: 125%;
     color: var(--bg-bk);
+    letter-spacing: -1%;
     word-wrap: break-word;
     text-wrap: pretty;
     text-decoration: none !important;
@@ -133,7 +135,7 @@ button {
 
 img,
 video {
-    border-radius: .5em;
+    border-radius: .3em;
     box-sizing: border-box;
     width: 100%;
     height: auto;
@@ -148,7 +150,7 @@ video {
 /* Customized */
 
 .line {
-    background-color: var(--bg-lightgrey) !important;
+    background-color: var(--line-black) !important;
     height: 1px;
     width: 100%;
 }
@@ -157,20 +159,15 @@ video {
     font-style: italic;
 }
 
-.opacity60 {
-    opacity: .6;
-}
-
 .numbers {
     font-size: var(--font-size-xsm);
-    opacity: .6;
+    color: var(--color-text-secondary);
 }
 
 .dot {
     width: 6px;
     height: 6px;
     border-radius: 10em;
-    background-color: var(--bg-wh);
 }
 
 @media only screen and (max-width: 999px) {

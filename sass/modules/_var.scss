@@ -3,6 +3,11 @@
     color: var(--bg-wh);
 }
 
+footer ::selection {
+    background: var(--bg-wh);
+    color: var(--bg-bk);
+}
+
 :root {
     /*
         Colours
@@ -48,6 +53,7 @@
     
     // Line
     --line-black: #10101020;
+    --line-white: #f9f8f720;
 
     // Preview Hint
     --color-preview-hint: #f9f8f770;
@@ -56,7 +62,8 @@
     --color-nav-icons: #737578;
 
     // Cursor Background
-    --color-cursor: #10101060;
+    --color-cursor: #10101050;
+    --color-cursor-ft: #f9f8f730;
 
     // Buttons
     --color-bg-toggle: #e9e8e7;;
@@ -67,6 +74,9 @@
     --color-text-primary-bk-light: #10101010;
     --color-text-primary-bk-border-dark: #10101020;
     --color-text-primary-bk-dark: #10101070;
+
+    --color-text-secondary: #828282;
+    --color-ft-text: #AAAAAA;
 
     --color-text-primary-wh-light: #f9f8f760;
     --color-text-primary-wh-dark: #f9f8f780;
@@ -89,7 +99,7 @@
     --font-size-display-title-md: 60px;
     --font-size-display-title-sm: 50px;
 
-    --font-size-display-body: 40px;
+    --font-size-display-body: 42px;
 
 
     // Z-index

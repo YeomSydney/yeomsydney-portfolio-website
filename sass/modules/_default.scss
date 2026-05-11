@@ -12,20 +12,15 @@ Version             : 2.0
 
 <Screen Sizes>
 Mobile              : 390px - 743px
-Tablet              : 744pxpx - 1199px
-Desktop             : 1200px
+Tablet              : 744px - 999px
+Desktop             : 1000px
 
 <Font>
 Main Font           : Nunito (Regular - 400)
 Secondary Font      : Lindsey Signature Regular (400), Bold (600)
 Font Weight         : 400 (Regular)
-Font Size - Mobile  : 16px & 18px
-Font Size - PC      : 14px & 20px
-
-<Colour>
-Main Colour         : Light (#FCFCFC), Dark (#0F0E12)
-Secondary Colour    : Light (Red, #DA2A2A), Dark (Yellow, #F7BD03)
-Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
+Font Size - Mobile  : 15px & 18px
+Font Size - PC      : 15px & 20px
 
 ----------------------------------
 */
@@ -58,57 +53,27 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     }
 
     .hero-middle {
+        height: 100%;
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding-bottom: 10em !important;
-        padding-top: 14em;
 
-        .hero-extra-goOtherPage {
-            display: flex;
-            flex-direction: row;
-            column-gap: 1em;
-            align-items: center;
-
-            a {
-                display: inline-block;
-                transform: translateX(0);
-                transition: all ease .4s;
-
-                &:hover {
-                    opacity: 1;
-                    transform: translateX(3px);
-                }
-            }
-        }
-
-        .hero-extra-casestudy {
-            background-color: var(--bg-bk);
-
-            h2, h3, h4, h5, h6, p, a, span, ul, li, i {
-                color: var(--bg-wh);
-            }
-        }
+        padding-top: 15em !important;
+        padding-bottom: 15em !important;
+        gap: 15em !important;
 
         .hero-extra {
             display: flex;
             flex-direction: column;
             row-gap: 7em;
 
-            .hero-extra-box {
+            .hero-about {
                 .hero-top-intro-para-about-box {
                     .hero-top-intro-para {
                         p {
-                            text-indent: 3em;
-                        }
-
-                        p, span {
+                            text-indent: 5em;
                             font-size: var(--font-size-sd-md);
-                            line-height: 110%;
-                        }
-
-                        span {
-                            opacity: .4;
                         }
                     }
                 }
@@ -121,12 +86,12 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         align-items: center;
                         padding: .5em .8em;
                         background-color: var(--bg-lightgrey);
-                        border-radius: .5em;
+                        border-radius: .3em;
                         transition: all .3s ease-in;
                         vertical-align: middle;
 
                         h3, i {
-                            font-size: var(--font-size-primary-sm);
+                            font-size: var(--font-size-sm);
                         }
 
                         &:hover {
@@ -140,376 +105,235 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 }
             }
 
-            .hero-casestudy-title,
-            .hero-top-intro-para-moreworks-box,
-            .hero-extra-casestudy,
-            .hero-extra-box-contact {
-                .hero-top-intro-para {
-                    .hero-top-intro-para-title {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1em;
+            .hero-casestudy-wrapper {
+                #casestudies {
+                    scroll-margin-top: 15em;
+                }
+                
+                .hero-casestudy-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 10em;
+                    align-items: center;
 
-                        h4 {
-                            opacity: .6;
-                            line-height: 18px;
-                        }
-
-                        p {
-                            font-size: var(--font-size-primary);
-                        }
-                    }
-
-                    .works-view-toggle {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-
-                        button {
-                            position: relative;
-                            display: inline-flex;
-                            align-items: center;
-                            column-gap: .4em;
-                            width: fit-content;
-                            font-size: var(--font-size-primary-sm);
-                            background: none;
-                            border: none;
-
-                            i {
-                                font-size: var(--font-size-primary-sm);
-                                background-color: var(--bg-lightgrey);
-                                border-radius: .5em;
-                                padding: .5em .6em;
-                                color: var(--color-text-primary-bk-border-dark);
-                                transition: color .25s ease, filter .25s ease;
-                                flex-shrink: 0;
-                            }
-
-                            /* ACTIVE or HOVER */
-                            &:hover,
-                            &.active {
-                                i {
-                                    color: var(--bg-bk);
-                                    background-color: var(--color-bg-toggle);
-                                }
-                            }
+                    &-details {
+                        width: 100%;
+                
+                        .hero-project-list-head {
+                            display: none !important;
                         }
                     }
                 }
-            }
 
-            .section-indicators-project {
-                h3 {
-                    span {
-                        font-size: var(--font-size-primary-sm);
-                    }
-                }
-            }
+                .hero-casestudy-previews {
+                    &.is-grid {
+                        .list-layout,
+                        .full-layout {
+                            display: none !important;
+                        }
 
-            .hero-extra-box-contact {
-                h2 {
-                    line-height: 18px;
-                }
-            
-                p {
-                    font-size: var(--font-size-primary-sm);
-                    line-height: 18px;
-                    opacity: .6;
-                }
-
-                .hero-top-intro-para {
-                    .hero-top-intro-para-title-wrapper {
-                        .hero-top-call-btn {
-                            transform: translateX(0px);
-                            transition: all .3s ease;
-
-                            a {
+                        .hero-casestudy-previews-row {
+                            .hero-cp-row-each a {
                                 display: flex;
-                                flex-direction: row;
-                                gap: .4em;
-                                align-items: center;
+                                flex-direction: column;
+                                gap: .8em;
+                            }
+                        }
+                    }
 
-                                h4, i {
-                                    font-size: var(--font-size-primary-sm);
+                    .hero-casestudy-previews-row {
+                        .hero-cp-row-each a {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .hero-project-link {
+                            .hero-cp-row-imgbox {
+                                display: flex;
+                                flex-direction: column;
+                                gap: .5em;
+                                overflow: hidden;
+                                width: 100%;
+                                height: 100%;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    transition: transform .3s ease;
                                 }
                             }
 
                             &:hover {
-                                transform: translateX(3px);
-                            }
-                        }
-                    }
-
-                    ul {
-                        li {
-                            display: flex;
-                            flex-direction: column;
-                            gap: .3em;
-
-                            a {
-                                display: flex;
-                                flex-direction: row;
-                                gap: .3em;
-                                align-items: center;
-                                
-                                h4, i {
-                                    font-size: var(--font-size-primary-sm);
-                                    border-radius: .5em;
-                                    background-color: var(--bg-wh);
-                                    border: 1px solid var(--bg-lightgrey);
-                                }
-
-                                h4 {
-                                    padding: 8px 14px;
-                                }
-
-                                i {
-                                    padding: 8px;
+                                .hero-cp-row-imgbox img {
+                                    transform: scale(1.02);
                                 }
                             }
 
-                            h5 {
-                                font-size: var(--font-size-primary-sm);
-                                opacity: .6;
-                            }
-                        }
-
-                        .opacity60 {
-                            font-size: var(--font-size-primary-sm);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .hero-extra-works-box {
-        transition: all 0.5s ease;
-
-        &.gallery {
-            ul {
-                a, li {
-                    transform: scale(1);
-                    display: flex;
-                    flex-direction: column;
-                    border-top: none;
-
-                    .hero-extra-works-text {
-                        display: flex !important;
-                        flex-direction: column !important;
-                        gap: .4em;
-
-                        h5 {
-                            display: none;
-                        }
-                    }
-
-                    .hero-more-projects-img {
-                        video, img {
-                            display: inline-block;
-                            max-width: 800px;
-                            width: 100%;
-                            height: auto;
-                            transform: scale(1);
-                        }
-
-                        .no-archive-thumbnail {
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }
-
-        ul,
-        &.list ul {
-            display: flex;
-            flex-direction: column;
-            gap: 3em;
-
-            a, li {
-                transition: 
-                    transform .45s cubic-bezier(.38,0,.2,1),
-                    width .45s cubic-bezier(.38,0,.2,1),
-                    height .45s cubic-bezier(.38,0,.2,1),
-                    margin .45s cubic-bezier(.38,0,.2,1);
-                will-change: transform, width, height;
-                transform: all 0.3s ease;
-
-                border-top: 1px solid var(--line-black);
-                padding: .8em 0 7em 0;
-                transition: all .3s ease;
-                width: 100%;
-
-                .hero-more-projects-thumbnails {
-                    display: flex;
-                    flex-direction: column;
-                    gap: .4em;
-
-                    &-title {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding: .5em .8em;
-                        background-color: var(--bg-wh);
-                        border-radius: .5em;
-                        transition: all .3s ease-in;
-                        vertical-align: middle;
-
-                        h3, i {
-                            font-size: var(--font-size-primary-sm) !important;
-                        }
-                    }
-                }
-
-                &:hover {
-                    .hero-more-projects-thumbnails {
-                        &-title {
-                            background-color: var(--bg-bk);
-
-                            h3, i {
-                                color: var(--bg-wh);
-                            }
-                        }
-                    }
-                }
-
-                .hero-more-projects-img {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: .3em;
-                    width: 100%;
-
-                    video, img {
-                        display: inline-block;
-                        width: 100%;
-                        height: auto;
-                        transform: scale(1);
-                        border-radius: .5em;
-                    }
-                }
-
-                .hero-extra-works-text {
-                    width: 100%;
-
-                    h4 {
-                        font-size: var(--font-size-sm) !important;
-                        opacity: .6;
-                        line-height: 16px;
-                    }
-                }
-            }
-        }
-
-        &.changing {
-            opacity: .1;
-        }
-    }
-
-    .hero-extra-casestudy {
-        width: 100vw;
-        height: 100%;
-
-        .hero-extra-casestudy-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            width: 100vw;
-            scroll-snap-type: y mandatory;
-
-            .work-gallery-each-box {
-                position: sticky !important;
-                top: 0;
-                height: 100%;
-                scroll-snap-type: y mandatory;
-                scroll-behavior: smooth;
-
-                .casestudy-each-list {
-                    position: relative !important;
-                    top: 0;
-                    width: 100vw !important;
-                    height: 100vh !important;
-                    overflow: hidden;
-                    scroll-snap-align: start;
-                    scroll-snap-stop: always;
-                    align-items: center;
-                    justify-self: center;
-
-                    .casestudy-each-list-content {
-                        width: 100%;
-                        height: 100%;
-                        justify-self: center;
-                        padding-top: 5em;
-                        padding-bottom: 1.8em;
-
-                        &::before {
-                            content: "";
-                            position: absolute;
-                            inset: -10%;
-                            background-image: var(--bg-image);
-                            background-size: cover;
-                            background-position: center;
-                            height: 100%;
-
-                            filter: blur(20px) brightness(0.7);
-                            transform: scale(1.2);
-                            z-index: var(--z-none);
-                        }
-
-                        .allProjectDetails {
-                            z-index: var(--z-content);
-
-                            &-top {
+                            .hero-casestudy-previews-info {
                                 display: flex;
                                 flex-direction: column;
-                                row-gap: .5em;
+                                gap: .25em;
 
-                                h4 {
-                                    font-size: var(--font-size-primary-sm) !important;
-                                }
-                            }
-
-                            h2 {
-                                font-size: var(--font-size-xsm);
-                                padding: 0 2px;
-                            }
-
-                            h3 {
-                                font-size: var(--font-size-display-body);
-                                line-height: 42px;
-                            }
-
-                            &-bottom {
-                                display: flex;
-                                flex-direction: column;
-                                row-gap: 2em;
-
-                                &-roles {
+                                &-title {
                                     display: flex;
-                                    flex-direction: column;
-                                    row-gap: .6em;
+                                    flex-direction: row;
+                                    gap: .5em;
+                                    align-items: center;
 
-                                    h5 {
-                                        font-size: var(--font-size-xsm);
-                                        color: var(--color-text-primary-wh-dark);
+                                    span {
+                                        font-size: var(--font-size-sm);
+                                    }
+
+                                    h3 {
+                                        font-size: var(--font-size-primary);
                                     }
                                 }
 
-                                ul li, h4, i {
-                                    font-size: var(--font-size-primary-sm);
+                                h4 {
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-text-secondary);
+                                    line-height: 125%;
                                 }
+                            }
+                        }
+                    }
+                }
+
+                .hero-casestudy {
+                    .hero-top-intro-para {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 7em;
+
+                        .hero-casestudy-top {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 3em;
+
+                            &-title {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                vertical-align: baseline;
+
+                                h3 {
+                                    font-size: var(--font-size-display-body);
+                                    margin-top: -.1em;
+                                    
+                                    span {
+                                        font-size: var(--font-size-primary);
+                                    }
+                                }
+
+                                .hero-casestudy-view-mode {
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 1em;
+
+                                    li button {
+                                        font-size: var(--font-size-primary-sm);
+                                        color: var(--color-text-secondary);
+                                        transition: all .3s ease;
+
+                                        &:hover {
+                                            opacity: .6;
+                                        }
+
+                                        &.is-active {
+                                            color: var(--bg-bk);
+                                        }
+                                    }
+                                }
+                            }
+
+                            &-list {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2em;
 
                                 ul {
                                     display: flex;
                                     flex-direction: column;
-                                    row-gap: .4em;
+                                    width: 100%;
+
+                                    li {
+                                        opacity: 0;
+                                        transform: translateY(8px);
+
+                                        &.is-visible {
+                                            opacity: 1;
+                                            transform: translateY(0);
+                                            transition:
+                                                opacity .45s ease,
+                                                transform .45s ease;
+                                        }
+
+                                        a {
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: space-between;
+                                            width: 100%;
+                                            vertical-align: middle;
+                                            padding: .25em 0;
+                                            transition: all .3s ease;
+
+                                            .hero-project-list-name,
+                                            .hero-project-list-cat {
+                                                display: flex;
+                                                flex-direction: row;
+                                                justify-content: flex-start;
+                                                gap: .5em;
+                                        
+                                                span {
+                                                    width: 1.5em;
+                                                }
+                                        
+                                                span,
+                                                h4 {
+                                                    font-size: var(--font-size-sm);
+                                                    color: var(--color-text-secondary);
+                                                }
+                                            }
+
+                                            &:hover {
+                                                background-color: var(--bg-bk);
+                                    
+                                                span,
+                                                h4 {
+                                                    color: var(--bg-wh);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+
+                                .hero-project-list-actions button {
+                                    display: block;
+                                    white-space: nowrap;
+                                    width: auto;
+                                    
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-text-secondary);
+                                    padding: 0 0 .15em 0;
+                                    border-bottom: 1px solid var(--color-text-secondary);
+
+                                    transition: all .3s ease;
+
+                                    &:hover {
+                                        color: var(--bg-bk);
+                                    }
                                 }
                             }
                         }
                     }
                 }
+            }
+
+            .section-indicator {
+                h3 { font-size: var(--font-size-primary-sm); }
             }
         }
     }
@@ -525,10 +349,10 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
             li {
                 background-color: transparent;
-                border-radius: .5em;
+                border-radius: .3em;
                 border: 1px solid var(--color-text-primary-bk-dark);
                 padding: .6em 1.2em;
-                opacity: .6;
+                color: var(--color-text-secondary);
                 transition: .3s all ease-in-out;
 
                 &:hover {
@@ -545,42 +369,50 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
 .about-section {
     .about-myself {
-        h3 {
-            opacity: .6;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        h2 { font-size: var(--font-size-display-title-md); }
+
+        p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-primary);
         }
+    }
 
-        .about-myself-title {
-            position: relative;
+    .about-container {
+        .about-myself-desc-wrapper {
+            .about-myself-desc-names {
+                display: flex;
+                flex-direction: column;
+                gap: .5em;
 
-            .about-title-highlight {
-                position: relative;
-                display: inline-block; /* 🔑 shrinks to text width */
-            
-                h2 {
-                    position: relative;
-                    z-index: 2;
+                h3 {
+                    text-transform: uppercase;
+                    color: var(--color-text-secondary);
+                    font-size: var(--font-size-xsm);
+                    line-height: 125%;
                 }
 
-                .point-colour-box {
-                    position: absolute;
-                    left: 0;
-                    top: 55%;
-                    transform: translateY(-45%); /* true vertical center */
-                    width: 100%;
-                    height: .8em;
-                    z-index: var(--z-negative);
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        inset: 0;
-                        backdrop-filter: blur(2.5px);
-                        background-color: var(--color-accent-red);
-                        border: 1px solid var(--bg-wh);
-                        filter: var(--button-dropshadow);
-                        border-radius: .15em;
+                ul {
+                    li {
+                        font-size: var(--font-size-primary-sm);
+                        line-height: 125%;
+                        text-transform: uppercase;
                     }
                 }
+            }
+        }
+    }
+
+    .about-container-details {
+        .about-each-detail-content {
+            h5, h6 {
+                font-size: var(--font-size-primary-sm);
+                line-height: 125%;
+                font-size: var(--font-size-primary-sm);
+                color: var(--color-text-secondary);
             }
         }
     }
@@ -600,7 +432,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     z-index: var(--z-searchOverlay);
 
     opacity: 0;
-    transition: opacity 0.25s ease;
+    transition: all 0.25s ease;
     width: 100%;
 
     .search-modal-wrapper {
@@ -635,7 +467,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
             h3 {
                 font-size: var(--font-size-primary-sm);
-                opacity: .6;
+                color: var(--color-text-secondary);
             }
 
             ul {
@@ -703,7 +535,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     }
 
     .preview-hint {
-        opacity: 0.6;
+        color: var(--color-text-secondary);
         font-size: var(--font-size-sd) !important;
 
         &:hover,
@@ -722,31 +554,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     flex-direction: column;
                     row-gap: 5em;
                 }
-
-                .hero-extra-works-box {
-                    width: 100%;
-
-                    ul, &.list ul {
-                        grid-template-columns: repeat(1, 1fr);
-                        row-gap: 0;
-                        column-gap: 0;
-                        transition: all .5s ease;
-            
-                        a, li {
-                            padding: 1.2em 0;
-                        }
-
-                        .hero-more-projects-img {
-                            display: grid;
-                            grid-template-columns: repeat(2, 1fr);
-                            gap: .4em;
-                            
-                            video, img {
-                                width: 100%;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
@@ -760,17 +567,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     .hero-top-intro-para {
                         display: flex;
                         flex-direction: column;
-                        row-gap: 5em;
-                    }
-                }
-            }
-
-            .hero-extra-works-box {
-                ul, &.list ul {
-                    .hero-more-projects-img {
-                        video, img {
-                            max-width: 130px;
-                        }
+                        row-gap: 2em;
                     }
                 }
             }
@@ -781,18 +578,39 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (max-width: 599px) {
     main {
         .hero-section {
-            .work-gallery-each-box {
-                .casestudy-each-list-content {
-                    padding: 0em 1.4em 1.8em 1.4em;
-                }
-            }
-        }
+            .hero-extra {
+                .hero-casestudy-wrapper {
+                    .hero-casestudy-content {
+                        .hero-casestudy-previews {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 3em;
+    
+                            &-row {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 3em;
 
-        .about-section {
-            .about-myself {
-                display: flex;
-                flex-direction: column;
-                gap: 1em;
+                                .hero-cp-row-each {
+                                    width: 100%;
+                                    height: 100%;
+    
+                                    a {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: .8em;
+
+                                        .hero-cp-row-imgbox,
+                                        .hero-cp-row-imgbox img {
+                                            height: 80vh;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -801,20 +619,40 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (min-width: 600px) and (max-width: 743px) {
     main {
         .hero-section {
-            .work-gallery-each-box {
-                .casestudy-each-list-content {
-                    padding: 0 1em 3em 1em;
-                }
-            }
-        }
+            .hero-extra {
+                .hero-casestudy-wrapper {
+                    .hero-casestudy-content {
+                        .hero-casestudy-previews {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 3em;
 
-        .about-section {
-            .about-myself {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                gap: 10em;
+                            &.is-grid {
+                                .hero-cp-row-each {
+                                    width: 100%;
+                                    height: 100%;
+                            
+                                    .hero-cp-row-imgbox,
+                                    .hero-cp-row-imgbox img {
+                                        width: 100%;
+                                        height: 60vh !important;
+                                    }
+                                }
+                            }
+
+                            .hero-cp-row-1,
+                            .hero-cp-row-2,
+                            .hero-cp-row-3,
+                            .hero-cp-row-4,
+                            .hero-cp-row-5 {
+                                display: grid;
+                                grid-template-columns: repeat(2, 1fr);
+                                column-gap: .5em;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -834,7 +672,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     .hero-top-desc-details {
                         p {
                             font-size: var(--font-size-sd-md);
-                            line-height: 110%;
                         }
                     }
                 }
@@ -857,116 +694,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         }
                     }
                 }
-
-                .hero-extra > div:not(.hero-extra-casestudy-wrapper) {
-                    padding-right: 1.4em;
-                    padding-left: 1.4em;
-                }
-
-                .hero-extra-casestudy {
-                    .hero-extra-casestudy-wrapper {
-                        width: 100%;
-
-                        .work-gallery-each-box {
-                            .casestudy-each-list-content {
-                                width: 100%;
-                                height: 100%;
-
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: flex-start;
-                                align-items: center;
-                                gap: 3em;
-                                
-                                .allProjectDetails {
-                                    width: 100%;
-                                    display: flex;
-                                    height: 100%;
-                                    flex-direction: column;
-                                    gap: 2em;
-                                    padding: 3em 0;
-
-                                    .allProjectDetails-wrapper {
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 3em;
-
-                                        .allProjectDetails-top {
-                                            h3 {
-                                                font-size: var(--font-size-sd-md) !important;
-                                            }
-                                        }
-
-                                        .allProjectDetails-bottom {
-                                            ul li {
-                                                font-size: var(--font-size-sm) !important;
-                                            }
-                                        }
-                                    }
-
-                                    .allProjectThumbnails {
-                                        position: relative;
-                                        min-width: 230px;
-                                        max-width: 700px;
-                                        height: auto;
-
-                                        .thumbnail-strip {
-                                            .hover-image {
-                                                display: none;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                .hero-top-intro-para-about-box,
-                .hero-extra-casestudy,
-                .hero-top-intro-para-moreworks-box,
-                .hero-extra-box-contact {
-                    .hero-top-intro-para {
-                        h3 {
-                            font-size: var(--font-size-display-body);
-                            line-height: 42px;
-                        }
-                    }
-
-                    .hero-casestudy-title {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .5em;
-                    }
-                }
-
-                .hero-extra-works-box {
-                    width: 100%;
-
-                    ul, &.list ul {
-                        a, li {
-                            padding: 1.2em 0 5em 0;
-                            display: flex;
-                            flex-direction: column;
-                            gap: 1em;
-                        }
-                    }
-        
-                    &.gallery ul {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(1, 1fr);
-                        justify-content: space-between;
-                        row-gap: 2em;
-                        column-gap: .5em;
-            
-                        a, li {
-                            display: flex;
-                            flex-direction: column;
-                            row-gap: .8em;
-                        }
-                    }
-                }
             }
         }
 
@@ -982,18 +709,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     flex-direction: column;
                     row-gap: 10em;
                     width: 100%;
-
-                    .about-myself {
-                        h2 {
-                            font-size: var(--font-size-display-title-md);
-                        }
-                
-                        h3 {
-                            text-transform: uppercase;
-                            font-size: var(--font-size-sm);
-                            line-height: 16px;
-                        }
-                    }
                 }
 
                 .about-myself-wrapper {
@@ -1011,13 +726,12 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 
                         h3 {
                             font-size: var(--font-size-sm);
-                            opacity: .6;
+                            color: var(--color-text-secondary);
                             text-transform: uppercase;
                         }
                 
                         h4 {
                             font-size: var(--font-size-sd-lg);
-                            line-height: 38px;
                         }
                     }
 
@@ -1034,7 +748,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                             h3 {
                                 font-size: var(--font-size-sm);
-                                opacity: .6;
+                                color: var(--color-text-secondary);
                                 text-transform: uppercase;
                             }
 
@@ -1046,14 +760,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 h4 {
                                     font-size: var(--font-size-primary-sm);
                                 }
-
-                                .about-each-detail-content {
-                                    h5, h6 {
-                                        font-size: var(--font-size-primary-sm);
-                                        line-height: 18px;
-                                        opacity: .6;
-                                    }
-                                }
                             }
                         }
                     }
@@ -1064,26 +770,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     display: flex;
                     flex-direction: column;
                     gap: 1.4em;
-
-                    .about-myself-desc-names {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .4em;
-        
-                        h3 {
-                            text-transform: uppercase;
-                            opacity: .6;
-                            font-size: var(--font-size-xsm);
-                        }
-        
-                        ul {
-                            li {
-                                font-size: var(--font-size-primary-sm);
-                                line-height: 18px;
-                                text-transform: uppercase;
-                            }
-                        }
-                    }
 
                     .about-myself-desc {
                         display: flex;
@@ -1107,8 +793,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             p {
                                 text-indent: 5em;
                                 font-size: var(--font-size-primary);
-                                line-height: 20px;
-                                opacity: .6;
+                                color: var(--color-text-secondary);
                             }
                         }
                     }
@@ -1139,8 +824,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                         p {
                             font-size: var(--font-size-primary);
-                            line-height: 18px;
-                            width: 90%;
                         }
                     }
                 }
@@ -1162,62 +845,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             width: 100%;
                             display: grid;
                             grid-template-columns: 2fr 1fr 1fr;
-                            gap: .5em;
-                        }
-                    }
-                }
-            
-                .hero-extra-casestudy {
-                    .allProjectThumbnails {
-                        position: relative;
-                        overflow: hidden;
-                        border-radius: .5em;
-                        min-width: 350px;
-                        max-width: 500px;
-                        width: 95%;
-
-                        .base-image {
-                            width: 100%;
-                            display: block;
-                            z-index: 1;
-                        }
-
-                        .hover-image {
-                            position: absolute;
-                            inset: 0;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: contain;
-                            z-index: 2;
-                            pointer-events: none;
-                            border-radius: 0;
-
-                            transform: translateX(100%);
-                            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-                        }
-
-                        &.is-hovered .hover-image {
-                            transform: translateX(0);
-                        }
-
-                        &.is-leaving .hover-image {
-                            transform: translateX(-100%);
-                        }
-
-                        &.is-resetting .hover-image {
-                            transition: none;
-                            transform: translateX(100%);
-                        }
-                    }
-                }
-
-                .hero-extra-works-box {
-                    ul, &.list ul {
-                        a, li {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            align-items: top;
+                            gap: .25em;
                         }
                     }
                 }
@@ -1236,44 +864,9 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     flex-direction: column;
                     row-gap: 10em;
                     width: 100%;
-
-                    .about-myself {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 2em;
-                
-                        h2 {
-                            font-size: var(--font-size-display-title-md);
-                        }
-                
-                        h3 {
-                            font-size: var(--font-size-primary);
-                            line-height: 18px;
-                        }
-                    }
                 }
 
                 .about-myself-desc-wrapper {
-                    .about-myself-desc-names {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .4em;
-        
-                        h3 {
-                            text-transform: uppercase;
-                            opacity: .6;
-                            font-size: var(--font-size-xsm);
-                        }
-        
-                        ul {
-                            li {
-                                font-size: var(--font-size-primary-sm);
-                                line-height: 18px;
-                                text-transform: uppercase;
-                            }
-                        }
-                    }
-
                     .about-myself-desc {
                         display: flex;
                         flex-direction: column;
@@ -1298,31 +891,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                             p {
                                 text-indent: 5em;
                                 font-size: var(--font-size-primary);
-                                line-height: 20px;
-                                opacity: .6;
                             }
                         }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 440px) and (max-width: 999px) {
-    main {
-        .hero-section {
-            .hero-extra-works-box {
-                width: 100%;
-                
-                ul, &.list ul {
-                    grid-template-columns: repeat(1, 1fr);
-                    row-gap: 0;
-                    column-gap: 0;
-                    transition: all .5s ease;
-        
-                    a, li {
-                        padding: 1.2em 0;
                     }
                 }
             }
@@ -1335,99 +905,39 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
         .hero-section {
             .hero-middle {
                 height: auto;
-            
-                .hero-extra > div:not(.hero-extra-casestudy-wrapper) {
-                    padding-right: 1.4em;
-                    padding-left: 1.4em;
 
-                    .hero-casestudy-title {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .5em;
-                    }
-
-                    .hero-top-intro-para-box {
-                        display: grid;
-                        grid-template-columns: 25% auto;
-                        align-items: start;
-                        vertical-align: text-top;
-                        width: 100%;
-                        line-height: 1;
-                        margin: 0;
-                        column-gap: 1em;
-                    }
-
-                    .hero-top-intro-para {
-                        p {
-                            font-size: var(--font-size-display-body);
-                            line-height: 42px;
-                        }
-                    }
-
-                    .hero-extra-box-contact {
-                        .hero-top-intro-para {
-                            ul {
-                                display: grid;
-                                grid-template-columns: repeat(3, 1fr);
-                            }
-                        }
-                    }
-                }
-
-                .hero-extra-casestudy {
-                    .hero-extra-casestudy-wrapper {
-                        width: 100%;
-
-                        .work-gallery-each-box {
-                            .casestudy-each-list-content {
-                                width: 100%;
-                                height: 100%;
-
+                .hero-extra {
+                    .hero-casestudy-wrapper {
+                        .hero-casestudy-content {
+                            .hero-casestudy-previews {
                                 display: flex;
                                 flex-direction: column;
-                                justify-content: flex-start;
-                                align-items: center;
-                                gap: 5em;
-                                
-                                .allProjectDetails {
-                                    width: 100%;
+                                gap: 4em;
 
-                                    .allProjectDetails-wrapper {
-                                        h3 {
-                                            font-size: var(--font-size-sd-lg) !important;
+                                &.is-grid {
+                                    .hero-cp-row-each {
+                                        width: 100%;
+                                        height: 100%;
+                                
+                                        .hero-cp-row-imgbox,
+                                        .hero-cp-row-imgbox img {
+                                            width: 100%;
+                                            height: 60vh;
                                         }
                                     }
                                 }
+
+                                .hero-cp-row-1,
+                                .hero-cp-row-2,
+                                .hero-cp-row-3,
+                                .hero-cp-row-4,
+                                .hero-cp-row-5 {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    column-gap: .5em;
+                                    width: 100%;
+                                }
                             }
-                        }
-                    }
-                }
-
-                .hero-extra-works-box {
-                    width: 100%;
-
-                    ul, &.list ul {
-                        a, li {
-                            display: grid;
-                            grid-template-columns: 3fr 1.5fr;
-                            gap: 2em;
-                            justify-content: space-between;
-                            padding-bottom: 5em;
-                        }
-                    }
-            
-                    &.gallery ul {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                        justify-content: space-between;
-                        row-gap: 5em;
-                        column-gap: .5em;
-            
-                        li {
-                            display: flex;
-                            flex-direction: column;
-                            row-gap: .8em;
                         }
                     }
                 }
@@ -1458,13 +968,13 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                         h3 {
                             font-size: var(--font-size-sm);
-                            opacity: .6;
+                            color: var(--color-text-secondary);
                             text-transform: uppercase;
                         }
 
                         h4 {
                             font-size: var(--font-size-sd-lg);
-                            line-height: 38px;
+                            line-height: 125%;
                         }
                     }
 
@@ -1481,7 +991,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                             h3 {
                                 font-size: var(--font-size-sm);
-                                opacity: .6;
+                                color: var(--color-text-secondary);
                                 text-transform: uppercase;
                             }
 
@@ -1492,14 +1002,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                                 h4 {
                                     font-size: var(--font-size-primary-sm);
-                                }
-
-                                .about-each-detail-content {
-                                    h5, h6 {
-                                        font-size: var(--font-size-primary-sm);
-                                        line-height: 18px;
-                                        opacity: .6;
-                                    }
                                 }
                             }
                         }
@@ -1522,96 +1024,21 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     main {
         .hero-section {
             .hero-middle {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: 18em !important;
-                padding-top: 8em !important;
-
-                .hero-extra-box-contact {
-                    display: flex;
-                    flex-direction: column;
-                    gap: .5em;
-
-                    .hero-top-intro-para {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 5em;
-
-                        ul {
-                            display: flex;
-                            flex-direction: column;
-                            row-gap: 5em;
-
-                            li {
-                                display: flex;
-                                flex-direction: column;
-                                gap: .3em;
-                            }
-
-                            .opacity60 {
-                                font-size: var(--font-size-primary-sm);
-                            }
-                        }
-                    }
-                }
-
                 .hero-extra {
-                    .hero-top-intro-para-title {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1em;
-
-                        h3 {
-                            font-size: var(--font-size-display-title-sm);
-                        }
-                    }
-
+                    .hero-bottom-intro-details,
                     .hero-top-intro-para-about-box,
-                    .hero-top-intro-para-box,
-                    .hero-top-intro-para-moreworks-box {
+                    .hero-casestudy {
                         display: flex;
                         flex-direction: column;
                         row-gap: 1em;
+                        padding: 0 1.4em;
                     }
 
-                    .hero-top-intro-para-moreworks-box .hero-top-intro-para {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 2em;
-                    }
-                    
-                    .hero-extra-works-box {
-                        ul, &.list ul {
-                            .hero-extra-works-text {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: flex-start;
-                                gap: .4em;
-                                align-items: right;
-
-                                h3, h4, h5 {
-                                    text-align: left;
-                                }
-                            }
-                        }
-                    }
-
-                    .hero-extra-box-contact {
-                        .hero-top-intro-para {
-                            .hero-top-intro-para-title-wrapper {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: flex-start;
-                                gap: 5em;
-                                width: 100%; 
-                            }
-                        }
-                    }
-
-                    .allProjectDetails-wrapper {
-                        .allProjectDetails-bottom-roles {
-                            display: none !important;
+                    .hero-casestudy-previews {
+                        &.is-grid,
+                        &.is-list {
+                            padding-right: 1.4em;
+                            padding-left: 1.4em;
                         }
                     }
                 }
@@ -1623,19 +1050,9 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 @media only screen and (min-width: 1000px) {
     main {
         .hero-section {
-            .hero-middle {
-                padding-top: 20em;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                row-gap: 25em !important;
-            }
-            
             .hero-extra {
                 .hero-bottom-intro-details,
-                .hero-top-intro-para-about-box,
-                .hero-top-intro-para-moreworks-box,
-                .hero-casestudy-title {
+                .hero-top-intro-para-about-box {
                     display: grid;
                     grid-template-columns: 1fr 1fr 3fr 1fr;
                     align-items: start;
@@ -1646,14 +1063,27 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                     padding-right: 1.2em;
                     padding-left: 1.2em;
 
-                    .section-indicators-project {
+                    .section-indicator {
                         grid-column-start: 2;
+                    }
 
-                        h3 {
-                            span {
-                                font-size: var(--font-size-primary-sm);
-                            }
-                        }
+                    .hero-top-intro-para {
+                        grid-column-start: 3;
+                    }
+                }
+
+                .hero-casestudy {
+                    padding: 0 1.2em;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 3fr 1fr;
+                    align-items: start;
+                    vertical-align: text-top;
+                    width: 100%;
+                    line-height: 1;
+                    margin: 0;
+
+                    .section-indicator {
+                        grid-column-start: 2;
                     }
 
                     .hero-top-intro-para {
@@ -1666,193 +1096,91 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                         grid-column-start: 3;
                     }
                 }
-
-                .hero-extra-box-contact {
-                    .hero-top-intro-para {
-                        .hero-top-intro-para-title-wrapper {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            width: 100%;
-                            align-items: center;   
-                        }
-                    }
-                }
-
-                .hero-casestudy-title,
-                .hero-top-intro-para-moreworks-box {
-                    text-align: left;
-                    vertical-align: text-top;
-                    width: 100%;
-                    line-height: 1;
-                    margin: 0;
-
-                    .hero-top-intro-para {
-                        grid-column-start: 3;
-
-                        .hero-top-intro-para-title {
-                            h3 {
-                                font-size: var(--font-size-display-body) !important;
-                            }
-
-                            h4 {
-                                font-size: var(--font-size-primary-sm);
-                            }
-                        }
-                    }
-                }
-
-                .hero-extra-works-box {
-                    padding-left: 1.2em;
-                    padding-right: 1.2em;
-                    width: 100%;
-
-                    &.gallery ul {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(4, 1fr);
-                        justify-content: space-between;
-                        row-gap: 7em;
-                        column-gap: .5em;
-
-                        a, li {
-                            display: flex;
-                            flex-direction: column;
-                            row-gap: .8em;
-                            border-top: 1px solid #1d1d1d00;
-                            padding: 0 !important;
-
-                            img {
-                                display: inline-block;
-                                max-width: 350px !important;
-                                width: 100% !important;
-                                height: 200px;
-                                transform: scale(1);
-                            }
-                        }
-                    }
-
-                    ul, &.list ul {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 0;
-
-                        a, li {
-                            display: grid;
-                            grid-template-columns: 3fr 1fr 2fr;
-                            justify-content: space-between;
-                            transition: all .3s ease;
-
-                            .hero-more-projects-text-details {
-                                grid-column-start: 3;
-                                width: 100%;
-
-                                .hero-extra-works-text {
-                                    display: grid;
-                                    grid-template-columns: repeat(2, 1fr);
-                                    justify-content: space-between;
-                                    width: 100%;
-                                    column-gap: 3em;
-                                    align-items: right;
-                                }
-                            }
-                        }
-                    }
-                }
                 
-                .hero-extra-box-contact {
-                    padding: 3em 1.2em;
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 3.5fr .5fr;
-                    align-items: start;
-                    vertical-align: text-top;
-                    width: 100%;
-                    line-height: 1;
-                    margin: 0;
-
-                    .hero-top-intro-para {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 7em;
-                        grid-column-start: 3;
-
-                        h3 {
-                            font-size: var(--font-size-display-body);
-                            line-height: 42px;
-                        }
-
-                        ul {
-                            display: grid;
-                            grid-template-columns: repeat(3, 1fr);
-                            gap: 1em;
-                        }
-                    }
-
-                    .section-indicators-project {
-                        grid-column-start: 2;
-
-                        h3 {
-                            span {
-                                font-size: var(--font-size-primary-sm) !important;
-                            }
-                        }
-                    }
-                }
-
                 .hero-top-intro-para-about-box {
                     .hero-top-intro-para {
                         display: grid;
 
                         h3 {
                             font-size: var(--font-size-sd-md) !important;
-                            line-height: 30px;
+                            line-height: 125%;
                         }
 
                         p {
-                            width: 90%;
-                            line-height: 20px;
+                            line-height: 125%;
                         }
                     }
                 }
 
-                .hero-top-intro-para-box {
-                    display: grid;
-                    grid-template-columns: 1fr 2fr 3fr 1fr;
-                    align-items: start;
-                    vertical-align: text-top;
-                    width: 100%;
-                    line-height: 1;
-                    margin: 0;
-
-                    .section-indicators-project {
-                        display: grid;
-                        grid-column-start: 2;
-                    }
-
-                    .hero-top-intro-para {
-                        display: grid;
-                        grid-column-start: 3;
-                    }
-                }
-
-                .hero-top-project-box {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: start;
-                    vertical-align: text-top;
-                    width: 100%;
-                    line-height: 1;
-                    margin: 0;
-                }
-            }
-
-            .hero-extra-casestudy {
-                .hero-extra-casestudy-wrapper {
+                .hero-casestudy-content {
+                    height: 100%;
                     width: 100%;
 
-                    .work-gallery-each-box {
-                        .casestudy-each-list-content {
-                            padding: 0 1.2em;
+                    .hero-casestudy-previews {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 7em;
+
+                        &.is-grid,
+                        &.is-list {
+                            padding-right: 1.2em;
+                            padding-left: 1.2em;
+                        }
+
+                        .hero-cp-row-1 {
+                            display: grid;
+                            grid-template-columns: 5fr 3fr 4fr;
+                            gap: .5em;
+                        }
+
+                        .hero-cp-row-2 {
+                            display: grid;
+                            grid-template-columns: 3fr 4fr 5fr;
+                            gap: .5em;
+
+                            .hero-cp-row-2-right {
+                                grid-column-start: 3;
+                            }
+                        }
+
+                        .hero-cp-row-3 {
+                            display: grid;
+                            grid-template-columns: 3fr 3fr 4fr 2fr;
+                            gap: .5em;
+
+                            .hero-cp-row-3-left {
+                                grid-column-start: 2;
+                            }
+
+                            .hero-cp-row-3-right {
+                                grid-column-start: 3;
+                            }
+                        }
+
+                        .hero-cp-row-4 {
+                            display: grid;
+                            grid-template-columns: 5fr 4fr 3fr;
+                            gap: .5em;
+
+                            .hero-cp-row-4-right {
+                                grid-column-start: 3;
+                            }
+                        }
+
+                        .hero-cp-row-5 {
+                            display: grid;
+                            grid-template-columns: 3fr 2fr 3fr 4fr;
+                            gap: .5em;
+
+                            .hero-cp-row-5-left {
+                                grid-column-start: 2;
+                            }
+
+                            .hero-cp-row-5-right {
+                                grid-column-start: 4;
+                            }
                         }
                     }
                 }
@@ -1902,8 +1230,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 p {
                                     text-indent: 5em;
                                     font-size: var(--font-size-sd);
-                                    line-height: 125%;
-                                    opacity: .6;
                                 }
                             }
                         }
@@ -1923,7 +1249,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                         h3 {
                             font-size: var(--font-size-sm);
-                            opacity: .6;
+                            color: var(--color-text-secondary);
                             text-transform: uppercase;
                         }
 
@@ -1945,7 +1271,7 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
 
                             h3 {
                                 font-size: var(--font-size-sm);
-                                opacity: .6;
+                                color: var(--color-text-secondary);
                                 text-transform: uppercase;
                             }
 
@@ -1957,14 +1283,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                                 h4 {
                                     font-size: var(--font-size-primary-sm);
                                 }
-
-                                .about-each-detail-content {
-                                    h5, h6 {
-                                        font-size: var(--font-size-primary-sm);
-                                        line-height: 125%;
-                                        opacity: .6;
-                                    }
-                                }
                             }
                         }
                     }
@@ -1974,102 +1292,8 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
     }
 }
 
-@media only screen and (min-width: 744px) and (max-width: 1199px) {
-    main {
-        .hero-section{
-            .allProjectDetails {
-                display: grid;
-                grid-template-columns: 2fr auto 3fr;
-                align-items: center;
-                height: 100%;
-                width: 100%;
-                padding: 0 1.2em;
-        
-                .allProjectDetails-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 3em;
-        
-                    .allProjectDetails-bottom {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 2em !important;
-                    }
-                }
-        
-                .allProjectThumbnails {
-                    grid-column-start: 3;
-                    justify-self: end;
-                }
-            }
-        }
-    }
-}
-
 @media only screen and (min-width: 1200px) {
     main {
-        .hero-section {
-            .hero-casestudy-title,
-            .hero-top-intro-para-moreworks-box {
-                .hero-top-intro-para-title {
-                    h3 {
-                        font-size: var(--font-size-display-body) !important;
-                    }
-                }
-            }
-
-            .hero-extra-box-contact {
-                ul {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-            
-                    li {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .3em;
-                    }
-                }
-            }
-
-            .hero-extra {
-                .hero-extra-works-box {
-                    &.gallery ul {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: repeat(5, 1fr) !important;
-                        justify-content: space-between;
-                        row-gap: 7em;
-                        column-gap: .5em;
-                    }
-                }
-            }
-
-            .hero-extra-casestudy {
-                .allProjectDetails {
-                    display: grid;
-                    grid-template-columns: 3fr 3fr !important;
-                    align-items: center;
-                    height: 100%;
-                    width: 100%;
-
-                    .allProjectDetails-wrapper {
-                        display: grid;
-                        grid-template-columns: 2fr 1fr !important;
-
-                        .allProjectDetails-bottom {
-                            display: flex;
-                            flex-direction: column;
-                            row-gap: 2em !important;
-                        }
-                    }
-
-                    .allProjectThumbnails {
-                        justify-self: end;
-                    }
-                }
-            }
-        }
-
         .about-section {
             .about-myself-wrapper {
                 display: grid;
@@ -2089,25 +1313,6 @@ Nav BG Colour       : Light (#DDDDDD), Dark (#09090B)
                 grid-template-columns: 2.2fr auto 550px !important;
                 width: 100%;
                 gap: 2em;
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1400px) {
-    main {
-        .hero-section {
-            .hero-extra-box-contact {
-                .hero-top-intro-para {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 7em;
-                    grid-column-start: 3;
-
-                    h3 {
-                        font-size: var(--font-size-display-body);
-                    }
-                }
             }
         }
     }

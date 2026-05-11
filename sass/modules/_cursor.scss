@@ -19,8 +19,8 @@
     // border-radius: 50%;
     border-radius: .5em;
     background-color: var(--color-cursor);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
     font-size: var(--font-size-xsm);
@@ -35,7 +35,11 @@
     justify-content: center !important;
     align-items: center !important;
 
-    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, transform 0.15s ease-out;
+    transition:
+        width 0.3s ease-in-out,
+        height 0.3s ease-in-out,
+        transform 0.15s ease-out,
+        background-color 0.1s ease;
 }
 
 .hover-trigger {
