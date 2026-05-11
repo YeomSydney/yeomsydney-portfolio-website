@@ -1,15 +1,3 @@
-body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top  {
-    h3, p, span, i, a, ul, li {
-        color: var(--bg-wh);
-        transition: color 0.25s ease;
-    }
-
-    h4 {
-        color: var(--color-ft-text);
-        transition: color 0.25s ease;
-    }
-}
-
 .footer-container {
     width: 100vw;
     height: 100%;
@@ -338,4 +326,23 @@ body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top  {
             }
         }
     }
+}
+
+/* =====================================
+    FOOTER ACTIVE STATE
+===================================== */
+
+body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top h3,
+body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top p,
+body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top span,
+body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top i,
+body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top a,
+body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top li {
+    color: var(--bg-wh);
+    transition: color 0.25s ease;
+}
+
+body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top h4 {
+    color: var(--color-ft-text);
+    transition: color 0.25s ease;
 }
