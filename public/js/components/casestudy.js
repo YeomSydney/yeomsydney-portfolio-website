@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    // Casestudy Grid, List, Full Modes.
+    /* ------------------------------
+    PROJECT DETAIL ARRAY
+    ------------------------------ */
     const projects = [
         {
             number: "01",
@@ -265,12 +267,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ];
 
-
-
     /* ------------------------------
     PREVIEW CARD GENERATOR
     ------------------------------ */
-
     const previewContainer = document.querySelector(".hero-casestudy-previews");
 
     previewContainer.innerHTML = "";
@@ -283,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         row.forEach(className => {
             const project = projects[projectIndex];
-            
+
             if (!project) return;
             const card = document.createElement("div");
             card.className =
@@ -357,19 +356,16 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------------
     VIEW MODE SWITCHER
     ------------------------------ */
-
     const viewButtons = document.querySelectorAll(
         ".hero-casestudy-view-mode button"
     );
 
     /* ------------------------------
-FULL MODE SNAP
------------------------------- */
-
+    FULL MODE SNAP
+    ------------------------------ */
     let fullModeObserver = null;
 
     function initFullModeSnap() {
-
         // disconnect old observer
         if (fullModeObserver) {
             fullModeObserver.disconnect();
@@ -382,34 +378,26 @@ FULL MODE SNAP
         if (!sections.length) return;
 
         fullModeObserver = new IntersectionObserver(
-
             entries => {
-
                 entries.forEach(entry => {
-
                     // SNAP IN
                     if (
                         entry.isIntersecting &&
                         entry.intersectionRatio > 0.45 &&
                         !entry.target.classList.contains("snapped")
                     ) {
-
                         entry.target.classList.add("snapped");
-
                         entry.target.scrollIntoView({
                             behavior: "smooth",
                             block: "start"
                         });
-
                     }
 
                     // RESET
                     if (!entry.isIntersecting) {
                         entry.target.classList.remove("snapped");
                     }
-
                 });
-
             },
 
             {
@@ -417,74 +405,80 @@ FULL MODE SNAP
                 threshold: [0.45],
                 rootMargin: "0px"
             }
-
         );
 
         sections.forEach(section => {
             fullModeObserver.observe(section);
         });
-
     }
 
     /* ------------------------------
     VIEW SWITCHING
     ------------------------------ */
-
     viewButtons.forEach(button => {
-
         button.addEventListener("click", () => {
-
             const view = button.dataset.view;
 
-            // remove old modes
-            previewContainer.classList.remove(
-                "is-grid",
-                "is-list",
-                "is-full"
+            /* ---------- transition out ---------- */
+            previewContainer.classList.add(
+                "is-transitioning"
             );
 
-            // apply new mode
-            previewContainer.classList.add(`is-${view}`);
+            setTimeout(() => {
 
-            // active button
-            viewButtons.forEach(btn => {
-                btn.classList.remove("is-active");
-            });
+                /* ---------- remove old modes ---------- */
+                previewContainer.classList.remove(
+                    "is-grid",
+                    "is-list",
+                    "is-full"
+                );
 
-            button.classList.add("is-active");
+                /* ---------- apply new mode ---------- */
+                previewContainer.classList.add(
+                    `is-${view}`
+                );
 
-            // remove body state
-            document.body.classList.remove(
-                "full-mode-active"
-            );
+                /* ---------- active button ---------- */
+                viewButtons.forEach(btn => {
+                    btn.classList.remove("is-active");
+                });
 
-            // FULL MODE
-            if (view === "full") {
+                button.classList.add("is-active");
 
-                document.body.classList.add(
+                /* ---------- remove body state ---------- */
+                document.body.classList.remove(
                     "full-mode-active"
                 );
 
-                initFullModeSnap();
+                /* ---------- FULL MODE ---------- */
+                if (view === "full") {
+                    document.body.classList.add(
+                        "full-mode-active"
+                    );
 
-            }
-
-            // LEAVING FULL MODE
-            else {
-
-                if (fullModeObserver) {
-                    fullModeObserver.disconnect();
+                    initFullModeSnap();
                 }
 
-                document.querySelectorAll(
-                    ".hero-cp-row-each"
-                ).forEach(section => {
-                    section.classList.remove("snapped");
+                /* ---------- LEAVING FULL MODE ---------- */
+                else {
+                    if (fullModeObserver) {
+                        fullModeObserver.disconnect();
+                    }
+
+                    document.querySelectorAll(
+                        ".hero-cp-row-each"
+                    ).forEach(section => {
+                        section.classList.remove("snapped");
+                    });
+                }
+
+                /* ---------- transition back in ---------- */
+                requestAnimationFrame(() => {
+                    previewContainer.classList.remove(
+                        "is-transitioning"
+                    );
                 });
-
-            }
-
+            }, 220);
         });
-
     });
 });

@@ -120,4 +120,10 @@ footer ::selection {
 
     // Drop Shadow
     --button-dropshadow: drop-shadow(0 8px 6px #10101020);
+
+    // Effects
+    --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-fast: 0.35s;
+    --motion-medium: 0.6s;
+    --motion-slow: 1s;
 }

@@ -84,7 +84,7 @@ Font Size - PC      : 15px & 20px
                         flex-direction: row;
                         justify-content: space-between;
                         align-items: center;
-                        padding: .5em .8em;
+                        padding: .6em .8em;
                         background-color: var(--bg-lightgrey);
                         border-radius: .3em;
                         transition: all .3s ease-in;
@@ -298,11 +298,11 @@ Font Size - PC      : 15px & 20px
                                             }
 
                                             &:hover {
-                                                background-color: var(--bg-bk);
+                                                background-color: var(--bg-lightgrey);
                                     
                                                 span,
                                                 h4 {
-                                                    color: var(--bg-wh);
+                                                    color: var(--bg-bk);
                                                 }
                                             }
                                         }

@@ -108,7 +108,7 @@ html.full-mode-active {
 .hero-casestudy-previews.is-list {
     display: flex !important;
     flex-direction: column;
-    gap: 1em !important;
+    gap: 0 !important;
     width: 100% !important;
 
     .grid-layout,
@@ -121,7 +121,7 @@ html.full-mode-active {
         // RESET OLD GRID
         display: flex !important;
         flex-direction: column;
-        gap: 1em !important;
+        gap: 0 !important;
         grid-template-columns: unset !important;
 
         .hero-cp-row-each {
@@ -129,11 +129,11 @@ html.full-mode-active {
             grid-column-start: unset !important;
 
             .list-layout {
-                
+                padding: 1.5em 0;
+                border-top: solid 1px var(--line-black);
+                transition: all .2s ease;
 
                 .hero-project-list-row {
-                    border-top: solid 1px var(--line-black);
-                    
                     span {
                         font-size: var(--font-size-sm);
                         color: var(--color-text-secondary);
@@ -144,6 +144,10 @@ html.full-mode-active {
                     .project-title {
                         font-size: var(--font-size-sd-md);
                     }
+                }
+
+                &:hover {
+                    background-color: var(--bg-lightgrey);
                 }
             }
         }
@@ -192,7 +196,6 @@ html.full-mode-active {
                     display: grid !important;
                     grid-template-columns: 3fr 3fr !important;
                     gap: 2em;
-                    padding: 1em 0 0 0;
                     align-items: center;
 
                     .hero-cp-list-img img {
@@ -293,7 +296,6 @@ html.full-mode-active {
                         .hero-project-list-row {
                             display: grid !important;
                             grid-template-columns: 1fr 2.2fr 1.4fr 1.4fr !important;
-                            padding-top: 1em !important;
                             align-items: center;
                         }
                     }
@@ -358,7 +360,6 @@ html.full-mode-active {
                         .hero-project-list-row {
                             display: grid !important;
                             grid-template-columns: 2fr 2fr 1fr 1fr !important;
-                            padding-top: 1em !important;
                             align-items: center;
                             vertical-align: middle;
                             width: 100%;
