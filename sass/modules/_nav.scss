@@ -3,12 +3,12 @@ body.footer-active {
         .nav-top-pc {
             .main-nav-pc-top {
                 h3,h4,h5,span,i {
-                    color: var(--bg-wh);
+                    color: var(--color-primary-wh);
                     transition: color 0.25s ease;
                 }
     
                 h4 {
-                    color: var(--color-ft-text);
+                    color: var(--color-tertiary);
                 }
             }
         }
@@ -23,7 +23,7 @@ body.footer-active {
                 }
         
                 li a span {
-                    color: var(--bg-wh);
+                    color: var(--color-primary-wh);
 
                     transition:
                         color 0.5s ease,
@@ -62,14 +62,14 @@ body.footer-active {
             h4,
             h5,
             span {
-                color: var(--bg-dk);
+                color: var(--color-primary-bk);
                 font-size: var(--font-size-sm);
                 font-family: 'Neue Montreal Regular', 'General Sans', 'Helvetica';
             }
 
             &.main-nav-left {
                 h4{
-                    color: var(--color-text-secondary);
+                    color: var(--color-secondary);
                 }
             }
 
@@ -136,7 +136,7 @@ body.footer-active {
                 
                     a {
                         span {
-                            color: var(--bg-wh);
+                            color: var(--color-primary-wh);
                             opacity: .6;
                             font-size: var(--font-size-primary-sm);
                             font-family: 'Neue Montreal Regular', 'General Sans', 'Helvetica';
@@ -177,7 +177,7 @@ body.footer-active {
                     }
 
                     h4 {
-                        color: var(--color-text-secondary);
+                        color: var(--color-secondary);
                     }
                 }
             }
@@ -205,7 +205,7 @@ body.footer-active {
                     grid-column-start: 3;
 
                     h4 {
-                        color: var(--color-text-secondary);
+                        color: var(--color-secondary);
                     }
                 }
             }
@@ -231,7 +231,7 @@ body.footer-active {
                 z-index: -1;
     
                 backdrop-filter: blur(8px);
-                background-color: var(--bg-wh-nav);
+                background-color: var(--search-text-icon);
                 border-radius: .3em;
     
                 filter: var(--button-dropshadow);
@@ -239,7 +239,7 @@ body.footer-active {
     
             .search-icon {
                 font-size: var(--font-size-primary-sm);
-                color: var(--color-nav-icons);
+                color: var(--search-text-icon);
                 opacity: .8;
                 pointer-events: none;
                 padding: 0 0 0 4px;
@@ -259,19 +259,19 @@ body.footer-active {
                 outline: none;
     
                 font-size: var(--font-size-primary-sm) !important;
-                color: var(--color-nav-icons);
+                color: var(--search-text-icon);
                 line-height: 1;
     
                 &::placeholder {
-                    color: var(--bg-dk);
-                    color: var(--color-text-secondary);
+                    color: var(--color-primary-bk);
+                    color: var(--color-secondary);
                     font-size: var(--font-size-primary-sm) !important;
                 }
     
                 &:focus,
                 &:hover {
                     width: 200px;
-                    border-color: var(--bg-bk);
+                    border-color: var(--color-primary-bk);
     
                     &::placeholder {
                         opacity: .2;
@@ -293,8 +293,8 @@ body.footer-active {
                 gap: .4em;
 
                 span {
-                    background-color: var(--bg-wh-nav);
-                    border: 1px solid var(--bg-wh);
+                    background-color: var(--search-text-icon);
+                    border: 1px solid var(--color-primary-wh);
                     filter: blur(8px);
                     border-radius: .3em;
                     filter: var(--button-dropshadow);

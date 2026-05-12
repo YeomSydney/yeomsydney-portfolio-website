@@ -25,7 +25,7 @@ Font Size - PC      : 15px & 20px
 ----------------------------------
 */
 .hero-section {
-    background-color: var(--bg-wh);
+    background-color: var(--color-primary-wh);
 
     .hero-top {
         display: flex;
@@ -85,7 +85,7 @@ Font Size - PC      : 15px & 20px
                         justify-content: space-between;
                         align-items: center;
                         padding: .6em .8em;
-                        background-color: var(--bg-lightgrey);
+                        background-color: var(--color-quaternary);
                         border-radius: .3em;
                         transition: all .3s ease-in;
                         vertical-align: middle;
@@ -95,10 +95,10 @@ Font Size - PC      : 15px & 20px
                         }
 
                         &:hover {
-                            background-color: var(--bg-bk);
+                            background-color: var(--color-primary-bk);
                         
                             h3, i {
-                                color: var(--bg-wh);
+                                color: var(--color-primary-wh);
                             }
                         }
                     }
@@ -193,7 +193,7 @@ Font Size - PC      : 15px & 20px
 
                                 h4 {
                                     font-size: var(--font-size-sm);
-                                    color: var(--color-text-secondary);
+                                    color: var(--color-secondary);
                                     line-height: 125%;
                                 }
                             }
@@ -234,7 +234,7 @@ Font Size - PC      : 15px & 20px
 
                                     li button {
                                         font-size: var(--font-size-primary-sm);
-                                        color: var(--color-text-secondary);
+                                        color: var(--color-secondary);
                                         transition: all .3s ease;
 
                                         &:hover {
@@ -242,7 +242,7 @@ Font Size - PC      : 15px & 20px
                                         }
 
                                         &.is-active {
-                                            color: var(--bg-bk);
+                                            color: var(--color-primary-bk);
                                         }
                                     }
                                 }
@@ -293,16 +293,16 @@ Font Size - PC      : 15px & 20px
                                                 span,
                                                 h4 {
                                                     font-size: var(--font-size-sm);
-                                                    color: var(--color-text-secondary);
+                                                    color: var(--color-secondary);
                                                 }
                                             }
 
                                             &:hover {
-                                                background-color: var(--bg-lightgrey);
+                                                background-color: var(--color-quaternary);
                                     
                                                 span,
                                                 h4 {
-                                                    color: var(--bg-bk);
+                                                    color: var(--color-primary-bk);
                                                 }
                                             }
                                         }
@@ -316,14 +316,14 @@ Font Size - PC      : 15px & 20px
                                     width: auto;
                                     
                                     font-size: var(--font-size-sm);
-                                    color: var(--color-text-secondary);
+                                    color: var(--color-secondary);
                                     padding: 0 0 .15em 0;
-                                    border-bottom: 1px solid var(--color-text-secondary);
+                                    border-bottom: 1px solid var(--color-secondary);
 
                                     transition: all .3s ease;
 
                                     &:hover {
-                                        color: var(--bg-bk);
+                                        color: var(--color-primary-bk);
                                     }
                                 }
                             }
@@ -334,34 +334,6 @@ Font Size - PC      : 15px & 20px
 
             .section-indicator {
                 h3 { font-size: var(--font-size-primary-sm); }
-            }
-        }
-    }
-
-    .hero-extra-links {
-        ul {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            column-gap: .4em;
-            row-gap: .6em;
-            flex-wrap: wrap;
-
-            li {
-                background-color: transparent;
-                border-radius: .3em;
-                border: 1px solid var(--color-text-primary-bk-dark);
-                padding: .6em 1.2em;
-                color: var(--color-text-secondary);
-                transition: .3s all ease-in-out;
-
-                &:hover {
-                    opacity: 1;
-                    
-                    a, span {
-                        color: var(--bg-wh);
-                    }
-                }
             }
         }
     }
@@ -376,7 +348,7 @@ Font Size - PC      : 15px & 20px
         h2 { font-size: var(--font-size-display-title-md); }
 
         p {
-            color: var(--color-text-secondary);
+            color: var(--color-secondary);
             font-size: var(--font-size-primary);
         }
     }
@@ -390,7 +362,7 @@ Font Size - PC      : 15px & 20px
 
                 h3 {
                     text-transform: uppercase;
-                    color: var(--color-text-secondary);
+                    color: var(--color-secondary);
                     font-size: var(--font-size-xsm);
                     line-height: 125%;
                 }
@@ -412,7 +384,7 @@ Font Size - PC      : 15px & 20px
                 font-size: var(--font-size-primary-sm);
                 line-height: 125%;
                 font-size: var(--font-size-primary-sm);
-                color: var(--color-text-secondary);
+                color: var(--color-secondary);
             }
         }
     }
@@ -426,7 +398,7 @@ Font Size - PC      : 15px & 20px
     align-items: center;
     justify-content: center;
 
-    background-color: var(--bg-bk-light);
+    background-color: var(--search-bar-bg);
     backdrop-filter: blur(25px);
 
     z-index: var(--z-searchOverlay);
@@ -446,7 +418,7 @@ Font Size - PC      : 15px & 20px
         h1, h2, h3, h4, h5, h6,
         a, li, ul, i, span, section, article,
         label, input {
-            color: var(--bg-wh);
+            color: var(--color-primary-wh);
         }
 
         .search-intro {
@@ -460,14 +432,14 @@ Font Size - PC      : 15px & 20px
 
         .search-default {
             padding: 1em 0;
-            border-top: 1px solid var(--color-text-primary-wh-light);
+            border-top: 1px solid var(--color-line-white);
             display: flex;
             flex-direction: column;
             gap: 1em;
 
             h3 {
                 font-size: var(--font-size-primary-sm);
-                color: var(--color-text-secondary);
+                color: var(--color-secondary);
             }
 
             ul {
@@ -480,8 +452,8 @@ Font Size - PC      : 15px & 20px
                     font-size: var(--font-size-primary-sm);
                 
                     span {
-                        background-color: var(--color-text-primary-wh-dark);
-                        border: 1px solid var(--bg-wh);
+                        background-color: var(--search-placeholder-bg);
+                        border: 1px solid var(--color-primary-wh);
                         text-align: center;
                         align-items: center;
                         inset: 0;
@@ -500,7 +472,7 @@ Font Size - PC      : 15px & 20px
         font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
         font-size: var(--font-size-sd-md);
         font-weight: 400;
-        color: var(--bg-wh);
+        color: var(--color-primary-wh);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -521,13 +493,13 @@ Font Size - PC      : 15px & 20px
         font-size: var(--font-size-sd-md) !important;
         
         .typed {
-            color: var(--bg-wh);
+            color: var(--color-primary-wh);
             font-size: var(--font-size-sd-md) !important;
         }
         
         .silhouette {
             font-size: var(--font-size-sd-md) !important;
-            color: var(--color-text-primary-wh-light);
+            color: var(--search-placeholder);
             margin-left: 0.02em;
             pointer-events: none;
             transition: opacity 0.2s ease;
@@ -535,12 +507,12 @@ Font Size - PC      : 15px & 20px
     }
 
     .preview-hint {
-        color: var(--color-text-secondary);
+        color: var(--color-secondary);
         font-size: var(--font-size-sd) !important;
 
         &:hover,
         &.highlighted {
-            background-color: var(--color-preview-hint);
+            background-color: var(--search-preview-hint);
         }
     }
 }
@@ -726,7 +698,7 @@ Font Size - PC      : 15px & 20px
                 
                         h3 {
                             font-size: var(--font-size-sm);
-                            color: var(--color-text-secondary);
+                            color: var(--color-secondary);
                             text-transform: uppercase;
                         }
                 
@@ -748,7 +720,7 @@ Font Size - PC      : 15px & 20px
 
                             h3 {
                                 font-size: var(--font-size-sm);
-                                color: var(--color-text-secondary);
+                                color: var(--color-secondary);
                                 text-transform: uppercase;
                             }
 
@@ -793,7 +765,7 @@ Font Size - PC      : 15px & 20px
                             p {
                                 text-indent: 5em;
                                 font-size: var(--font-size-primary);
-                                color: var(--color-text-secondary);
+                                color: var(--color-secondary);
                             }
                         }
                     }
@@ -968,7 +940,7 @@ Font Size - PC      : 15px & 20px
 
                         h3 {
                             font-size: var(--font-size-sm);
-                            color: var(--color-text-secondary);
+                            color: var(--color-secondary);
                             text-transform: uppercase;
                         }
 
@@ -991,7 +963,7 @@ Font Size - PC      : 15px & 20px
 
                             h3 {
                                 font-size: var(--font-size-sm);
-                                color: var(--color-text-secondary);
+                                color: var(--color-secondary);
                                 text-transform: uppercase;
                             }
 
@@ -1249,7 +1221,7 @@ Font Size - PC      : 15px & 20px
 
                         h3 {
                             font-size: var(--font-size-sm);
-                            color: var(--color-text-secondary);
+                            color: var(--color-secondary);
                             text-transform: uppercase;
                         }
 
@@ -1271,7 +1243,7 @@ Font Size - PC      : 15px & 20px
 
                             h3 {
                                 font-size: var(--font-size-sm);
-                                color: var(--color-text-secondary);
+                                color: var(--color-secondary);
                                 text-transform: uppercase;
                             }
 

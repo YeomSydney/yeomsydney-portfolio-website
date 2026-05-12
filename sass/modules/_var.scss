@@ -1,11 +1,11 @@
 ::selection {
-    background: var(--bg-bk);
-    color: var(--bg-wh);
+    background: var(--color-primary-bk);
+    color: var(--color-primary-wh);
 }
 
 footer ::selection {
-    background: var(--bg-wh);
-    color: var(--bg-bk);
+    background: var(--color-primary-wh);
+    color: var(--color-primary-bk);
 }
 
 :root {
@@ -18,10 +18,10 @@ footer ::selection {
             │
             ├── Text
             │   ├── Primary Black: #101010
-            │   └── Primary White: #f9f8f7
+            │   └── Primary White: #F9F8F7
             │
             ├── Background
-            │   ├── White: #f9f8f7
+            │   ├── White: #F9F8F7
             │   ├── LightGrey 01: #F9F9F9
             │   └── LightGrey 02: #EFEFEF
             │
@@ -31,7 +31,7 @@ footer ::selection {
             │   └── Dark (Black): #10101010
             │
             └── Glow
-                └── Glow White: #f9f8f770
+                └── Glow White: #F9F8F770
     */
 
 
@@ -40,46 +40,38 @@ footer ::selection {
     --color-accent-red: #e53e3e;
     --color-accent-lightgreen: #bcd311;
 
-    // Nav
-    --bg-wh-nav: #f9f8f790;
 
-    // Background
-    --bg-wh: #f9f8f7;
-    --bg-lightgrey: #efeeed;
-    --bg-search-modal: #E0E0E050;
-
-    --bg-bk: #101010;
-    --bg-bk-light: #10101080;
+    // Brand Colours
+    --color-primary-wh: #F9F8F7;
+    --color-primary-bk: #101010;
+    --color-secondary: #7C7C7C;
+    --color-tertiary: #828282;
+    --color-quaternary: #EFEEED;
     
+
     // Line
-    --line-black: #10101020;
-    --line-white: #f9f8f720;
+    --color-line-black: #10101020;
+    --color-line-white: #F9F8F720;
 
-    // Preview Hint
-    --color-preview-hint: #f9f8f770;
-
-    // Nav Icons
-    --color-nav-icons: #737578;
 
     // Cursor Background
     --color-cursor: #10101050;
-    --color-cursor-ft: #f9f8f730;
-
-    // Buttons
-    --color-bg-toggle: #e9e8e7;;
+    --color-cursor-ft: #F9F8F750;
 
 
+    // Button colours
+    --color-btn-wh-blur: #F9F8F770;
+    --color-btn-bk-blur: #10101070;
 
-    // Text Colours
-    --color-text-primary-bk-light: #10101010;
-    --color-text-primary-bk-border-dark: #10101020;
-    --color-text-primary-bk-dark: #10101070;
 
-    --color-text-secondary: #828282;
-    --color-ft-text: #AAAAAA;
+    // Search Colours
+    --search-bar-bg: #10101080;
+    --search-modal-bg: #E0E0E050;
+    --search-preview-hint: #F9F8F770;
+    --search-text-icon: #7C7C7C;
+    --search-placeholder: #7C7C7C60;
+    --search-placeholder-bg: #7C7C7C80;
 
-    --color-text-primary-wh-light: #f9f8f760;
-    --color-text-primary-wh-dark: #f9f8f780;
 
     // Text Size
     --font-size-xsm: 12px;

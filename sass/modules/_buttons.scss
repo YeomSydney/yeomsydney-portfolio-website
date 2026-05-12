@@ -37,7 +37,7 @@
     width: auto;
     border-radius: .3em;
     padding: .6em .8em;
-    background-color: var(--color-preview-hint);
+    background-color: var(--color-btn-wh-blur);
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -79,11 +79,11 @@
 
 .fc-bt-btn-back {
     padding: 0 0 .2em 0;
-    border-bottom: 1px solid var(--color-ft-text);
+    border-bottom: 1px solid var(--color-tertiary);
     transition: all .3s ease-in;
 
     h4 {
-        color: var(--color-ft-text);
+        color: var(--color-tertiary);
     }
 
     &:hover {
@@ -109,7 +109,7 @@
 
     h4 {
         font-size: var(--font-size-sm);
-        color: var(--bg-bk);
+        color: var(--color-primary-bk);
     }
 }
 
@@ -118,7 +118,7 @@
     flex-direction: row;
     align-items: center;
     padding: .4em .8em;
-    background-color: var(--bg-lightgrey);
+    background-color: var(--color-quaternary);
     border-radius: .3em;
     transition: all .3s ease-in;
     vertical-align: middle;

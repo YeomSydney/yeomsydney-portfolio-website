@@ -7,7 +7,7 @@
 
 /* Case Study Each Page */
 .casestudy-item {
-    background-color: var(--bg-wh) !important;
+    background-color: var(--color-primary-wh) !important;
 
     .casestudy-container {
         display: flex;
@@ -58,7 +58,7 @@
 
                         h3 {
                             font-size: var(--font-size-xsm);
-                            color: var(--color-text-secondary);
+                            color: var(--color-secondary);
                             text-transform: uppercase;
                         }
 
@@ -69,7 +69,7 @@
 
                         p {
                             font-size: var(--font-size-primary);
-                            color: var(--color-text-secondary);
+                            color: var(--color-secondary);
                             width: 90%;
                         }
 
@@ -103,11 +103,11 @@
                 .cs-process-box-wrapper {
                     h2, h3, h4, h6,
                     a, p, li, span {
-                        color: var(--bg-dk);
+                        color: var(--color-primary-bk);
                     }
 
                     .casestudy-each-step {
-                        border: 1px solid var(--line-black);
+                        border: 1px solid var(--color-line-black);
                         border-radius: .5em;
                         padding: 1.2em !important;
                     }
@@ -154,7 +154,7 @@
                                             row-gap: .5em;
 
                                             .cs-es-subtitle {
-                                                color: var(--color-text-secondary);
+                                                color: var(--color-secondary);
                                                 font-size: var(--font-size-primary-sm);
                                             }
                                         }
@@ -173,7 +173,7 @@
                                             width: 100%;
                                             height: auto;
                                             padding-top: 1em;
-                                            border-top: 1px solid var(--line-black);
+                                            border-top: 1px solid var(--color-line-black);
                                             display: flex;
                                             flex-direction: column;
 
@@ -186,7 +186,7 @@
                                                 vertical-align: middle;
                                                 
                                                 h4 {
-                                                    color: var(--color-text-secondary);
+                                                    color: var(--color-secondary);
                                                     font-size: var(--font-size-primary-sm);
                                                     margin: 0;
                                                 }
@@ -194,7 +194,7 @@
                                                 i {
                                                     transform: rotateZ(0);
                                                     transition: all 0.4s ease;
-                                                    color: var(--bg-dk);
+                                                    color: var(--color-primary-bk);
                                                 }
                                             }
 
@@ -261,7 +261,7 @@
                         flex-direction: column;
                     
                         h3 {
-                            color: var(--color-text-secondary);
+                            color: var(--color-secondary);
                             padding: 4px 0;
                             font-size: var(--font-size-xsm);
                         }
@@ -277,7 +277,7 @@
                             justify-content: space-between;
 
                             h3 {
-                                color: var(--color-text-secondary);
+                                color: var(--color-secondary);
                                 padding: 4px 0;
                                 font-size: var(--font-size-xsm);
                             }
@@ -324,7 +324,7 @@
 
                                     .note {
                                         font-size: var(--font-size-primary-sm);
-                                        color: var(--color-text-secondary);
+                                        color: var(--color-secondary);
                                         font-style: italic;
                                     }
                                 }
@@ -571,7 +571,7 @@
 
                 h4 {
                     font-size: var(--font-size-sm);
-                    color: var(--color-text-secondary);
+                    color: var(--color-secondary);
                 }
             }
         }
@@ -723,7 +723,7 @@
 
                             h4 {
                                 font-size: var(--font-size-sm);
-                                color: var(--color-text-secondary);
+                                color: var(--color-secondary);
                             }
                         }
                     }

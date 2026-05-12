@@ -43,7 +43,7 @@ html {
         padding: 0;
         width: 100vw;
         transition: color .3s ease-in, background-color .3s ease-in;
-        background-color: var(--bg-wh) !important;
+        background-color: var(--color-primary-wh) !important;
     }
 
     body, main {
@@ -60,7 +60,7 @@ html {
 
     main {
         align-items: center;
-        color: var(--bg-bk);
+        color: var(--color-primary-bk);
     }
 }
 
@@ -86,7 +86,7 @@ button {
     font-family: 'PP Neue Montreal', 'General Sans', 'Helvetica';
     font-size: var(--font-size-primary);
     font-weight: 400;
-    color: var(--bg-bk);
+    color: var(--color-primary-bk);
     letter-spacing: -1%;
     word-wrap: break-word;
     text-wrap: pretty;
@@ -101,7 +101,7 @@ p {
     font-size: var(--font-size-primary);
     font-weight: 400;
     line-height: 125%;
-    color: var(--bg-bk);
+    color: var(--color-primary-bk);
     letter-spacing: -1%;
     word-wrap: break-word;
     text-wrap: pretty;
@@ -155,7 +155,7 @@ video {
 /* Customized */
 
 .line {
-    background-color: var(--line-black) !important;
+    background-color: var(--color-line-black) !important;
     height: 1px;
     width: 100%;
 }
@@ -166,7 +166,7 @@ video {
 
 .numbers {
     font-size: var(--font-size-xsm);
-    color: var(--color-text-secondary);
+    color: var(--color-secondary);
 }
 
 .dot {
