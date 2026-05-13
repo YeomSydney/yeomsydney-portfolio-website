@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             category: "Brand Identity",
             industry: "Cafe/Desserts",
             desc: "Lazy Donut is a donut brand designed for busy students and workers who struggle to take breaks.",
-            image: "./public/images/lazydonut/LazyDonut_PaperCup02.jpg",
+            image: "./public/images/lazydonut/LazyDonut_ENV01.jpg",
             url: "/lazydonut/",
             message: "View Casestudy"
         },
