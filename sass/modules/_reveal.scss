@@ -72,8 +72,8 @@ main {
     }
 
     .about-section {
-        .about-myself-wrapper,
-        .about-myself-desc-wrapper {
+        .container-title,
+        .about-details {
             opacity: 0;
 
             transition:
@@ -88,21 +88,21 @@ main {
         }
 
         /* ---------- description ---------- */
-        .about-myself-wrapper {
+        .container-title {
             transform: translateY(24px);
             filter: blur(6px);
         }
 
         /* ---------- logo/name ---------- */
-        .about-myself-desc-wrapper {
+        .about-details {
             transform: translateY(12px) scale(0.985);
             filter: blur(2px);
             transition-delay: 0.18s;
         }
 
         /* ---------- visible ---------- */
-        .about-myself-wrapper.is-visible,
-        .about-myself-desc-wrapper.is-visible {
+        .container-title.is-visible,
+        .about-details.is-visible {
             opacity: 1;
             transform: translateY(0) scale(1);
             filter: blur(0);

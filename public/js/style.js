@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- about reveal ---------- */
   revealElements(
-    ".about-myself-wrapper, .about-myself-desc-wrapper",
+    ".container-title, .about-details",
     { threshold: 0.25 }
   );
 
