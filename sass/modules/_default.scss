@@ -62,7 +62,7 @@ Font Size - PC      : 15px & 20px
         padding-bottom: 15em !important;
         gap: 15em !important;
 
-        .hero-extra {
+        .hero-details {
             display: flex;
             flex-direction: column;
             row-gap: 7em;
@@ -613,7 +613,7 @@ Font Size - PC      : 15px & 20px
 @media only screen and (max-width: 439px) {
     main {
         .hero-section {
-            .hero-extra {
+            .hero-details {
                 .hero-top-intro-para {
                     display: flex;
                     flex-direction: column;
@@ -640,7 +640,7 @@ Font Size - PC      : 15px & 20px
     main {
         .hero-section {
             .hero-middle {
-                .hero-extra {
+                .hero-details {
                     .hero-top-intro-para {
                         display: flex;
                         flex-direction: column;
@@ -674,7 +674,7 @@ Font Size - PC      : 15px & 20px
 @media only screen and (max-width: 599px) {
     main {
         .hero-section {
-            .hero-extra {
+            .hero-details {
                 .hero-casestudy-wrapper {
                     .hero-casestudy-content {
                         .hero-casestudy-previews {
@@ -766,7 +766,7 @@ Font Size - PC      : 15px & 20px
 @media only screen and (min-width: 600px) and (max-width: 743px) {
     main {
         .hero-section {
-            .hero-extra {
+            .hero-details {
                 .hero-casestudy-wrapper {
                     .hero-casestudy-content {
                         .hero-casestudy-previews {
@@ -863,8 +863,8 @@ Font Size - PC      : 15px & 20px
             }
 
             .hero-middle {
-                .hero-extra {
-                    .hero-extra-box {
+                .hero-details {
+                    .hero-details-box {
                         display: flex;
                         flex-direction: column;
                         row-gap: 7em;
@@ -903,11 +903,11 @@ Font Size - PC      : 15px & 20px
             }
             
             .hero-middle {
-                .hero-extra {
+                .hero-details {
                     display: flex;
                     flex-direction: column;
             
-                    .hero-extra-box {
+                    .hero-details-box {
                         display: flex;
                         flex-direction: column;
                         row-gap: 10em;
@@ -956,7 +956,7 @@ Font Size - PC      : 15px & 20px
             .hero-middle {
                 height: auto;
 
-                .hero-extra {
+                .hero-details {
                     .hero-casestudy-wrapper {
                         .hero-casestudy-content {
                             .hero-casestudy-previews {
@@ -1000,7 +1000,7 @@ Font Size - PC      : 15px & 20px
     main {
         .hero-section {
             .hero-middle {
-                .hero-extra {
+                .hero-details {
                     .hero-bottom-intro-details,
                     .hero-top-intro-para-about-box,
                     .hero-casestudy {
@@ -1026,7 +1026,7 @@ Font Size - PC      : 15px & 20px
 @media only screen and (min-width: 1000px) {
     main {
         .hero-section {
-            .hero-extra {
+            .hero-details {
                 .hero-bottom-intro-details,
                 .hero-top-intro-para-about-box {
                     display: grid;
