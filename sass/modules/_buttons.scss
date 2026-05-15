@@ -44,14 +44,21 @@
 }
 
 .gotop-btn {
-    width: 100%;
+    width: fit-content;
     align-items: center;
     display: inline-flex;
     justify-content: center;
     pointer-events: none;
 
+    position: fixed;
+    right: 1.5em;
+    bottom: 2.5em;
+
     button {
+        padding: .3em .6em .3em .4em;
+        overflow: hidden;
         align-items: center;
+
         vertical-align: middle;
         
         transform: translateY(0px);
@@ -67,6 +74,19 @@
 
         &:hover {
             transform: translateY(-3px);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: var(--z-negative);
+            backdrop-filter: blur(8px);
+            border-radius: .3em;
+            // background-color: var(--color-cursor);
+            transition:
+                background-color 0.5s ease,
+                backdrop-filter 0.5s ease,
         }
     }
 

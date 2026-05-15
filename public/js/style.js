@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // auto width based on text
       mouseCursor.style.width = "auto";
       mouseCursor.style.height = "auto";
-      mouseCursor.style.padding = "6px 10px";
+      mouseCursor.style.padding = ".5em .8em";
     } else {
       mouseCursor.classList.remove("has-text");
       setCursorText("");
@@ -194,7 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (footer) {
     const footerObserver = new IntersectionObserver (
-
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {

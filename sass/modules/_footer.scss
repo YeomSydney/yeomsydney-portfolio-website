@@ -337,9 +337,16 @@ body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top p,
 body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top span,
 body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top i,
 body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top a,
-body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top li {
+body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top li,
+body.footer-active .gotop-btn i,
+body.footer-active .gotop-btn span {
     color: var(--color-primary-wh);
     transition: color 0.25s ease;
+}
+
+body.footer-active .gotop-btn {
+    background-color: var(--color-cursor-ft);
+    border-radius: .3em;
 }
 
 body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top h4 {
