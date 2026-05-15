@@ -25,9 +25,8 @@ Font Size - PC      : 15px & 20px
 ----------------------------------
 */
 .hero-section {
-    background-color: var(--color-primary-wh);
-
     .hero-top {
+        padding: 0 1.5em;
         display: flex;
         width: 100%;
         min-height: 100vh;
@@ -340,51 +339,157 @@ Font Size - PC      : 15px & 20px
 }
 
 .about-section {
-    .about-myself {
+    .about-container {
+        padding: 12em 1.5em 15em 1.5em;
         display: flex;
         flex-direction: column;
-        gap: 2em;
+        gap: 15em;
 
-        h2 { font-size: var(--font-size-display-title-md); }
+        .about-container-main {
+            display: flex;
+            flex-direction: column;
+            gap: 18em;
 
-        p {
-            color: var(--color-secondary);
-            font-size: var(--font-size-primary);
-        }
-    }
-
-    .about-container {
-        .about-myself-desc-wrapper {
-            .about-myself-desc-names {
-                display: flex;
-                flex-direction: column;
-                gap: .5em;
-
-                h3 {
-                    text-transform: uppercase;
-                    color: var(--color-secondary);
-                    font-size: var(--font-size-xsm);
-                    line-height: 125%;
-                }
-
-                ul {
-                    li {
-                        font-size: var(--font-size-primary-sm);
-                        line-height: 125%;
-                        text-transform: uppercase;
-                    }
+            .container-title {
+                h2 {
+                    font-size: var(--font-size-display-title-md);
                 }
             }
-        }
-    }
 
-    .about-container-details {
-        .about-each-detail-content {
-            h5, h6 {
-                font-size: var(--font-size-primary-sm);
-                line-height: 125%;
-                font-size: var(--font-size-primary-sm);
-                color: var(--color-secondary);
+            .about-details-container {
+                display: flex;
+                flex-direction: column;
+                gap: 7em;
+
+                .about-details {
+                    h3 {
+                        font-size: var(--font-size-display-body);
+                        margin-top: -.1em;
+                    }
+
+                    .about-details-left {
+                        .location {
+                            display: flex;
+                            flex-direction: column;
+                            gap: .25em;
+
+                            .fc-semi-label {
+                                color: var(--color-secondary);
+                                font-size: var(--font-size-xsm);
+                                text-transform: uppercase;
+                            }
+                        
+                            p {
+                                font-size: var(--font-size-primary-sm);
+                            }
+                        }
+                    }
+
+                    .about-details-right {
+                        p,
+                        table th,
+                        table .role {
+                            color: var(--color-secondary);
+                        }
+
+                        span, a {
+                            font-size: var(--font-size-sd);
+                            width: fit-content;
+                        }
+                    }
+                }
+
+                .about-details-bio {
+                    .about-details-right {
+                        span {
+                            line-height: 125%;
+                            font-size: var(--font-size-sd-md);
+                            text-indent: 3em;
+                        }
+
+                        p {
+                            font-size: var(--font-size-primary);
+                        }
+                    }
+                }
+
+                .about-details-works {
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+
+                        th,
+                        td {
+                            text-align: left;
+                        }
+
+                        thead th {
+                            color: var(--color-secondary);
+                            font-size: var(--font-size-sm);
+                        }
+
+                        tbody {
+                            tr {
+                                border-top: 1px solid var(--color-line-black);
+                            }
+
+                            .year,
+                            .role {
+                                color: var(--color-secondary);
+                                font-size: var(--font-size-sm);
+                            }
+
+                            .workplace {
+                                font-size: var(--font-size-sd);
+                            }
+                        }
+                    }
+                }
+
+                .about-details-contacts {
+                    display: grid;
+                    grid-template-columns: repeat(12, 1fr);
+
+                    .about-details-right {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5em;
+
+                        .fc-social-details {
+                            display: inline-flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: .25em;
+                            
+                            span {
+                                transition: all .2s ease-in;
+                                line-height: 125%;
+
+                                &:hover {
+                                    h4 {
+                                        color: var(--color-secondary);
+                                    }
+                                }
+                            }
+                    
+                            span,
+                            h4,
+                            a {
+                                font-size: var(--font-size-sd);
+                                display: inline-flex;
+                                width: fit-content;
+                            }
+                        }
+                    }
+                    
+                    .about-details-left {
+                        grid-column: 1 / 6;
+                    }
+
+                    .about-details-right {
+                        grid-column: 7 / 13;
+                    }
+                }
             }
         }
     }
@@ -585,6 +690,57 @@ Font Size - PC      : 15px & 20px
                 }
             }
         }
+
+        .about-section {
+            .about-container {
+                .about-details-bio,
+                .about-details-works {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3em;
+
+                    .about-details-left {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                }
+
+                .about-details-bio {
+                    .about-details-right {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5em;
+                    }
+                }
+
+                .about-details-works {
+                    table {
+                        thead {
+                            display: none;
+                        }
+
+                        tbody {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1em;
+
+                            tr {
+                                display: flex;
+                                flex-direction: column;
+                                gap: .25em;
+
+                                th {
+                                    padding: 1em 0 .5em 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -627,6 +783,69 @@ Font Size - PC      : 15px & 20px
                 }
             }
         }
+
+        .about-section {
+            .about-container {
+                .about-details-bio {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3em;
+
+                    .about-details-left {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .about-details-right {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 999px) {
+    main {
+        .about-section {
+            .about-details-works {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+
+                .about-details-left {
+                    grid-column: 1 / 6;
+                }
+
+                .about-details-right {
+                    grid-column: 7 / 13;
+
+                    thead {
+                        display: none;
+                    }
+
+                    tbody {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1em;
+
+                        tr {
+                            display: flex;
+                            flex-direction: column;
+                            gap: .25em;
+
+                            th {
+                                padding: 1em 0 .5em 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -634,8 +853,6 @@ Font Size - PC      : 15px & 20px
     main {
         .hero-section {
             .hero-top {
-                padding: 0 1.2em;
-
                 .hero-top-desc {
                     display: flex;
                     flex-direction: column;
@@ -668,116 +885,6 @@ Font Size - PC      : 15px & 20px
                 }
             }
         }
-
-        .about-section {
-            .about-container {
-                display: flex;
-                flex-direction: column;
-                gap: 5em;
-                padding: 15em 1.2em 10em 1.2em;
-
-                .about-container-myself {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 10em;
-                    width: 100%;
-                }
-
-                .about-myself-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5em;
-                    width: 100%;
-                }
-
-                .about-container-details {
-                    .about-details-left {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .4em;
-                
-                        h3 {
-                            font-size: var(--font-size-sm);
-                            color: var(--color-secondary);
-                            text-transform: uppercase;
-                        }
-                
-                        h4 {
-                            font-size: var(--font-size-sd-lg);
-                        }
-                    }
-
-                    ul {
-                        grid-column-start: 3;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 2em;
-
-                        .about-details-right {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 1em;
-
-                            h3 {
-                                font-size: var(--font-size-sm);
-                                color: var(--color-secondary);
-                                text-transform: uppercase;
-                            }
-
-                            li {
-                                display: flex;
-                                flex-direction: column;
-                                gap: .4em;
-
-                                h4 {
-                                    font-size: var(--font-size-primary-sm);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .about-myself-desc-wrapper {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.4em;
-
-                    .about-myself-desc {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 2em;
-                        width: 100%;
-                        grid-column-start: 3;
-        
-                        .about-profile-img {
-                            max-width: 350px;
-        
-                            img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                                transition: transform .45s cubic-bezier(.38, 0, .2, 1);
-                            }
-                        }
-        
-                        .about-myself-desc-text {
-                            p {
-                                text-indent: 5em;
-                                font-size: var(--font-size-primary);
-                                color: var(--color-secondary);
-                            }
-                        }
-                    }
-                }
-
-                .about-container-details {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5em;
-                }
-            }
-        }
     }
 }
 
@@ -785,8 +892,6 @@ Font Size - PC      : 15px & 20px
     main {
         .hero-section {
             .hero-top {
-                padding: 0 1.2em;
-
                 .hero-top-desc {
                     display: grid;
                     grid-template-columns: 1fr 1fr 1.5fr 2.5fr;
@@ -825,46 +930,23 @@ Font Size - PC      : 15px & 20px
         }
 
         .about-section {
-            .about-container {
-                display: flex;
-                flex-direction: column;
-                gap: 5em;
-                padding: 14em 1.2em 10em 1.2em;
+            .about-details-container {
+                .about-details-bio {
+                    display: grid;
+                    grid-template-columns: repeat(12, 1fr);
 
-                .about-container-myself {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 10em;
-                    width: 100%;
-                }
-
-                .about-myself-desc-wrapper {
-                    .about-myself-desc {
+                    .about-details-left {
+                        grid-column: 1 / 6;
                         display: flex;
                         flex-direction: column;
-                        gap: 2em;
-                        width: 100%;
-                        max-width: 450px;
-                        grid-column-start: 3;
-        
-                        .about-profile-img {
-                            min-width: 350px;
-                            max-width: 450px;
-        
-                            img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                                transition: transform .45s cubic-bezier(.38, 0, .2, 1);
-                            }
-                        }
-        
-                        .about-myself-desc-text {
-                            p {
-                                text-indent: 5em;
-                                font-size: var(--font-size-primary);
-                            }
-                        }
+                        justify-content: space-between;
+                    }
+
+                    .about-details-right {
+                        grid-column: 7 / 13;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5em;
                     }
                 }
             }
@@ -915,80 +997,6 @@ Font Size - PC      : 15px & 20px
                 }
             }
         }
-
-        .about-section {
-            .about-container {
-                .about-myself-wrapper {
-                    display: grid;
-                    grid-template-columns: 3fr 1fr 350px;
-                    justify-content: space-between;
-                    width: 100%;
-                    align-items: flex-end;
-                    gap: 1.4em;
-                }
-
-                .about-container-details {
-                    display: grid;
-                    grid-template-columns: 3fr auto 350px;
-                    width: 100%;
-                    gap: 1.4em;
-
-                    .about-details-left {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .4em;
-
-                        h3 {
-                            font-size: var(--font-size-sm);
-                            color: var(--color-secondary);
-                            text-transform: uppercase;
-                        }
-
-                        h4 {
-                            font-size: var(--font-size-sd-lg);
-                            line-height: 125%;
-                        }
-                    }
-
-                    ul {
-                        grid-column-start: 3;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 2em;
-
-                        .about-details-right {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 1em;
-
-                            h3 {
-                                font-size: var(--font-size-sm);
-                                color: var(--color-secondary);
-                                text-transform: uppercase;
-                            }
-
-                            li {
-                                display: flex;
-                                flex-direction: column;
-                                gap: .4em;
-
-                                h4 {
-                                    font-size: var(--font-size-primary-sm);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .about-myself-desc-wrapper {
-                    width: 100%;
-                    display: grid;
-                    grid-template-columns: 2.2fr 1fr 350px;
-                    align-items: flex-end;
-                    gap: 1.4em;
-                }
-            }
-        }
     }
 }
 
@@ -1003,14 +1011,14 @@ Font Size - PC      : 15px & 20px
                         display: flex;
                         flex-direction: column;
                         row-gap: 1em;
-                        padding: 0 1.4em;
+                        padding: 0 1.5em;
                     }
 
                     .hero-casestudy-previews {
                         &.is-grid,
                         &.is-list {
-                            padding-right: 1.4em;
-                            padding-left: 1.4em;
+                            padding-right: 1.5em;
+                            padding-left: 1.5em;
                         }
                     }
                 }
@@ -1045,7 +1053,7 @@ Font Size - PC      : 15px & 20px
                 }
 
                 .hero-casestudy {
-                    padding: 0 1.2em;
+                    padding: 0 1.5em;
                     display: grid;
                     grid-template-columns: 1fr 1fr 3fr 1fr;
                     align-items: start;
@@ -1160,103 +1168,24 @@ Font Size - PC      : 15px & 20px
         }
 
         .about-section {
-            .about-container {
-                .about-container-myself {
-                    .about-myself-wrapper {
-                        display: grid;
-                        grid-template-columns: 2.2fr 1fr 450px;
-                        justify-content: space-between;
-                        width: 100%;
-                        align-items: flex-end;
-                        gap: 2em;
-                    }
+            .about-details-works {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
 
-                    .about-myself-desc-wrapper {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: 4fr 1.2fr auto;
-                        align-items: flex-end;
-                        gap: 2em;
-
-                        .about-myself-desc {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 2em;
-                            width: 100%;
-                            max-width: 450px;
-                            grid-column-start: 3;
-
-                            .about-profile-img {
-                                min-width: 350px;
-                                max-width: 450px;
-
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
-                                    transition: transform .45s cubic-bezier(.38, 0, .2, 1);
-                                }
-                            }
-
-                            .about-myself-desc-text {
-                                p {
-                                    text-indent: 5em;
-                                    font-size: var(--font-size-sd);
-                                }
-                            }
-                        }
-                    }
+                .about-details-left {
+                    grid-column: 1 / 6;
                 }
 
-                .about-container-details {
-                    display: grid;
-                    grid-template-columns: 2.2fr auto 450px;
-                    width: 100%;
-                    gap: 2em;
+                .about-details-right {
+                    grid-column: 7 / 13;
 
-                    .about-details-left {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .4em;
-
-                        h3 {
-                            font-size: var(--font-size-sm);
-                            color: var(--color-secondary);
-                            text-transform: uppercase;
-                        }
-
-                        h4 {
-                            font-size: var(--font-size-sd-lg);
-                        }
+                    th, td {
+                        padding: .5em;
                     }
 
-                    ul {
-                        grid-column-start: 3;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 2em;
-
-                        .about-details-right {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 1em;
-
-                            h3 {
-                                font-size: var(--font-size-sm);
-                                color: var(--color-secondary);
-                                text-transform: uppercase;
-                            }
-
-                            li {
-                                display: flex;
-                                flex-direction: column;
-                                gap: .4em;
-
-                                h4 {
-                                    font-size: var(--font-size-primary-sm);
-                                }
-                            }
-                        }
+                    .year,
+                    .role {
+                        font-size: var(--font-size-sd);
                     }
                 }
             }
@@ -1267,24 +1196,12 @@ Font Size - PC      : 15px & 20px
 @media only screen and (min-width: 1200px) {
     main {
         .about-section {
-            .about-myself-wrapper {
-                display: grid;
-                grid-template-columns: 2.2fr 4fr 550px !important;
-                justify-content: space-between;
-                width: 100%;
-                align-items: flex-end;
-                gap: 2em;
-            }
-
-            .about-myself-desc {
-                max-width: 550px !important;
-            }
-
-            .about-container-details {
-                display: grid;
-                grid-template-columns: 2.2fr auto 550px !important;
-                width: 100%;
-                gap: 2em;
+            .about-container {
+                .about-details-bio {
+                    .about-details-right {
+                        width: 90%;
+                    }
+                }
             }
         }
     }
