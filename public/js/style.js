@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            entry.target.classList.add("active");
             entry.target.classList.add("is-visible");
 
             observer.unobserve(entry.target);
@@ -54,8 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- hero reveal ---------- */
   revealElements(
-    ".hero-top-desc, .hero-top-name",
-    { instant: true }
+    ".hero-top-desc, .hero-top-name, .hero-about, .hero-casestudy",
+    { threshold: 0.15 }
+    // { instant: true }
+  );
+
+  revealElements(
+    ".hero-casestudy-content-details",
+    { threshold: 0.05 }
   );
 
   /* ---------- about reveal ---------- */

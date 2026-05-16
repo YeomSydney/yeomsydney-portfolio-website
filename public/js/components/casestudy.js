@@ -290,11 +290,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.innerHTML = `
                 <a href="${project.url}" class="hero-project-link" data-text="${project.message}">
-                    <div class="hero-cp-row-imgbox reveal">
+                    <div class="hero-cp-row-imgbox">
                         <img src="${project.image}" alt="(${project.title})">
                     </div>
 
-                    <div class="grid-layout reveal">
+                    <div class="grid-layout">
                         <div class="hero-casestudy-previews-info-wrapper">
                             <div class="hero-casestudy-previews-info">
                                 <div class="hero-casestudy-previews-info-title">
@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <img src="${project.image}" alt="(${project.title})">
                         </div>
 
-                        <div class="hero-project-list-row hero-project-list-body reveal">
+                        <div class="hero-project-list-row hero-project-list-body">
                             <span>${project.year}</span>
                             <h3 class="project-title">${project.title}</h3>
                             <span>${project.category}</span>
@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     <div class="full-layout">
                         <div class="hero-casestudy-previews-info-wrapper">
-                            <div class="hero-casestudy-previews-info reveal">
+                            <div class="hero-casestudy-previews-info">
                                 <div class="hero-casestudy-previews-info-title">
                                     <div class="hero-cp-each-title">
                                         <h3>${project.title}</h3>
@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
                             </div>
 
-                            <div class="reveal">
+                            <div>
                                 <span class="full-mode-btn">
                                     <i class="ri-arrow-right-line"></i>
                                 </span>

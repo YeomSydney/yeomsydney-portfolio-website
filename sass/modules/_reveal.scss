@@ -34,7 +34,10 @@ header {
 main {
     .hero-section {
         .hero-top-desc,
-        .hero-top-name {
+        .hero-top-name,
+        .hero-about,
+        .hero-casestudy,
+        .hero-casestudy-content-details {
             opacity: 0;
 
             transition:
@@ -49,7 +52,10 @@ main {
         }
 
         /* ---------- description ---------- */
-        .hero-top-desc {
+        .hero-top-desc,
+        .hero-about,
+        .hero-casestudy,
+        .hero-casestudy-content-details {
             transform: translateY(24px);
             filter: blur(6px);
         }
@@ -63,7 +69,10 @@ main {
 
         /* ---------- visible ---------- */
         .hero-top-desc.is-visible,
-        .hero-top-name.is-visible {
+        .hero-top-name.is-visible,
+        .hero-about.is-visible,
+        .hero-casestudy.is-visible,
+        .hero-casestudy-content-details.is-visible {
             opacity: 1;
             transform: translateY(0) scale(1);
             filter: blur(0);
