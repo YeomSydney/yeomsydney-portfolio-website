@@ -4,13 +4,13 @@
         gap: 0.5em;
         align-items: center;
 
-        span {
+        span, i {
             font-size: var(--font-size-sm) !important;
             color: var(--color-secondary);
             transition: all 0.25s ease;
 
             &.is-active {
-                color: var(--color-primary-bk);
+                color: var(--color-primary-bk) !important;
             }
         }
     }

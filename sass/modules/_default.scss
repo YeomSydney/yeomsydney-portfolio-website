@@ -846,6 +846,12 @@ Font Size - PC      : 15px & 20px
 }
 
 @media only screen and (max-width: 743px) {
+    .theme-toggle {
+        .pc-theme-toggle {
+            display: none;
+        }
+    }
+
     main {
         .hero-section {
             .hero-top {
@@ -885,6 +891,12 @@ Font Size - PC      : 15px & 20px
 }
 
 @media only screen and (min-width: 744px) {
+    .theme-toggle {
+        .mobile-theme-toggle {
+            display: none;
+        }
+    }
+
     main {
         .hero-section {
             .hero-top {

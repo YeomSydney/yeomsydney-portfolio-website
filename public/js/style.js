@@ -97,28 +97,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ===============================
     Dark/Light Mode
-  ==============================- */ 
-  const toggleBtn = document.querySelector(".theme-toggle button");
+============================== */
+
+  const toggleBtns = document.querySelectorAll(".theme-toggle button");
   const root = document.documentElement;
 
-  const sunIcon = document.querySelector(".btn-lightmode");
-  const moonIcon = document.querySelector(".btn-darkmode");
+  const lightModes = document.querySelectorAll(".btn-lightmode");
+  const darkModes = document.querySelectorAll(".btn-darkmode");
 
   function updateIcons(isDark) {
-    if (isDark) {
-      sunIcon.classList.remove("is-active");
-      moonIcon.classList.add("is-active");
-    } else {
-      sunIcon.classList.add("is-active");
-      moonIcon.classList.remove("is-active");
-    }
+    lightModes.forEach((el) => {
+      el.classList.toggle("is-active", !isDark);
+    });
+
+    darkModes.forEach((el) => {
+      el.classList.toggle("is-active", isDark);
+    });
   }
 
-  toggleBtn.addEventListener("click", () => {
-    const isDark = root.classList.toggle("dark-theme");
+  toggleBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const isDark = root.classList.toggle("dark-theme");
 
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    updateIcons(isDark);
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+
+      updateIcons(isDark);
+    });
   });
 
   window.addEventListener("DOMContentLoaded", () => {
@@ -126,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isDark = saved === "dark";
 
     root.classList.toggle("dark-theme", isDark);
+
     updateIcons(isDark);
   });
 

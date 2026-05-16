@@ -14,11 +14,13 @@ body.footer-active {
         }
 
         .theme-toggle {
-            button span {
+            button span,
+            button i {
                 color: var(--color-secondary) !important;
             }
 
-            button span.is-active {
+            button span.is-active,
+            button i.is-active {
                 color: var(--color-primary-wh) !important;
             }
         }
