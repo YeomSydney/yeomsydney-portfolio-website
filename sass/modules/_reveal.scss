@@ -9,6 +9,28 @@
     transform: translateY(0);
 }
 
+header {
+    .nav-top-pc {
+        opacity: 0;
+
+        transition:
+            opacity 1.2s var(--ease-smooth),
+            transform 1.2s var(--ease-smooth),
+            filter 1.2s var(--ease-smooth);
+
+        will-change:
+            opacity,
+            transform,
+            filter;
+
+        &.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+        }
+    }
+}
+
 main {
     .hero-section {
         .hero-top-desc,

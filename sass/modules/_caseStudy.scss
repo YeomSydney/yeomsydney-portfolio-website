@@ -7,8 +7,6 @@
 
 /* Case Study Each Page */
 .casestudy-item {
-    background-color: var(--color-primary-wh) !important;
-
     .casestudy-container {
         display: flex;
         flex-direction: column;
@@ -441,8 +439,8 @@
         .casestudy-item {
             .casestudy-container-top,
             div.casestudy-container-middle .casestudy-detail-box > div:not(.cs-process-box-wrapper) {
-                padding-left: 1.2em;
-                padding-right: 1.2em;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
             }
 
             .casestudy-item-bg {
@@ -797,8 +795,8 @@
         .casestudy-item {
             .casestudy-container-top,
             div.casestudy-container-middle .casestudy-detail-box > div:not(.cs-process-box-wrapper) {
-                padding-left: 1.2em;
-                padding-right: 1.2em;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
             }
 
             .casestudy-step {

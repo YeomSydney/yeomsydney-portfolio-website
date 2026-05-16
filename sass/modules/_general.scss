@@ -1,3 +1,273 @@
+/* DARK MODE */
+.dark-theme {
+    /* ===== selection ===== */
+    ::selection {
+        background: var(--color-primary-wh) !important;
+        color: var(--color-primary-bk) !important;
+    }
+
+    /* ===== cursor ===== */
+    #mouse_cursor {
+        background-color: var(--color-cursor-ft);
+        color: var(--color-primary-wh) !important;
+    }
+
+    /* ===== base layout ===== */
+    body {
+        background-color: var(--color-primary-bk) !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    li,
+    ul,
+    i,
+    p,
+    span,
+    section,
+    article,
+    label,
+    input,
+    textarea,
+    form,
+    button {
+        color: var(--color-primary-wh) !important;
+    }
+
+    .line {
+        background-color: var(--color-line-white) !important;
+    }
+
+    /* ===== NAV ===== */
+    #main-nav-pc {
+        .nav-top-pc .main-nav-pc-top {
+            h3, h5, span, i {
+                color: var(--color-primary-wh) !important;
+            }
+
+            h4 {
+                color: var(--color-tertiary) !important;
+            }
+        }
+
+        .theme-toggle button span {
+            color: var(--color-tertiary) !important;
+        }
+
+        .theme-toggle button span.is-active {
+            color: var(--color-primary-wh) !important;
+        }
+
+        .nav-center ul {
+            &::before {
+                background-color: var(--color-cursor-ft) !important;
+            }
+
+            li {
+                a span {
+                    opacity: .6 !important;
+                    color: var(--color-primary-wh) !important;
+                }
+
+                &.is-active,
+                &:hover {
+                    a span {
+                        opacity: 1 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    /* ===== HERO ===== */
+    .hero-section {
+        .logo {
+            filter: invert(1) brightness(2) !important;
+        }
+
+        .hero-bottom-intro-details li a {
+            background-color: var(--color-tertiary) !important;
+            color: var(--color-primary-bk) !important;
+
+            &:hover {
+                background-color: var(--color-primary-wh) !important;
+
+                h3, i {
+                    color: var(--color-primary-bk) !important;
+                }
+            }
+        }
+
+        .hero-casestudy-wrapper {
+            .hero-casestudy-previews-info h4 {
+                color: var(--color-tertiary) !important;
+            }
+
+            .hero-casestudy-view-mode li button {
+                color: var(--color-tertiary) !important;
+
+                &.is-active {
+                    color: var(--color-primary-wh) !important;
+                }
+            }
+
+            .hero-project-list a {
+                span, h4 {
+                    color: var(--color-tertiary) !important;
+                }
+
+                &:hover {
+                    span, h4 {
+                        color: var(--color-primary-bk) !important;
+                    }
+                }
+            }
+
+            .hero-project-list-actions button {
+                color: var(--color-tertiary) !important;
+
+                &:hover {
+                    color: var(--color-primary-wh) !important;
+                }
+            }
+        }
+    }
+
+    /* ===== ABOUT ===== */
+    .about-section {
+        .about-container {
+            .about-details-works {
+                tbody {
+                    tr {
+                        border-top: 1px solid var(--color-line-white) !important;
+                    }
+
+                    .workplace {
+                        color: var(--color-primary-wh) !important;
+                    }
+                }
+            }
+
+            .about-details-right {
+                p,
+                table th,
+                table .role {
+                    color: var(--color-tertiary) !important;
+                }
+            }
+
+            .about-details-bio {
+                .about-details-left .fc-semi-label {
+                    color: var(--color-tertiary) !important;
+                }
+            }
+        }
+    }
+
+    /* ===== CASESTUDY =====*/
+    .casestudy-section {
+        .casestudy-item {
+            .casestudy-container {
+                .casestudy-eachDetail {
+                    h3,
+                    p {
+                        color: var(--color-secondary) !important;
+                    }
+                }
+    
+                .casestudy-container-middle {
+                    .cs-process-box-wrapper {
+                        h2,
+                        h3,
+                        h4,
+                        h6,
+                        a,
+                        p,
+                        li,
+                        span {
+                            color: var(--color-primary-wh) !important;
+                        }
+
+                        .casestudy-each-step {
+                            border: 1px solid var(--color-line-white) !important;
+                        }
+                    }
+
+                    .cs-each-step-title-wrapping-box {
+                        .cs-es-subtitle {
+                            color: var(--color-secondary) !important;
+                        }
+                    }
+
+                    .casestudy-each-step-details {
+                        .casestudy-each-step-details-box {
+                            border-top: 1px solid var(--color-line-white) !important;
+
+                            .casestudy-each-step-details-box-title,
+                            .casestudy-each-step-details-box-title-noHover {
+                                h4 {
+                                    color: var(--color-secondary) !important;
+                                }
+
+                                i {
+                                    color: var(--color-primary-wh) !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .project-badge {
+            background-color: var(--color-tertiary) !important;
+
+            h4 {
+                color: var(--color-primary-wh) !important;
+            }
+        }
+
+        .cs-next-project-text {
+            h4 { color: var(--color-secondary) !important; }
+        }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer-container {
+        background-color: var(--color-darkmode-bg) !important;
+
+        h3,
+        h4,
+        p,
+        span,
+        i,
+        a,
+        ul,
+        li {
+            color: var(--color-primary-wh) !important;
+        }
+
+        .fc-semi-label,
+        .fc-bt-connect-desc span,
+        .footer-container-top .fc-top-contact h3,
+        .footer-container-misc ul li,
+        .footer-container-misc ul a {
+            color: var(--color-secondary) !important;
+        }
+
+        .fc-bt-btn-back h4 {
+            color: var(--color-tertiary) !important;
+        }
+    }
+}
+
+
+
 // General Rule
 * {
     box-sizing: border-box;
@@ -16,8 +286,6 @@
 *::after {
     box-sizing: border-box;
 }
-
-.hidden { display: none; }
 
 @media (pointer: coarse) {
     html,
@@ -153,6 +421,10 @@ video {
     -moz-user-select: none !important;
     -webkit-user-select: none !important;
     -ms-user-select: none !important;
+}
+
+.logo {
+    fill: currentColor;
 }
 
 /* Customized */

@@ -1,3 +1,10 @@
+body.footer-active {
+    #mouse_cursor {
+        background-color: var(--color-cursor-ft);
+        color: var(--color-primary-wh);
+    }
+}
+
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {
     #mouse_cursor {
         display: none;

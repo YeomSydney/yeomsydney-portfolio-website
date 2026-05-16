@@ -46,6 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ---------- nav reveal ----------- */
+  revealElements(
+    ".nav-top-pc",
+    { threshold: 0.25 }
+  );
+
   /* ---------- hero reveal ---------- */
   revealElements(
     ".hero-top-desc, .hero-top-name",
@@ -70,6 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.25 }
   );
 
+
+
+
   /* ===============================
     NAV ACTIVE STATE (HTML-DRIVEN)
   =============================== */
@@ -83,6 +92,44 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+
+
+  /* ===============================
+    Dark/Light Mode
+  ==============================- */ 
+  const toggleBtn = document.querySelector(".theme-toggle button");
+  const root = document.documentElement;
+
+  const sunIcon = document.querySelector(".btn-lightmode");
+  const moonIcon = document.querySelector(".btn-darkmode");
+
+  function updateIcons(isDark) {
+    if (isDark) {
+      sunIcon.classList.remove("is-active");
+      moonIcon.classList.add("is-active");
+    } else {
+      sunIcon.classList.add("is-active");
+      moonIcon.classList.remove("is-active");
+    }
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    const isDark = root.classList.toggle("dark-theme");
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateIcons(isDark);
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("theme");
+    const isDark = saved === "dark";
+
+    root.classList.toggle("dark-theme", isDark);
+    updateIcons(isDark);
+  });
+
+
 
   /* ===============================
     CUSTOM CURSOR
@@ -162,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("click", e => {
     const target = e.target.closest(
-      "a, button, [role='button'], .hover-trigger"
+      "a, button, [role='button'], .hover-trigger, "
     );
 
     if (!target) return;
@@ -193,19 +240,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelector("footer");
 
   if (footer) {
-    const footerObserver = new IntersectionObserver (
+    const footerObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            document.body.classList.add("footer-active");
-            mouseCursor.style.backgroundColor =
-              "var(--color-cursor-ft)";
-          } else {
-            document.body.classList.remove("footer-active");
-
-            mouseCursor.style.backgroundColor =
-              "var(--color-cursor)";
-          }
+          document.body.classList.toggle(
+            "footer-active",
+            entry.isIntersecting
+          );
         });
       },
       {
