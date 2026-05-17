@@ -55,14 +55,17 @@
             }
         }
 
-        .theme-toggle button span,
-        .theme-toggle button i {
-            color: var(--color-tertiary) !important;
-        }
-
-        .theme-toggle button span.is-active,
-        .theme-toggle button i.is-active {
-            color: var(--color-primary-wh) !important;
+        .theme-toggle {
+            button {
+                span,
+                i {
+                    color: var(--color-tertiary) !important;
+    
+                    &.is-active {
+                        color: var(--color-primary-wh) !important;
+                    }
+                }
+            }
         }
 
         .nav-center ul {
