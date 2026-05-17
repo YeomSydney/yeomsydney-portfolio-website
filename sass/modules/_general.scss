@@ -93,7 +93,7 @@
         }
 
         .hero-bottom-intro-details li a {
-            background-color: var(--color-tertiary) !important;
+            background-color: var(--color-btn-wh-contact) !important;
             color: var(--color-primary-bk) !important;
 
             &:hover {
@@ -184,6 +184,10 @@
                     td li {
                         color: var(--color-primary-wh) !important;
                     }
+
+                    tr {
+                        border-top: solid 1px var(--color-line-white) !important;
+                    }
                 }
             }
 
@@ -192,6 +196,10 @@
                 .cs-process h3,
                 ul li {
                     color: var(--color-tertiary) !important;
+                }
+
+                .cs-process-each {
+                    border-top: 1px solid var(--color-line-white) !important;
                 }
             }
         }
@@ -213,7 +221,7 @@
 
     /* ===== FOOTER ===== */
     .footer-container {
-        background-color: var(--color-darkmode-bg) !important;
+        border-top: solid 1px var(--color-line-white);
 
         h3,
         h4,
@@ -231,7 +239,7 @@
         .footer-container-top .fc-top-contact h3,
         .footer-container-misc ul li,
         .footer-container-misc ul a {
-            color: var(--color-secondary) !important;
+            color: var(--color-tertiary) !important;
         }
 
         .fc-bt-btn-back h4 {

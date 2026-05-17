@@ -175,8 +175,12 @@ main {
 
     .casestudy-section {
         .casestudy-title h3,
-        .casestudy-details,
-        .casestudy-container-right-3c {
+        .cs-basic-info-intro h2,
+        .external-btn,
+        .cs-basic-info-details,
+        .cs-challenge,
+        .cs-process,
+        .cs-more-project {
             opacity: 0;
             transform:
                 translateY(40px) scale(0.985);
@@ -195,19 +199,31 @@ main {
 
         /* ---------- revealed ---------- */
         .casestudy-title h3.is-visible,
-        .casestudy-details.is-visible,
-        .casestudy-container-right-3c.is-visible {
+        .cs-basic-info-intro h2.is-visible,
+        .external-btn.is-visible,
+        .cs-basic-info-details.is-visible,
+        .cs-challenge.is-visible,
+        .cs-process.is-visible,
+        .cs-more-project.is-visible {
             opacity: 1;
             transform: translateY(0) scale(1);
             filter: blur(0);
         }
 
         /* ---------- stagger ---------- */
-        .casestudy-details {
+        .casestudy-title h3,
+        .cs-basic-info-intro h2,
+        .external-btn,
+        .cs-basic-info-details {
             transition-delay: 0.12s;
         }
 
-        .casestudy-container-right-3c {
+        .cs-challenge,
+        .cs-process {
+            transition-delay: 0.18s;
+        }
+
+        .cs-more-project {
             transition-delay: 0.22s;
         }
     }

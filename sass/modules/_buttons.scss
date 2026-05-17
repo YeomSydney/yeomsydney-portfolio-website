@@ -79,13 +79,9 @@
         padding: .3em .6em .3em .4em;
         overflow: hidden;
         align-items: center;
-
         vertical-align: middle;
-        
         transform: translateY(0px);
         transition: transform .3s ease;
-        background-color: var(--color-cursor-ft);
-        border-radius: .3em;
 
         i {
             font-size: var(--font-size-primary);
@@ -98,18 +94,6 @@
         &:hover {
             transform: translateY(-3px);
         }
-
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: var(--z-negative);
-            backdrop-filter: blur(8px);
-            border-radius: .3em;
-            transition:
-                background-color 0.5s ease,
-                backdrop-filter 0.5s ease,
-        }
     }
 
     &.is-visible {
@@ -121,11 +105,11 @@
 
 .fc-bt-btn-back {
     padding: 0 0 .2em 0;
-    border-bottom: 1px solid var(--color-tertiary);
+    border-bottom: 1px solid var(--color-secondary);
     transition: all .3s ease-in;
 
     h4 {
-        color: var(--color-tertiary);
+        color: var(--color-secondary);
     }
 
     &:hover {

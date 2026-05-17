@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- casestudy reveal ---------- */
   revealElements(
-    ".casestudy-title h3, .casestudy-details, .casestudy-container-right-3c",
+    ".casestudy-title h3, .cs-basic-info-intro h2, .external-btn, .cs-basic-info-details, .cs-challenge, .cs-process, .cs-more-project",
     { threshold: 0.25 }
   );
 

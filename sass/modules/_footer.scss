@@ -16,7 +16,7 @@
         gap: 10em;
 
         .fc-semi-label {
-            color: var(--color-tertiary);
+            color: var(--color-secondary);
             font-size: var(--font-size-xsm);
             text-transform: uppercase;
         }
@@ -52,7 +52,7 @@
                     gap: .5em;
 
                     span {
-                        color: var(--color-tertiary);
+                        color: var(--color-secondary);
                         line-height: 125%;
                     }
                 }
@@ -106,7 +106,7 @@
 
                 h3 {
                     font-size: var(--font-size-primary-sm);
-                    color: var(--color-tertiary);
+                    color: var(--color-secondary);
                 }
             }
         }
@@ -349,6 +349,6 @@ body.footer-active .gotop-btn {
 }
 
 body.footer-active #main-nav-pc .nav-top-pc .main-nav-pc-top h4 {
-    color: var(--color-tertiary);
+    color: var(--color-secondary);
     transition: color 0.25s ease;
 }

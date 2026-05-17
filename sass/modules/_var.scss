@@ -45,14 +45,12 @@ footer ::selection {
     --color-primary-wh: #F9F8F7;
     --color-primary-bk: #101010;
     --color-secondary: #7C7C7C;
-    --color-tertiary: #828282;
+    --color-tertiary: #9A9A9A;
     --color-quaternary: #EFEEED;
-    
-    --color-darkmode-bg: #0C0C0C;
 
     // Line
     --color-line-black: #E4E4E4;
-    --color-line-white: #F9F8F720;
+    --color-line-white: #4E4E4E;
 
 
     // Cursor Background
@@ -61,8 +59,9 @@ footer ::selection {
 
 
     // Button colours
-    --color-btn-wh-blur: #F9F8F770;
-    --color-btn-bk-blur: #10101070;
+    --color-btn-wh-blur: #F9F8F760;
+    --color-btn-bk-blur: #10101060;
+    --color-btn-wh-contact: #4E4E4E;
 
 
     // Search Colours
