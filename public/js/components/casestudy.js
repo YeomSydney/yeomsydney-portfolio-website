@@ -1,27 +1,13 @@
 /* =====================================
     CASESTUDY ENHANCE
-    - Thumbnail background sync
-    - Hover effects
-    - Snap scrolling
-    - Expand / collapse steps
+    - CASESTUDY LIST VIEW IN INDEX PAGE
+    - CASESTUDY EACH PAGE
 ===================================== */
 
+
+
+// CASESTUDY LIST VIEW IN INDEX PAGE
 document.addEventListener("DOMContentLoaded", () => {
-    /* ===============================
-        STEP TOGGLE (DETAILS)
-    =============================== */
-    document
-        .querySelectorAll('.casestudy-each-step-details-box')
-        .forEach(box => {
-            box.addEventListener('click', () => {
-                box.classList.toggle('active');
-            });
-        });
-    
-
-
-
-
     /* ------------------------------
     PROJECT DETAIL ARRAY
     ------------------------------ */
@@ -125,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
             category: "Editorial",
             industry: "Poem Commentary",
             desc: "<I Wasn't There> is a set of two booklets enclosed in a box cover, exploring the themes of absence and existence through two different poems.",
-            image: "./public/images/iwasntthere/iwasntthere_Mockup01.jpg",
+            image: "./public/images/iwasntthere/iwasntthere_Cover02.jpg",
             url: "/i-wasnt-there/",
             message: "View Casestudy"
         },
@@ -151,14 +137,11 @@ document.addEventListener("DOMContentLoaded", () => {
             category: "Brand Identity",
             industry: "Festival",
             desc: "Lights of Seoul is a lantern festival held on Toronto Island that reinterprets Korean cultural traditions within a Canadian context.",
-            image: "./public/images/lightsofseoul/Revision_Mockups04.jpg",
+            image: "./public/images/lightsofseoul/lightsofseoul-digital-display01.jpg",
             url: "/lights-of-seoul/",
             message: "View Casestudy"
         },
     ];
-
-
-
 
     /* ------------------------------
     PROJECT COUNT + PROJECT LIST
@@ -350,9 +333,6 @@ document.addEventListener("DOMContentLoaded", () => {
         previewContainer.appendChild(rowElement);
     });
 
-
-
-
     /* ------------------------------
     VIEW MODE SWITCHER
     ------------------------------ */
@@ -480,5 +460,106 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }, 220);
         });
+    });
+});
+
+
+
+// CASESTUDY EACH PAGE
+document.addEventListener("DOMContentLoaded", () => {
+    // More Project (Footer)
+    const moreProjects = [
+        {
+            title: "Mellow Ground",
+            category: "Brand Identity",
+            image: "../public/images/mellowground/MellowGround_CoffeeCan01_Thumbnail.jpg",
+            url: "/mellowground/"
+        },
+
+        {
+            title: "Lazy Donut",
+            category: "Brand Identity",
+            image: "../public/images/lazydonut/LazyDonut_ENV01.jpg",
+            url: "/lazydonut/"
+        },
+
+        {
+            title: "Trace Toronto",
+            category: "Campaign Planning",
+            image: "../public/images/tracetoronto/TraceToronto_BannerBillboard02.jpg",
+            url: "/trace-toronto/"
+        },
+
+        {
+            title: "Brass Fork",
+            category: "Brand Identity",
+            image: "../public/images/brassfork/BrassFork_Ad.jpg",
+            url: "/brassfork/"
+        },
+
+        {
+            title: "Gentle Dazs",
+            category: "Brand Identity/Packaging",
+            image: "../public/images/gentledazs/GentleDazs_Packages_01.jpg",
+            url: "/gentle-dazs/"
+        },
+
+        {
+            title: "The Favric Expo",
+            category: "Brand Identity",
+            image: "../public/images/thefavricexpo/thefabricexpo-binder03.jpg",
+            url: "/the-favric-expo/"
+        },
+
+        {
+            title: "One Spoon",
+            category: "Brand Identity",
+            image: "../public/images/onespoon/OneSpoon_Banner03_Building.jpg",
+            url: "/onespoon/"
+        },
+
+        {
+            title: "I Wasn't There",
+            category: "Editorial",
+            image: "../public/images/iwasntthere/iwasntthere_Cover02.jpg",
+            url: "/i-wasnt-there/"
+        },
+
+        {
+            title: "Lights of Seoul",
+            category: "Brand Identity",
+            image: "../public/images/lightsofseoul/lightsofseoul-digital-display01.jpg",
+            url: "/lights-of-seoul/"
+        },
+    ];
+
+    const projectContainer = document.querySelector(".cs-more-project-items");
+
+    if (!projectContainer) return;
+
+    const currentPath = window.location.pathname;
+
+    // remove current project
+    const filteredProjects = moreProjects.filter(project => {
+        return project.url !== currentPath;
+    });
+
+    filteredProjects.forEach(project => {
+        const item = document.createElement("li");
+
+        item.innerHTML = `
+            <a href="${project.url}" data-text="View Casestudy">
+                <div class="cs-mp-img">
+                    <img src="${project.image}" loading="lazy">
+                </div>
+
+                <div class="cs-mp-info">
+                    <h4>${project.title}</h4>
+                    <span>${project.category}</span>
+                </div>
+            </a>
+        `;
+
+        projectContainer.appendChild(item);
     });
 });

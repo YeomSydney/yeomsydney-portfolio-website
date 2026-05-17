@@ -238,8 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- smooth follow ---------- */
   function animateCursor() {
-    currentX = lerp(currentX, cursorX, 0.22);
-    currentY = lerp(currentY, cursorY, 0.22);
+    currentX = lerp(currentX, cursorX, 0.75);
+    currentY = lerp(currentY, cursorY, 0.75);
 
     mouseCursor.style.transform =
       `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
