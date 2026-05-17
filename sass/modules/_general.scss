@@ -173,69 +173,41 @@
 
     /* ===== CASESTUDY =====*/
     .casestudy-section {
-        .casestudy-item {
-            .casestudy-container {
-                .casestudy-eachDetail {
-                    h3,
-                    p {
-                        color: var(--color-secondary) !important;
+        .cs-main-content {
+            .cs-basic-info {
+                .cs-basic-info-desc {
+                    p { color: var(--color-tertiary) !important; }
+                }
+
+                .cs-basic-info-data {
+                    td,
+                    td li {
+                        color: var(--color-primary-wh) !important;
                     }
                 }
-    
-                .casestudy-container-middle {
-                    .cs-process-box-wrapper {
-                        h2,
-                        h3,
-                        h4,
-                        h6,
-                        a,
-                        p,
-                        li,
-                        span {
-                            color: var(--color-primary-wh) !important;
-                        }
+            }
 
-                        .casestudy-each-step {
-                            border: 1px solid var(--color-line-white) !important;
-                        }
-                    }
-
-                    .cs-each-step-title-wrapping-box {
-                        .cs-es-subtitle {
-                            color: var(--color-secondary) !important;
-                        }
-                    }
-
-                    .casestudy-each-step-details {
-                        .casestudy-each-step-details-box {
-                            border-top: 1px solid var(--color-line-white) !important;
-
-                            .casestudy-each-step-details-box-title,
-                            .casestudy-each-step-details-box-title-noHover {
-                                h4 {
-                                    color: var(--color-secondary) !important;
-                                }
-
-                                i {
-                                    color: var(--color-primary-wh) !important;
-                                }
-                            }
-                        }
-                    }
+            .cs-indepth-process {
+                .cs-challenge h3,
+                .cs-process h3,
+                ul li {
+                    color: var(--color-tertiary) !important;
                 }
             }
         }
 
-        .project-badge {
-            background-color: var(--color-tertiary) !important;
+        .cs-more-project {
+            border-top: solid 1px var(--color-line-white) !important;
 
-            h4 {
-                color: var(--color-primary-wh) !important;
+            .cs-more-project-title h3 {
+                color: var(--color-tertiary) !important;
             }
-        }
 
-        .cs-next-project-text {
-            h4 { color: var(--color-secondary) !important; }
+            .cs-more-project-list ul li {
+                .cs-mp-info {
+                    span { color: var(--color-tertiary) !important; }
+                }
+            }
         }
     }
 

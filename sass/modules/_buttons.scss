@@ -17,13 +17,15 @@
 }
 
 .btn-default,
-.full-mode-btn {
+.full-mode-btn,
+.external-btn {
     display: inline-flex;
     flex-direction: row;
     column-gap: .4em;
     align-items: center;
     transition: all .3s ease-in;
     padding: .5em 0;
+    width: fit-content;
 
     h4 {
         font-size: var(--font-size-primary-sm) !important;
@@ -138,34 +140,5 @@
         &:hover {
             transform: translateX(3px);
         }
-    }
-}
-
-.external-btn {
-    display: inline-flex;
-    width: auto;
-    padding: 0 .4em;
-    border-radius: .3em;
-
-    h4 {
-        font-size: var(--font-size-sm);
-        color: var(--color-primary-bk);
-    }
-}
-
-.project-badge {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    padding: .4em .8em;
-    background-color: var(--color-quaternary);
-    border-radius: .3em;
-    transition: all .3s ease-in;
-    vertical-align: middle;
-    gap: .4em;
-
-    h4,
-    i {
-        font-size: var(--font-size-sm);
     }
 }
