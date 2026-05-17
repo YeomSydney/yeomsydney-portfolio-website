@@ -90,11 +90,12 @@ body.footer-active {
                 justify-content: flex-end;
 
                 a {
-                    display: flex;
+                    display: inline-flex;
                     flex-direction: row;
                     justify-content: flex-end;
                     align-items: center;
-                    gap: .5em;
+                    width: fit-content;
+                    column-gap: .4em;
 
                     .dot {
                         background-color: var(--color-accent-lightgreen) !important;
