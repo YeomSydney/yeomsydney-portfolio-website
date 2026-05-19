@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
             category: "Brand Identity",
             industry: "Festival",
             desc: "Lights of Seoul is a lantern festival held on Toronto Island that reinterprets Korean cultural traditions within a Canadian context.",
-            image: "./public/images/lightsofseoul/lightsofseoul-digital-display01.jpg",
+            image: "./public/images/lightsofseoul/lightsofseoul-digital-display02.jpg",
             url: "/lights-of-seoul/",
             message: "View Casestudy"
         },
@@ -528,7 +528,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Lights of Seoul",
             category: "Brand Identity",
-            image: "../public/images/lightsofseoul/lightsofseoul-digital-display01.jpg",
+            image: "../public/images/lightsofseoul/lightsofseoul-digital-display02.jpg",
             url: "/lights-of-seoul/"
         },
     ];
