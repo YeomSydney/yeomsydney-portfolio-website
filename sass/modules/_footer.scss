@@ -9,7 +9,18 @@
     h3, h4, p, span, i, a, ul, li {
         color: var(--color-primary-wh);
     }
+}
 
+.contact-section {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-container,
+.contact-section {
     .footer-container-main {
         display: flex;
         flex-direction: column;
@@ -141,7 +152,8 @@
 }
 
 @media only screen and (max-width: 599px) {
-    .footer-container {
+    .footer-container,
+    .contact-section {
         padding: 13em 1.5em 10em 1.5em;
 
         display: grid;
@@ -200,7 +212,8 @@
 }
 
 @media only screen and (max-width: 743px) and (min-width:600px) {
-    .footer-container {
+    .footer-container,
+    .contact-section {
         padding: 13em 1.5em 7em 1.5em;
 
         .footer-container-wrapper {
@@ -238,7 +251,8 @@
 }
 
 @media only screen and (max-width: 743px) {
-    .footer-container {
+    .footer-container,
+    .contact-section {
         .footer-container-misc {
             display: flex;
             flex-direction: column;
@@ -248,7 +262,8 @@
 }
 
 @media only screen and (min-width: 744px) {
-    .footer-container {
+    .footer-container,
+    .contact-section {
         padding: 12em 1.5em 1.5em 1.5em;
 
         .footer-container-wrapper {
@@ -282,12 +297,14 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
     }
 }
 
 @media only screen and (max-width: 999px) {
-    .footer-container {
+    .footer-container,
+    .contact-section {
         .footer-container-main {
             padding-bottom: 7em;
         }
@@ -295,7 +312,8 @@
 }
 
 @media only screen and (min-width: 1000px) {
-    .footer-container {
+    .footer-container,
+    .contact-section {
         width: 100vw;
         height: 100%;
 

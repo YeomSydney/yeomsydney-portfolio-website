@@ -224,8 +224,6 @@
 
     /* ===== FOOTER ===== */
     .footer-container {
-        border-top: solid 1px var(--color-line-white);
-
         h3,
         h4,
         p,
@@ -236,7 +234,11 @@
         li {
             color: var(--color-primary-wh) !important;
         }
+    }
 
+
+    .footer-container,
+    .contact-section {
         .fc-semi-label,
         .fc-bt-connect-desc span,
         .footer-container-top .fc-top-contact h3,
