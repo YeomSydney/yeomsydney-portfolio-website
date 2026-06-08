@@ -79,19 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         {
             number: "06",
-            year: "2025",
-            title: "The Favric Expo",
-            type: "Casestudy",
-            category: "Brand Identity",
-            industry: "Exhibition",
-            desc: "The Favric Expo is an annual exhibition that celebrates personal identity through fashion and self-expression.",
-            image: "./public/images/thefavricexpo/thefabricexpo-binder03.jpg",
-            url: "/the-favric-expo/",
-            message: "View Casestudy"
-        },
-        
-        {
-            number: "07",
             year: "2026",
             title: "One Spoon",
             type: "Casestudy",
@@ -100,6 +87,19 @@ document.addEventListener("DOMContentLoaded", () => {
             desc: "One Spoon is an immersive food museum that explores the relationship between food, dining cultures, and climate.",
             image: "./public/images/onespoon/OneSpoon_Banner03_Building.jpg",
             url: "/onespoon/",
+            message: "View Casestudy"
+        },
+        
+        {
+            number: "07",
+            year: "2025",
+            title: "The Favric Expo",
+            type: "Casestudy",
+            category: "Brand Identity",
+            industry: "Exhibition",
+            desc: "The Favric Expo is an annual exhibition that celebrates personal identity through fashion and self-expression.",
+            image: "./public/images/thefavricexpo/thefabricexpo-binder03.jpg",
+            url: "/the-favric-expo/",
             message: "View Casestudy"
         },
 
