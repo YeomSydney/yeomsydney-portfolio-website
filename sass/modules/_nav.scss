@@ -14,14 +14,21 @@ body.footer-active {
         }
 
         .theme-toggle {
-            button span,
-            button i {
+            .pc-theme-toggle span {
                 color: var(--color-secondary) !important;
+
+                &.is-active {
+                    color: var(--color-primary-wh) !important;
+                }
             }
 
-            button span.is-active,
-            button i.is-active {
-                color: var(--color-primary-wh) !important;
+            .mobile-theme-toggle i {
+                color: var(--color-tertiary) !important;
+
+                &.is-active {
+                    color: var(--color-primary-bk) !important;
+                    background-color: var(--color-primary-wh) !important;
+                }
             }
         }
 
@@ -64,18 +71,23 @@ body.footer-active {
         padding: 1em 1.5em;
         z-index: 2001 !important;
 
-        .main-nav-pc-top {
+        .main-nav-logo {
             display: flex;
-            flex-direction: row;
-            gap: .8em;
-            align-items: center;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            gap: .3em;
+        }
 
-            h3,
-            h4,
-            h5,
-            span {
+        .main-nav-pc-top {
+            h4 {
                 color: var(--color-primary-bk);
-                font-size: var(--font-size-sm);
+                font-size: var(--font-size-primary-sm);
+            }
+
+            h3 {
+                font-size: var(--font-size-primary);
             }
 
             &.main-nav-left {
@@ -168,21 +180,14 @@ body.footer-active {
     #main-nav-pc {
         .nav-top-pc {
             .main-nav-pc-top {
-                display: flex;
-                flex-direction: row;
-                gap: .8em;
-
                 &.main-nav-left {
                     display: none;
                 }
 
                 &.main-nav-logo {
-                    h3, h4 {
-                        font-size: var(--font-size-sm);
-                    }
-
                     h4 {
                         color: var(--color-secondary);
+                        font-size: var(--font-size-sm);
                     }
                 }
             }
@@ -201,11 +206,6 @@ body.footer-active {
             grid-template-columns: 1fr 1fr 3fr 1fr;
 
             .main-nav-pc-top {
-                display: flex;
-                flex-direction: row;
-                gap: .6em;
-                align-items: center;
-
                 &.main-nav-logo {
                     grid-column-start: 3;
 

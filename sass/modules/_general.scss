@@ -57,13 +57,21 @@
 
         .theme-toggle {
             button {
-                span,
-                i {
+                span {
                     color: var(--color-tertiary) !important;
     
                     &.is-active {
                         color: var(--color-primary-wh) !important;
                     }
+                }
+            }
+
+            .mobile-theme-toggle i {
+                color: var(--color-tertiary) !important;
+
+                &.is-active {
+                    color: var(--color-primary-bk) !important;
+                    background-color: var(--color-primary-wh) !important;
                 }
             }
         }

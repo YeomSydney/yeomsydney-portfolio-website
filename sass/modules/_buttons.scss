@@ -1,16 +1,32 @@
 .theme-toggle {
     button {
         display: flex;
-        gap: 0.5em;
         align-items: center;
+        gap: .25em;
 
         span, i {
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-primary-sm);
             color: var(--color-secondary);
             transition: all 0.25s ease;
+        }
+
+        span {
+            padding: 0.1em;
 
             &.is-active {
                 color: var(--color-primary-bk);
+            }
+        }
+    }
+
+    .mobile-theme-toggle {
+        i {
+            padding: .4em .5em;
+            border-radius: .3em;
+
+            &.is-active {
+                color: var(--color-primary-wh) !important;
+                background-color: var(--color-primary-bk);
             }
         }
     }
