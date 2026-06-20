@@ -77,7 +77,7 @@ body.footer-active {
             justify-content: flex-start;
             align-items: flex-start;
             width: 100%;
-            gap: .3em;
+            gap: .2em;
         }
 
         .main-nav-pc-top {
@@ -87,7 +87,7 @@ body.footer-active {
             }
 
             h3 {
-                font-size: var(--font-size-primary);
+                font-size: var(--font-size-primary-sm);
             }
 
             &.main-nav-left {
