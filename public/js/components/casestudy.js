@@ -15,6 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             number: "01",
             year: "2026",
+            title: "Momento",
+            type: "Casestudy",
+            category: "Brand Identity",
+            industry: "Premium Tea",
+            desc: "Momento is a premium tea house built around the relationship between time, memory, and ritual.",
+            image: "./public/images/momento/momento-thumbnail.jpg",
+            url: "/momento/",
+            message: "View Casestudy"
+        },
+
+        {
+            number: "02",
+            year: "2026",
             title: "Mellow Ground",
             type: "Casestudy",
             category: "Brand Identity",
@@ -26,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         {
-            number: "02",
+            number: "03",
             year: "2026",
             title: "Lazy Donut",
             type: "Casestudy",
@@ -35,19 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
             desc: "Lazy Donut is a donut brand designed for busy students and workers who struggle to take breaks.",
             image: "./public/images/lazydonut/LazyDonut_ENV01.jpg",
             url: "/lazydonut/",
-            message: "View Casestudy"
-        },
-
-        {
-            number: "03",
-            year: "2025",
-            title: "Trace Toronto",
-            type: "Casestudy",
-            category: "Campaign Planning",
-            industry: "Campaign/City Plan",
-            desc: "Trace Toronto is a campaign under the City of Toronto, designed to help residents stay informed about the city’s progress on public initiatives and infrastructure projects.",
-            image: "./public/images/tracetoronto/TraceToronto_BannerBillboard02.jpg",
-            url: "/trace-toronto/",
             message: "View Casestudy"
         },
 
@@ -67,31 +67,18 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             number: "05",
             year: "2025",
-            title: "Gentle Dazs",
+            title: "Trace Toronto",
             type: "Casestudy",
-            category: "Brand Identity/Packaging",
-            industry: "Fashion/Dessert",
-            desc: "Gentle Dazs is a conceptual collaboration between Gentle Monster and Häagen-Dazs, reimagining how a product can engage multiple senses through design.",
-            image: "./public/images/gentledazs/GentleDazs_Packages_01.jpg",
-            url: "/gentle-dazs/",
-            message: "View Casestudy"
-        },
-
-        {
-            number: "06",
-            year: "2026",
-            title: "One Spoon",
-            type: "Casestudy",
-            category: "Brand Identity",
-            industry: "Museum",
-            desc: "One Spoon is an immersive food museum that explores the relationship between food, dining cultures, and climate.",
-            image: "./public/images/onespoon/OneSpoon_Banner03_Building.jpg",
-            url: "/onespoon/",
+            category: "Campaign Planning",
+            industry: "Campaign/City Plan",
+            desc: "Trace Toronto is a campaign under the City of Toronto, designed to help residents stay informed about the city’s progress on public initiatives and infrastructure projects.",
+            image: "./public/images/tracetoronto/TraceToronto_BannerBillboard02.jpg",
+            url: "/trace-toronto/",
             message: "View Casestudy"
         },
         
         {
-            number: "07",
+            number: "06",
             year: "2025",
             title: "The Favric Expo",
             type: "Casestudy",
@@ -100,6 +87,19 @@ document.addEventListener("DOMContentLoaded", () => {
             desc: "The Favric Expo is an annual exhibition that celebrates personal identity through fashion and self-expression.",
             image: "./public/images/thefavricexpo/thefabricexpo-binder03.jpg",
             url: "/the-favric-expo/",
+            message: "View Casestudy"
+        },
+
+        {
+            number: "07",
+            year: "2026",
+            title: "One Spoon",
+            type: "Casestudy",
+            category: "Brand Identity",
+            industry: "Museum",
+            desc: "One Spoon is an immersive food museum that explores the relationship between food, dining cultures, and climate.",
+            image: "./public/images/onespoon/OneSpoon_Banner03_Building.jpg",
+            url: "/onespoon/",
             message: "View Casestudy"
         },
 
