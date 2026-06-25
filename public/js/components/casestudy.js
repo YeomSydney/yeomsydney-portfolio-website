@@ -470,6 +470,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // More Project (Footer)
     const moreProjects = [
         {
+            title: "Momento",
+            category: "Brand Identity",
+            image: "../public/images/momento/momento-thumbnail.jpg",
+            url: "/momento/"
+        },
+
+        {
             title: "Mellow Ground",
             category: "Brand Identity",
             image: "../public/images/mellowground/MellowGround_CoffeeCan01_Thumbnail.jpg",
