@@ -394,7 +394,11 @@ Font Size - PC      : 15px & 20px
                             }
 
                             .organizations {
-                                font-size: 18px;
+                                font-size: var(--font-size-sd);
+
+                                span a {
+                                    font-size: var(--font-size-primary-sm);
+                                }
                             }
                         }
                     }
@@ -1142,12 +1146,19 @@ Font Size - PC      : 15px & 20px
                     grid-column: 7 / 13;
 
                     th, td {
-                        padding: .5em;
+                        padding-top: .5em;
+                        padding-bottom: .65em;
+                        vertical-align: top;
+                    }
+
+                    th {
+                        padding-right: 1.5em !important;
                     }
 
                     .year,
                     .role {
                         font-size: var(--font-size-sd);
+                        padding: .75em 0;
                     }
                 }
             }
